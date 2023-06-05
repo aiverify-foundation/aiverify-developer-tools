@@ -1,8 +1,6 @@
-# Building your first algorithm component
+# Creating your First Algorithm Component
 
 In this guided example, you will be building a plugin that takes in a feature value from the user and prints out that value in a generated report. This plugin requires two type of components: **algorithm** and **widget** (See [this page](../introduction_to_plugins) for more details on *Plugins*). 
-
-## Creating your first algorithm component
 
 There are three objectives in this algorithm component example:
 

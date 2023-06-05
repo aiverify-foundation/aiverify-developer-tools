@@ -1,4 +1,4 @@
-# Creating your first widget component
+# Creating your First Widget Component
 
 There are three learning objectives in this tutorial:
 
@@ -44,9 +44,9 @@ Open the file `mywidget.meta.json` and check that the properties are set correct
   ]
 }
 ```
-### Editing sample file
+## Editing sample file
 
-Open and edit `your_first_algorithm.sample.json` with a valid sample output from the algorithm or input block. This sample data will be passed to the MDX component props in the project canvas, and allows the MDX to display data based on sample input.
+Open and edit `your_first_algorithm_component.sample.json` with a valid sample output from the algorithm or input block. This sample data will be passed to the MDX component props in the project canvas, and allows the MDX to display data based on sample input.
 
 ```JSON
 {"my_expected_results": [
@@ -66,7 +66,7 @@ Open and edit `your_first_algorithm.sample.json` with a valid sample output from
 }
 ```
 
-### Editing MDX
+## Editing MDX
 
 Open and edit `mywidget.mdx` to implement the MDX content.
 
@@ -83,11 +83,4 @@ export const cid = "your_first_algorithm_component"
 )}
 ```
 
-## Deploying Widget Components
-
-After generating and implementing the plugin and components, run the [**ai-verify-plugin zip**](../plugins/widget/Plugin_Tool.md#zip) command to create a deployable zip. This zip file can be uploaded to the AI Verify Portal using the Plugin Manager. 
-
-```bash
-# Make sure you are in the root of the plugin directory (e.g., ./myplugin)
-$ ai-verify-plugin zip .
-```
+Once you are done with the widget creation, you can proceed to [deploy your plugin](./deploy_your_plugin.md).

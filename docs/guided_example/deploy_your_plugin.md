@@ -2,9 +2,9 @@
 
 Now that you've created both an algorithm and widget component, it's time to package it into a single plugin for deployment.
 
-If you are following the guided example, you should have the following components completed and packaged in its own respective zips:
+If you are following the guided example, you should have the following components completed and packaged in its own respective folders:
 
-1. your-first-algorithm-plugin component
+1. your-first-algorithm-component component
 2. your-first-widget component
 
 At this point, you may decide if you wish to deploy the components as two separate plugins (i.e. algorithm plugin and widget plugin), or combine and package it as a single plugin. Each method comes with its own rationale and benefit.

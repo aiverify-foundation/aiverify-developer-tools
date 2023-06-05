@@ -2,36 +2,19 @@
 
 There are three learning objectives in this tutorial:
 
-1. Create a widget component in the plugin project.
-2. Modify the widget component to display the results from the algorithm component
+1. Create a widget component in the existing plugin project.
+2. Modify the widget component to display the results from the completed algorithm component
 3. Deploy the widget component
-
-First, let's create a new algorithm project.
-
-## Generating the project
-
-Use the [**ai-verify-plugin gp**](Plugin_Tool.md#generate-plugin-alias-gp) command to generate a plugin project.
-
-To generate a plugin, run the following command with `gid` specified as `my-plugin`
-
-```Javascript
-$ ai-verify-plugin gp "myplugin" --name "My Plugin"
-```
-
-Once the plugin has been generate, run `cd` to change the directory to the plugin. For example,
-
-```bash
-$ cd myplugin
-```
 
 ## Generating a widget component
 
-Use [**ai-verify-plugin gw**](../plugins/widget/Plugin_Tool.md#generate-widget-alias-gw) to generate your widget.
+Widgets are stored in the **template_plugin/widgets** folder. Use [**ai-verify-plugin gw**](../plugins/widget/Plugin_Tool.md#generate-widget-alias-gw) to generate your widget.
 
 Run the following command to generate a new widget and create a dependency to the algorithm component created earlier.
 
 ```bash
-$ ai-verify-plugin gw "mywidget" --name "My Widget" --description "A Widget" --dep "Algorithm,your_first_algorithm_plugin"
+cd template_plugin/widgets
+ai-verify-plugin gw "mywidget" --name "My Widget" --description "A Widget" --dep "Algorithm,your_first_algorithm_component"
 ```
 
 Open the file `mywidget.meta.json` and check that the properties are set correctly as shown below:
@@ -49,14 +32,14 @@ Open the file `mywidget.meta.json` and check that the properties are set correct
   "description": "A Widget",
   "dependencies": [
     {
-      "cid": "your_first_algorithm_plugin"
+      "cid": "your_first_algorithm_component"
     }
   ],
   "mockdata": [
     {
       "type": "Algorithm",
-      "cid": "your_first_algorithm_plugin",
-      "datapath": "your_first_algorithm_plugin.sample.json"
+      "cid": "your_first_algorithm_component",
+      "datapath": "your_first_algorithm_component.sample.json"
     }
   ]
 }
@@ -88,7 +71,7 @@ Open and edit `your_first_algorithm.sample.json` with a valid sample output from
 Open and edit `mywidget.mdx` to implement the MDX content.
 
 ```Javascript
-export const cid = "your_first_algorithm_plugin"
+export const cid = "your_first_algorithm_component"
 
 {props.getResults[cid]?(
   <>
@@ -102,7 +85,7 @@ export const cid = "your_first_algorithm_plugin"
 
 ## Deploying Widget Components
 
-After generating and implementing the plugin and components, run the [**ai-verify-plugin zip**](../plugins/widget/Plugin_Tool.md#zip) command to create a deployable zip. This zip file can be uploded to the AI Verify Portal using the Plugin Manager. 
+After generating and implementing the plugin and components, run the [**ai-verify-plugin zip**](../plugins/widget/Plugin_Tool.md#zip) command to create a deployable zip. This zip file can be uploaded to the AI Verify Portal using the Plugin Manager. 
 
 ```bash
 # Make sure you are in the root of the plugin directory (e.g., ./myplugin)

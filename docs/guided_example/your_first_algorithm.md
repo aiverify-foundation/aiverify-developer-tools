@@ -1,30 +1,29 @@
 # Building your first algorithm component
 
-You will be building a plugin to take in a feature value from the user and print out the value in a generated report report. This plugin requires two type of components: **algorithm** and **widget** (See [this page](../introduction_to_plugins) for more details on *Plugins*). 
+In this guided example, you will be building a plugin that takes in a feature value from the user and prints out that value in a generated report. This plugin requires two type of components: **algorithm** and **widget** (See [this page](../introduction_to_plugins) for more details on *Plugins*). 
 
 ## Creating your first algorithm component
 
-There are three objectives in this algorithm component:
+There are three objectives in this algorithm component example:
 
-1. Modify the input schema so that the algorithm can receive input from user
-2. Modify the output schema and codes to return expected output
+1. Modify the input schema for the algorithm to receive user input
+2. Modify the output schema and and write code to return the expected output
 3. Modify the testing codes
 
-First, let's create a new algorithm project. If you haven't setup your environment, [follow the instructions on this page](../../getting_started/install_aiverify_dev_tools) before continuing.
+## Generating the algorithm component project
 
-## Generating the project
+First, we will have to create a new algorithm component project. If you haven't setup your environment, [follow the instructions on this page](../../getting_started/install_aiverify_dev_tools) before continuing. 
 
-From your terminal, use `cookiecutter` to download the base `algorithm` folder for your new algorithm.
+!!!info
+    For this guided example, we will be using the **template_plugin** folder to store the algorithm and widget components, before using *deploy_plugin.sh* helper script to package and deploy the final plugin zip.
+
+Algorithms are stored in the **template_plugin/algorithms** folder. From your terminal, use `cookiecutter` to generate an algorithm component template for your new algorithm.
 
 ```bash
 # From the aiverify-developer-tools project directory
-cd template_plugin
+cd template_plugin/algorithms
 
-# Create algorithms folder if it doesn't already exist
-mkdir -p algorithms
-
-cd algorithms
-
+# use cookiecutter with the algorithm template
 cookiecutter ../../ai-verify-algorithm-template
 ```
 
@@ -33,28 +32,28 @@ Answer the following questions:
 | Required Input | Action |
 | ---- | ---------- |
 | author [example_author] | We will use the default. *Press Enter.* |
-| plugin_name [example plugin] | Type ```your-first-algorithm-plugin```. *Press Enter.* |
+| plugin_name [example plugin] | Type ```your-first-algorithm-component```. *Press Enter.* |
 | Choose from 1 [1] | We will use the default. *Press Enter.* |
 | plugin_version [0.1.0] | We will use the default. *Press Enter*  |
-| plugin_description [My example plugin] | Type ```Your first algorithm plugin```.*Press Enter*  |
-| plugin_url [https://pypi.org/project/example_plugin/] | We will use the default. *Press Enter*  |
+| plugin_description [My example plugin] | Type ```Your first algorithm component```.*Press Enter*  |
 | Select license [1] | We will use the default. *Press Enter*  |
 | Select algo_model_support [1] | We will use the default. *Press Enter* |
 | Select require_ground_truth [1] | We will use the default. *Press Enter* |
 
 !!! note
-    The plugin name ```your-first-algorithm-plugin``` will automatically be converted to ```your_first_algorithm_plugin```. The cookiecutter generator will automatically convert the name to create the project slug. Refer to the [guide](https://peps.python.org/pep-0008/#package-and-module-names) on **Package and Module Names**.
+    The plugin name ```your-first-algorithm-component``` will automatically be converted to ```your_first_algorithm_component```. The cookiecutter generator will automatically convert the name to create the project slug. Refer to the [guide](https://peps.python.org/pep-0008/#package-and-module-names) on **Package and Module Names**.
 
-Verify that the directory ```your_first_algorithm_plugin``` exists in your current directory:
+Verify that the directory ```your_first_algorithm_component``` exists in your current directory:
 
 ```bash
-ls | grep your_first_algorithm_plugin
+ls | grep your_first_algorithm_component
 ```
 
 ![Generated directory](../images/generated_directory.png)
+
 If you do not see the project name, something in the setup is incomplete. Please re-create the project directory through the steps above again.
 
-Yay! You have generated a project to create your first algorithm (See more details at [Understanding your algorithm project](../plugins/algorithm/file_structure.md))
+Yay! You have generated an algorithm component project to create your first algorithm (See more details at [Understanding your algorithm project](../plugins/algorithm/file_structure.md))
 
 ## Modifying input schema
 
@@ -82,22 +81,22 @@ Modify `input.schema.json` to request an input called `feature_name` from the us
 
 ## Modifying algorithm
 
-Modify `your_first_algorithm_plugin.py` to receive and return the data of the requested `feature_name`. 
+Modify `your_first_algorithm_component.py` to receive and return the data of the requested `feature_name`. 
 
 !!! Tip
     All codes generated using our `cookiecutter` template has annotated with `TODO:` to for users to quickly navigate to areas that require code modification.
 
 First, update the description of this algorithm in the code.
 
-```py title="your_first_algorithm_plugin.py" linenums="23" hl_lines="3 4 9"
+```py title="your_first_algorithm_component.py" linenums="23" hl_lines="3 4 9"
 class Plugin(IAlgorithm):
     """
     # TODO: Update the plugin description below
-    The Plugin(your-first-algorithm-plugin) class specifies methods in generating results for algorithm
+    The Plugin(your-first-algorithm-component) class specifies methods in generating results for algorithm
     """
 
-    # Some information on plugin
-    _name: str = "your-first-algorithm-plugin"
+    # Some information on component
+    _name: str = "your-first-algorithm-component"
     _description: str = "This algorithm returns the value of the feature name selected by the user."
     _version: str = "0.1.0"
     _metadata: PluginMetadata = PluginMetadata(_name, _description, _version)
@@ -198,13 +197,13 @@ Next, run `python` to test your algorithm.
 python .
 ```
 
-If the test passes (no error messages in terminal), you have successfully completed the creation of the algorithm component. At this stage, you can either [**deploy your algorithm component**](#deploy-your-algorithm-component) as a standalone plugin, or continue to [**work on other components**](./your_first_widget.md) (eg. another algorithm, widget, input block etc) before packaging it as a single plugin.
+If the test passes (no error messages in terminal), you have **successfully completed** the creation of the algorithm component. At this stage, you can either [**deploy your algorithm component**](#deploy-your-algorithm-component) as a standalone plugin, or continue to [**work on other components**](./your_first_widget.md) (eg. another algorithm, widget, input block etc) before packaging it as a single plugin.
 
 If the test fails, refer to the troubleshooting guide for help.
 
-## Deploy your algorithm component
+## Deploy your algorithm component (Optional)
 
-We have provided a script to help deploy your algorithm plugin by packaging it. If you have not created a widget component at this point, this will package the algorithm as a standalone plugin. To run the script, navigate to the directory with the script `deploy_script.sh`. This is located at the **root of template_plugin** folder. At the directory, enter:
+We have provided a script to help deploy your plugin by packaging it. If you have not created a widget component at this point, this will package the algorithm as a standalone plugin. To run the script, navigate to the directory with the script `deploy_script.sh`. This is located at the **root of template_plugin** folder. At the directory, enter:
 
 ```bash
 ./deploy_script.sh

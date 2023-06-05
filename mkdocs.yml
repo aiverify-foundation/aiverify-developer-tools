@@ -98,9 +98,9 @@ nav:
       - Template: plugins/widget/Template.md
   - How-to:
     - How-to: how_to/index.md
-    - How to use fairness decision tree: how_to/use_fairness_tree.md
-    - How to prepare tabular dataset and models: how_to/prepare_tabular.ipynb
-    - How to prepare image dataset and models: how_to/prepare_image.ipynb
+    - How to use Fairness Decision Tree: how_to/use_fairness_tree.md
+    - How to prepare Tabular Datasets and Models: how_to/prepare_tabular.ipynb
+    - How to prepare Image Datasets and Models: how_to/prepare_image.ipynb
   - AI Verify Stock Plugins:
     - AI Verify Stock Plugins: stock_plugins/index.md
     - Fairness for Classification: stock_plugins/fmtc.md

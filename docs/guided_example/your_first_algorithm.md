@@ -127,7 +127,7 @@ Next, update the `generate` method to retrieve the return the values of the sele
         self._progress_inst.update(1)
 ```
 
-Lastly, update the `output.scheme.json` to return the expected results. This file will be validated against the output to ensure that the results (see line 180 in the previous code snippet) adhere to the output schema.
+Lastly, update the `output.schema.json` to return the expected results. This file will be validated against the output to ensure that the results (see line 180 in the previous code snippet) adhere to the output schema.
 
 In this algorithm, the expected output will be stored in a list (or array) named `my_expected_results`.  There must be at least 10 items in the list, and the items must have the type `number` (as shown in the highlighted lines).
 

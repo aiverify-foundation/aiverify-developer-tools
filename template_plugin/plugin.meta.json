@@ -1,0 +1,7 @@
+{
+    "gid": "your_first_plugin",
+    "version": "0.1.0",
+    "name": "Your First Plugin",
+    "author": "Example Author",
+    "description": "This is your first plugin"
+}

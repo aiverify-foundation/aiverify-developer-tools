@@ -1,0 +1,21 @@
+.mytable {
+  width: 100%;
+  margin: 10px 0 10px 0;
+  border-collapse: collapse;
+  background-color: white;
+  color: black;
+}
+
+.mytable td, .mytable th {
+  padding: 5px;
+}
+
+.mytable tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+.mylist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

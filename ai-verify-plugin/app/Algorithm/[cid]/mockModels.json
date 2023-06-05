@@ -1,0 +1,62 @@
+[
+  {
+    "id": "64059d1b8a23590cddde3fdd",
+    "name": "pickle_scikit_multiclasslr_loan.sav",
+    "filename": "pickle_scikit_multiclasslr_loan.sav",
+    "filePath": "/model/pickle_scikit_multiclasslr_loan.sav",
+    "ctime": "2023-03-06T07:58:19.322Z",
+    "size": "1.13 KB",
+    "status": "Valid",
+    "description": "AAA",
+    "serializer": "pickle",
+    "modelFormat": "sklearn",
+    "modelType": "Classification",
+    "errorMessages": "",
+    "type": "File"
+  },
+  {
+    "id": "6440e8c6e8f82a7d757679e4",
+    "name": "pickle_scikit_lr_mnist.sav",
+    "filename": "pickle_scikit_lr_mnist.sav",
+    "filePath": "/model/pickle_scikit_lr_mnist.sav",
+    "ctime": "2023-04-20T07:24:54.177Z",
+    "size": "62.26 KB",
+    "status": "Valid",
+    "description": "",
+    "serializer": "pickle",
+    "modelFormat": "sklearn",
+    "modelType": "Classification",
+    "errorMessages": "",
+    "type": "File"
+  },
+  {
+    "id": "6440ef0ae8f82a7d75834dc0",
+    "name": "joblib_scikit_lr_compas.sav",
+    "filename": "joblib_scikit_lr_compas.sav",
+    "filePath": "/model/joblib_scikit_lr_compas.sav",
+    "ctime": "2023-04-20T07:51:38.486Z",
+    "size": "828 Bytes",
+    "status": "Valid",
+    "description": "",
+    "serializer": "joblib",
+    "modelFormat": "sklearn",
+    "modelType": "Classification",
+    "errorMessages": "",
+    "type": "File"
+  },
+  {
+    "id": "6453ca64c20570cb41f7b09d",
+    "name": "pickle_scikit_lr_mnist_1.sav",
+    "filename": "pickle_scikit_lr_mnist_1.sav",
+    "filePath": "/model/pickle_scikit_lr_mnist_1.sav",
+    "ctime": "2023-05-04T15:08:20.759Z",
+    "size": "62.26 KB",
+    "status": "Valid",
+    "description": "",
+    "serializer": "pickle",
+    "modelFormat": "sklearn",
+    "modelType": "Classification",
+    "errorMessages": "",
+    "type": "File"
+  }
+]

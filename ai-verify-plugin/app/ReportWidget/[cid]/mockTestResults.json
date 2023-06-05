@@ -1,0 +1,448 @@
+[
+  {
+    "algorithmGID": "aiverify.stock.fairness_metrics_toolbox_for_classification:fairness_metrics_toolbox_for_classification",
+    "algorithm": {
+      "gid": "aiverify.stock.fairness_metrics_toolbox_for_classification:fairness_metrics_toolbox_for_classification",
+      "name": "fairness metrics toolbox for classification",
+      "description": "The FMTC computes a list of fairness metrics to measure how resources (e.g. opportunities, food, loan) are allocated among the demographic groups (e.g. married male, married female) given a set of sensitive feature(s) (e.g. gender, marital status)."
+    },
+    "testArguments": {
+      "sensitive_feature": [
+        "Gender"
+      ]
+    },
+    "status": "Success",
+    "progress": 100,
+    "timeStart": "2023-05-17T09:06:49.712Z",
+    "timeTaken": 0,
+    "output": {
+      "sensitive_feature": [
+        "Gender"
+      ],
+      "output_classes": [
+        0,
+        1,
+        2
+      ],
+      "results": [
+        {
+          "True Positive Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.0035236718467654498
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.004427177448500181
+            }
+          ],
+          "True Negative Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.28996153311396394
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.7063539880428233
+            }
+          ],
+          "Positive Predictive Value Parity": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.15789473684210525
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.19838056680161945
+            }
+          ],
+          "Negative Predictive Value Parity": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.23182955071792496
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.5647429365446966
+            }
+          ],
+          "False Positive Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.0010427770310979284
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.002641701812114752
+            }
+          ],
+          "False Negative Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.2799060354174196
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.7121431152873148
+            }
+          ],
+          "False Discovery Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.18218623481781376
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.46153846153846156
+            }
+          ],
+          "False Omission Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.05739694302918018
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.14603056970819825
+            }
+          ],
+          "Disparate Impact": [
+            {
+              "group": [
+                0,
+                1
+              ],
+              "metric": 1.2650146484852156
+            }
+          ],
+          "Equal Selection Parity": [
+            {
+              "group": [
+                0,
+                1
+              ],
+              "metric": 79
+            }
+          ]
+        },
+        {
+          "True Positive Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.19939836699613236
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.4839278040395359
+            }
+          ],
+          "True Negative Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.10529206513310933
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.26389247867666066
+            }
+          ],
+          "Positive Predictive Value Parity": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.13097724834867047
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.3178738779427539
+            }
+          ],
+          "Negative Predictive Value Parity": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.17338795488401787
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.43456054479676526
+            }
+          ],
+          "False Positive Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.18111915223571984
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.4496963039545102
+            }
+          ],
+          "False Negative Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.09411259131929522
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.22256123764503652
+            }
+          ],
+          "False Discovery Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.15824535651781177
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.39290351719076383
+            }
+          ],
+          "False Omission Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.11651415194722281
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.27553734837199406
+            }
+          ],
+          "Disparate Impact": [
+            {
+              "group": [
+                0,
+                1
+              ],
+              "metric": 0.9988551166864583
+            }
+          ],
+          "Equal Selection Parity": [
+            {
+              "group": [
+                0,
+                1
+              ],
+              "metric": 14934
+            }
+          ]
+        },
+        {
+          "True Positive Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.1223596861798431
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.30703077851538924
+            }
+          ],
+          "True Negative Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.20487506552507426
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.5035820373929757
+            }
+          ],
+          "Positive Predictive Value Parity": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.13116610059841502
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.329128254892447
+            }
+          ],
+          "Negative Predictive Value Parity": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.19720797241611301
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.484736355226642
+            }
+          ],
+          "False Positive Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.08538645232686819
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.20615644475508182
+            }
+          ],
+          "False Negative Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.16571112452222891
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.40489841078253874
+            }
+          ],
+          "False Discovery Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.1580678203676748
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.38163782414146313
+            }
+          ],
+          "False Omission Rate": [
+            {
+              "group": [
+                0
+              ],
+              "metric": 0.09236677599304796
+            },
+            {
+              "group": [
+                1
+              ],
+              "metric": 0.225688896364197
+            }
+          ],
+          "Disparate Impact": [
+            {
+              "group": [
+                0,
+                1
+              ],
+              "metric": 0.9989101011932562
+            }
+          ],
+          "Equal Selection Parity": [
+            {
+              "group": [
+                0,
+                1
+              ],
+              "metric": 7819
+            }
+          ]
+        }
+      ]
+    },
+    "errorMessages": null
+  },
+  {
+    "algorithmGID": "aiverify.stock.algorithms.adversarial_examples_toolbox:adversarial_examples_toolbox",
+    "algorithm": {
+      "gid": "aiverify.stock.algorithms.adversarial_examples_toolbox:adversarial_examples_toolbox",
+      "name": "adversarial examples toolbox",
+      "description": "My adversarial examples toolbox"
+    },
+    "testArguments": {},
+    "status": "Error",
+    "progress": 100,
+    "timeStart": "2023-05-17T09:06:49.714Z",
+    "timeTaken": null,
+    "output": null,
+    "errorMessages": [
+      {
+        "id": "6464992b6c0e390d22c4ea55",
+        "description": "Task Terminated: Unable to get algorithm instance: "
+      }
+    ]
+  }
+]

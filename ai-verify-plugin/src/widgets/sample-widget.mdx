@@ -1,0 +1,123 @@
+# My MDX Widget
+
+Developers should modify this file to build their own widget MDX. For more information on AI Verify widgets, please refer to the [AI Verify Widget Page](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-plugin/-/blob/main/docs/Widget.md).
+
+Below are some examples of MDX.
+
+## Examples of MDX Props
+
+The following example displays the JSON output from an algorithm.
+
+export const algo_gid = "my-algoritm-gid"
+
+{props.result[algo_gid]?(
+  <>
+    <b>JSON output of algorithm</b>
+    <div style={{ maxHeight:"100px", overflow:"auto" }}>{JSON.stringify(props.result[algo_gid])}</div>
+  </>
+):(
+  <div>No data</div>
+)}
+
+The following example display the width and height of the parent container.
+
+<div style={{ widget:props.container.width, backgroundColor:"olive", color:"white" }}>
+  Container size: width {props.container.width}px, height {props.container.height}px
+</div>
+
+## Example of Markdown Content
+
+Some examples of markdown.
+
+*Italic* and **bold** text with some `inline code`.
+* Unordered list
+1. Ordered List
+
+## Example of JSX
+
+Some examples of JSX components.
+
+<div>Hello World</div>
+
+export const HelloWorld = () => (
+  <div>Hello World again</div>
+)
+
+<HelloWorld />
+
+## Example Styling of components
+
+Below are some examples of how to style JSX compoents using the [AI Verify Shared Library Styles](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-shared-library/-/tree/main/packages/styles).
+
+<div style={{ display:"flex" }}>
+  <h3 className="c-primary">Primary Color</h3>
+  <h3 className="c-error">Error Color</h3>
+</div>
+
+<div className="aiv-card">My Card</div>
+<div className="aiv-panel c-success">My Success Panel</div>
+
+<div style={{ display:"flex", alignItems:"flex-start", width:"100%" }}>
+  <button className="aiv-button">My Button</button>
+  <input className="aiv-input" value="My Input" />
+  <textarea rows="4" className="aiv-textarea" value="My Textarea" />
+</div>
+
+## Example Import from AI Verify Shared Library
+
+Below is an example of how to add a [BarChart](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-shared-library/-/tree/main/packages/charts#barchart) component from the [AI Verify Shared Charts Library](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-shared-library/-/tree/main/packages/charts).
+
+import { BarChart } from 'ai-verify-shared-library/charts'
+
+export const data01 = [
+  {
+    name: 'Page A',
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: 'Page B',
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: 'Page C',
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'Page D',
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'Page E',
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: 'Page F',
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: 'Page G',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
+
+<div style={{ width:props.container.width, height:"220px", padding:"10px" }}>
+  <BarChart
+    data={data01}
+    xAxisDataKey="name"
+    bars={[{ dataKey:"uv" }, { dataKey:"pv" }, { dataKey:"amt" }]}
+  />
+</div>

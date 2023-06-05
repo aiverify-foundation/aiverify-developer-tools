@@ -1,0 +1,10 @@
+{
+    "author": "example_author",
+    "plugin_name": "example plugin",
+    "project_slug": ["{{ cookiecutter.plugin_name.lower().replace(' ', '_').replace('-', '_') }}"],
+    "plugin_version": "0.1.0",
+    "plugin_description": "My example plugin",
+    "license": ["Apache Software License 2.0", "MIT", "BSD-3", "GNU GPL v3.0", "Mozilla Public License 2.0"],
+    "algo_model_support": ["Classification", "Regression", "Both"],
+    "require_ground_truth": ["True", "False"]
+}

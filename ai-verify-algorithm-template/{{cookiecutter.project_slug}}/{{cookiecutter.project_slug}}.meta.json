@@ -1,0 +1,21 @@
+{
+    "cid": "{{cookiecutter.project_slug}}",
+    "name": "{{cookiecutter.plugin_name}}",
+    {% if cookiecutter.algo_model_support == "Both" %}"modelType":["classification","regression"],
+    {% elif cookiecutter.algo_model_support == "Regression" %}"modelType":["regression"],
+    {% else %}"modelType":["classification"],{% endif %}
+    "version": "{{cookiecutter.plugin_version}}",
+    "author": "{{cookiecutter.author}}",
+    "description": "{{cookiecutter.plugin_description}}",
+    "tags": [
+        "{{cookiecutter.plugin_name}}",
+        {% if cookiecutter.algo_model_support == "Both" %}"classification",
+        "regression"
+        {% elif cookiecutter.algo_model_support == "Regression" %}"regression"
+        {% else %}"classification"{% endif %}
+    ],
+    {% if cookiecutter.require_ground_truth == "True" %}"requireGroundTruth": true
+    {% else %}"requireGroundTruth": false{% endif %},
+    "requiredFiles": ["AUTHORS.rst", "CHANGELOG.md", "input.schema.json", "LICENSE",
+    "output.schema.json", "{{cookiecutter.project_slug}}.meta.json", "{{cookiecutter.project_slug}}.py", "README.md", "requirements.txt", "syntax_checker.py"]
+}

@@ -1,0 +1,24 @@
+# My MDX Input Block
+
+Developers should modify this file to build their own Input Block. For more information on AI Verify Input Blocks, please refer to the [AI Verify Input Block Page](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-plugin/-/blob/main/docs/InputBlock.md).
+
+Below are some examples of how to create input blocks.
+
+## Example HTML Form
+
+<div style={{ display:"flex", flexDirection:"column", marginBottom:"10px" }}>
+  <label htmlFor="fname">First name:</label>
+  <input type="text" id="fname" value={props.data["fname"]} onChange={(e)=>props.onChangeData("fname",e.target.value)} />
+  <label htmlFor="lname">Last name:</label>
+  <input type="text" id="lname" value={props.data["lname"]} onChange={(e)=>props.onChangeData("lname",e.target.value)} />
+  <label htmlFor="bio">Bio:</label>
+  <textarea rows="4" style={{ width:"100%", resize:"none" }} value={props.data["bio"]} onChange={(e)=>props.onChangeData("bio",e.target.value)} />
+</div>
+
+## Example use of Decision Tree Component
+
+The [AI Verify Shared Library DecisionTree](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-shared-library/-/tree/main/packages/graph) allows user to build their own decision tree.
+
+You can find an example of Decision Tree Input Block from the [Widgets for Fairness Metrics Toolbox](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-stock-plugins/aiverify.stock.fairness-metrics-toolbox-widgets) plugin.
+An example use of the **DecisionTree** component can be found in the implementation for the [AI Verify Fairness Tree](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-stock-plugins/aiverify.stock.fairness-metrics-toolbox-widgets/-/blob/main/inputs/fairness-tree.mdx) is found under the *inputs* folder.
+

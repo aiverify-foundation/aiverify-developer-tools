@@ -1,0 +1,7 @@
+{
+    "gid": "aiverify.algorithms.{{cookiecutter.project_slug}}",
+    "version": "{{cookiecutter.plugin_version}}",
+    "name": "{{cookiecutter.plugin_name}}",
+    "author": "{{cookiecutter.author}}",
+    "description": "{{cookiecutter.plugin_description}}"
+}

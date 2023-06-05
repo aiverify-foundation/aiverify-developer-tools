@@ -82,6 +82,7 @@ nav:
       - Create Your First Widget: guided_example/your_first_widget.md
       - Deploy Your Plugin: guided_example/deploy_your_plugin.md
   - Plugin System: 
+    - Plugin System: plugins/index.md
     - Algorithm: 
       - Project Structure: plugins/algorithm/file_structure.md
       - Core Modules: plugins/algorithm/core_modules.md
@@ -96,9 +97,11 @@ nav:
     - Report Template:
       - Template: plugins/widget/Template.md
   - How-to:
+    - How-to: how_to/index.md
     - How to use fairness decision tree: how_to/use_fairness_tree.md
     - How to prepare image dataset and models: how_to/prepare_image.ipynb
   - AI Verify Stock Plugins:
+    - AI Verify Stock Plugins: stock_plugins/index.md
     - Fairness for Classification: stock_plugins/fmtc.md
     - Fairness for Regression: stock_plugins/fmtr.md
     - Boundary Attack: stock_plugins/boundary_attack.md

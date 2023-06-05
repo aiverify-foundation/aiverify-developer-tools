@@ -1,5 +1,5 @@
 # SHAP Toolbox
-aiverify.stock.shap-toolbox [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.shap-toolbox)]
+(aiverify.stock.shap-toolbox) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.shap-toolbox)]
 
 ## Description
 This plugin explains how your features affect your overall predictions by using Shapley Values.
@@ -23,7 +23,7 @@ This plugin explains how your features affect your overall predictions by using 
 
 ## Using the Plugin in AI Verify
 ### Data Preparation
-- Tabular dataset ([Tutorial for Preparation](www.test.com))
+- Tabular dataset ([Tutorial for Preparation](../how_to/prepare_tabular.ipynb))
 
 ### Algorithm User Input(s)
 
@@ -36,7 +36,7 @@ This plugin explains how your features affect your overall predictions by using 
 
 ### Sample use of the widgets
 
-![SHAP sample](images/shap_sample.png)
+![SHAP sample](../images/shap_sample.png)
 
 
 ### More details

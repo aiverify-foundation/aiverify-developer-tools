@@ -1,5 +1,5 @@
 # AI Verify Process Checklist
-aiverify.stock.process-checklist [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.process-checklist)]
+(aiverify.stock.process-checklist) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.process-checklist)]
 
 ## Description
 Process checklist for AI Verify framework

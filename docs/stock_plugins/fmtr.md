@@ -1,5 +1,5 @@
 # Fairness Metrics Toolbox for Regression
-(aiverify.stock.fairness-metrics-toolbox-for-regression) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.fairness-metrics-toolbox-for-regression)]
+(aiverify.stock.fairness-metrics-toolbox-for-regression) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.fairness-metrics-toolbox-for-regression)]
 
 ## Description
 
@@ -32,7 +32,7 @@ This plugin computes and displays a list of fairness metrics to measure how corr
 
 ## Using the Plugin in AI Verify
 ### Data Preparation
-- Tabular dataset ([Tutorial for Preparation](www.test.com))
+- Tabular dataset ([Tutorial for Preparation](../how_to/prepare_tabular.ipynb))
 
 ### Algorithm User Input(s)
 
@@ -43,7 +43,7 @@ This plugin computes and displays a list of fairness metrics to measure how corr
 
 ### Sample use of the widgets
 
-![FMTR sample](images/fmtr_sample.png)
+![FMTR sample](../images/fmtr_sample.png)
 
 
 ### More details

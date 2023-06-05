@@ -1,5 +1,5 @@
 # Image Corruption Toolbox
-(aiverify.stock.image-corruption-toolbox) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.image-corruption-toolbox)]
+(aiverify.stock.image-corruption-toolbox) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox)]
 
 ## Description
 This plugin tests the robustness of AI models to natural corruptions. 
@@ -41,14 +41,15 @@ The toolbox generates corrupted images based on the uploaded test data at 5 diff
 
 ## Using the Plugin in AI Verify
 ### Data Preparation
-- Image dataset ([Tutorial for Preparation](www.test.com))
-- Annotated Ground Truth Dataset ([Tutorial for Preparation](www.test.com))
+- Image dataset ([Tutorial for Preparation](../how_to/prepare_image.ipynb))
+- Annotated Ground Truth Dataset ([Tutorial for Preparation](../how_to/prepare_image.ipynb))
 
 ### Additional Requirements
 ImageMagick (Details for installation can be found [here](https://docs.wand-py.org/en/0.6.11/guide/install.html#))
 
 ### Algorithm User Input(s)
 Note: These inputs are the same for all the algorithms in this plugin (Blur Corruptions, Digital Corruptions, Environmental Corruptions and General Corruptions)
+
 |                Input Field                |                                                                            Description                                                                             |   Type   |
 | :---------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: |
 |        Annotated ground truth path        |                                      An uploaded dataset containing image file names and the corresponding ground truth label                                      | `string` |
@@ -58,7 +59,7 @@ Note: These inputs are the same for all the algorithms in this plugin (Blur Corr
 
 ### Sample use of the widgets
 
-![ICT sample](images/image_corruption_toolbox_sample.png)
+![ICT sample](../images/image_corruption_toolbox_sample.png)
 
 
 ### More details

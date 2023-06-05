@@ -1,5 +1,5 @@
 # Robustness Toolbox
-aiverify.stock.robustness-toolbox [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.robustness-toolbox)]
+(aiverify.stock.robustness-toolbox) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.robustness-toolbox)]
 
 ## Description
 This plugin generates a perturbed dataset using boundary attack algorithm on the test dataset. 
@@ -29,11 +29,13 @@ This algorithm is developed for image dataset but can also be used to create noi
 This plugin was mainly designed for image datasets, but can also be used on tabular datasets.
 
 For images:
-- Image dataset ([Tutorial for Preparation](www.test.com))
-- Annotated Ground Truth Dataset ([Tutorial for Preparation](www.test.com))
+
+- Image dataset ([Tutorial for Preparation](../how_to/prepare_image.ipynb))
+- Annotated Ground Truth Dataset ([Tutorial for Preparation](../how_to/prepare_image.ipynb))
 
 For tabular:
-- Tabular dataset ([Tutorial for Preparation](www.test.com))
+
+- Tabular dataset ([Tutorial for Preparation](../how_to/prepare_tabular.ipynb))
 
 ### Algorithm User Input(s)
 
@@ -44,7 +46,7 @@ For tabular:
 
 ### Sample use of the widgets
 
-![ICT sample](images/robustness_toolbox_sample.png)
+![Robustness Toolbox Sample](../images/robustness_toolbox_sample.png)
 
 
 ### More details

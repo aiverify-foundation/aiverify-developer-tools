@@ -109,7 +109,7 @@ nav:
     - SHAP: stock_plugins/shap.md
     - Partial Dependence Plot: stock_plugins/pdp.md
     - Accumulated Local Effect: stock_plugins/ale.md
-    - Image Corruption Algorithms: stock_plugins/image_corruption.md
+    - Image Corruption Toolbox: stock_plugins/image_corruption.md
     - Stock Reports: stock_plugins/report.md
     - Process Checklist: stock_plugins/process_checklist.md
     - Decorators: stock_plugins/decorators.md

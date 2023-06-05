@@ -1,5 +1,5 @@
 # Partial Dependence Plot
-(aiverify.stock.partial-dependence-plot) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.partial-dependence-plot)]
+(aiverify.stock.partial-dependence-plot) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.partial-dependence-plot)]
 
 ## Description
 
@@ -23,12 +23,12 @@ This plugin explains how each feature and its feature value contribute to the pr
 
 ## Using the Plugin in AI Verify
 ### Data Preparation
-- Tabular dataset ([Tutorial for Preparation](www.test.com))
+- Tabular dataset ([Tutorial for Preparation](../how_to/prepare_tabular.ipynb))
 
 
 ### Sample use of the widgets
 
-![PDP sample](images/pdp_sample.png)
+![PDP sample](../images/pdp_sample.png)
 
 
 ### More details

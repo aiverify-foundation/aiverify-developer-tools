@@ -1,5 +1,5 @@
 # AI Verify Stock Decorators
-aiverify.stock.decorators [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.decorators)]
+(aiverify.stock.decorators) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.decorators)]
 
 ## Description
 This plugin contains the stock decorators for the AI Verify report.

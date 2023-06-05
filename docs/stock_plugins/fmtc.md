@@ -1,5 +1,5 @@
 # Fairness Metrics Toolbox for Classification
-(aiverify.stock.fairness-metrics-toolbox-for-classification) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.fairness-metrics-toolbox-for-classification)]
+(aiverify.stock.fairness-metrics-toolbox-for-classification) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.fairness-metrics-toolbox-for-classification)]
 
 ## Description
 
@@ -26,7 +26,7 @@ The Fairness Metrics Toolbox (FMT) for Classification contains a list of fairnes
 
 ## Using the Plugin in AI Verify
 ### Data Preparation
-- Tabular dataset ([Tutorial for Preparation](www.test.com))
+- Tabular dataset ([Tutorial for Preparation](../how_to/prepare_tabular.ipynb))
 
 ### Algorithm User Input(s)
 
@@ -39,7 +39,7 @@ The Fairness Tree helps you to select the most relevant fairness metrics for you
 
 ### Sample use of the widgets
 
-![FMTC sample](images/fmtc_sample.png)
+![FMTC sample](../images/fmtc_sample.png)
 
 
 ### More details

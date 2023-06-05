@@ -1,5 +1,5 @@
 # AI Verify Stock Reports
-aiverify.stock.reports [[source](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify.stock.reports)]
+(aiverify.stock.reports) [[source](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.reports)]
 
 ## Description
 Stock reports for AI Verify

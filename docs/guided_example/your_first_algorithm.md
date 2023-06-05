@@ -197,27 +197,6 @@ Next, run `python` to test your algorithm.
 python .
 ```
 
-If the test passes (no error messages in terminal), you have **successfully completed** the creation of the algorithm component. At this stage, you can either [**deploy your algorithm component**](#deploy-your-algorithm-component) as a standalone plugin, or continue to [**work on other components**](./your_first_widget.md) (eg. another algorithm, widget, input block etc) before packaging it as a single plugin.
+If the test passes (no error messages in terminal), you have **successfully completed** the creation of the algorithm component. At this stage, you can either [**deploy your algorithm component**](./deploy_your_plugin.md) as a standalone plugin, or continue to [**work on other components**](./your_first_widget.md) (eg. another algorithm, widget, input block etc) before packaging it as a single plugin.
 
 If the test fails, refer to the troubleshooting guide for help.
-
-## Deploy your algorithm component (Optional)
-
-We have provided a script to help deploy your plugin by packaging it. If you have not created a widget component at this point, this will package the algorithm as a standalone plugin. To run the script, navigate to the directory with the script `deploy_script.sh`. This is located at the **root of template_plugin** folder. At the directory, enter:
-
-```bash
-./deploy_script.sh
-```
-
-!!! note
-    A new folder `dist` will be created. This folder is where the packaged `.zip` file will be created and placed.
-
-Verify that the zip file ```your_first_algorithm_plugin-0.1.0.zip``` exists in your `dist` directory:
-
-```bash
-ls dist | grep your_first_algorithm_plugin
-```
-
-We can see that the is a generated `zip` file which can be used to share with other developers who are interested in using your algorithm. Users and developers can then upload the zip file onto AI Verify through the plugin manager.
-
-![algorithm_dist](../images/algorithm_dist.png)

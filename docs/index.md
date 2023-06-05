@@ -12,7 +12,3 @@ For first time contributors, we hope you find the following guide from Open Sour
 ## Bugs
 
 If you come across a bug with our API or want to report incorrect documentation, please open an issue on our [issue tracker](https://github.com/IMDA-BTG/aiverify/issues).
-
-## Join the community
-
-Join the [AI Verify Foundation](#PLACEHOLDER) for additional support and discussion regarding AI Verify.

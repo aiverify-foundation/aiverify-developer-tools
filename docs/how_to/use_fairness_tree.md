@@ -28,16 +28,41 @@ In a **multiclass classification model** where there are more than two outcomes,
 
 This calculation will be repeated for other classes (e.g., two separate measurements for dog and mouse using the same logic above).
 
-## List of Fairness Metrics in AI Verify
+## Fairness Metrics in AI Verify
+
 There are more than 20 fairness metrics in the literature. However, some metrics are task-specific (e.g., steorotype can only be computed in NLP tasks) while some are more abstract to be understood and used in operation (e.g., sufficiency). In AI Verify, we have selected 10 commonly used fairness metrics.
 
-*G = the entire dataset*
+| Metrics     | Definition | 
+| -----------  | ----------- |
+| False Negative Rate Parity | The difference between two groups based on the percentage of incorrect predictions among the actual negative values.|
+| False Positive Rate Parity | The difference between two groups based on the percentage of incorrect predictions among the actual positive values. |
+| False Discovery Rate Parity | The difference between two groups based on the percentage of incorrect predictions among those that are predicted as positive. |
+| False Omission Rate Parity | The diffrence between two groups based on the percentage of incorrect predictions among those that are predicted as negative. |
+| True Positive Rate Parity | The difference between two groups based on the percentage of correct predictions among the actual positive values. |
+| Positive Predictive Value Parity | The difference between two groups based on the percentage of correct predictions among the labels that are predicted as positive. |
+| Negative Predictive Value Parity | The difference between two groups based on the percentage of correct predictions among the labels that are predicted as negative. |
+| Equal Selection Parity     | The **difference** in the number of positive predictions between the subgroups  |
+| Disparate Imapct     |  The **ratio** in the number of positive predictions between the subgroups  |
 
-| Metrics      | Formula | Definition | 
-| ----------- | ----------- | ----------- |
-| Equal Selection Parity     |  Subgroup 1(TP + FP)/Subgroup 2(TP+FP)   |  The **difference** in the number of positive predictions between the subgroups  |
-| Disparate Imapct     |  (TP + FP) | G    |  The **ratio** in the number of positive predictions between the subgroups  |
+## Fairness Decision Tree
+
+We adapted Aequitas Fairness Tree [2] to make it easier for our users to understand in selecting their fairness metrics. 
+
+![](../images/../../../images/fairness_tree.png)
+([Click here to view the full image](../images/../../../images/fairness_tree.png))
+
+There are three guided questions:
+
+| Guided Questions     | Options | Rationale |  
+| -----------  | ----------- | --- | 
+| What do you consider to be fair in your use case?  | a. Equal representation<br/>b. Wrong predictions<br/>c. Correct Predictions | To guide the user into thinking about the broad concern in this use case  |
+| Whose impact are you more concerned about?  | a. Is it qualified group not receiving opportunity?<br/>b. Is it unqualified group receiving opportunity?<br/>c. Is it qualified group receiving opportunity?<br/>d. Is it unqualified group not receiving opportunity? | To guide the user into identifying the actual concern in this use case |
+| Does your final decision depends heavily on the model?  | a. Yes<br/>b. No | If the final decision is heavily dependent on the model, the model's prediction should be prioritised. Hence, the metric chosen has the model's prediction as the denominator. Otherwise, we will prioritise the actual value as the denominator |
+
+### Example Use Case
+
 
 
 # Reference
 [1]: The Impossibility of Theorem of Machine Fairness: A Casual Perspective. https://arxiv.org/pdf/2007.06024.pdf.
+[2]: Aequitas. http://www.datasciencepublicpolicy.org/our-work/tools-guides/aequitas/

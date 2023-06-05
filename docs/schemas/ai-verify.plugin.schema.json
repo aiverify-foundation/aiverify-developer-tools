@@ -1,0 +1,39 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "/ai-verify.plugin.schema.json",
+    "title": "Plugin Metadata Schema",
+    "description": "AI Verify plugin metadata schema",
+    "type": "object",
+    "properties": {
+        "gid": {
+            "description": "Unique global identififer for the plugin",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-._]*$"
+        },
+        "version": {
+            "description": "Version of the plugin",
+            "type": "string"
+        },
+        "name": {
+            "description": "Plugin name",
+            "type": "string"
+        },
+        "author": {
+            "description": "Plugin author",
+            "type": "string"
+        },
+        "description": {
+            "description": "Plugin description",
+            "type": "string"
+        },
+        "url": {
+            "description": "URL of project page",
+            "type": "string"
+        }
+    },
+    "required": [
+        "gid",
+        "version",
+        "name"
+    ]
+}

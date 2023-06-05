@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/ai-verify.widget.schema.json",
+  "title": "Widget Metadata Schema",
+  "description": "AI Verify Widget metadata schema",
+  "type": "object",
+  "properties": {
+      "cid": {
+          "description": "Unique identififer for the widget within the plugin",
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-._]*$"
+      },
+      "name": {
+          "description": "Widget name",
+          "type": "string"
+      },
+      "description": {
+          "description": "Widget description",
+          "type": "string"
+      },
+      "widgetSize": {
+        "description": "Describe the widget size in terms of canvas grid units",
+        "type": "object",
+        "properties": {
+          "minW": {
+            "description": "Minimum widget width",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          },
+          "minH": {
+            "description": "Minimum widget height",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 36
+          },
+          "maxW": {
+            "description": "Maximum widget width",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          },
+          "maxH": {
+            "description": "Maximum widget height",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 36
+          }
+        },
+        "required": [
+          "minW",
+          "minH",
+          "maxW",
+          "maxH"
+        ]
+      },
+      "properties": {
+        "description": "List of widget properties",
+        "type": "array",
+        "maxItems": 256,
+        "items": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "description": "Property key",
+              "type": "string"
+            },
+            "helper": {
+              "description": "Helper text for the property",
+              "type": "string"
+            },
+            "default": {
+              "description": "Property default value",
+              "type": "string"
+            }
+          },
+          "required": [
+            "key",
+            "helper"
+          ]  
+        }
+      },
+      "tags": {
+        "description": "Widget tags, used for searching",
+        "type": "array",
+        "maxItems": 128,
+        "items": {
+          "type": "string"
+        }
+      },
+      "dependencies": {
+        "description": "Widget dependencies",
+        "type": "array",
+        "maxItems": 256,
+        "items": {
+          "type": "object",
+          "properties": {
+            "gid": {
+              "description": "GID of the component dependency",
+              "type": "string"
+            },
+            "version": {
+              "description": "Version of the component dependency required",
+              "type": "string"
+            }
+          },
+          "required": [ "gid" ]  
+        }
+      },
+      "mockdata": {
+        "description": "Sample data to be fed into the widget in canvas mode",
+        "type": "array",
+        "maxItems": 256,
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "Type of sample data",
+              "type": "string",
+              "enum": ["Algorithm", "InputBlock"]
+            },
+            "gid": {
+              "description": "GID of sample data",
+              "type": "string"
+            },
+            "datapath": {
+              "description": "Path to the file containing sample data",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "gid",
+            "datapath"
+          ]  
+        }
+      }
+  },
+  "required": [
+      "cid",
+      "name",
+      "widgetSize"
+  ]
+}

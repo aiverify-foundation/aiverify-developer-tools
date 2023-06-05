@@ -1,0 +1,12 @@
+from enum import Enum
+
+
+class ErrorSeverity(Enum):
+    """
+    The ErrorSeverity enum class specifies the different Error Severity
+    """
+
+    SYSTEM_WIDE = 1
+    CRITICAL = 2
+    WARNING = 3
+    INFORMATION = 4

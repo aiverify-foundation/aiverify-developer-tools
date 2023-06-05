@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/ai-verify.template.schema.json",
+  "title": "Template Metadata Schema",
+  "description": "AI Verify Template metadata schema",
+  "type": "object",
+  "properties": {
+      "cid": {
+          "description": "Unique identififer for the template within the plugin",
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-._]*$"
+      },
+      "name": {
+          "description": "Template name",
+          "type": "string"
+      },
+      "description": {
+          "description": "Template description",
+          "type": "string"
+      },
+      "author": {
+        "description": "Template autho",
+        "type": "string"
+      }
+  },
+  "required": [
+      "cid",
+      "name"
+  ]
+}

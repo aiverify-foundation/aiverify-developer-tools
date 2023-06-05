@@ -161,3 +161,6 @@ cython_debug/
 
 # Deployment temp folder
 temp/
+
+# Environments
+my_virtual_env/

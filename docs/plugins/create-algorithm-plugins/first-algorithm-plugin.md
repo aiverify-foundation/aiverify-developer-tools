@@ -48,7 +48,6 @@ You will be presented with a couple of questions:
 * Choose from 1 [1]: <b>We will use the default. Press Enter.</b>
 * plugin_version [0.1.0]: <b>We will use the default. Press Enter.</b>
 * plugin_description [My example plugin]: <b>Our plugin description will be called ```Your first algorithm plugin```. Press Enter.</b>
-* plugin_url [https://pypi.org/project/example_plugin/]: <b>We will use the default. Press Enter.</b>
 * Select license [1]: <b>We will use the default. Press Enter.</b>
 * Select algo_model_support [1]: <b>We will use the default. Press Enter.</b>
 * Select require_ground_truth [1]: <b> Our plugin will not need ground_truth. Select 2. Press Enter. </b>

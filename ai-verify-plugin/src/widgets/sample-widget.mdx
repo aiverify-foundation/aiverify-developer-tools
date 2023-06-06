@@ -8,22 +8,46 @@ Below are some examples of MDX.
 
 The following example displays the JSON output from an algorithm.
 
-export const algo_gid = "my-algoritm-gid"
+export const algo_cid = "my-algoritm-cid"
 
-{props.result[algo_gid]?(
+{props.getResults(algo_cid)?(
   <>
     <b>JSON output of algorithm</b>
-    <div style={{ maxHeight:"100px", overflow:"auto" }}>{JSON.stringify(props.result[algo_gid])}</div>
+    <div style={{ maxHeight:"100px", overflow:"auto" }}>{JSON.stringify(props.getResults(algo_cid))}</div>
   </>
 ):(
   <div>No data</div>
 )}
 
+import { useEffect, useState } from 'react';
+
 The following example display the width and height of the parent container.
 
-<div style={{ widget:props.container.width, backgroundColor:"olive", color:"white" }}>
-  Container size: width {props.container.width}px, height {props.container.height}px
-</div>
+export const DisplayWidgetSize = ({ getContainerObserver }) => {
+  const [ container, setContainer ] = useState({
+    width: 0,
+    height: 0,
+  })
+
+  useEffect(() => {
+    if (getContainerObserver) {
+      getContainerObserver((width, height) => {
+        setContainer({
+          width,
+          height
+        })
+      })
+    }
+  },[getContainerObserver])
+
+  return (
+    <div style={{ width:"100%", backgroundColor:"olive", color:"white" }}>
+      Container size: width {container.width}px, height {container.height}px
+    </div>
+  )
+}
+
+<DisplayWidgetSize getContainerObserver={props.getContainerObserver} />
 
 ## Example of Markdown Content
 
@@ -114,7 +138,7 @@ export const data01 = [
   },
 ];
 
-<div style={{ width:props.container.width, height:"220px", padding:"10px" }}>
+<div style={{ width:"100%", height:"220px", padding:"10px" }}>
   <BarChart
     data={data01}
     xAxisDataKey="name"

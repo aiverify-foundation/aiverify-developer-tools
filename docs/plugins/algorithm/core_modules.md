@@ -20,7 +20,7 @@ Model pipelines are models which apply a list of transforms and final estimator 
 
 Model pipelines currently supported:
 
-- scikit-learn Pipeline
+- scikit-learn
 
 ### Deserializer
 Deserializers process serialized data and make them into readable objects. Model and data files can sometimes be passed in as a serialized file type (e.g. Joblib). A serialized file is not easily readable and modifiable by humans. If we have the right deserializer for the serialized file, it wil deserialize the file into an object like Pandas dataframe, which users are able to modify. 
@@ -28,15 +28,19 @@ Deserializers process serialized data and make them into readable objects. Model
 
 Deserializers currently supported:
 
+- Delimiter
 - Joblib
 - Pickle
 - TensorFlow
+- Image
+
 <br>
 
 ### Data Type
 Data type refers to the type of data after it has been deserialized. If the data passed in does not require deserializing (e.g. the data file is `csv` file), the data type will be whatever is in the data file.<br>
 Data types currently supported:
 
-- Delimiter Data (includes colon, comma, pipe, semicolon, space, tab separated values)
+- Delimiter (colon, comma, pipe, semicolon, space, tab separated values)
 - Pandas
+- Image (JPG, JPEG, PNG)
 <br>

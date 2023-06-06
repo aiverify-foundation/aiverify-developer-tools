@@ -98,7 +98,7 @@ nav:
     - AI Verify Stock Plugins: stock_plugins/index.md
     - Fairness for Classification: stock_plugins/fmtc.md
     - Fairness for Regression: stock_plugins/fmtr.md
-    - Boundary Attack: stock_plugins/boundary_attack.md
+    - Robustness Toolbox: stock_plugins/robustness_toolbox.md
     - SHAP: stock_plugins/shap.md
     - Partial Dependence Plot: stock_plugins/pdp.md
     - Accumulated Local Effect: stock_plugins/ale.md

@@ -104,7 +104,7 @@ class Plugin(IAlgorithm):
 
 Next, update the `generate` method to retrieve the return the values of the selected `feature_name` in a given sample data file.
 
-```py title="your_first_algorithm_plugin.py" linenums="167" hl_lines="8 10 13 14 15"
+```py title="your_first_algorithm_component.py" linenums="167" hl_lines="8 10 13 14 15"
     def generate(self) -> None:
         """
         A method to generate the algorithm results with the provided data, model, ground truth information.

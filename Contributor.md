@@ -251,7 +251,7 @@ By contributing to this project, you agree that your contributions will be licen
 
 # Resources
 
-## Issue Label Definitions
+## Issue label definitions
 
 **Issue type**
 
@@ -271,12 +271,12 @@ By contributing to this project, you agree that your contributions will be licen
 1. `in progress`: This label can be used to indicate that a contributor is currently working on the issue
 2. `verified`: This label can be used to indicate that a fix has been tested and confirmed to solve the issue.
 
-**Issue Resolution**
+**Issue resolution**
 
 1. `invalid`: Marks an issue that is not relevant or not appropriate.
 2. `duplicate`: Marks an issue that has already been reported.
 
-**Contributor Engagement**
+**Contributor engagement**
 
 1. `good first issue`: Marks an issue that is recommended for contributors new to the project.
 2. `help wanted`: Identifies issues where project maintainers are actively seeking help from contributors.
@@ -288,7 +288,7 @@ By contributing to this project, you agree that your contributions will be licen
 8. `ready for development`: This label signifies that the issue has been sufficiently defined and is ready for someone to start working on it.
 9. `ready for testing`: This label can be used when the solution is ready and needs to be tested.
 
-## Types of Changes for Pull Requests
+## Types of changes for pull requests
 
 - feat: A new feature
 - fix: A bug fix

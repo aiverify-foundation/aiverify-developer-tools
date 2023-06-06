@@ -1,0 +1,23 @@
+# ignore all
+*
+# whitelist
+!.gitignore
+!README.md
+!package.json
+!package-lock.json
+!src/
+!src/**
+!app/
+!app/**
+!docs/
+!docs/**
+!pages/
+!pages/**
+!__tests__/
+!__tests__/**
+!jest.*
+!tsconfig.*
+!next*
+!playground/
+!playground/**
+!snapshotResolver.cjs

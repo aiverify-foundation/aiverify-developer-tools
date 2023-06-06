@@ -374,7 +374,7 @@ const argv = yargs(process.argv.slice(2))
     // console.log("This commmand is not implemented yet.")
     await runTest(argv);
   })
-  .command('playground', '[TODO] Launch the plugin playround', (yargs) => {
+  .command('playground', 'Launch the plugin playround', (yargs) => {
     yargs.option('pluginDir', {
       type: 'string',
       describe: 'Path to plugin directory',

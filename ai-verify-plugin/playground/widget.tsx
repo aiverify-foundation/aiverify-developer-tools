@@ -7,16 +7,18 @@ export default function Widget({ widget, pluginMeta, code, frontmatter, properti
   const ref = useRef<HTMLDivElement>(null);
   const [ frozen, setFrozen ] = useState<any>(null);
   const Component = useMemo(() => getMDXComponent(code), [code])
+	const resizeObserver = useRef<ResizeObserver>();
   const [ container, setContainer ] = useState<any>({
+		observing: false,
 		width: 0,
 		height: 0,
 	});
 
   useEffect(() => {
-		setContainer({
-			width: ref?.current?.parentElement?.offsetWidth,
-			height: ref?.current?.parentElement?.offsetHeight,
-		})
+		// setContainer({
+		// 	width: ref?.current?.parentElement?.offsetWidth,
+		// 	height: ref?.current?.parentElement?.offsetHeight,
+		// })
   },[ref?.current?.parentElement?.offsetWidth, ref?.current?.parentElement?.offsetHeight]);
 
   useEffect(() => {
@@ -40,12 +42,27 @@ export default function Widget({ widget, pluginMeta, code, frontmatter, properti
 		const timeStart = moment();
     const timeTaken = Math.floor((Math.random() * 1000) + 1);
 		const reportDate = timeStart.add(timeTaken, 'seconds');
+		let resizeObserver: ResizeObserver|null = null;
 		const obj = Object.freeze({
 			inputBlockData,
 			result,
 			meta: widget.meta,
 			properties: properties,
-      container,
+			getContainerObserver: (callback: (width:number, height:number) => void) => {
+				resizeObserver = new ResizeObserver(() => {
+					if (ref.current && ref.current.parentElement) {
+						// console.log("callback", ref.current.parentElement.offsetWidth, ref.current.parentElement.offsetHeight)
+						callback(ref.current.parentElement.offsetWidth-20, ref.current.parentElement.offsetHeight-20);
+					}
+				});
+				if (ref.current && ref.current.parentElement)
+					resizeObserver.observe(ref.current.parentElement)
+				return resizeObserver;
+			},
+      container: {
+				width: '100%',
+				height:'100%',
+			},
       // additional properties added
 			getResults(cid: string, gid:(null|string)=null) {
 				const key = (gid && gid.length > 0)?`${gid}:${cid}`:`${pluginMeta.gid}:${cid}`;
@@ -78,15 +95,19 @@ export default function Widget({ widget, pluginMeta, code, frontmatter, properti
 		});
 		// console.log("frozen", obj)
 		setFrozen(obj);
+
+		return () => {
+			if (resizeObserver)
+				resizeObserver.disconnect();
+		}
 	}, [widget, container])
 
   if (!code || !frozen) {
     return <div>Invalid Widget</div>
   }
 
-
   return (
-    <div ref={ref} style={{ padding:'10px', textAlign:'justify' }}>
+    <div ref={ref} style={{ position:'relative', padding:'10px', textAlign:'justify', fontSize:'14px', width:'100%' }}>
       <Component {...frozen} frontmatter={frontmatter} />
     </div>
   );

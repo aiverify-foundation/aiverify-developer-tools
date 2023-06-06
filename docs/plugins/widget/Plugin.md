@@ -15,7 +15,7 @@ This section defines the terminology used.
 ## Plugin Structure
 
 The diagram below describes the folders and files that may be found under each plugin.
-![Plugin Structure Image](images/Plugin-Structure.png?raw=true)
+![Plugin Structure Image](../../images/plugin_structure.png?raw=true)
 
 Each of the component type folder can contain one or more components.
 

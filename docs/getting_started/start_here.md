@@ -1,6 +1,6 @@
 # Getting Started
 
-The developer guide is designed to be beginner-friendly for developers, but assumes some familiarity and proficiency in and [Python](https://docs.python.org/3.10/), [Javascript](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics), and [MDX](https://mdxjs.com/docs/).
+The developer guide is designed to be beginner-friendly for developers, but assumes some familiarity and proficiency in [Python](https://docs.python.org/3.10/), [Javascript](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics), and [MDX](https://mdxjs.com/docs/).
 
 ## Learning Objectives
 

@@ -5,7 +5,6 @@ After creating the project from Cookiecutter (with `your_first_algorithm_plugin`
 ```
 ├── AUTHORS.rst
 ├── CHANGELOG.md
-├── INSTRUCTIONS.md
 ├── LICENSE
 ├── README.md
 ├── __main__.py
@@ -64,8 +63,6 @@ After creating the project from Cookiecutter (with `your_first_algorithm_plugin`
 The name or organisation name of the algorithm developer.
 - `CHANGELOG.md`<br>
 A log of all notable changes made to this project.
-- `INSTRUCTIONS.md`<br>
-An instruction file with a step-by-step guide on how to create an algorithm plugin.
 - `LICENSE`<br>
 The license of this algorithm.
 - `README.md`<br>
@@ -98,7 +95,7 @@ While there are many files included in this project, you will only need to focus
 
 #### `__main__.py`<br>
 The entry point when testing your algorithm. When you run `python .`, you will run this file, which will call the test file. You will need to update the paths to the data and the input arguments in this file. <br>Example: 
-```py title="__main__.py" linenums="1" hl_lines="8"
+```py title="__main__.py" linenums="1"
     core_modules_path = ""
     data_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
     model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
@@ -113,7 +110,7 @@ The entry point when testing your algorithm. When you run `python .`, you will r
 
 ```
 
-- `core_modules_path`: The absolute or relative path (from `__main__.py`) of the <b>test-engine-core-modules</b> path. This can be left empty and it will default to `../../test-engine-core-modules`
+- `core_modules_path`: The absolute or relative path (from `__main__.py`) of the <b>test-engine-core-modules</b> path. This can be left empty and it will default to `../../../../test-engine-core-modules`
 - `data_path`: The absolute or relative path (from `__main__.py`) of the test data file
 - `model_path`: The absolute or relative path (from `__main__.py`) of the test model file
 - `ground_truth_path` (optional): The absolute or relative path (from `__main__.py`) of the ground truth data file 

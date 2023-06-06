@@ -12,11 +12,11 @@ Assuming you have created a widget with cid "sample-widget", then there should b
 
 ## Widget Meta Data
 
-During installation, the Plugin Manager will search for and validate the widget meta data accounding to the schema [ai-verify.widget.schema.json](../schemas/ai-verify.widget.schema.json) schema definitions.
+During installation, the Plugin Manager will search for and validate the widget meta data according to the schema [ai-verify.widget.schema.json](../schemas/ai-verify.widget.schema.json) schema definitions.
 
 | Propreties | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |
-| cid | string, must match pattern `^[a-zA-Z0-9][a-zA-Z0-9-._]*$` | Yes | Unique identififer for the widget within the plugin. |
+| cid | string, must match pattern `^[a-zA-Z0-9][a-zA-Z0-9-._]*$` | Yes | Unique identifier for the widget within the plugin. |
 | name | string | Yes | Widget name. |
 | description | string | No | Widget description. |
 | widgetSize | object | Yes | Describe the widget size in terms of canvas grid units. See [Widget Size Object Schema](#widget-size-object-schema) for the schema of the widgetSize object.
@@ -137,6 +137,7 @@ The widget MDX are loaded as React components and the component properties are p
 | result | object | Object containing the output from an algorithm, accessed by its gid `props.result[gid]`. |
 | properties | object | Object containing the widget properties entered in the canvas page. |
 | container | object | Object containing the widget container information, see [Widget Container](#widget-container) |
+| getContainerObserver(callback) | function | Function to create an observer to retrieve the the widget container size, see [Widget Container Observer](#widget-container-observer) |
 | getResults(cid, gid=null) | function | Function to return result of an algorithm identified by cid. If gid of the algorithm is not specified, the function assumes same plugin gid as the widget. |
 | getIBData(cid, gid=null) | function | Function to return data of an input block identified by cid. If gid of the input block is not specified, the function assumes same plugin gid as the widget. |
 | getTest(cid, gid=null) | function | Function to return test result information (if successful), see [Test Result Information](#test-result-information) |
@@ -156,12 +157,15 @@ export const cid = "some_algo_cid"
 </div>
 ```
 
-#### Widget Container
+#### Widget Container Observer
 
-| Propreties | Type | Description |
-| ---------- | ---- | ----------- |
-| width | number | container width in pixel. |
-| height | number | container height in pixel. |
+To retrieve the size of the widget container, call the following getContainerObserver function. The callback function passes the container width and height in pixel.
+
+```
+props.getContainerObserver((width, height) => {
+  // Do something with the constainer width and height
+})
+```
 
 #### Test Result Information
 

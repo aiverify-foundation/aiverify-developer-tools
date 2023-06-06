@@ -7,11 +7,11 @@ There will be a syntax check run on the main Python file (in this case it will b
 <br>
 
 ### Test Running the Algorithm
-This is the same as testing your algorithm in the [previous section](#testing-your-algorithm). The algorithm's input argument(s) and generated results will be validated against the schema you have defined in `input.schema.json` and `output.schema.json` respectively. This is to ensure that the input argument(s) and generated results have the right format and data type. 
+This is the same as testing your algorithm in the [previous section](testing_algorithm.md). The algorithm's input argument(s) and generated results will be validated against the schema you have defined in `input.schema.json` and `output.schema.json` respectively. This is to ensure that the input argument(s) and generated results have the right format and data type. 
 <br>
 
 ### Adding in the Required Files
-There is a predefined list of files that are required (as mentioned in [requiredFiles](#yyour_first_algorithm_pluginmetajson)) to be packaged with the algorithm plugin for the algorithm to run. The Python file(s)/directory(s) you have added into `requiredFiles` will be added into the package as well. 
+There is a predefined list of files that are required (as mentioned in [requiredFiles](file_structure.md#your_first_algorithm_pluginmetajson)) to be packaged with the algorithm plugin for the algorithm to run. The Python file(s)/directory(s) you have added into `requiredFiles` will be added into the package as well. 
 <br>
 
 ### Packaging the Algorithm Plugin

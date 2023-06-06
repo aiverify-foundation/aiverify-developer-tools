@@ -1,16 +1,26 @@
 # AI Verify Plugin Tool
 
-The [ai-verify-plugin](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-plugin) tool is a command-line tool that help widget and input block developers to develop and scaffold AI Verify plugin projects directly from command line. 
+The [ai-verify-plugin](https://github.com/IMDA-BTG/aiverify-developer-tools/tree/main/ai-verify-plugin) tool is a command-line tool that help widget and input block developers to develop and scaffold AI Verify plugin projects directly from command line. 
 
 ## Installation
 
-To install the tool, run the following commands
+To install the tool, clone the [aiverify-developer-tools](git@github.com:IMDA-BTG/aiverify-developer-tools.git) repo. The plugin tools is also dependent on the shared library in the [aiverify repository](https://github.com/IMDA-BTG/aiverify).
+
+To clone the repository, run the following commands.
+```
+git clone git@github.com:IMDA-BTG/aiverify-developer-tools.git
+```
+
+Assuming the aiverify repository and the aiverify-developer-tools is under the same parent folder, install the plugin tool and link the shared library with the following command.
 
 ```
-git clone git@gitlab.com:imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-plugin.git
-cd ai-verify-plugin
+cd aiverify-developer-tools/ai-verify-plugin
+npm install
+npm link ../../aiverify/ai-verify-shared-library/
 npm install -g
 ```
+
+
 
 ## Basic Use
 
@@ -40,6 +50,8 @@ Commands:
   ai-verify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                     [aliases: gib]
   ai-verify-plugin zip [pluginDir]            Create the plugin zip file
   ai-verify-plugin validate                   Validate AI Verify plugin
+  ai-verify-plugin test                       Run the plugin tests
+  ai-verify-plugin playground                 Launch the plugin playround
 
 Options:
   --help  Show help                                                                                            [boolean]
@@ -73,7 +85,7 @@ If the command run is successful, the tool will generate a folder with the same 
 | File | Description |
 | ---- | ----------- |
 | plugin.meta.json | Contains the plugin meta information |
-| README.md | Contains generic README instructions for the plugin |
+| README.md | Contains generic README for the plugin |
 | .gitignore | List of untracked files for git to ignore |
 
 
@@ -262,3 +274,20 @@ By default, the command will run *validation* and *snapshot* tests on the input 
 
 To add additional Jest tests, developers can write their own tests and place them under `__tests__` folder under the plugin directory.
 
+## playground
+
+This command launches a web playground app to allow developers to view widgets and input blocks during development.
+
+```
+ai-verify-plugin playground
+
+Launch the plugin playround
+
+Options:
+  --help       Show help                                                                                       [boolean]
+  --pluginDir  Path to plugin directory                                                          [string] [default: "."]
+  --port       Playground port to listen on                                                     [number] [default: 5000]
+  --hostname   Playground hostname to listen on                                          [string] [default: "localhost"]
+```
+
+To start the playground, runs the playground command under a plugin directory. The command will scan for the algorithms, widgets and input blocks found under the plugin and luanches the playground app listening on http://localhost:5000/ by default. To change the port and hostname, use the options to configure.

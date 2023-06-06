@@ -17,9 +17,9 @@ This page prepares your environment for development on AI Verify. By the end of 
     └── template_plugin/
 └── my_virtual_environment/
 ```
-The Developer Tools require specific modules from the main AI Verify repository. If you have not installed AI Verify, use sparse-checkout on AI Verify monorepo to selectively checkout files that are relevant to the Developer Tools.
+The Developer Tools require specific modules from the main AI Verify repository. If you have not installed AI Verify, use [sparse-checkout](https://git-scm.com/docs/git-sparse-checkout) on the AI Verify repository to selectively checkout files that are relevant to the Developer Tools.
 
-1. Clone the required modules
+1. Clone the required modules and selectively checkout dependencies needed for Developer Tools
 ```bash
 # Execute in the working directory
 git clone git@github.com:IMDA-BTG/aiverify.git # requires Github public SSH key
@@ -77,10 +77,8 @@ which python # you should see something like <working directory>/my_virtual_envi
 4. Install plugin dependencies in your virtual environment
 ```bash
 pip install --upgrade pip
-pip install cookiecutter pandas==1.5.3 scikit-learn
+pip install cookiecutter
 ```
-!!! Note 
-    AI Verify currently runs Pandas V1.5.3. We do not support Pandas 2.x.x.
 
 1. Install AI Verify Test Engine Core.
 ```bash
@@ -91,6 +89,9 @@ pip install dist/test_engine_core-0.9.0.tar.gz
 # Head back to the aiverify directory
 cd ..
 ```
+
+    !!! Note 
+        AI Verify Test Engine currently runs Pandas V1.5.3. We do not support Pandas 2.x.x.
 
 1. Install necessary requirements from `test-engine-core-modules`.
 ```bash
@@ -129,10 +130,20 @@ cd aiverify-developer-tools/ai-verify-plugin
 npm install
 npm install ../../aiverify/ai-verify-shared-library
 sudo npm install -g # You may need sudo for this command
-ai-verify-plugin --help
 ```
 
 If the installation is successful, you should see a similar output as shown below.
+#### ai-verify-plugin
+```bash
+ai-verify-plugin --help
+```
+
 ![ai-verify-plugin Help Text](../images/aiverifyplugin_help_text.png)
+#### cookiecutter
+```bash
+cookiecutter -h
+```
+
+![cookiecutter Help Text](../images/cookiecutter_help_text.png)
 
 Congratulations! You are ready to create your first plugin.

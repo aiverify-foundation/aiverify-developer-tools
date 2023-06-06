@@ -73,7 +73,7 @@ Open and edit `mywidget.mdx` to implement the MDX content.
 ```Javascript
 export const cid = "your_first_algorithm_component"
 
-{props.getResults[cid]?(
+{props.getResults(cid)?(
   <>
     <b>JSON output of algorithm</b>
     <div style={{ maxHeight:"100px", overflow:"auto" }}>{JSON.stringify(props.getResults(cid))}</div>

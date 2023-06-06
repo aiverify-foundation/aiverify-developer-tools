@@ -77,9 +77,9 @@ To upload the plugin, start the frontend portal of AI Verify. You will need to i
    
 3. The following prompt should appear to inform you that the plugin has been installed successfully: 
 
-![plugin_installed_successfully](../images/plugin_installed_successfully.png)
+      ![plugin_installed_successfully](../images/plugin_installed_successfully.png)
 
-You should see your plugin in the list of installed plugins:
+4. You should see your plugin in the list of installed plugins:
    ![plugin_manager_page](../images/plugin_manager_page.png)
 
 ## Generating the Report
@@ -90,15 +90,15 @@ You should see your plugin in the list of installed plugins:
     ![project_details](../images/project_details.png)
 3. On the **Design Report** page, drag your widget from the left panel to the canvas:
    ![canvas](../images/canvas.png)
-   Click "Next" on the top right.
+   You can resize the the widget and click on the alignment buttons to refresh its size. When you're ready, click "Next" on the top right.
 4. On the **Select the Datasets and AI Model to be tested** page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template. Refer to the following table for reference.
 
-| Data, Model, and Test Arguments | Selected Dataset / Model / Test Arguments |
-| ---- | ---------- |
-| Testing Dataset | ```pickle_pandas_mock_binary_classification_credit_risk_testing.sav``` |
-| Ground Truth Dataset | ```pickle_pandas_mock_binary_classification_credit_risk_testing.sav```, Ground Truth: ```default``` |
-| AI Model | ```binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav``` | 
-| Test Arguments | ```gender``` |
+      | Data, Model, and Test Arguments | Selected Dataset / Model / Test Arguments |
+      | ---- | ---------- |
+      | Testing Dataset | ```pickle_pandas_mock_binary_classification_credit_risk_testing.sav``` |
+      | Ground Truth Dataset | ```pickle_pandas_mock_binary_classification_credit_risk_testing.sav```, Ground Truth: ```default``` |
+      | AI Model | ```binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav``` | 
+      | Test Arguments | ```gender``` |
 
 5. For the model, choose ```Upload AI Model``` and click "Next".
    ![upload_model](../images/upload_model.png)
@@ -110,4 +110,6 @@ You should see your plugin in the list of installed plugins:
    ![confirm_generate_report](../images/confirm_generate_report.png) 
 9. You should see the logs of what is happening in the backend and when your report has been generated, you should see the "Test Completed" prompt in the top right. Click on "VIEW REPORT" to see your report:
    ![generated_report](../images/generated_report.png) 
+10. Your report will be displayed as a PDF file.
+   ![report](../images/report.png) 
    Congratulations! You have generated your first report. 

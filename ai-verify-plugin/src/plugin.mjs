@@ -245,14 +245,44 @@ export function zipPlugin (argv) {
     zip.addLocalFolder(path.join(pluginDir, "templates"), "templates")
   }
   
-  // if (fs.existsSync("algorithms")) {
-  //   zip.addFile("algorithms/", null)
-  //   zip.addLocalFolder(path.join(pluginDir, "algorithms"), "algorithms")
-  // }
+  if (fs.existsSync("algorithms")) {
+    zip.addFile("algorithms/", null)
+    // zip.addLocalFolder(path.join(pluginDir, "algorithms"), "algorithms")
+    const algoRootPath = path.join(pluginDir, "algorithms");
+    const subdirs = fs.readdirSync(algoRootPath);
+    for (const algo of subdirs) {
+      const algoPath = path.join(algoRootPath, algo);
+      const metaPath = path.join(algoPath, `${algo}.meta.json`);
+      if (!fs.existsSync(metaPath)) {
+        console.log(`Meta file ${metaPath} does not exists`);
+        continue;
+      }
+      zip.addFile(`algorithms/${algo}/`, null)
+      const meta = readJSON(metaPath);
+      if (Array.isArray(meta.requiredFiles)) {
+        for (let f of meta.requiredFiles) {
+          const subpath = path.join(algoPath, f);
+          const stat = fs.lstatSync(subpath);
+          if (stat.isDirectory()) {
+            console.log("isDirectory", f)
+            zip.addFile(`algorithms/${algo}/${f}/`, null)
+            zip.addLocalFolder(subpath, `algorithms/${algo}`);
+          } else {
+            zip.addLocalFile(subpath, `algorithms/${algo}`);
+          }
+        }
+      }
+    }
+  }
+
+  const distPath = path.join(pluginDir, "dist");
+  if (!fs.existsSync(distPath)) {
+    fs.mkdirSync(distPath);
+  }
   
   // write to disk
   const zipFilename = `${pluginMeta.gid}-${pluginMeta.version}.zip`;
-  const zipPath = path.join(pluginDir, zipFilename)
+  const zipPath = path.join(distPath, zipFilename)
   zip.writeZip(zipPath);
 
   console.log(`Plugin zip "${zipFilename}" is created.`)

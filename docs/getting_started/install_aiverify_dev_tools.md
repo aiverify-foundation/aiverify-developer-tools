@@ -2,15 +2,32 @@
 
 ## Before You Begin 
 
-The Developer Tools require specific modules from the main AI Verify repository. If you have not installed AI Verify, use sparse-checkout on AI Verify monorepo to selectively checkout files that are relevant to the Developer Tools. 
+This page prepares your environment for development on AI Verify. By the end of this guided example, you should end up with the following folder structure.
+
+```
+<working directory>/
+├── aiverify
+    ├── ai-verify-shared-library/
+    ├── test-engine-core/
+    └── test-engine-library/
+├── aiverify-developer-tools/
+    ├── README.md
+    ├── ai-verify-algorithm-template/
+    ├── ai-verify-plugin/
+    └── template_plugin/
+└── my_virtual_environment/
+```
+The Developer Tools require specific modules from the main AI Verify repository. If you have not installed AI Verify, use sparse-checkout on AI Verify monorepo to selectively checkout files that are relevant to the Developer Tools.
 
 1. Clone the required modules
 ```bash
+# Execute in the working directory
 git clone git@github.com:IMDA-BTG/aiverify.git # requires Github public SSH key
 cd aiverify
 git sparse-checkout init --cone
 git sparse-checkout set ai-verify-shared-library test-engine-core-modules test-engine-core
-cd ..
+
+ls # You should be able to see the three folders
 ```
 
 After the sparse checkout, you should end up with these three folders in your aiverify project directory. Please take note of the **test-engine-core-modules** path, as you will need it later while testing the algorithm component. 
@@ -43,6 +60,7 @@ We recommend setting up a virtual environment for your plugin project to ensure 
 
 1. Create a virtual environment
 ```bash
+# Execute in the working directory
 python3 -m venv my_virtual_environment
 ```
 
@@ -53,7 +71,7 @@ source my_virtual_environment/bin/activate
 
 3. Check that you're working from the virtual environment
 ```bash
-which python # you should see something like <working dir>/my_virtual_environment/bin/python
+which python # you should see something like <working directory>/my_virtual_environment/bin/python
 ```
 
 4. Install plugin dependencies in your virtual environment
@@ -64,31 +82,42 @@ pip install cookiecutter pandas==1.5.2 scikit-learn
 
 5. Install AI Verify Test Engine Core.
 ```bash
-cd aiverify/test-engine-core
+# Execute these in the aiverify directory
+cd test-engine-core
 pip install dist/test_engine_core-0.9.0.tar.gz
-cd ../..
+
+# Head back to the aiverify directory
+cd ..
 ```
 
 6. Install necessary requirements from `test-engine-core-modules`.
 ```bash
-cd aiverify/test-engine-core-modules
+# Execute these in the aiverify directory
+cd test-engine-core-modules
 pip install -r requirements.txt
-cd ../..
+
+# Head back to the aiverify directory
+cd ..
 ```
 
 7. Install dependencies and build AI Verify Frontend Shared Library
 ```bash
-cd aiverify/ai-verify-shared-library
+# Execute these in the aiverify directory
+cd ai-verify-shared-library
 npm install
 npm run build
+
+# Head back to the aiverify directory
+cd ..
 ```
 
 ## Installing AI Verify Developer Tools
 
 Install AI Verify Developer Tools in your environment.
 
-1. Clone our developer's repository.
+1. Clone our developer's repository. We recommend cloning this in the *same directory* you cloned **aiverify**.
 ```bash
+# Execute in the working directory
 git clone git@gitlab.com:imda_dsl/t2po/ai-verify/aiverify-developer-tools.git # requires Github public SSH key
 ```
 

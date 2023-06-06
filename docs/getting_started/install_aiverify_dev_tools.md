@@ -9,7 +9,7 @@ This page prepares your environment for development on AI Verify. By the end of 
 ├── aiverify/
     ├── ai-verify-shared-library/
     ├── test-engine-core/
-    └── test-engine-library/
+    └── test-engine-core-modules/
 ├── aiverify-developer-tools/
     ├── README.md
     ├── ai-verify-algorithm-template/
@@ -80,7 +80,7 @@ pip install --upgrade pip
 pip install cookiecutter pandas==1.5.3 scikit-learn
 ```
 !!! Note 
-    Currently only this V1.5.3 of Pandas is tested and we do not suport Pandas 2.x.x
+    AI Verify currently runs Pandas V1.5.3. We do not support Pandas 2.x.x.
 
 1. Install AI Verify Test Engine Core.
 ```bash

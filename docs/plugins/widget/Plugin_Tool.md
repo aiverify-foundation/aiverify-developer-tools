@@ -85,7 +85,7 @@ If the command run is successful, the tool will generate a folder with the same 
 | File | Description |
 | ---- | ----------- |
 | plugin.meta.json | Contains the plugin meta information |
-| README.md | Contains generic README instructions for the plugin |
+| README.md | Contains generic README for the plugin |
 | .gitignore | List of untracked files for git to ignore |
 
 

@@ -30,13 +30,13 @@ Answer the following questions:
 | Required Input | Action |
 | ---- | ---------- |
 | author [example_author] | We will use the default. *Press Enter.* |
-| plugin_name [example plugin] | Type ```your-first-algorithm-component```. *Press Enter.* |
+| plugin_name [example plugin] | Type **your-first-algorithm-component**. *Press Enter.* |
 | Choose from 1 [1] | We will use the default. *Press Enter.* |
-| plugin_version [0.1.0] | We will use the default. *Press Enter*  |
-| plugin_description [My example plugin] | Type ```Your first algorithm component```.*Press Enter*  |
-| Select license [1] | We will use the default. *Press Enter*  |
-| Select algo_model_support [1] | We will use the default. *Press Enter* |
-| Select require_ground_truth [1] | We will use the default. *Press Enter* |
+| plugin_version [0.1.0] | We will use the default. *Press Enter.*  |
+| plugin_description [My example plugin] | Type **Your first algorithm component**. *Press Enter.*  |
+| Select license [1] | We will use the default. *Press Enter.*  |
+| Select algo_model_support [1] | We will use the default. *Press Enter.* |
+| Select require_ground_truth [1] | We will use the default. *Press Enter.* |
 
 !!! note
     The plugin name ```your-first-algorithm-component``` will automatically be converted to ```your_first_algorithm_component```. The cookiecutter generator will automatically convert the name to create the project slug. Refer to the [guide](https://peps.python.org/pep-0008/#package-and-module-names) on **Package and Module Names**.
@@ -57,7 +57,7 @@ Yay! You have generated an algorithm component project to create your first algo
 
 Modify `input.schema.json` to request an input called `feature_name` from the user when the user uses this algorithm. Notice the highlighted lines that requires a `feature_name` field, and the properties of the `feature_name` is also defined.
 
-```py title="input.schema.json" linenums="1" hl_lines="8 11 12 13 14 15"
+```py title="input.schema.json" linenums="1" hl_lines="6 9 10 11 12 13"
 {
     "title": "Algorithm Plugin Input Arguments",
     "description": "A schema for algorithm plugin input arguments",
@@ -80,7 +80,7 @@ Modify `input.schema.json` to request an input called `feature_name` from the us
 Modify `your_first_algorithm_component.py` to receive and return the data of the requested `feature_name`. 
 
 !!! Tip
-    All codes generated using our `cookiecutter` template has annotated with `TODO:` to for users to quickly navigate to areas that require code modification.
+    All codes generated using the `cookiecutter` template has been annotated with `TODO:` for users to quickly navigate to areas that require code modification.
 
 First, update the description of this algorithm in the code.
 
@@ -127,7 +127,7 @@ Lastly, update the `output.schema.json` to return the expected results. This fil
 
 In this algorithm, the expected output will be stored in a list (or array) named `my_expected_results`.  There must be at least 10 items in the list, and the items must have the type `number` (as shown in the highlighted lines).
 
-```py title="output.schema.json" linenums="1" hl_lines="7 10 11 12 13 14"
+```py title="output.schema.json" linenums="1" hl_lines="5 8 9 10 11 12"
 {
     "title": "Algorithm Plugin Output Arguments",
     "description": "A schema for algorithm plugin output arguments",
@@ -150,7 +150,7 @@ First, update `__main__.py` with your sample data, model and ground truth files 
 
 In this algorithm, we have updated the `data_path`, `model_path`, `ground_truth_path` to the path of the files. The `ground_truth` has also been set to default. We have also updated the `plugin_argument_values` with required arguments to ensure that the input validation passes. This is typically an input parameter from the dataset. For the mock data, we will be using *gender* as the plugin argument value.
 
-If you created the algorithm component with cookiecutter, you only need to point the `core_modules_path` to the **test-engine-core-modules** folder in step 1 of the [Installing AI Verify Developer Tools](../getting_started/install_aiverify_dev_tools.md) page. 
+If you created the algorithm component with cookiecutter but did not use the recommended directory structure, you only need to point the `core_modules_path` to the **test-engine-core-modules** folder in step 1 of the [Installing AI Verify Developer Tools](../getting_started/install_aiverify_dev_tools.md) page. If you followed the recommended directory structure, you can leave the `core_modules_path` as an empty string.
 
 ```py title="__main__.py" linenums="1" hl_lines="12 13 14 15 16 17 26"
 from tests.plugin_test import PluginTest

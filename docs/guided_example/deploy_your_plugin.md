@@ -43,11 +43,11 @@ You may wish to edit *plugin.meta.json* to change the plugin details.
 
 ## Deploy your Plugin
 
-We have provided a script that helps package and deploy your plugin. If you have not created a widget component at this point, this will package the algorithm as a standalone plugin. To run the script, navigate to the directory with the script `deploy_script.sh`. This is located at the **root of template_plugin** folder. At the directory, enter:
+We have provided a script that helps package and deploy your plugin. If you have not created a widget component at this point, this will package the algorithm as a standalone plugin. To run the script, navigate to the directory with the script `deploy_plugin.sh`. This is located at the **root of template_plugin** folder. At the directory, enter:
 
 ```bash
 # Execute this script in the template_plugin directory
-./deploy_script.sh
+./deploy_plugin.sh
 ```
 
 !!! note

@@ -338,9 +338,9 @@ If the test passes (no error messages in terminal), you are ready to move to the
 - [Variables in main.py](algorithm-plugin-in-depth-reference.md#__main__py)
 
 ### Deploying the Algorithm Plugin
-We have provided a script to help deploy your algorithm plugin by packaging it. To run the script, change directory to the directory with the script `deploy_script.sh` and enter:
+We have provided a script to help deploy your algorithm plugin by packaging it. To run the script, change directory to the directory with the script `deploy_plugin.sh` and enter:
 ```bash
-./deploy_script.sh
+./deploy_plugin.sh
 ```
 
 !!! note

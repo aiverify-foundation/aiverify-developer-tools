@@ -7,7 +7,7 @@ Each input block consists of at least two files located under the **templates** 
 
 ## Template Meta Data
 
-During installation, the Plugin Manager will search for and validate the input block meta data according to the schema [ai-verify.template.schema.json](../schemas/ai-verify.template.schema.json) schema definitions.
+During installation, the Plugin Manager will search for and validate the input block meta data according to the schema [ai-verify.template.schema.json](../../schemas/ai-verify.template.schema.json) schema definitions.
 
 | Propreties | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |

@@ -14,7 +14,7 @@ Assuming you have created a input block with cid "sample-input-block", then ther
 
 ## Input Block Meta Data
 
-During installation, the Plugin Manager will search for and validate the input block meta data according to the schema [ai-verify.inputBlock.schema.json](../schemas/ai-verify.inputBlock.schema.json) schema definitions.
+During installation, the Plugin Manager will search for and validate the input block meta data according to the schema [ai-verify.inputBlock.schema.json](../../schemas/ai-verify.inputBlock.schema.json) schema definitions.
 
 | Propreties | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |

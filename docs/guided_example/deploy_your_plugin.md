@@ -91,7 +91,7 @@ To upload the plugin, start the frontend portal of AI Verify. You will need to i
 3. On the **Design Report** page, drag your widget from the left panel to the canvas:
    ![canvas](../images/canvas.png)
    You can resize the the widget and click on the alignment buttons to refresh its size. When you're ready, click "Next" on the top right.
-4. On the **Select the Datasets and AI Model to be tested** page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template. Refer to the following table for reference.
+4. On the **Select the Datasets and AI Model to be tested** page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template or download from [here](https://github.com/IMDA-BTG/aiverify/tree/main/examples). Refer to the following table for reference.
 
       | Data, Model, and Test Arguments | Selected Dataset / Model / Test Arguments |
       | ---- | ---------- |

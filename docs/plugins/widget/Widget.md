@@ -12,7 +12,7 @@ Assuming you have created a widget with cid "sample-widget", then there should b
 
 ## Widget Meta Data
 
-During installation, the Plugin Manager will search for and validate the widget meta data according to the schema [ai-verify.widget.schema.json](../schemas/ai-verify.widget.schema.json) schema definitions.
+During installation, the Plugin Manager will search for and validate the widget meta data according to the schema [ai-verify.widget.schema.json](../../schemas/ai-verify.widget.schema.json) schema definitions.
 
 | Propreties | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |

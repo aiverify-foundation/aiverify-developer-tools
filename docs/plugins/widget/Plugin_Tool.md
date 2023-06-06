@@ -4,7 +4,7 @@ The [ai-verify-plugin](https://github.com/IMDA-BTG/aiverify-developer-tools/tree
 
 ## Installation
 
-To install the tool, clone the [aiverify-developer-tools](git@github.com:IMDA-BTG/aiverify-developer-tools.git) repo. The plugin tools is also dependent on the shared library in the [aiverify repository](https://github.com/IMDA-BTG/aiverify).
+To install the tool, clone the [aiverify-developer-tools](https://github.com/IMDA-BTG/aiverify-developer-tools) repo. The plugin tools is also dependent on the shared library in the [aiverify repository](https://github.com/IMDA-BTG/aiverify).
 
 To clone the repository, run the following commands.
 ```
@@ -19,8 +19,6 @@ npm install
 npm link ../../aiverify/ai-verify-shared-library/
 npm install -g
 ```
-
-
 
 ## Basic Use
 

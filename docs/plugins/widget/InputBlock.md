@@ -14,11 +14,11 @@ Assuming you have created a input block with cid "sample-input-block", then ther
 
 ## Input Block Meta Data
 
-During installation, the Plugin Manager will search for and validate the input block meta data accounding to the schema [ai-verify.inputBlock.schema.json](../schemas/ai-verify.inputBlock.schema.json) schema definitions.
+During installation, the Plugin Manager will search for and validate the input block meta data according to the schema [ai-verify.inputBlock.schema.json](../schemas/ai-verify.inputBlock.schema.json) schema definitions.
 
 | Propreties | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |
-| cid | string, must match pattern `^[a-zA-Z0-9][a-zA-Z0-9-._]*$` | Yes | Unique identififer for the input block within the plugin. |
+| cid | string, must match pattern `^[a-zA-Z0-9][a-zA-Z0-9-._]*$` | Yes | Unique identifier for the input block within the plugin. |
 | name | string | Yes | Input block name. |
 | description | string | No | Input block description. |
 | group | string | No | Input blocks that have the same group name will be grouped together in the user input page |

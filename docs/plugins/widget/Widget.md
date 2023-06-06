@@ -12,11 +12,11 @@ Assuming you have created a widget with cid "sample-widget", then there should b
 
 ## Widget Meta Data
 
-During installation, the Plugin Manager will search for and validate the widget meta data accounding to the schema [ai-verify.widget.schema.json](../schemas/ai-verify.widget.schema.json) schema definitions.
+During installation, the Plugin Manager will search for and validate the widget meta data according to the schema [ai-verify.widget.schema.json](../schemas/ai-verify.widget.schema.json) schema definitions.
 
 | Propreties | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |
-| cid | string, must match pattern `^[a-zA-Z0-9][a-zA-Z0-9-._]*$` | Yes | Unique identififer for the widget within the plugin. |
+| cid | string, must match pattern `^[a-zA-Z0-9][a-zA-Z0-9-._]*$` | Yes | Unique identifier for the widget within the plugin. |
 | name | string | Yes | Widget name. |
 | description | string | No | Widget description. |
 | widgetSize | object | Yes | Describe the widget size in terms of canvas grid units. See [Widget Size Object Schema](#widget-size-object-schema) for the schema of the widgetSize object.

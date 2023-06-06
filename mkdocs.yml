@@ -68,8 +68,6 @@ plugins:
             show_signature_annotations: false
             group_by_category: true
             heading_level: 2
-  - mkdocs-jupyter:
-      execute: False
 
 nav:
   - Home: index.md
@@ -96,11 +94,6 @@ nav:
       - MDX Guide: plugins/widget/MDX_Guide.md
     - Report Template:
       - Template: plugins/widget/Template.md
-  - How-to:
-    - How-to: how_to/index.md
-    - How to use Fairness Decision Tree: how_to/use_fairness_tree.md
-    - How to prepare Tabular Datasets and Models: how_to/prepare_tabular.ipynb
-    - How to prepare Image Datasets and Models: how_to/prepare_image.ipynb
   - AI Verify Stock Plugins:
     - AI Verify Stock Plugins: stock_plugins/index.md
     - Fairness for Classification: stock_plugins/fmtc.md

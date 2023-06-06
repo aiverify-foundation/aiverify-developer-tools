@@ -6,7 +6,7 @@ This page prepares your environment for development on AI Verify. By the end of 
 
 ```
 <working directory>/
-├── aiverify
+├── aiverify/
     ├── ai-verify-shared-library/
     ├── test-engine-core/
     └── test-engine-library/

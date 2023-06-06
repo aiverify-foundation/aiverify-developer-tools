@@ -66,22 +66,20 @@ The resulting plugin is packaged as a `zip` file, which can be used to share wit
 
 ## Uploading the plugin
 
-1. To upload the plugin, start the frontend portal of AI Verify:
+To upload the plugin, start the frontend portal of AI Verify. You will need to install AI Verify if you have not done so. The instructions to install and run AI Verify from source code can be found in the [User Guide](https://imda-btg.github.io/aiverify-user-guide-docs/getting-started/source-code-setup/).
 
-    <<"TODOZ: instructions to start AIV FE">>
-
-2. Once the portal is started up, visit the portal at locahost:5000/xx. In the homepage, click on "Plugins" to visit the Plugin Manager page:
+1. Once the portal is started up, visit the portal at [http://localhost:3000/home](http://localhost:3000/home). In the homepage, click on "Plugins" to visit the Plugin Manager page:
    ![aiv_homepage](../images/aiv_home_page.png)
 
-3. In the **Plugin Manager page**, click on "INSTALL PLUGIN" at the top right and select ```your_first_plugin-0.1.0.zip```, then click on "INSTALL" :
+2. In the **Plugin Manager page**, click on "INSTALL PLUGIN" at the top right and select ```your_first_plugin-0.1.0.zip```, then click on "INSTALL" :
    ![install_plugin](../images/install_plugin.png)
 
    
-4. The following should prompt should appear to inform you that the plugin has been installed successfully:
-   
-   ![plugin_installed_successfully](../images/plugin_installed_successfully.png)
+3. The following prompt should appear to inform you that the plugin has been installed successfully: 
 
-5. You should see your plugin in the list of installed plugins:
+![plugin_installed_successfully](../images/plugin_installed_successfully.png)
+
+You should see your plugin in the list of installed plugins:
    ![plugin_manager_page](../images/plugin_manager_page.png)
 
 ## Generating the Report
@@ -89,12 +87,27 @@ The resulting plugin is packaged as a `zip` file, which can be used to share wit
 1. It is time to run the plugin. In the homepage, click on "Create New Project":
    ![aiv_homepage](../images/aiv_home_page.png)
 2. Fill in the project details and click "Next" on the top right:
-    <"TODOZ add screenshot of the details page">
+    ![project_details](../images/project_details.png)
 3. On the **Design Report** page, drag your widget from the left panel to the canvas:
    ![canvas](../images/canvas.png)
    Click "Next" on the top right.
-4. On the **Select the Datasets and AI Model to be tested** page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template. Select the <"TODOZ to check i got the fields right">plugin arguments and click on "Next" on the top right. Click on "PROCEED" when prompted:
+4. On the **Select the Datasets and AI Model to be tested** page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template. Refer to the following table for reference.
+
+| Data, Model, and Test Arguments | Selected Dataset / Model / Test Arguments |
+| ---- | ---------- |
+| Testing Dataset | ```pickle_pandas_mock_binary_classification_credit_risk_testing.sav``` |
+| Ground Truth Dataset | ```pickle_pandas_mock_binary_classification_credit_risk_testing.sav```, Ground Truth: ```default``` |
+| AI Model | ```binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav``` | 
+| Test Arguments | ```gender``` |
+
+5. For the model, choose ```Upload AI Model``` and click "Next".
+   ![upload_model](../images/upload_model.png)
+6. We will be uploading the ```binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav``` model.
+   ![model_uploaded_successfully](../images/model_uploaded_successfully.png) 
+7. Type `gender` into the plugin arguments. The end result should look like this.
+   ![data_and_model_selection](../images/data_and_model_selection.png) 
+8. When you are ready, click on "Next" on the top right. Click on "PROCEED" when prompted:
    ![confirm_generate_report](../images/confirm_generate_report.png) 
-5. You should see the logs of what is happening in the backend and when your report has been generated, you should see the "Test Completed" prompt in the top right. Click on "VIEW REPORT" to see your report:
+9. You should see the logs of what is happening in the backend and when your report has been generated, you should see the "Test Completed" prompt in the top right. Click on "VIEW REPORT" to see your report:
    ![generated_report](../images/generated_report.png) 
    Congratulations! You have generated your first report. 

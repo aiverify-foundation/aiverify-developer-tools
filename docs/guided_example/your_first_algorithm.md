@@ -59,8 +59,6 @@ Modify `input.schema.json` to request an input called `feature_name` from the us
 
 ```py title="input.schema.json" linenums="1" hl_lines="8 11 12 13 14 15"
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://pypi.org/project/example_plugin//input.schema.json",
     "title": "Algorithm Plugin Input Arguments",
     "description": "A schema for algorithm plugin input arguments",
     "type": "object",
@@ -131,8 +129,6 @@ In this algorithm, the expected output will be stored in a list (or array) named
 
 ```py title="output.schema.json" linenums="1" hl_lines="7 10 11 12 13 14"
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://pypi.org/project/example_plugin//output.schema.json",
     "title": "Algorithm Plugin Output Arguments",
     "description": "A schema for algorithm plugin output arguments",
     "type": "object",
@@ -154,7 +150,7 @@ First, update `__main__.py` with your sample data, model and ground truth files 
 
 In this algorithm, we have updated the `data_path`, `model_path`, `ground_truth_path` to the path of the files. The `ground_truth` has also been set to default. We have also updated the `plugin_argument_values` with required arguments to ensure that the input validation passes. This is typically an input parameter from the dataset. For the mock data, we will be using *gender* as the plugin argument value.
 
-If you created the algorithm component with cookiecutter, you only need to point the core_modules_path to the **test-engine-core-modules** folder in step 1 of the [Installing AI Verify Developer Tools](../getting_started/install_aiverify_dev_tools.md) page. 
+If you created the algorithm component with cookiecutter, you only need to point the `core_modules_path` to the **test-engine-core-modules** folder in step 1 of the [Installing AI Verify Developer Tools](../getting_started/install_aiverify_dev_tools.md) page. 
 
 ```py title="__main__.py" linenums="1" hl_lines="12 13 14 15 16 17 26"
 from tests.plugin_test import PluginTest
@@ -168,7 +164,7 @@ if __name__ == "__main__":
     # model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
     # ground_truth = "default"
     # model_type = ModelType.CLASSIFICATION
-    core_modules_path = "<working directory>/aiverify/test-engine-core-modules"
+    core_modules_path = ""
     data_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
     model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
     ground_truth_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"

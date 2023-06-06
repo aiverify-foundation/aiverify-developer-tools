@@ -1,6 +1,6 @@
 # Deploy Your Plugin
 
-Now that you've created your plugin component(s), it's time to package it into a single plugin for deployment.
+Now that you have created your plugin component(s), it is time to package it into a single plugin for deployment.
 
 If you are following the guided example, you should have the following components completed and packaged in its own respective folders:
 
@@ -53,21 +53,48 @@ We have provided a script that helps package and deploy your plugin. If you have
 !!! note
     A new folder `dist` will be created. This folder is where the packaged `.zip` file will be created and placed.
 
-If you didn't edit the gid, verify that the zip file ```your_first_plugin-0.1.0.zip``` exists in your `dist` directory:
+If you did not edit the gid, verify that the zip file ```your_first_plugin-0.1.0.zip``` exists in your `dist` directory:
 
 ```bash
 ls dist | grep your_first_plugin
 ```
 
-The resulting plugin is packaged as a `zip` file, which can be used to share with other developers who are interested in using your algorithm. Users and developers can then upload the zip file onto AI Verify through the plugin manager and use it in the report.
+The resulting plugin is packaged as a `zip` file, which can be used to share with other developers who are interested in using your plugin. Users and developers can then upload the zip file onto AI Verify through the plugin manager and use it in the report.
 
 
 ![algorithm_dist](../images/algorithm_dist.png)
 
-## Upload the plugin
+## Uploading the plugin
 
-For instructions on uploading the plugin, please refer to the [plugin manager page](https://imda-btg.github.io/aiverify/user-interface-features/plugin-manager-page/).
+1. To upload the plugin, start the frontend portal of AI Verify:
 
-## Loading the plugin
+    <<"TODOZ: instructions to start AIV FE">>
 
-## Generating the report
+2. Once the portal is started up, visit the portal at locahost:5000/xx. In the homepage, click on "Plugins" to visit the Plugin Manager page:
+   ![aiv_homepage](../images/aiv_home_page.png)
+
+3. In the **Plugin Manager page**, click on "INSTALL PLUGIN" at the top right and select ```your_first_plugin-0.1.0.zip```, then click on "INSTALL" :
+   ![install_plugin](../images/install_plugin.png)
+
+   
+4. The following should prompt should appear to inform you that the plugin has been installed successfully:
+   
+   ![plugin_installed_successfully](../images/plugin_installed_successfully.png)
+
+5. You should see your plugin in the list of installed plugins:
+   ![plugin_manager_page](../images/plugin_manager_page.png)
+
+## Generating the Report
+
+1. It is time to run the plugin. In the homepage, click on "Create New Project":
+   ![aiv_homepage](../images/aiv_home_page.png)
+2. Fill in the project details and click "Next" on the top right:
+    <"TODOZ add screenshot of the details page">
+3. On the **Design Report** page, drag your widget from the left panel to the canvas:
+   ![canvas](../images/canvas.png)
+   Click "Next" on the top right.
+4. On the **Select the Datasets and AI Model to be tested** page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template. Select the <"TODOZ to check i got the fields right">plugin arguments and click on "Next" on the top right. Click on "PROCEED" when prompted:
+   ![confirm_generate_report](../images/confirm_generate_report.png) 
+5. You should see the logs of what is happening in the backend and when your report has been generated, you should see the "Test Completed" prompt in the top right. Click on "VIEW REPORT" to see your report:
+   ![generated_report](../images/generated_report.png) 
+   Congratulations! You have generated your first report. 

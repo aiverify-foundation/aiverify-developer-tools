@@ -77,10 +77,12 @@ which python # you should see something like <working directory>/my_virtual_envi
 4. Install plugin dependencies in your virtual environment
 ```bash
 pip install --upgrade pip
-pip install cookiecutter pandas==1.5.2 scikit-learn
+pip install cookiecutter pandas==1.5.3 scikit-learn
 ```
+!!! Note 
+    Currently only this V1.5.3 of Pandas is tested and we do not suport Pandas 2.x.x
 
-5. Install AI Verify Test Engine Core.
+1. Install AI Verify Test Engine Core.
 ```bash
 # Execute these in the aiverify directory
 cd test-engine-core
@@ -90,7 +92,7 @@ pip install dist/test_engine_core-0.9.0.tar.gz
 cd ..
 ```
 
-6. Install necessary requirements from `test-engine-core-modules`.
+1. Install necessary requirements from `test-engine-core-modules`.
 ```bash
 # Execute these in the aiverify directory
 cd test-engine-core-modules
@@ -100,7 +102,7 @@ pip install -r requirements.txt
 cd ..
 ```
 
-7. Install dependencies and build AI Verify Frontend Shared Library
+1. Install dependencies and build AI Verify Frontend Shared Library
 ```bash
 # Execute these in the aiverify directory
 cd ai-verify-shared-library

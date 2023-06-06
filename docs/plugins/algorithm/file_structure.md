@@ -3,38 +3,60 @@
 ## Project Directory
 After creating the project from Cookiecutter (with `your_first_algorithm_plugin` as an example), the project directory will look something like this:
 ```
-your_first_algorithm_plugin/
 ├── AUTHORS.rst
 ├── CHANGELOG.md
 ├── INSTRUCTIONS.md
 ├── LICENSE
 ├── README.md
 ├── __main__.py
-├── deploy_plugin.sh
 ├── input.schema.json
-├── your_first_algorithm_plugin.meta.json
-├── your_first_algorithm_plugin.py
 ├── output.schema.json
 ├── plugin.meta.json
 ├── requirements.txt
 ├── syntax_checker.py
-└── tests
-    ├── core_modules
-    │   ├── joblibserializer
-    │   ├── lightgbmmodel
-    │   ├── openapimodel
-    │   ├── pandasdata
-    │   ├── pickleserializer
-    │   ├── sklearnmodel
-    │   ├── tensorflowmodel
-    │   ├── tensorflowserializer
-    │   └── xgboostmodel
-    ├── install_core_modules_requirements.sh
-    ├── plugin_test.py
-    └── user_defined_files
-        ├── sample_data.sav
-        ├── sample_ground_truth.sav
-        └── sample_model.sav
+├── tests
+│   ├── plugin_test.py
+│   └── user_defined_files
+│       ├── data
+│       │   ├── pickle_pandas_mock_binary_classification_credit_risk_testing.sav
+│       │   ├── pickle_pandas_mock_binary_classification_pipeline_credit_risk_testing.sav
+│       │   ├── pickle_pandas_mock_binary_classification_pipeline_credit_risk_ytest.sav
+│       │   ├── pickle_pandas_mock_multiclass_classification_pipeline_toxic_classification_testing.sav
+│       │   ├── pickle_pandas_mock_multiclass_classification_pipeline_toxic_classification_ytest.sav
+│       │   ├── pickle_pandas_mock_multiclass_classification_toxic_classification_testing.sav
+│       │   ├── pickle_pandas_mock_regression_donation_testing.sav
+│       │   ├── pickle_pandas_mock_regression_pipeline_testing.sav
+│       │   ├── pickle_pandas_mock_regression_pipeline_ytest.sav
+│       │   └── raw_fashion_image_10
+│       │       ├── 0.png
+│       │       ├── 1.png
+│       │       ├── 2.png
+│       │       ├── 3.png
+│       │       ├── 4.png
+│       │       ├── 5.png
+│       │       ├── 6.png
+│       │       ├── 7.png
+│       │       ├── 8.png
+│       │       └── 9.png
+│       ├── model
+│       │   ├── binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav
+│       │   ├── multiclass_classification_mock_toxic_classification_sklearn.linear_model._logistic.LogisticRegression.sav
+│       │   └── regression_mock_donation_sklearn.linear_model._base.LinearRegression.sav
+│       └── pipeline
+│           ├── binary_classification_tabular_credit_loan
+│           │   ├── binary_classification_pipeline_credit_risk_sklearn.pipeline.Pipeline.sav
+│           │   └── creditCustomClass.py
+│           ├── multiclass_classification_image_mnist_fashion
+│           │   ├── fashionCustomClass.py
+│           │   └── fashion_mnist_lr_pipeline.sav
+│           ├── multiclass_classification_tabular_toxic_classification
+│           │   ├── multiclass_classification_pipeline_toxic_classification_sklearn.pipeline.Pipeline.sav
+│           │   └── toxicCustomClass.py
+│           └── regression_tabular_donation
+│               ├── regressionCustomClass.py
+│               └── regression_pipeline_donation_sklearn.pipeline.Pipeline.sav
+├── your_first_algorithm_plugin.meta.json
+└── your_first_algorithm_plugin.py
 ```
 
 ## Files in The Project <br>
@@ -50,14 +72,8 @@ The license of this algorithm.
 A default page which is shown on the code repository. It contains the description, license, plugin URL and developers.
 - `__main__.py`<br>
 The file with a main function which serves as an entry point for testing. 
-- `deploy_plugin.sh`<br>
-The script to test and package the algorithm plugin when the developer completes the algorithm.
 - `input.schema.json`<br>
 The input schema of the algorithm. It is used to validate against the user's input when running the algorithm.
-- `your_first_algorithm_plugin.meta.json`<br>
-The metadata of the type of algorithm, which also serves as a configuration file to manage the files to include for deployment. It contains the cid, name, model type, version, description, tags, whether or not it requires ground truth and the required files for deployment. 
-- `your_first_algorithm_plugin.py`<br>
-The file with all the logic of the algorithm. Most, if not all the codes should reside in this file.
 - `output.schema.json`<br>
 The output schema of the algorithm. It is used to validate against the algorithm's generated result.
 - `plugin.meta.json`<br>
@@ -66,14 +82,14 @@ The metadata of the algorithm. It contains the gid, version, name, author, descr
 A list of required Python packages required for this plugin.
 - `syntax_checker.py`<br>
 A Python script which checks for syntax errors in the main file `your_first_algorithm_plugin.py`.
-- `tests/core_modules`<br>
-A directory which contains the packages of the supported models, data types and serializers.
-- `tests/install_core_modules_requirements.sh`<br>
-A script which installs all the dependencies for the packages in `test/core_modules`.
 - `tests/plugin_test.py`<br>
 The file with all the testing logic of the algorithm plugin. It is called by `__main__.py`. 
 - `tests/user_defined_files`<br>
 A directory for the user to place all the test files required for the algorithm. Test files can include sample data and model read in by the algorithm. 
+- `your_first_algorithm_plugin.meta.json`<br>
+The metadata of the type of algorithm, which also serves as a configuration file to manage the files to include for deployment. It contains the cid, name, model type, version, description, tags, whether or not it requires ground truth and the required files for deployment. 
+- `your_first_algorithm_plugin.py`<br>
+The file with all the logic of the algorithm. Most, if not all the codes should reside in this file.
 <br/><br/>
 
 ## Understanding the Files You Need To Modify
@@ -83,26 +99,29 @@ While there are many files included in this project, you will only need to focus
 #### `__main__.py`<br>
 The entry point when testing your algorithm. When you run `python .`, you will run this file, which will call the test file. You will need to update the paths to the data and the input arguments in this file. <br>Example: 
 ```py title="__main__.py" linenums="1" hl_lines="8"
-    data_path = "tests/user_defined_files/pickle_pandas_tabular_loan_testing.sav"
-    model_path = "tests/user_defined_files/pickle_scikit_multiclasslr_loan.sav"
-    ground_truth_path = "tests/user_defined_files/pickle_pandas_tabular_loan_testing.sav"
-    ground_truth = "Interest_Rate"
+    core_modules_path = ""
+    data_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
+    model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
+    ground_truth_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
+    ground_truth = "default"
+    model_type = ModelType.CLASSIFICATION
+    run_pipeline = False
 
     plugin_argument_values = {
-        "sensitive_feature": ["Gender", "Home_Owner"],
-        "ground_truth": ground_truth,
+        "sensitive_feature": ["gender"]
     }
 
 ```
 
+- `core_modules_path`: The absolute or relative path (from `__main__.py`) of the <b>test-engine-core-modules</b> path. This can be left empty and it will default to `../../test-engine-core-modules`
 - `data_path`: The absolute or relative path (from `__main__.py`) of the test data file
 - `model_path`: The absolute or relative path (from `__main__.py`) of the test model file
 - `ground_truth_path` (optional): The absolute or relative path (from `__main__.py`) of the ground truth data file 
-- `ground_truth`(optional): The field name(`string`) of the ground truth. Your ground truth field name **MUST** be assigned to the variable `"ground_truth"` in `plugin_argument_values` (as shown in the highlighted line) 
+- `ground_truth`(optional): The field name(`string`) of the ground truth 
 !!! Note
     Ground truth is optional so if your algorithm does not require ground truth, `ground_truth_path` and `ground_truth` can be left as an empty string `""`.
  
-- `plugin_argument_values`: A dictionary of input arguments. In the example above, the input arguments `target_feature_name`, `percentiles`, `grid_resolution` have the types `string`, `array` of numbers and `number` respectively. The input arguments and their types must match the schema in [`input.schema.json`](#inputschemajson). 
+- `plugin_argument_values`: A dictionary of input arguments. In the example above, the input argument `sensitive_feature`is an  `array` of `string` . The input argument(s) and their type(s) must match the schema in [`input.schema.json`](#inputschemajson). 
 <br><br>
 
 
@@ -180,52 +199,35 @@ Specifies the schema for the input. This is used to validate the schema of the u
 
 ```json
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-stock-plugins/partial_dependence_plot/input.schema.json",
     "title": "Algorithm Plugin Input Arguments",
     "description": "A schema for algorithm plugin input arguments",
     "type": "object",
     "required": [
-        "target_feature_name",
-        "percentiles",
-        "grid_resolution"
+        "sensitive_feature"
     ],
     "properties": {
-        "target_feature_name": {
-            "title": "Target Feature Name",
-            "description": "Target Feature Name (e.g. Interest_Rate)",
-            "type": "string"
-        },
-        "percentiles": {
-            "title": "Cut-off percentiles",
-            "description": "Cut-off percentiles (e.g. [0.01, 0.99])",
+        "sensitive_feature": {
+            "title": "Sensitive Feature Names",
+            "description": "Array of Sensitive Feature Names (e.g. Gender)",
             "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
             "items": {
-                "type": "number"
-            }
-        },
-        "grid_resolution": {
-            "title": "Grid Resolution",
-            "description": "Grid Resolution (e.g. 25)",
-            "type": "number"
+                "type": "string"
+            },
+            "minItems": 1
         }
     }
 }
 
 ```
 
-- ```$id```: The full URL to this file. It is autogenerated from the Cookiecutter template
 - ```title```: The title of this input schema file 
 - ```description```: The description of this input schema file
 - ```type```: Input type of argument. It should be ```object``` by default
 - ```required```:  Field(s) which must be present. Add the name of the required field(s) into the list (i.e. ```required: [required_feature_one, ... ,required_feature_n]```)
 - ```properties```: Contains the details of the ```required``` field(s). Every ```required``` field **must** be included and contain the following details: 
-  - ```title```: Name of the required field
-  - ```description```: A brief description of the field with some sample 
-  - ```type```: The type of the required field. It can be ```array```, ```string```, ```number```, etc
-    ],
+    - ```title```: Name of the required field
+    - ```description```: A brief description of the field with some sample 
+    - ```type```: The type of the required field. It can be ```array```, ```string```, ```number```, etc
     - If the ```type``` is ```array```, it must also contain a nested list named ```items```, which contains the ```type``` of the element in the ```array``` (refer to ```percentiles``` in the example). You can include multiple types in the ```items``` list if you allow multiple types for the ```items``` (i.e. ```"items": {"type": "number", "type": "string"}```)
 
 <br>
@@ -234,8 +236,6 @@ Specifies the schema for the input. This is used to validate the schema of the u
   Specifies the schema for the output. This is used to validate the schema of the algorithm's output. <br> Example: <br>
 ```json
 {
-    "$schema":"https://json-schema.org/draft/2020-12/schema",
-    "$id":"/partial_dependence_plot/output.schema.json",
     "title":"Algorithm Plugin Output Arguments",
     "description":"A schema for algorithm plugin output arguments",
     "type":"object",
@@ -301,18 +301,14 @@ Specifies the schema for the input. This is used to validate the schema of the u
 
 ```
 
-- ```$id```: The relative path to this file. It is autogenerated from the Cookiecutter template<br>
 - ```title```: The title of this output schema file <br>
 - ```description```: The description of this output schema file<br>
 - ```type```: Input type of argument. It should be ```object``` by default<br>
 - ```required```:  Field(s) which must be present. Add the name of the required field(s) into the list (i.e. ```required: [required_feature_one, ... ,required_feature_n]```)<br>
 - ```properties```: Contains the details of the ```required``` field(s). Every ```required``` field **must** be included and contain the following details: <br>
-  - ```title```: Name of the required field<br>
-  - ```description```: A brief description of the field with some sample <br>
-  - ```type```: The type of the required field. It can be ```array```, ```string```, ```number```, etc
-    ]<br>
-    - If the ```type``` is ```array```, it must also contain a nested list named ```items```, which contains the ```type``` of the element in the ```array``` (refer to ```output_classes``` in the example). You can include multiple types in the ```items``` list if you allow multiple types for the ```items``` (i.e. ```"items": {"type": "number", "type": "string"}```)
-  
+    - ```description```: A brief description of the field with some sample <br>
+    - ```type```: The type of the required field. It can be ```array```, ```string```, ```number```, etc <br>
+    - If the ```type``` is ```array```, it must also contain a nested list named ```items```, which contains the ```type``` of the element in the ```array``` (refer to ```output_classes``` in the example). You can include multiple types in the ```items``` list if you allow multiple types for the ```items``` (i.e. ```"items": {"type": "number", "type": "string"}```)  
   <br>
 
 #### `your_first_algorithm_plugin.meta.json`<br>
@@ -326,8 +322,8 @@ The metadata of the algorithm plugin. This file should be autogenerated by Cooki
         "classification",
         "regression"
     ],
-    "version": "0.1.0",
-    "author": "IMDA T2E",
+    "version": "0.9.0",
+    "author": "AI Verify",
     "description": "A Partial Dependence Plot (PDP) explains how each feature and its feature value contribute to the predictions.",
     "tags": [
         "Partial Dependence Plot",
@@ -353,7 +349,7 @@ The metadata of the algorithm plugin. This file should be autogenerated by Cooki
 
 ```
 
-- ```cid```: <br>
+- ```cid```: The component name of the algorithm<br>
 - ```name```: The name of this algorithm plugin <br>
 - ```modelType```: The type(s) of the algorithm model. It can be either ```classification```, ```regression``` or both <br>
 - ```version```: The version of this algorithm. It defaults to ```0.1.0```. If this algorithm is an improvement of a previous algorithm, you should increase the version accordingly. Refer to [Understanding Versioning](https://cpl.thalesgroup.com/software-monetization/software-versioning-basics) for more information <br>
@@ -364,8 +360,8 @@ The metadata of the algorithm plugin. This file should be autogenerated by Cooki
 - ```requiredFiles```: A list of required files for the algorithm to run. If you have other required file(s) (currently we only allow ```.py``` files), add the file name into this list <br>
     - If the ```.py``` file(s) are in a directory, you can add the directory into the list. The directory will be recursively traversed and all the discovered ```.py``` files will be added, with the directory hierarchy preserved
         - For example, `my_additional_python_files_dir` and `my_custom_python_file.py` are additional required directory and Python file  added in by the user<br>
-    - Note: **Do not remove or edit the required files already in the list** <br>
-<br>
+        !!! note
+            **Do not remove or edit the required files already in the list** <br>
 
 #### `requirements.txt`
 Python requirements file is used to keep track of the Python packages used by this algorithm plugin. It simplifies the installation of all required packages and makes it easy to share your project with others. Example:

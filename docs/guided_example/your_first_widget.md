@@ -17,7 +17,7 @@ cd template_plugin/widgets
 ai-verify-plugin gw "mywidget" --name "My Widget" --description "A Widget" --dep "Algorithm,your_first_algorithm_component"
 ```
 
-Open the file `mywidget.meta.json` and check that the properties are set correctly as shown below:
+Open the file `mywidget.meta.json` in the <b>widgets</b> folder and check that the properties are set correctly as shown below:
 
 ```JSON
 {

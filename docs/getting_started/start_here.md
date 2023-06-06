@@ -17,8 +17,7 @@ You will learn to:
 
 To start developing on AI Verify, you will need to install AI Verify Developer Tools. These are the minimum requirements to run AI Verify on a local computer:
 
-- Ubuntu 22.04
-- 64-bit computer
+- Ubuntu 22.04 (64-bit)
 - At least 3GB disk space to download and install AI Verify and Developer Tools
 - At least 4GB memory
 

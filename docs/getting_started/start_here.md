@@ -22,7 +22,7 @@ To start developing on AI Verify, you will need to install AI Verify Developer T
 - At least 4GB memory
 
 !!! warning
-    We do not officially provide support for Windows. For Windows developers, AI Verify requires minimally Windows 10 **with WSL2**. Please follow instructions to set up WSL2 [here](https://learn.microsoft.com/en-us/windows/wsl/install) if you wish to proceed.
+    We do not officially provide support for Windows. For Windows developers, AI Verify requires minimally Windows 10 **with WSL2**. Please note that we have not conducted tests on Windows 10. Please follow instructions to set up WSL2 [here](https://learn.microsoft.com/en-us/windows/wsl/install) if you still wish to proceed.
 
 ## Installing AI Verify
 

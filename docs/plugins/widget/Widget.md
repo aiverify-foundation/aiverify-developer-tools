@@ -137,6 +137,7 @@ The widget MDX are loaded as React components and the component properties are p
 | result | object | Object containing the output from an algorithm, accessed by its gid `props.result[gid]`. |
 | properties | object | Object containing the widget properties entered in the canvas page. |
 | container | object | Object containing the widget container information, see [Widget Container](#widget-container) |
+| getContainerObserver(callback) | function | Function to create an observer to retrieve the the widget container size, see [Widget Container Observer](#widget-container-observer) |
 | getResults(cid, gid=null) | function | Function to return result of an algorithm identified by cid. If gid of the algorithm is not specified, the function assumes same plugin gid as the widget. |
 | getIBData(cid, gid=null) | function | Function to return data of an input block identified by cid. If gid of the input block is not specified, the function assumes same plugin gid as the widget. |
 | getTest(cid, gid=null) | function | Function to return test result information (if successful), see [Test Result Information](#test-result-information) |
@@ -156,12 +157,15 @@ export const cid = "some_algo_cid"
 </div>
 ```
 
-#### Widget Container
+#### Widget Container Observer
 
-| Propreties | Type | Description |
-| ---------- | ---- | ----------- |
-| width | number | container width in pixel. |
-| height | number | container height in pixel. |
+To retrieve the size of the widget container, call the following getContainerObserver function. The callback function passes the container width and height in pixel.
+
+```
+props.getContainerObserver((width, height) => {
+  // Do something with the constainer width and height
+})
+```
 
 #### Test Result Information
 

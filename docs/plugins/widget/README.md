@@ -13,6 +13,5 @@ This section contains documentations for widget and input block developers as we
 
 ## Guides
 * [MDX Guide](MDX_Guide.md) - Overview of MDX and some examples.
-* [Quick Start](Quick_Start.md) - Quick start guide on how to create widget and input blocks.
 
 

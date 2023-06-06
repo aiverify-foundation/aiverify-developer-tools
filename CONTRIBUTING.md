@@ -1,4 +1,4 @@
-# Contributor.md
+# Contributing.md
 
 ## Important things to take note before contributing:
 

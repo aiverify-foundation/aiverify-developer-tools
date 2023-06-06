@@ -32,7 +32,7 @@ The toolbox generates corrupted images based on the uploaded test data at 5 diff
 | Line Chart (Blur Corruptions)                                                                                                                                                                                                                                                                                    | To generate line chart to visualise the accuracy results when blur corruptions are applied        |
 | <ul> <li> Samples (Blur: Defocus Blur) </li> <li>Samples (Blur: Gaussian Blur) </li> <li>Samples (Blur: Glass Blur) </li> <li> Samples (Blur: Horizontal Motion Blur) </li> <li>Samples (Blur: Vertical Motion Blur) </li> <li>Samples (Blur: Zoom Blur)</li> </ul>                                              | To generate sample images for the blur corruptions                                                |
 | Line Chart (Digital Corruptions)                                                                                                                                                                                                                                                                                 | To generate line chart to visualise the accuracy results when digital corruptions are applied     |
-| <ul> <li> Samples (Digital:  Brightness Up) </li> <li>Samples (Digital:  Brightness Down) </li> <li>Samples (Digital:  Contrast Up </li> <li> Samples (Digital:  Contrast Down </li> <li>Samples (Digital:  Saturate) </li> <li>Samples (Digital: Compression)</li> <li>Samples (Digital: Compression)</li></ul> | To generate sample images for the digital corruptions                                             |
+| <ul> <li> Samples (Digital:  Brightness Up) </li> <li>Samples (Digital:  Brightness Down) </li> <li>Samples (Digital:  Contrast Up) </li> <li> Samples (Digital:  Contrast Down) </li> <li>Samples (Digital:  Saturate) </li> <li>Samples (Digital: Compression)</li> <li>Samples (Digital: Compression)</li></ul> | To generate sample images for the digital corruptions                                             |
 | Line Chart (Environmental Corruptions)                                                                                                                                                                                                                                                                           | To generate line chart to visualise the accuracy results when environment corruptions are applied |
 | <ul><li> Samples (Environment: Rain) </li><li> Samples (Environment: Fog)</li>   <li> Samples (Environment: Snow)</li></ul>                                                                                                                                                                                      | To generate samples for the environment corruptions                                               |
 | Line Chart (General Corruptions)                                                                                                                                                                                                                                                                                 | To generate line chart to visualise the accuracy results when general corruptions are applied     |
@@ -41,11 +41,11 @@ The toolbox generates corrupted images based on the uploaded test data at 5 diff
 
 ## Using the Plugin in AI Verify
 ### Data Preparation
-- Image dataset ([Tutorial for Preparation](../how_to/prepare_image.ipynb))
-- Annotated Ground Truth Dataset ([Tutorial for Preparation](../how_to/prepare_image.ipynb))
+- Image dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#1-dataset-preparation))
+- Annotated Ground Truth Dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#2-annotated-ground-truth-dataset))
 
 ### Additional Requirements
-ImageMagick (Details for installation can be found [here](https://docs.wand-py.org/en/0.6.11/guide/install.html#))
+- ImageMagick (Details for installation can be found [here](https://docs.wand-py.org/en/0.6.11/guide/install.html#))
 
 ### Algorithm User Input(s)
 Note: These inputs are the same for all the algorithms in this plugin (Blur Corruptions, Digital Corruptions, Environmental Corruptions and General Corruptions)

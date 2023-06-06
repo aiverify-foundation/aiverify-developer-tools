@@ -1,5 +1,5 @@
 # Understanding the Core Modules
-The core modules are custom packages that support different types of models, serialized data and data. When you run your algorithm, we will read in your model and data files. We will then traverse the `core_modules` directory and see if there are support packages to handle the model and data files. If there are, we will be able to process the data correctly.  
+The core modules are custom packages that support different types of models, serialized data and data. When you run your algorithm, we will read in your model and data files. We will then traverse the `test_engine_core_modules` directory and see if there are support packages to handle the model and data files. If there are, we will be able to process the data correctly.  
 
 There are three categories of support for algorithms: 
 <br>

@@ -110,7 +110,7 @@ The [AI Verify Shared Library]https://github.com/IMDA-BTG/aiverify/tree/main/ai-
 
 ### JSX Component Styling
 
-To ensure consistent stylings for widgets, it is recommended that JSX components use the CSS classes as provided in the [AI Verify Shared Library Styles](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-shared-library/-/tree/main/packages/styles).
+To ensure consistent stylings for widgets, it is recommended that JSX components use the CSS classes as provided in the [AI Verify Shared Library Styles](https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/styles).
 
 The following classnames provide different color schemas:
 

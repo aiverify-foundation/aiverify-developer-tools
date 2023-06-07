@@ -32,9 +32,9 @@ A plugin can extend the functionality of AI Verify in four ways:
 | Term | Definition |
 | ---- | ---------- |
 | plugin | AI Verify plugin that can be installed using the AI Verify portal. |
-| component | Each AI Verify plugin consists of one or more components and can be used to extend the functionality of the system. The types of components are described in the table [below](#ai-verify-components). |
-| gid | Global Identifier. All plugins requires a unique global identifier that is used to identify the plugin. See [Global Identifier (GID)](#global-identifier-gid). |
-| cid | Component ID. Unique ID that identifies the component within the plugin. See [Component Identifier (CID)](#component-identifier-cid) |
+| component | Each AI Verify plugin consists of one or more components and can be used to extend the functionality of the system. These are listed in details below. |
+| gid | Global Identifier. All plugins requires a unique global identifier that is used to identify the plugin. See [Widget](../plugins/widget/Widget.md) for more details |
+| cid | Component ID. Unique ID that identifies the component within the plugin. See [Widget](../plugins/widget/Widget.md) for more details |
 
 ## Algorithm
 

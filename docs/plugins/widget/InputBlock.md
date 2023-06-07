@@ -55,9 +55,9 @@ The MDX are loaded as React components and the component properties are passed a
 | data | object | Key-Value Object containing the user input data saved |
 | onChangeData | (key: string, value: any) => void | Function to save user data, e.g. `props.onChangeData("mykey","Hello World")` |
 
-## Input Block Summary Typescript
+## Input Block Summary
 
-For each input block, there should be a summary file **\<input block cid\>.ts** that is imported by the AI Verify portal. The script MUST implement and export the following methods. For Example,
+For each input block, there should be a summary file **\<input block cid\>.mdx** that is imported by the AI Verify portal. The script MUST implement and export the following methods. For Example,
 
 ```
 {/* Return summary of data */}

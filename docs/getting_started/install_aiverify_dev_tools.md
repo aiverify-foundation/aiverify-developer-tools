@@ -121,7 +121,7 @@ Install AI Verify Developer Tools in your environment.
 1. Clone our developer's repository. We recommend cloning this in the *same directory* you cloned **aiverify**.
 ```bash
 # Execute in the working directory
-git clone git@gitlab.com:imda_dsl/t2po/ai-verify/aiverify-developer-tools.git # requires Github public SSH key
+git clone https://github.com/IMDA-BTG/aiverify-developer-tools.git
 ```
 
 2. Install AI Verify Frontend Plugin Tool

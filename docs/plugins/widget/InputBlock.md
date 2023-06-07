@@ -57,7 +57,7 @@ The MDX are loaded as React components and the component properties are passed a
 
 ## Input Block Summary
 
-For each input block, there should be a summary file **\<input block cid\>.mdx** that is imported by the AI Verify portal. The script MUST implement and export the following methods. For Example,
+For each input block, there should be a summary file **\<input block cid\>.summary.mdx** that is imported by the AI Verify portal. The script MUST implement and export the following methods. For Example,
 
 ```
 {/* Return summary of data */}

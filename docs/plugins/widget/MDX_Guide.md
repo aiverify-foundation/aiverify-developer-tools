@@ -106,7 +106,7 @@ Below is an example of a component that displays a simple form and save the form
 
 ## AI Verify Shared Library
 
-The [AI Verify Shared Library]https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library) provides some shared components that can be imported by MDX. See [Shared Library Documentation](Shared_Library.md).
+The [AI Verify Shared Library](https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library) provides some shared components that can be imported by MDX. See [Shared Library Documentation](Shared_Library.md).
 
 ### JSX Component Styling
 

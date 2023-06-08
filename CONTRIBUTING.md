@@ -233,7 +233,7 @@ Please check all the boxes that apply to this pull request using "x":
 [Add any additional information or context that might be relevant to reviewers.]
 ```
 
-Should you find that you are making a change that potentially qualifies as a large feature change, please contact ________ separately before making a PR.
+Should you find that you are making a change that potentially qualifies as a large feature change, please [contact us](https://aiverifyfoundation.sg/contact-us/?utm_source=Github&utm_medium=referral&utm_campaign=20230607_Queries_from_GitHub) separately before making a PR.
 
 ## Other ways of contributing
 

@@ -42,7 +42,7 @@ This project is released under the Apache 2.0 license, which can be found under 
 
 ## Support
 
-If you have any questions or need assistance, please check the project discussions or issue tracker for existing threads. If you cannot find a resolution, feel free to create a new discussion or issue, or contact info@aiverify.sg if you require assistance.
+If you have any questions or need assistance, please check the project discussions or issue tracker for existing threads. If you cannot find a resolution, feel free to create a new discussion or issue, or [contact us](https://aiverifyfoundation.sg/contact-us/?utm_source=Github&utm_medium=referral&utm_campaign=20230607_Queries_from_GitHub) if you require assistance.
 
 Thank you for your interest in AI Verify, and we look forward to your contributions!
 

@@ -66,7 +66,7 @@ The resulting plugin is packaged as a `zip` file, which can be used to share wit
 
 ## Uploading the plugin
 
-To upload the plugin, start the frontend portal of AI Verify. You will need to install AI Verify if you have not done so. The instructions to install and run AI Verify from source code can be found in the [User Guide](https://imda-btg.github.io/aiverify-user-guide-docs/getting-started/source-code-setup/).
+To upload the plugin, start the frontend portal of AI Verify. You will need to install AI Verify if you have not done so. The instructions to install and run AI Verify from source code can be found in the [User Guide](https://imda-btg.github.io/aiverify/getting-started/source-code-setup/).
 
 1. Once the portal is started up, visit the portal at [http://localhost:3000/home](http://localhost:3000/home). In the homepage, click on "Plugins" to visit the Plugin Manager page:
    ![aiv_homepage](../images/aiv_home_page.png)

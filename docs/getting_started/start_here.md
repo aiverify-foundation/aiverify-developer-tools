@@ -26,7 +26,7 @@ To start developing on AI Verify, you will need to install AI Verify Developer T
 
 ## Installing AI Verify
 
-Installation of AI Verify is optional during the development phase. For those interested, we recommend using the source code installation method for easier debugging. This can be found in the [User Guide](https://imda-btg.github.io/aiverify-user-guide-docs/getting-started/source-code-setup/).
+Installation of AI Verify is optional during the development phase. For those interested, we recommend using the source code installation method for easier debugging. This can be found in the [User Guide](https://imda-btg.github.io/aiverify/getting-started/source-code-setup/).
 
 ## Installing AI Verify Developer Tools
 

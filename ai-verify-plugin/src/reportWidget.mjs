@@ -36,7 +36,7 @@ export function generateWidget(argv) {
   if (fs.existsSync(metaFile)) {
     meta = readJSON(metaFile);
   }
-  for (let key of ["name","description","tag","minW","minH","maxW","maxH"]) {
+  for (let key of ["name","description","tag","minW","minH","maxW","maxH","dynamicHeight"]) {
     if (key in argv) {
       switch (key) {
         case 'minW':

@@ -157,6 +157,9 @@ const argv = yargs(process.argv.slice(2))
       requiresArg: true,
       type: 'string',
       array: true,
+    }).option('dynamicHeight', {
+      describe: 'Indicate that this widget has dynamic height.',
+      type: "boolean",
     }).option('force', {
       describe: 'Overwrite existing settings. By default existing settings will not be overwritten.',
       type: "boolean",

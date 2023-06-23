@@ -88,7 +88,7 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
               isResizable={true}
               resizeHandles={['s','e','sw','se']}
             >
-              <div key={widget.meta.cid} style={{ backgroundColor:'white', overflow:'visible' }}>
+              <div key={widget.meta.cid} style={{ backgroundColor:'white', overflow:widget.meta.dynamicHeight?'visible':'hidden' }}>
                 <Widget
                   widget={widget} 
                   pluginMeta={pluginMeta} 

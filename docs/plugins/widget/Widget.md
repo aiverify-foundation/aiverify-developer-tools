@@ -24,10 +24,20 @@ During installation, the Plugin Manager will search for and validate the widget 
 | tags | array of string | No | List of tags for this widget. Used for search and filtering of the widget |
 | dependencies | array | No | List of input blocks and/or algorithms that this widget depends on. See [Widget Dependency Schema](#widget-dependency-schema). |
 | mockdata | array | No | List of sample data that is provided to the widget in the canvas page. See [Widget Mock Data Schema](#widget-mock-data-schema). |
+| dynamicHeight | boolean | No | Indicates whether this widget has dynamic height. See [Dynamic Height Widget](#dynamic-height-widget) |
 
 **Note**: The widget meta data does not contain a gid property as it is automatically inferred and referenced using the format
 
 > \<plugin gid\>:\<widget cid\>
+
+### Dynamic Height Widget
+
+When the widget's `dynamicHeight` meta property is set to true, it indicates that the widget has dynamic height. Dynamic height widgets are special widgets that are treated different at the portal:
+
+- At the canvas editor page, dynamic height widgets must be placed at the bottom most position on the canvas, meaning there can be no other widgets beneath a dynamic height widget.
+- During report generation, the widget can "overflow" beyond the current page. The report generator will automatically insert page breaks.
+
+Dynamic height widget can use CSS `break-after`, `break-before` and `break-inside` properties to specify where the page breaks can or cannot occur.
 
 ### Widget Size Object Schema
 

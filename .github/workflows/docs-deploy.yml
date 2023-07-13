@@ -35,6 +35,7 @@ jobs:
 
       - name: Push to gh-pages
         run: |
+          source env/bin/activate
           git config user.name "imda-btg"
           git config user.email "idma-btg@imda.gov.sg"
 

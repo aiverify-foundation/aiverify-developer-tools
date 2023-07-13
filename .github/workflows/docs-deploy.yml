@@ -27,10 +27,11 @@ jobs:
           ref: docs
 
       # Install dependencies (mkdocs)
-
-      - name: Install mdkdocs
+      - name: Install dependencies
         run: |
-          pip install mkdocs
+          python -m venv env
+          source env/bin/activate
+          pip install -r requirements.txt
 
       - name: Push to gh-pages
         run: |

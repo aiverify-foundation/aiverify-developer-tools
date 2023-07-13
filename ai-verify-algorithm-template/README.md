@@ -7,21 +7,29 @@ A Cookiecutter project template that allows users to create projects from, e.g. 
 - Flexible
 - Easy to use
 
-## For users of existing templates
+## For Users Using Our Template
 
-- Installation
+1. Installation
   ```bash
   pip3 install cookiecutter
   ```
 
-- Simple command line usage:
-
+2. Clone this repository
   ```bash
-  $ cookiecutter https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-test-engine/test-engine-algo-plugin-template
-  # You'll be prompted to enter your git credentials to access this repository
-  # You'll then be prompted to enter values to generate your plugin
+  git clone https://github.com/IMDA-BTG/aiverify-developer-tools.git
+  ```
+3. Go to the folder folder where the algorithm are stored
+  ```bash
+  cd aiverify-developer-tools/template_plugin/algorithms
+  ```
+3. Run cookiecutter and point it to the provided template
+  ```bash
+  cookiecutter ../../ai-verify-algorithm-template
+  # You'll be prompted to enter values to generate your plugin
   # Once completed, it will create a folder with the plugin name you defined in your current working directory
   ```
+
+Refer to the [Developer Guide](https://imda-btg.github.io/aiverify-developer-tools/guided_example/your_first_algorithm/) for detailed instruction. 
   
 # Reference Project
   - CookieCutter (https://github.com/cookiecutter/cookiecutter)

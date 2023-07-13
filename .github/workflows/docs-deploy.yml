@@ -36,6 +36,6 @@ jobs:
           git config user.name "imda-btg"
           git config user.email "idma-btg@imda.gov.sg"
           git config pull.rebase true
-          git pull origin gh-pages
+          git pull origin docs
 
           mkdocs gh-deploy --clean

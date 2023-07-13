@@ -23,7 +23,7 @@ jobs:
       - name: Checkout docs
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{secrets.DEPLOY_DOCS_KEY}}
+          ssh-key: ${{secrets.DEPLOY_DOCS_DEV_KEY}}
           ref: docs
 
       # Install dependencies (mkdocs)

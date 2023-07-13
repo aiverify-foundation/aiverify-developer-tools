@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ssh-key: ${{secrets.DEPLOY_DOCS_KEY}}
+          ref: docs
 
       # Install dependencies (mkdocs)
 
@@ -35,6 +36,5 @@ jobs:
         run: |
           git config user.name "imda-btg"
           git config user.email "idma-btg@imda.gov.sg"
-          git checkout docs
 
           mkdocs gh-deploy --clean

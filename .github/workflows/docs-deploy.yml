@@ -48,7 +48,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.DEPLOY_DOCS_DEV_KEY }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Update documentation"
           title: "Update documentation"
           body: "Update documentation"

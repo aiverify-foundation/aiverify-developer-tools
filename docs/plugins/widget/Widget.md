@@ -52,7 +52,7 @@ The **widgetSize** property defines the minimum and maximum size of the widget. 
 
 ### Widget Property Schema
 
-The widget properties allows widget developers to define properties that affects the look and/or behaviour of the widget. Example of properties are color, textual information, etc. Each property should have a default value that is used if the property has no input. The template designers can change the properties of a widget by right clicking the widget in the canvas page to bring up the propery dialog. Each property value can be a string input or selected from the canvas *Global Properties*.
+The widget properties allows widget developers to define properties that affects the look and/or behaviour of the widget. Example of properties are color, textual information, etc. Each property should have a default value that is used if the property has no input. The template designers can change the properties of a widget by right clicking the widget in the canvas page to bring up the property dialog. Each property value can be a string input or selected from the canvas *Global Properties*.
 
 | Propreties | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |

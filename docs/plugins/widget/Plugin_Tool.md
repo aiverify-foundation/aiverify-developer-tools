@@ -94,7 +94,7 @@ To generate plugin with random gid.
 ai-verify-plugin gp --name "My Plugin" --description "Just a test plugin"
 ```
 
-To genreate plugin with specific gid.
+To generate plugin with specific gid.
 ```
 ai-verify-plugin gp "myplugin" --name "My Plugin" --description "Just a test plugin"
 ```

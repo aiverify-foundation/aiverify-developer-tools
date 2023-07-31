@@ -50,3 +50,6 @@ jobs:
           title: "Update documentation"
           body: "Update documentation"
           branch: "update-documentation"
+          labels: |
+            automerge,
+            documentation

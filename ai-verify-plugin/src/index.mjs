@@ -1,14 +1,19 @@
 #!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+
+import { rootDir } from './utils.mjs';
+import * as dotenv from 'dotenv';
+dotenv.config({ path: path.join(rootDir, ".env") })
 
 import semver from 'semver';
 import { URL } from 'node:url';
-import fs from 'node:fs';
-import path from 'node:path';
 import { v4 as uuidv4 } from 'uuid';
 
 import { generatePlugin, validatePlugin, zipPlugin, PLUGIN_META_FILE } from './plugin.mjs';
 import { generateWidget } from './reportWidget.mjs';
 import { generateInputBock } from './inputBlock.mjs';
+import { generateAlgorithm } from './algorithms.mjs';
 import { runPlayground } from './playground.mjs';
 import { runTest } from './test.mjs';
 
@@ -74,10 +79,17 @@ const argv = yargs(process.argv.slice(2))
       type: 'string',
       describe: 'Plugin author',
       requiresArg: true,
+      default: "AI Verify"
     }).option('description', {
       type: 'string',
       describe: 'Plugin description',
       requiresArg: true,
+    }).option('license', {
+      type: 'string',
+      describe: 'Plugin opensource license',
+      requiresArg: true,
+      choices: ["Apache Software License 2.0", "MIT", "BSD-3", "GNU GPL v3.0", "Mozilla Public License 2.0"],
+      default: "Apache Software License 2.0",
     }).option('url', {
       type: 'string',
       describe: 'Plugin URL',
@@ -270,6 +282,53 @@ const argv = yargs(process.argv.slice(2))
     // if (!argv.name)
     //   argv.name = argv.cid;
     generateInputBock(argv);
+  })
+  .command(['generate-algorithm <cid>','ga'], 'Generate skeleton AI Verify algorithm', (yargs) => {
+    yargs.positional('cid', {
+      type: 'string',
+      describe: 'Algorithm Component ID'
+    }).option('interactive', {
+      type: 'boolean',
+      describe: 'Prompt for arguments (will ignore rest of command line options)',
+    }).option('author', {
+      type: 'string',
+      describe: 'Author name',
+      requiresArg: true,
+      default: "Example Author"
+    }).option('pluginVersion', {
+      type: 'string',
+      describe: 'Plugin version',
+      requiresArg: true,
+      default: "0.1.0",
+    }).option('description', {
+      type: 'string',
+      describe: 'Algorithm description',
+      requiresArg: true,
+    }).option('modelSupport', {
+      type: 'string',
+      describe: 'Algoritm model support',
+      choices: ["Classification", "Regression", "Both"],
+      default: "Classification",
+    }).option('requireGroundTruth', {
+      describe: 'Whether this algorithm require ground truth (--no-requireGroundTruth to indicate not required)',
+      type: "boolean",
+      default: true,
+    }).option('pluginDir', {
+      describe: 'Path to plugin directory',
+      type: "string",
+      requiresArg: true,
+      default: "."
+    }).check((argv, options) => {
+      // console.log("check", argv, options)
+      findPluginRoot(argv);
+      return true;
+    })
+  }, function (argv) {
+    if (!argv.name)
+      argv.name = argv.cid;
+    if (!argv.description)
+      argv.description = argv.name;
+    generateAlgorithm(argv);
   })
   .command('zip [pluginDir]', 'Create the plugin zip file', (yargs) => {
     yargs.positional('pluginDir', {

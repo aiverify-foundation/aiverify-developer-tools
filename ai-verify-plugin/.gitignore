@@ -21,3 +21,4 @@
 !playground/
 !playground/**
 !snapshotResolver.cjs
+!.env.development

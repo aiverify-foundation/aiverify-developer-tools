@@ -3,12 +3,14 @@ import path from 'node:path';
 import { validate } from 'jsonschema';
 import AdmZip from "adm-zip";
 
-import { srcDir, readJSON } from './utils.mjs';
+import { srcDir, readJSON, rootDir } from './utils.mjs';
 
 import { pluginSchema } from './schemas.mjs';
 import { validateAllWidgets } from './reportWidget.mjs';
 import { validateAllInputBlocks } from './inputBlock.mjs';
 import { validateAllAlgorithms } from './algorithms.mjs';
+import { exit } from 'node:process';
+import moment from 'moment';
 
 
 export const PLUGIN_META_FILE = "plugin.meta.json"; 
@@ -140,6 +142,45 @@ ai-verify-plugin zip --pluginPath=<path to plugin directory>
   if (!meta.name)
     meta.name = meta.gid;
   fs.writeFileSync(metaFile, JSON.stringify(meta, null, 2) + "\n")
+
+  // create license file
+  if (argv.license) {
+    const licenseDir = path.join(rootDir, "../ai-verify-algorithm-template/{{cookiecutter.project_slug}}/templates/licenses");
+    let filename = "";
+    switch (argv.license) {
+      case 'Apache Software License 2.0':
+        filename = 'Apache-2';
+        break;
+      case 'MIT':
+        filename = 'MIT';
+        break;
+      case 'BSD-3':
+        filename = 'BSD-3';
+        break;
+      case 'GNU GPL v3.0':
+        filename = 'GPL-3';
+        break;
+      case 'Mozilla Public License 2.0':
+        filename = 'MPL-2';
+        break;
+    }
+    const licenseTemplateFile = path.join(licenseDir, filename);
+    if (!fs.existsSync(licenseTemplateFile)) {
+      console.error(`License file template for ${license} not found`);
+      exit(-1);
+    }
+    const licenseFile = path.join(pluginDir, "LICENSE");
+    try {
+      let tmpl = fs.readFileSync(licenseTemplateFile, 'utf-8');
+      tmpl = tmpl.replaceAll(/{#.+#}/ig, '')
+      tmpl = tmpl.replaceAll(/{{cookiecutter.author}}/ig, argv.author || "")
+      tmpl = tmpl.replaceAll(/{%\s+now\s+'utc',\s+'%Y'\s+%}/ig, moment().format('YYYY'))
+      fs.writeFileSync(licenseFile, tmpl, { flag: 'w+' });
+    } catch (e) {
+      console.error("Error generating license file", e);
+      exit(-1)
+    }
+  }
 }
 
 /**

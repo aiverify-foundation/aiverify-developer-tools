@@ -132,7 +132,7 @@ default_context:
   require_ground_truth: "${argv.requireGroundTruth?"True":"False"}"
 `)
 
-    const args = ['--config-file', configFile, templateDir];
+    const args = ['--config-file', configFile, "-o", algoDir, templateDir];
     if (!argv.interactive) {
       args.unshift('--no-input')
     }

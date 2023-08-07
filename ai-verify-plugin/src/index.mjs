@@ -15,7 +15,7 @@ import { generateWidget } from './reportWidget.mjs';
 import { generateInputBock } from './inputBlock.mjs';
 import { generateAlgorithm } from './algorithms.mjs';
 import { runPlayground } from './playground.mjs';
-import { runTest } from './test.mjs';
+import { runTest, runAlgoTests } from './test.mjs';
 
 function validateID (id) {
   return id.match(/^[a-zA-Z0-9][a-zA-Z0-9-._]*$/);
@@ -374,7 +374,7 @@ const argv = yargs(process.argv.slice(2))
       console.log("Plugin is invalid")
     }
   })
-  .command('test', 'Run the plugin tests', (yargs) => {
+  .command(['test-widget', 'testw'], 'Run the plugin tests for widgets and input blocks', (yargs) => {
     yargs.option('pluginDir', {
       type: 'string',
       describe: 'Path to plugin directory',
@@ -434,6 +434,42 @@ const argv = yargs(process.argv.slice(2))
     })
   }, async function (argv) {
     // console.log("This commmand is not implemented yet.")
+    await runTest(argv);
+  })
+  .command(['test-algorithm', 'testa'], 'Run the plugin tests for algorithms', (yargs) => {
+    yargs.option('pluginDir', {
+      type: 'string',
+      describe: 'Path to plugin directory',
+      requiresArg: true,
+      default: "."
+    })
+    .option('silent', {
+      type: 'boolean',
+      describe: 'Do not display the stdout from the algorithm tests on the console.',
+      default: false,
+    })
+    .check((argv, options) => {
+      findPluginRoot(argv);
+      return true;
+    })
+  }, async function (argv) {
+    // console.log("This commmand is not implemented yet.")
+    await runAlgoTests(argv);
+  })
+  .command('test-all', 'Run all the tests for widgets, input blocks and algorithms with default options', (yargs) => {
+    yargs.option('pluginDir', {
+      type: 'string',
+      describe: 'Path to plugin directory',
+      requiresArg: true,
+      default: "."
+    })
+    .check((argv, options) => {
+      findPluginRoot(argv);
+      return true;
+    })
+  }, async function (argv) {
+    // console.log("This commmand is not implemented yet.")
+    await runAlgoTests(argv);
     await runTest(argv);
   })
   .command('playground', 'Launch the plugin playround', (yargs) => {

@@ -14,8 +14,6 @@ const ALGORITHM_SUBDIR = "algorithms";
 const SYNTAX_CHECKER = "syntax_checker.py";
 
 export async function validateAlgorithm(argv, meta, subdir) {
-  const pluginDir = argv._pluginDir;
-
   const python = process.env.PYTHON || "python";
 
   const checkerScript = path.join(subdir, SYNTAX_CHECKER);

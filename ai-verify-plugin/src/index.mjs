@@ -304,6 +304,11 @@ const argv = yargs(process.argv.slice(2))
       type: 'string',
       describe: 'Algorithm description',
       requiresArg: true,
+    }).option('tag', {
+      describe: 'Allow users to search and filter by tags',
+      requiresArg: true,
+      array: true,
+      type: 'string',
     }).option('modelSupport', {
       type: 'string',
       describe: 'Algoritm model support',
@@ -323,12 +328,12 @@ const argv = yargs(process.argv.slice(2))
       findPluginRoot(argv);
       return true;
     })
-  }, function (argv) {
+  }, async function (argv) {
     if (!argv.name)
       argv.name = argv.cid;
     if (!argv.description)
       argv.description = argv.name;
-    generateAlgorithm(argv);
+    await generateAlgorithm(argv);
   })
   .command('zip [pluginDir]', 'Create the plugin zip file', (yargs) => {
     yargs.positional('pluginDir', {

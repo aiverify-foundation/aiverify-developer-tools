@@ -83,7 +83,7 @@ export async function validateAllAlgorithms(argv) {
   return true;
 }
 
-export function generateAlgorithm(argv) {
+export async function generateAlgorithm(argv) {
   const COOKIECUTTER = process.env.COOKIECUTTER || "cookiecutter";
 
   console.log("Generating skeleton algorithm..");
@@ -161,6 +161,18 @@ default_context:
     cc.on("close", (code) => {
       rl.close();
       cleanupFiles();
+
+      // update meta
+      const metaFilename = path.join(compDir, `${argv.cid}.meta.json`);
+      const meta = readJSON(metaFilename)
+      if (argv.tag) {
+        meta.tags = argv.tag;
+      }
+      fs.writeFile(metaFilename, JSON.stringify(meta, null, 2), err => {
+        if (err) {
+          console.error("Error updating algorithm meta file");
+        }
+      });
     });
   } catch (e) {
     console.error("Error executing cookiecutter", e.stdout.toString());

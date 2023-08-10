@@ -302,6 +302,8 @@ export function zipPlugin (argv) {
       const meta = readJSON(metaPath);
       if (Array.isArray(meta.requiredFiles)) {
         for (let f of meta.requiredFiles) {
+          if (f === "LICENSE")
+            continue;
           const subpath = path.join(algoPath, f);
           const stat = fs.lstatSync(subpath);
           if (stat.isDirectory()) {

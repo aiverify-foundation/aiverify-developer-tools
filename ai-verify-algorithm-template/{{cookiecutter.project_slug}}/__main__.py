@@ -7,14 +7,16 @@ if __name__ == "__main__":
     #       Define core modules path as relative/absolute path. If you cloned the project using 
     #       the provided setup script, leave core_modules_path as an empty string.
     # Example:
-    # data_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
-    # model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
+    # data_path = "tests/user_defined_files/data/sample_reg_donation_data.sav"
+    # model_path = "tests/user_defined_files/model/sample_reg_donation_sklearn_linear.LogisticRegression.sav"
+    # ground_truth_path = "tests/user_defined_files/data/sample_reg_donation_data.sav"
     # ground_truth = "default"
-    # model_type = ModelType.CLASSIFICATION
+    # model_type = ModelType.REGRESSION
     core_modules_path = ""
-    data_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
-    model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
-    ground_truth_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
+    
+    data_path = "tests/user_defined_files/data/sample_bc_credit_data.sav"
+    model_path = "tests/user_defined_files/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav"
+    ground_truth_path = "tests/user_defined_files/data/sample_bc_credit_data.sav"
     ground_truth = "default"
     model_type = ModelType.CLASSIFICATION
     run_pipeline = False

@@ -3,7 +3,7 @@ import path from 'node:path';
 import { validate } from 'jsonschema';
 import AdmZip from "adm-zip";
 
-import { srcDir, readJSON } from './utils.mjs';
+import { srcDir, readJSON, linkModulePath } from './utils.mjs';
 
 import { pluginSchema } from './schemas.mjs';
 import { validateAllWidgets } from './reportWidget.mjs';
@@ -151,6 +151,8 @@ ai-verify-plugin zip --pluginPath=<path to plugin directory>
  */
 export async function validatePlugin(argv) {
   const pluginDir = argv._pluginDir;
+
+  linkModulePath();
 
   if (!validatePluginOnly(argv)) {
     return false;

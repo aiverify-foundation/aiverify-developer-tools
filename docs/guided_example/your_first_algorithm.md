@@ -1,6 +1,6 @@
 # Creating your First Algorithm Component
 
-In this guided example, you will be building a plugin that takes in a feature value from the user and prints out that value in a generated report. This plugin requires two type of components: **algorithm** and **widget** (See [this page](../introduction_to_plugins) for more details on *Plugins*). 
+In this example, you will be building an algorithm component that takes in a feature value from the user and prints out that value in a generated report. 
 
 There are three objectives in this algorithm component example:
 
@@ -10,52 +10,27 @@ There are three objectives in this algorithm component example:
 
 ## Generating the algorithm component project
 
-First, we will have to create a new algorithm component project. If you haven't setup your environment, [follow the instructions on this page](../../getting_started/install_aiverify_dev_tools) before continuing. 
-
-!!!info
-    For this guided example, we will be using the **template_plugin** folder to store the algorithm and widget components, before using *deploy_plugin.sh* helper script to package and deploy the final plugin zip.
-
-Algorithms are stored in the **template_plugin/algorithms** folder. From your terminal, use `cookiecutter` to generate an algorithm component template for your new algorithm.
+Algorithms are stored under the **my_plugin/algorithms** folder. From your terminal, use [`ai-verify-plugin ga`](../plugins/Plugin_Tool.md#generate-algorithm-alias-ga) to generate an algorithm component template for your new algorithm.
 
 ```bash
-# From the aiverify-developer-tools project directory
-cd template_plugin/algorithms
+# Navigate to the plugin project directory
+cd my_plugin
 
-# use cookiecutter with the algorithm template
-cookiecutter ../../ai-verify-algorithm-template
+# Generate the algorithm template
+ai-verify-plugin ga my_algorithm --name "My Algorithm" --description "This algorithm returns the value of the feature name selected by the user."
 ```
 
-Answer the following questions:
-
-| Required Input | Action |
-| ---- | ---------- |
-| author [example_author] | We will use the default. *Press Enter.* |
-| plugin_name [example plugin] | Type **your-first-algorithm-component**. *Press Enter.* |
-| Choose from 1 [1] | We will use the default. *Press Enter.* |
-| plugin_version [0.1.0] | We will use the default. *Press Enter.*  |
-| plugin_description [My example plugin] | Type **Your first algorithm component**. *Press Enter.*  |
-| Select license [1] | We will use the default. *Press Enter.*  |
-| Select algo_model_support [1] | We will use the default. *Press Enter.* |
-| Select require_ground_truth [1] | We will use the default. *Press Enter.* |
-
-!!! note
-    The plugin name ```your-first-algorithm-component``` will automatically be converted to ```your_first_algorithm_component```. The cookiecutter generator will automatically convert the name to create the project slug. Refer to the [guide](https://peps.python.org/pep-0008/#package-and-module-names) on **Package and Module Names**.
-
-Verify that the directory ```your_first_algorithm_component``` exists in your current directory:
+Yay! You have generated an algorithm component project to create your first algorithm. Verify that the directory ```algorithms/my_algorithm``` exists in your current directory.
 
 ```bash
-ls | grep your_first_algorithm_component
+ls algorithms/my_algorithm
 ```
 
-![Generated directory](../images/generated_directory.png)
-
-If you do not see the project name, something in the setup is incomplete. Please re-create the project directory through the steps above again.
-
-Yay! You have generated an algorithm component project to create your first algorithm (See more details at [Understanding your algorithm project](../plugins/algorithm/file_structure.md))
+You should see the files generated for the algorithm component under the directory. For more information on the files generated, see [Understanding your algorithm project](../plugins/algorithm/file_structure.md).
 
 ## Modifying input schema
 
-Modify `input.schema.json` to request an input called `feature_name` from the user when the user uses this algorithm. Notice the highlighted lines that requires a `feature_name` field, and the properties of the `feature_name` is also defined.
+First, modify `input.schema.json` to request an input called `feature_name` from the user when the user uses this algorithm. Notice the highlighted lines that requires a `feature_name` field, and the properties of the `feature_name` is also defined.
 
 ```py title="input.schema.json" linenums="1" hl_lines="6 9 10 11 12 13"
 {
@@ -77,32 +52,14 @@ Modify `input.schema.json` to request an input called `feature_name` from the us
 
 ## Modifying algorithm
 
-Modify `your_first_algorithm_component.py` to receive and return the data of the requested `feature_name`. 
+Modify `my_algorithm.py` to receive and return the data of the requested `feature_name`. 
 
 !!! Tip
-    All codes generated using the `cookiecutter` template has been annotated with `TODO:` for users to quickly navigate to areas that require code modification.
-
-First, update the description of this algorithm in the code.
-
-```py title="your_first_algorithm_component.py" linenums="23" hl_lines="3 4 9"
-class Plugin(IAlgorithm):
-    """
-    # TODO: Update the plugin description below
-    The Plugin(your-first-algorithm-component) class specifies methods in generating results for algorithm
-    """
-
-    # Some information on component
-    _name: str = "your-first-algorithm-component"
-    _description: str = "This algorithm returns the value of the feature name selected by the user."
-    _version: str = "0.1.0"
-    _metadata: PluginMetadata = PluginMetadata(_name, _description, _version)
-    _plugin_type: PluginType = PluginType.ALGORITHM
-    _requires_ground_truth: bool = False
-```
+    All codes generated has been annotated with `TODO:` for users to quickly navigate to areas that require code modification.
 
 Next, update the `generate` method to retrieve the return the values of the selected `feature_name` in a given sample data file.
 
-```py title="your_first_algorithm_component.py" linenums="167" hl_lines="8 10 13 14 15"
+```py title="my_algorithm.py" linenums="319" hl_lines="8 10 13 14 15"
     def generate(self) -> None:
         """
         A method to generate the algorithm results with the provided data, model, ground truth information.
@@ -152,7 +109,7 @@ In this algorithm, we have updated the `data_path`, `model_path`, `ground_truth_
 
 If you created the algorithm component with cookiecutter but did not use the recommended directory structure, you only need to point the `core_modules_path` to the **test-engine-core-modules** folder in step 1 of the [Installing AI Verify Developer Tools](../getting_started/install_aiverify_dev_tools.md) page. If you followed the recommended directory structure, you can leave the `core_modules_path` as an empty string.
 
-```py title="__main__.py" linenums="1" hl_lines="12 13 14 15 16 17 26"
+```py title="__main__.py" linenums="3" hl_lines="12 13 14 15 16 17 26"
 from tests.plugin_test import PluginTest
 
 if __name__ == "__main__":
@@ -160,14 +117,16 @@ if __name__ == "__main__":
     #       Define core modules path as relative/absolute path. If you cloned the project using 
     #       the provided setup script, leave core_modules_path as an empty string.
     # Example:
-    # data_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
-    # model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
+    # data_path = "tests/user_defined_files/data/sample_reg_donation_data.sav"
+    # model_path = "tests/user_defined_files/model/sample_reg_donation_sklearn_linear.LogisticRegression.sav"
+    # ground_truth_path = "tests/user_defined_files/data/sample_reg_donation_data.sav"
     # ground_truth = "default"
-    # model_type = ModelType.CLASSIFICATION
+    # model_type = ModelType.REGRESSION
     core_modules_path = ""
-    data_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
-    model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
-    ground_truth_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
+    
+    data_path = "tests/user_defined_files/data/sample_bc_credit_data.sav"
+    model_path = "tests/user_defined_files/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav"
+    ground_truth_path = "tests/user_defined_files/data/sample_bc_credit_data.sav"
     ground_truth = "default"
     model_type = ModelType.CLASSIFICATION
     run_pipeline = False
@@ -185,10 +144,10 @@ if __name__ == "__main__":
 !!! Note
     Ground truth is optional so if your algorithm does not require ground truth, `ground_truth_path` and `ground_truth` can be left as an empty string `""`.
 
-Next, run `python` to test your algorithm.
+Next, run [`ai-verify-plugin testa`](../plugins/Plugin_Tool.md#test-algorithm-alias-testa) to test your algorithm.
 
 ```bash
-python .
+ai-verify-plugin testa
 ```
 
 If the test passes (no error messages in terminal), you have **successfully completed** the creation of the algorithm component. At this stage, you can either [**deploy your algorithm component**](./deploy_your_plugin.md) as a standalone plugin, or continue to [**work on other components**](./your_first_widget.md) (eg. another algorithm, widget, input block etc) before packaging it as a single plugin.

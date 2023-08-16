@@ -2,24 +2,6 @@
 
 The [ai-verify-plugin](https://github.com/IMDA-BTG/aiverify-developer-tools/tree/main/ai-verify-plugin) tool is a command-line tool that help widget and input block developers to develop and scaffold AI Verify plugin projects directly from command line. 
 
-## Installation
-
-To install the tool, clone the [aiverify-developer-tools](https://github.com/IMDA-BTG/aiverify-developer-tools) repo. The plugin tools is also dependent on the shared library in the [aiverify repository](https://github.com/IMDA-BTG/aiverify).
-
-To clone the repository, run the following commands.
-```
-git clone git@github.com:IMDA-BTG/aiverify-developer-tools.git
-```
-
-Assuming the aiverify repository and the aiverify-developer-tools is under the same parent folder, install the plugin tool and link the shared library with the following command.
-
-```
-cd aiverify-developer-tools/ai-verify-plugin
-npm install
-npm link ../../aiverify/ai-verify-shared-library/
-npm install -g
-```
-
 ## Basic Use
 
 Once the tool is installed, it can be invoked with `ai-verify-plugin`. The command line syntax is as follows:
@@ -43,22 +25,26 @@ You can view the list of commands with `ai-verify-plugin --help`.
 ai-verify-plugin <cmd> [args]
 
 Commands:
-  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                   [aliases: gp]
-  ai-verify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                           [aliases: gw]
-  ai-verify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                     [aliases: gib]
+  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
+  ai-verify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                          [aliases: gw]
+  ai-verify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                    [aliases: gib]
+  ai-verify-plugin generate-algorithm <cid>   Generate skeleton AI Verify algorithm                       [aliases: ga]
   ai-verify-plugin zip [pluginDir]            Create the plugin zip file
   ai-verify-plugin validate                   Validate AI Verify plugin
-  ai-verify-plugin test                       Run the plugin tests
+  ai-verify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
+  ai-verify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
+  ai-verify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
+                                              options
   ai-verify-plugin playground                 Launch the plugin playround
 
 Options:
-  --help  Show help                                                                                            [boolean]
+  --help  Show help                                                                                           [boolean]
 ```
 
 **Tip**: Using the gp, gw and gib commands on existing plugin or component will update the component meta data with any new arguments specified. To overwrite existing meta properties, use the *--force* argument.
 
 ## generate-plugin [alias: gp]
-This command generates a skeleton [plugin](Plugin.md) project.
+This command generates a skeleton [plugin](../guided_example/introduction_to_plugins.md) project.
 
 ```
 ai-verify-plugin generate-plugin [gid]
@@ -72,8 +58,11 @@ Options:
   --help         Show help                                                                                     [boolean]
   --name         Plugin name. If not provided will be set to same as gid.                                       [string]
   --version      Plugin version. Version should be a valid semantic version.                 [string] [default: "1.0.0"]
-  --author       Plugin author                                                                                  [string]
+  --author       Plugin author                                                           [string] [default: "AI Verify"]
   --description  Plugin description                                                                             [string]
+  --license      Plugin opensource license
+         [string] [choices: "Apache Software License 2.0", "MIT", "BSD-3", "GNU GPL v3.0", "Mozilla Public License 2.0"]
+                                                                                [default: "Apache Software License 2.0"]
   --url          Plugin URL                                                                                     [string]
   --force        Overwrite existing settings. By default existing settings will not be overwritten.            [boolean]
 ```
@@ -84,6 +73,7 @@ If the command run is successful, the tool will generate a folder with the same 
 | ---- | ----------- |
 | plugin.meta.json | Contains the plugin meta information |
 | README.md | Contains generic README for the plugin |
+| LICENSE | Contains the selected license file for the plugin project |
 | .gitignore | List of untracked files for git to ignore |
 
 
@@ -100,7 +90,7 @@ ai-verify-plugin gp "myplugin" --name "My Plugin" --description "Just a test plu
 ```
 
 ## generate-widget [alias: gw]
-To generate a [widget](Widget.md), cd to a plugin project folder and run the following command.
+To generate a [widget](../guided_example/your_first_widget.md), cd to a plugin project folder and run the following command.
 
 ```
 ai-verify-plugin generate-widget <cid>
@@ -121,10 +111,11 @@ Options:
   --name               Widget name. If not provided will be set to same as cid.                                 [string]
   --description        Widget description                                                                       [string]
   --tag                Allow users to search and filter by tags                                                  [array]
-  --dep, --dependency  Option format: "<Algorithm|InputBlock>,gid[,version]". Add the option as dependency in the widget
-                       meta config.                                                                              [array]
+  --dep, --dependency  Option format: "<Algorithm|InputBlock>,cid[,gid,version]". Add the option as dependency in the
+                       widget meta config.                                                                       [array]
   --prop, --property   Option format: "key[,helper][,default]". Add the option as property in the widget meta config.
                                                                                                                  [array]
+  --dynamicHeight      Indicate that this widget has dynamic height.                                           [boolean]
   --force              Overwrite existing settings. By default existing settings will not be overwritten.      [boolean]
   --pluginDir          Path to plugin directory                                                  [string] [default: "."]
 ```
@@ -168,7 +159,7 @@ ai-verify-plugin gw "mywidget" --name "My Widget" --description "Widget with dep
 ```
 
 ## generate-inputblock [alias: gib]
-To generate an [input block](InputBlock.md), cd to a plugin project folder and run the following command.
+To generate an [input block](./widget/InputBlock.md), cd to a plugin project folder and run the following command.
 
 ```
 ai-verify-plugin generate-inputblock <cid>
@@ -210,6 +201,33 @@ Generate with input block with dialog width "lg"
 ai-verify-plugin gib "myinputblock" --name "My Input Block" --description "An input block with dialog width lg" --width lg
 ```
 
+## generate-algorithm [alias: ga]
+To generate an [Algorithm](../guided_example/your_first_algorithm.md), cd to a plugin project folder and run the following command.
+
+```
+ai-verify-plugin generate-algorithm <cid>
+
+Generate skeleton AI Verify algorithm
+
+Positionals:
+  cid  Algorithm Component ID                                                                        [string] [required]
+
+Options:
+  --help                Show help                                                                              [boolean]
+  --interactive         Prompt for arguments (will ignore rest of command line options)                        [boolean]
+  --author              Author name                                                 [string] [default: "Example Author"]
+  --pluginVersion       Plugin version                                                       [string] [default: "0.1.0"]
+  --description         Algorithm description                                                                   [string]
+  --tag                 Allow users to search and filter by tags                                                 [array]
+  --modelSupport        Algoritm model support
+                                  [string] [choices: "Classification", "Regression", "Both"] [default: "Classification"]
+  --requireGroundTruth  Whether this algorithm require ground truth (--no-requireGroundTruth to indicate not required)
+                                                                                               [boolean] [default: true]
+  --pluginDir           Path to plugin directory                                                 [string] [default: "."]
+```
+Upon successful command run, the algorithm boilerplate files are generated under the **algorithms/{algorithm cid}** sub-folder:
+
+
 ## zip 
 This commands create a plugin zip file that can be uploaded to the AI Verify portal using the Plugin Manager.
 
@@ -242,35 +260,65 @@ Options:
   --pluginDir  Path to plugin directory                                                          [string] [default: "."]
 ```
 
-## test
-This command uses [Jest](https://jestjs.io/) to run tests on the plugin files and scripts.
+## test-widget [alias: testw]
+This command uses [Jest](https://jestjs.io/) to run tests on the input blocks and widgets.
 
 ```
-ai-verify-plugin test
+ai-verify-plugin test-widget
 
-Run the plugin tests
+Run the plugin tests for widgets and input blocks
 
 Options:
-      --help                         Show help                                                                                [boolean]
-      --pluginDir                    Path to plugin directory                                                   [string] [default: "."]
-      --coverage, --collectCoverage  Indicates that test coverage information should be collected and reported in the output.
-                                                                                                             [boolean] [default: false]
-      --listTests                    Lists all test files that Jest will run given the arguments, and exits. [boolean] [default: false]
-      --showConfig                   Print your Jest config and then exits.                                  [boolean] [default: false]
-      --watch                        Watch files for changes and rerun tests related to changed files.       [boolean] [default: false]
-      --watchAll                     Watch files for changes and rerun all tests when something changes.     [boolean] [default: false]
+      --help                         Show help                                                                 [boolean]
+      --pluginDir                    Path to plugin directory                                    [string] [default: "."]
+      --coverage, --collectCoverage  Indicates that test coverage information should be collected and reported in the
+                                     output.                                                  [boolean] [default: false]
+      --listTests                    Lists all test files that Jest will run given the arguments, and exits.
+                                                                                              [boolean] [default: false]
+      --showConfig                   Print your Jest config and then exits.                   [boolean] [default: false]
+      --watch                        Watch files for changes and rerun tests related to changed files.
+                                                                                              [boolean] [default: false]
+      --watchAll                     Watch files for changes and rerun all tests when something changes.
+                                                                                              [boolean] [default: false]
       --ci                           When this option is provided, Jest will assume it is running in a CI environment.
-                                                                                                             [boolean] [default: false]
+                                                                                              [boolean] [default: false]
   -u, --updateSnapshot               Use this flag to re-record every snapshot that fails during this test run.
-                                                                                                             [boolean] [default: false]
-      --json                         Prints the test results in JSON. This mode will send all other test output and user messages to
-                                     stderr.                                                                 [boolean] [default: false]
-      --outputFile                   Write test results to a file when the --json option is also specified.                    [string]
+                                                                                              [boolean] [default: false]
+      --json                         Prints the test results in JSON. This mode will send all other test output and user
+                                     messages to stderr.                                      [boolean] [default: false]
+      --outputFile                   Write test results to a file when the --json option is also specified.     [string]
 ```
 
 By default, the command will run *validation* and *snapshot* tests on the input blocks and widgets found under the plugin directory. The snapshots will be saved to `__snapshots__` folder under the plugin directory. It is recommended that developers add the `__snapshots__` folder to their project repository. 
 
 To add additional Jest tests, developers can write their own tests and place them under `__tests__` folder under the plugin directory.
+
+## test-algorithm [alias: testa]
+This command run the algorithm test script for each algorithm found under the plugin directory.
+
+```
+ai-verify-plugin test-algorithm
+
+Run the plugin tests for algorithms
+
+Options:
+  --help       Show help                                                                                       [boolean]
+  --pluginDir  Path to plugin directory                                                          [string] [default: "."]
+  --silent     Do not display the stdout from the algorithm tests on the console.             [boolean] [default: false]
+```
+
+## test-all
+This command runs the tests for all algorithms, input blocks and widgets found under the plugin directory.
+
+```
+ai-verify-plugin test-all
+
+Run all the tests for widgets, input blocks and algorithms with default options
+
+Options:
+  --help       Show help                                                                                       [boolean]
+  --pluginDir  Path to plugin directory                                                          [string] [default: "."]
+```
 
 ## playground
 

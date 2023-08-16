@@ -47,9 +47,3 @@ Each instance of the components should be saved under the component folder; and 
 * widgetA.meta.json
 * widgetA.mdx
 
-## Template Plugin Structure
-
-In the aiverify-developer-tools repository, the **template_plugin** folder follows the plugin structure as mentioned above. The *deploy_plugin.sh* helper script helps to check and package the components into a single zip file for deployment.
-
-!!!info
-    Use the **template_plugin** folder to store the components before deploying it with *deploy_plugin.sh*.

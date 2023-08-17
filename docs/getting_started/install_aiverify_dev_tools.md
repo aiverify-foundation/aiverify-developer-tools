@@ -15,7 +15,9 @@ This page prepares your environment for development on AI Verify. By the end of 
     ├── ai-verify-algorithm-template/
     ├── ai-verify-plugin/
     └── template_plugin/
+├── my_plugin/
 └── my_virtual_environment/
+
 ```
 The Developer Tools require specific modules from the main AI Verify repository. If you have not installed AI Verify, use [sparse-checkout](https://git-scm.com/docs/git-sparse-checkout) on the AI Verify repository to selectively checkout files that are relevant to the Developer Tools.
 

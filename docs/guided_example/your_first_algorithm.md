@@ -107,7 +107,7 @@ First, update `__main__.py` with your sample data, model and ground truth files 
 
 In this algorithm, we have updated the `data_path`, `model_path`, `ground_truth_path` to the path of the files. The `ground_truth` has also been set to default. We have also updated the `plugin_argument_values` with required arguments to ensure that the input validation passes. This is typically an input parameter from the dataset. For the mock data, we will be using *gender* as the plugin argument value.
 
-If you created the algorithm component with cookiecutter but did not use the recommended directory structure, you only need to point the `core_modules_path` to the **test-engine-core-modules** folder in step 1 of the [Installing AI Verify Developer Tools](../getting_started/install_aiverify_dev_tools.md) page. If you followed the recommended directory structure, you can leave the `core_modules_path` as an empty string.
+**If you have been following every step from [Installing AI Verify Developer Tools](../getting_started/install_aiverify_dev_tools.md) to [Guided Example](../guided_example/deploy_your_plugin.md), you will need to update ```core_modules_path``` as shown below.** If you decide to structure the files differently, ensure that ```core_modules_path``` is an absolute/relative path pointing to your **test-engine-core-modules** folder.
 
 ```py title="__main__.py" linenums="3" hl_lines="12 13 14 15 16 17 26"
 from tests.plugin_test import PluginTest
@@ -122,7 +122,7 @@ if __name__ == "__main__":
     # ground_truth_path = "tests/user_defined_files/data/sample_reg_donation_data.sav"
     # ground_truth = "default"
     # model_type = ModelType.REGRESSION
-    core_modules_path = ""
+    core_modules_path = "../../../aiverify/test-engine-core-modules"
     
     data_path = "tests/user_defined_files/data/sample_bc_credit_data.sav"
     model_path = "tests/user_defined_files/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav"

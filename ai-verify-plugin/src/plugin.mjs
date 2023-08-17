@@ -1,32 +1,30 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { validate } from 'jsonschema';
+import fs from "node:fs";
+import path from "node:path";
+import { validate } from "jsonschema";
 import AdmZip from "adm-zip";
 
-import { srcDir, readJSON, rootDir } from './utils.mjs';
+import { readJSON, rootDir, linkModulePath } from "./utils.mjs";
 
-import { pluginSchema } from './schemas.mjs';
-import { validateAllWidgets } from './reportWidget.mjs';
-import { validateAllInputBlocks } from './inputBlock.mjs';
-import { validateAllAlgorithms } from './algorithms.mjs';
-import { exit } from 'node:process';
-import moment from 'moment';
+import { pluginSchema } from "./schemas.mjs";
+import { validateAllWidgets } from "./reportWidget.mjs";
+import { validateAllInputBlocks } from "./inputBlock.mjs";
+import { validateAllAlgorithms } from "./algorithms.mjs";
+import { exit } from "node:process";
+import moment from "moment";
 
-
-export const PLUGIN_META_FILE = "plugin.meta.json"; 
+export const PLUGIN_META_FILE = "plugin.meta.json";
 
 /**
  * Generate plugin.
- * 
- * @param {object} argv 
+ *
+ * @param {object} argv
  */
 export function generatePlugin(argv) {
-  console.log(`Generating skeleton project for ${argv.gid}..`)
+  console.log(`Generating skeleton project for ${argv.gid}..`);
 
-  // create director 
+  // create director
   const pluginDir = argv.gid;
-  if (!fs.existsSync(pluginDir))
-    fs.mkdirSync(pluginDir);
+  if (!fs.existsSync(pluginDir)) fs.mkdirSync(pluginDir);
 
   // Note: remove generation of npm files
 
@@ -65,7 +63,7 @@ export function generatePlugin(argv) {
   }
   fs.writeFileSync(packagePath, JSON.stringify(mypackage, null, 2) + "\n")
   */
-  
+
   // create gitignore
   const gitignorePath = path.join(pluginDir, ".gitignore");
   if (!fs.existsSync(gitignorePath) || argv.force) {
@@ -78,8 +76,8 @@ build/
 lib-cov
 coverage
 cache
-      `
-      fs.writeFileSync(gitignorePath, gitignore.trim() + "\n")    
+      `;
+    fs.writeFileSync(gitignorePath, gitignore.trim() + "\n");
   }
 
   // create README
@@ -110,9 +108,9 @@ Install the [ai-verify-plugin](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-ver
 \`\`\`
 ai-verify-plugin zip --pluginPath=<path to plugin directory>
 \`\`\`
-`
+`;
 
-    fs.writeFileSync(readmePath, readme.trim() + "\n")
+    fs.writeFileSync(readmePath, readme.trim() + "\n");
   }
 
   /*
@@ -126,42 +124,43 @@ ai-verify-plugin zip --pluginPath=<path to plugin directory>
   */
 
   // create plugin meta
-  const metaFile = path.join(pluginDir, PLUGIN_META_FILE)
+  const metaFile = path.join(pluginDir, PLUGIN_META_FILE);
   let meta = {
     gid: argv.gid,
   };
   if (fs.existsSync(metaFile)) {
     meta = readJSON(metaFile);
   }
-  for (let key of ["name","version","description","author","url"]) {
+  for (let key of ["name", "version", "description", "author", "url"]) {
     if (key in argv) {
-      if (!meta[key] || argv.force)
-        meta[key] = argv[key];
+      if (!meta[key] || argv.force) meta[key] = argv[key];
     }
   }
-  if (!meta.name)
-    meta.name = meta.gid;
-  fs.writeFileSync(metaFile, JSON.stringify(meta, null, 2) + "\n")
+  if (!meta.name) meta.name = meta.gid;
+  fs.writeFileSync(metaFile, JSON.stringify(meta, null, 2) + "\n");
 
   // create license file
   if (argv.license) {
-    const licenseDir = path.join(rootDir, "../ai-verify-algorithm-template/{{cookiecutter.project_slug}}/templates/licenses");
+    const licenseDir = path.join(
+      rootDir,
+      "../ai-verify-algorithm-template/{{cookiecutter.project_slug}}/templates/licenses"
+    );
     let filename = "";
     switch (argv.license) {
-      case 'Apache Software License 2.0':
-        filename = 'Apache-2';
+      case "Apache Software License 2.0":
+        filename = "Apache-2";
         break;
-      case 'MIT':
-        filename = 'MIT';
+      case "MIT":
+        filename = "MIT";
         break;
-      case 'BSD-3':
-        filename = 'BSD-3';
+      case "BSD-3":
+        filename = "BSD-3";
         break;
-      case 'GNU GPL v3.0':
-        filename = 'GPL-3';
+      case "GNU GPL v3.0":
+        filename = "GPL-3";
         break;
-      case 'Mozilla Public License 2.0':
-        filename = 'MPL-2';
+      case "Mozilla Public License 2.0":
+        filename = "MPL-2";
         break;
     }
     const licenseTemplateFile = path.join(licenseDir, filename);
@@ -171,14 +170,17 @@ ai-verify-plugin zip --pluginPath=<path to plugin directory>
     }
     const licenseFile = path.join(pluginDir, "LICENSE");
     try {
-      let tmpl = fs.readFileSync(licenseTemplateFile, 'utf-8');
-      tmpl = tmpl.replaceAll(/{#.+#}/ig, '')
-      tmpl = tmpl.replaceAll(/{{cookiecutter.author}}/ig, argv.author || "")
-      tmpl = tmpl.replaceAll(/{%\s+now\s+'utc',\s+'%Y'\s+%}/ig, moment().format('YYYY'))
-      fs.writeFileSync(licenseFile, tmpl, { flag: 'w+' });
+      let tmpl = fs.readFileSync(licenseTemplateFile, "utf-8");
+      tmpl = tmpl.replaceAll(/{#.+#}/gi, "");
+      tmpl = tmpl.replaceAll(/{{cookiecutter.author}}/gi, argv.author || "");
+      tmpl = tmpl.replaceAll(
+        /{%\s+now\s+'utc',\s+'%Y'\s+%}/gi,
+        moment().format("YYYY")
+      );
+      fs.writeFileSync(licenseFile, tmpl, { flag: "w+" });
     } catch (e) {
       console.error("Error generating license file", e);
-      exit(-1)
+      exit(-1);
     }
   }
 }
@@ -186,12 +188,14 @@ ai-verify-plugin zip --pluginPath=<path to plugin directory>
 /**
  * Validate plugin.
  * @todo Add script validation
- * 
- * @param {object} argv 
- * @returns 
+ *
+ * @param {object} argv
+ * @returns
  */
 export async function validatePlugin(argv) {
   const pluginDir = argv._pluginDir;
+
+  linkModulePath();
 
   if (!validatePluginOnly(argv)) {
     return false;
@@ -202,7 +206,7 @@ export async function validatePlugin(argv) {
   //   console.log("Plugin meta is missing")
   //   return false;
   // }
-  
+
   // const meta = readJSON(metaFile);
   // // console.log("meta", meta);
 
@@ -218,18 +222,15 @@ export async function validatePlugin(argv) {
   // }
 
   if (fs.existsSync(path.join(pluginDir, "widgets"))) {
-    if (!(await validateAllWidgets(argv)))
-      return false;
+    if (!(await validateAllWidgets(argv))) return false;
   }
 
   if (fs.existsSync(path.join(pluginDir, "inputs"))) {
-    if (!(await validateAllInputBlocks(argv)))
-      return false;
+    if (!(await validateAllInputBlocks(argv))) return false;
   }
 
   if (fs.existsSync(path.join(pluginDir, "algorithms"))) {
-    if (!(await validateAllAlgorithms(argv)))
-      return false;
+    if (!(await validateAllAlgorithms(argv))) return false;
   }
 
   return true;
@@ -238,13 +239,13 @@ export async function validatePlugin(argv) {
 export function validatePluginOnly(argv) {
   const pluginDir = argv._pluginDir;
 
-  const metaFile = path.join(pluginDir, PLUGIN_META_FILE)
+  const metaFile = path.join(pluginDir, PLUGIN_META_FILE);
 
   if (!fs.existsSync(metaFile)) {
-    console.log("Plugin meta is missing")
+    console.log("Plugin meta is missing");
     return false;
   }
-  
+
   const meta = readJSON(metaFile);
   // console.log("meta", meta);
 
@@ -255,14 +256,14 @@ export function validatePluginOnly(argv) {
       return false;
     }
   } catch (err) {
-    console.error("Invalid meta object", err)
+    console.error("Invalid meta object", err);
     return false;
   }
 
   return true;
 }
 
-export function zipPlugin (argv) {
+export function zipPlugin(argv) {
   const pluginDir = argv._pluginDir;
 
   const metaFile = path.join(argv._pluginDir, PLUGIN_META_FILE);
@@ -270,24 +271,24 @@ export function zipPlugin (argv) {
 
   const zip = new AdmZip();
   zip.addLocalFile(metaFile);
-  
+
   if (fs.existsSync("widgets")) {
-    zip.addFile("widgets/", null)
-    zip.addLocalFolder(path.join(pluginDir, "widgets"), "widgets")
+    zip.addFile("widgets/", null);
+    zip.addLocalFolder(path.join(pluginDir, "widgets"), "widgets");
   }
-  
+
   if (fs.existsSync("inputs")) {
-    zip.addFile("widgets/", null)
-    zip.addLocalFolder(path.join(pluginDir, "inputs"), "inputs")
+    zip.addFile("widgets/", null);
+    zip.addLocalFolder(path.join(pluginDir, "inputs"), "inputs");
   }
-  
+
   if (fs.existsSync("templates")) {
-    zip.addFile("templates/", null)
-    zip.addLocalFolder(path.join(pluginDir, "templates"), "templates")
+    zip.addFile("templates/", null);
+    zip.addLocalFolder(path.join(pluginDir, "templates"), "templates");
   }
-  
+
   if (fs.existsSync("algorithms")) {
-    zip.addFile("algorithms/", null)
+    zip.addFile("algorithms/", null);
     // zip.addLocalFolder(path.join(pluginDir, "algorithms"), "algorithms")
     const algoRootPath = path.join(pluginDir, "algorithms");
     const subdirs = fs.readdirSync(algoRootPath);
@@ -298,17 +299,16 @@ export function zipPlugin (argv) {
         console.log(`Meta file ${metaPath} does not exists`);
         continue;
       }
-      zip.addFile(`algorithms/${algo}/`, null)
+      zip.addFile(`algorithms/${algo}/`, null);
       const meta = readJSON(metaPath);
       if (Array.isArray(meta.requiredFiles)) {
         for (let f of meta.requiredFiles) {
-          if (f === "LICENSE")
-            continue;
+          if (f === "LICENSE") continue;
           const subpath = path.join(algoPath, f);
           const stat = fs.lstatSync(subpath);
           if (stat.isDirectory()) {
-            console.log("isDirectory", f)
-            zip.addFile(`algorithms/${algo}/${f}/`, null)
+            console.log("isDirectory", f);
+            zip.addFile(`algorithms/${algo}/${f}/`, null);
             zip.addLocalFolder(subpath, `algorithms/${algo}`);
           } else {
             zip.addLocalFile(subpath, `algorithms/${algo}`);
@@ -322,11 +322,11 @@ export function zipPlugin (argv) {
   if (!fs.existsSync(distPath)) {
     fs.mkdirSync(distPath);
   }
-  
+
   // write to disk
   const zipFilename = `${pluginMeta.gid}-${pluginMeta.version}.zip`;
-  const zipPath = path.join(distPath, zipFilename)
+  const zipPath = path.join(distPath, zipFilename);
   zip.writeZip(zipPath);
 
-  console.log(`Plugin zip "${zipFilename}" is created.`)
+  console.log(`Plugin zip "${zipFilename}" is created.`);
 }

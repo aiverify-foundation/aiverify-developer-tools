@@ -66,19 +66,7 @@ Here are the brief steps to begin cloning the repository and creating a feature 
 
 1. Create a GitHub account if you do not have one yet.
 2. Fork the project’s repository by clicking on the Fork button at the top of the page. By doing so, a copy of the repository will be made in your account on GitHub.
-3. Next, clone this copy from your account to your local device by doing the following: 
-
-For the AI Verify repo:
-
-```markdown
-git clone https://github.com/<YourUsername>/aiverify.git
-```
-
-For the AI Verify Developer Tools repo:
-
-```markdown
-git clone https://github.com/<YourUsername>/aiverify-developer-tools.git
-```
+3. Next, clone this copy from your account to your local device.
 
 1. From the directory where you have cloned this copy, install AI Verify locally. Refer to the installation guide to see how to do so.
 2. Once you have completed the installation, you may now go ahead and create a feature branch for your changes. First, open the project with your IDE, together with your terminal. You should be at the root directory of the project. Run the following command in your terminal to ensure your project is updated with changes made to the remote Main branch:

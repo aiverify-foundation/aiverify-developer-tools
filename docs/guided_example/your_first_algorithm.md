@@ -109,7 +109,7 @@ In this algorithm, we have updated the `data_path`, `model_path`, `ground_truth_
 
 **If you have been following every step from [Installing AI Verify Developer Tools](../getting_started/install_aiverify_dev_tools.md) to [Guided Example](../guided_example/deploy_your_plugin.md), you will need to update ```core_modules_path``` as shown below.** If you decide to structure the files differently, ensure that ```core_modules_path``` is an absolute/relative path pointing to your **test-engine-core-modules** folder.
 
-```py title="__main__.py" linenums="3" hl_lines="12 13 14 15 16 17 26"
+```py title="__main__.py" linenums="3" hl_lines="13 15 16 17 18 19 20 27 28 29"
 from tests.plugin_test import PluginTest
 
 if __name__ == "__main__":

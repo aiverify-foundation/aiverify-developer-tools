@@ -28,6 +28,40 @@ ls algorithms/my_algorithm
 
 You should see the files generated for the algorithm component under the directory. For more information on the files generated, see [Understanding your algorithm project](../plugins/algorithm/file_structure.md).
 
+## Check the Algorithm Meta Data
+
+Open the file `my_algorithm.meta.json` under the ```widgets``` folder and check that the properties are set correctly as shown below:
+
+```JSON title="my_algorithm.meta.json"
+{
+  "cid": "my_algorithm",
+  "name": "My Algorithm",
+  "modelType": [
+    "classification"
+  ],
+  "version": "0.1.0",
+  "author": "Example Author",
+  "description": "This algorithm returns the value of the feature name selected by the user.",
+  "tags": [
+    "My Algorithm",
+    "classification"
+  ],
+  "requireGroundTruth": true,
+  "requiredFiles": [
+    "AUTHORS.rst",
+    "CHANGELOG.md",
+    "input.schema.json",
+    "LICENSE",
+    "output.schema.json",
+    "my_algorithm.meta.json",
+    "my_algorithm.py",
+    "README.md",
+    "requirements.txt",
+    "syntax_checker.py"
+  ]
+}
+```
+
 ## Modifying input schema
 
 First, modify `input.schema.json` to request an input called `feature_name` from the user when the user uses this algorithm. Notice the highlighted lines that requires a `feature_name` field, and the properties of the `feature_name` is also defined.
@@ -150,6 +184,6 @@ Next, run [`ai-verify-plugin testa`](../plugins/Plugin_Tool.md#test-algorithm-al
 ai-verify-plugin testa
 ```
 
-If the test passes (no error messages in terminal), you have **successfully completed** the creation of the algorithm component. At this stage, you can either [**deploy your algorithm component**](./deploy_your_plugin.md) as a standalone plugin, or continue to [**work on other components**](./your_first_widget.md) (eg. another algorithm, widget, input block etc) before packaging it as a single plugin.
+If the test passes (no error messages in terminal), you have **successfully completed** the creation of the algorithm component. At this stage, you can either [**deploy your algorithm component**](./deploy_your_plugin.md) as a standalone plugin, or continue to [**work on other components**](./your_first_inputblock.md) (eg. another algorithm, widget, input block etc) before packaging it as a single plugin.
 
 If the test fails, refer to the troubleshooting guide for help.

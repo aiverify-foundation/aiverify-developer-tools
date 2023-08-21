@@ -41,7 +41,7 @@ ai-verify-plugin zip
 !!! note
     A new folder `dist` will be created. This folder is where the packaged `.zip` file will be created and placed.
 
-Verify that the zip file ```your_first_plugin-1.0.0.zip``` exists in your `dist` directory:
+Verify that the zip file ```my_plugin-1.0.0.zip``` exists in your `dist` directory:
 
 The resulting plugin is packaged as a `zip` file, which can be used to share with other developers who are interested in using your plugin. Users and developers can then upload the zip file onto AI Verify through the plugin manager and use it in the report.
 
@@ -52,7 +52,7 @@ To upload the plugin, start the frontend portal of AI Verify. You will need to i
 1. Once the portal is started up, visit the portal at [http://localhost:3000/home](http://localhost:3000/home). In the homepage, click on "Plugins" to visit the Plugin Manager page:
    ![aiv_homepage](../images/aiv_home_page.png)
 
-2. In the **Plugin Manager page**, click on "INSTALL PLUGIN" at the top right and select ```your_first_plugin-0.1.0.zip```, then click on "INSTALL" :
+2. In the **Plugin Manager page**, click on "INSTALL PLUGIN" at the top right and select ```my_plugin-0.1.0.zip```, then click on "INSTALL" :
    ![install_plugin](../images/install_plugin.png)
 
    
@@ -71,21 +71,20 @@ To upload the plugin, start the frontend portal of AI Verify. You will need to i
     ![project_details](../images/project_details.png)
 3. On the **Design Report** page, drag your widget from the left panel to the canvas:
    ![canvas](../images/canvas.png)
-   You can resize the the widget and click on the alignment buttons to refresh its size. When you're ready, click "Next" on the top right.
+   Since the widget is a **dynamic height** widget, the widget height will expand dynamically to fill to the bottom of the canvas. When you're ready, click "Next" on the top right.
 4. On the **Select the Datasets and AI Model to be tested** page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template or download from [here](https://github.com/IMDA-BTG/aiverify/tree/main/examples). Refer to the following table for reference.
 
       | Data, Model, and Test Arguments | Selected Dataset / Model / Test Arguments |
       | ---- | ---------- |
-      | Testing Dataset | ```pickle_pandas_mock_binary_classification_credit_risk_testing.sav``` |
-      | Ground Truth Dataset | ```pickle_pandas_mock_binary_classification_credit_risk_testing.sav```, Ground Truth: ```default``` |
-      | AI Model | ```binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav``` | 
+      | Testing Dataset | ```sample_bc_credit_data.sav``` |
+      | Ground Truth Dataset | ```sample_bc_credit_data.sav```, Ground Truth: ```default``` |
+      | AI Model | ```sample_bc_credit_data.sav``` | 
       | Test Arguments | ```gender``` |
 
-5. For the model, choose ```Upload AI Model``` and click "Next".
+5. During model upload, choose ```Upload AI Model``` to the AI model file and click "Next".
    ![upload_model](../images/upload_model.png)
-6. We will be uploading the ```binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav``` model.
-   ![model_uploaded_successfully](../images/model_uploaded_successfully.png) 
-7. Type `gender` into the plugin arguments. The end result should look like this.
+6. Click "OPEN" at the "My Algorithm" box and type `gender` for the feature name.
+7. Click "OPEN" at the "My Input Block" box and enter your first and last name. The end result should look like this.
    ![data_and_model_selection](../images/data_and_model_selection.png) 
 8. When you are ready, click on "Next" on the top right. Click on "PROCEED" when prompted:
    ![confirm_generate_report](../images/confirm_generate_report.png) 

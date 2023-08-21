@@ -21,9 +21,11 @@ The project folder `my_plugin` should be generated under the plugin directory. U
 * plugin.meta.json
 * .gitignore
 
+## Check the Plugin Meta Data
+
 Open the plugin meta file `plugin.meta.json` and make sure that the meta properties are set correctly as follows:
 
-```JSON
+```JSON title="plugin.meta.json"
 {
   "gid": "my_plugin",
   "name": "My Plugin",

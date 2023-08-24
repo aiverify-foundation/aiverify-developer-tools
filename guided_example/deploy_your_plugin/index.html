@@ -319,6 +319,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -353,8 +357,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../your_first_plugin/" class="md-nav__link">
+        Create Your First Plugin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../your_first_algorithm/" class="md-nav__link">
         Create Your First Algorithm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../your_first_inputblock/" class="md-nav__link">
+        Create Your First Input Block
       </a>
     </li>
   
@@ -711,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Plugin_Tool/" class="md-nav__link">
+      <a href="../../plugins/widget/Plugin_Tool.md" class="md-nav__link">
         AI Verify Frontend Plugin Tool
       </a>
     </li>
@@ -1103,37 +1135,13 @@
 <p>Now that you have created your plugin component(s), it is time to package it into a single plugin for deployment.</p>
 <p>If you are following the guided example, you should have the following components completed and packaged in its own respective folders:</p>
 <ol>
-<li>your-first-algorithm-component component</li>
-<li>your-first-widget component</li>
+<li>my_algorithm component</li>
+<li>my_widget component</li>
 </ol>
-<p>At this point, you may decide if you wish to deploy the components as two separate plugins (i.e. algorithm plugin and widget plugin), or combine and package it as a single plugin. Each method comes with its own rationale and benefit.</p>
-<table>
-<thead>
-<tr>
-<th>Deployment Style</th>
-<th>Description</th>
-<th>Rationale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Combine</strong></td>
-<td>Combine components into a single plugin zip</td>
-<td>Combine components when they are tightly coupled, eg. input block component needed for the algorithm component to run properly, widget component needed to display algorithm results etc</td>
-</tr>
-<tr>
-<td><strong>Separate</strong></td>
-<td>Separate the components into its own respective plugin zips</td>
-<td>This is a more modular design approach. Some components do not have additional dependencies, or are add-ons to existing plugins. eg. Additional widget plugins for different ways to display algorithm results.</td>
-</tr>
-</tbody>
-</table>
 <h2 id="combine-the-plugin-components">Combine the plugin components</h2>
-<p>The <strong>template_plugin</strong> directory should mimic the same plugin structure. The algorithms directory should contain algorithms, with each one in its own respective folder. The widget components will be stored in the widgets directory.</p>
+<p>The <strong>my_plugin</strong> directory should mimic the same plugin structure. The algorithms directory should contain algorithms, with each one in its own respective folder. The widget components will be stored in the widgets directory.</p>
 <p><img alt="plugin structure" src="../../images/plugin_structure.png" /></p>
-<p>In this guided example, the algorithms directory will have the folder <em>your_first_algorithm_component</em>. The widgets directory will contain <em>mywidget.meta.json</em>, <em>mywidget.mdx</em>, and <em>your_first_algorithm_component.sample.json</em>.</p>
-<p>It should look something like this:</p>
-<p><img alt="plugin ready to deploy" src="../../images/plugin_ready_to_deploy.png" /></p>
+<p>In this guided example, the algorithms directory will have the folder <em>my_algorithm</em>. The widgets directory will contain <em>my_widget.meta.json</em>, <em>my_widget.mdx</em>, and <em>my_algorithm.sample.json</em>.</p>
 <h2 id="edit-plugin-details-optional">Edit Plugin Details (Optional)</h2>
 <p>You may wish to edit <em>plugin.meta.json</em> to change the plugin details.</p>
 <div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">plugin.meta.json</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -1143,27 +1151,24 @@
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
 <span class="normal"><a href="#__codelineno-0-6">6</a></span>
 <span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="hll">    <span class="s2">&quot;gid&quot;</span><span class="p">:</span> <span class="s2">&quot;your_first_plugin&quot;</span><span class="p">,</span>
-</span></span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="hll">    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-</span></span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="hll">    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Your First Plugin&quot;</span><span class="p">,</span>
-</span></span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="hll">    <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Author&quot;</span><span class="p">,</span>
-</span></span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="hll">    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;This is your first plugin&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="hll">  <span class="s2">&quot;gid&quot;</span><span class="p">:</span> <span class="s2">&quot;my_plugin&quot;</span><span class="p">,</span>
+</span></span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="hll">  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;My Plugin&quot;</span><span class="p">,</span>
+</span></span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="hll">  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+</span></span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="hll">  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;My First Plugin&quot;</span><span class="p">,</span>
+</span></span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="hll">  <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;AI Verify&quot;</span>
 </span></span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="deploy-your-plugin_1">Deploy your Plugin</h2>
-<p>We have provided a script that helps package and deploy your plugin. If you have not created a widget component at this point, this will package the algorithm as a standalone plugin. To run the script, navigate to the directory with the script <code>deploy_plugin.sh</code>. This is located at the <strong>root of template_plugin</strong> folder. At the directory, enter:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Execute this script in the template_plugin directory</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>./deploy_plugin.sh
+<p>You can package your plugin using the <a href="../../plugins/Plugin_Tool/#zip"><code>ai-verify-plugin zip</code></a> command.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Execute this command under the my_plugin directory</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ai-verify-plugin<span class="w"> </span>zip
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A new folder <code>dist</code> will be created. This folder is where the packaged <code>.zip</code> file will be created and placed.</p>
 </div>
-<p>If you did not edit the gid, verify that the zip file <code>your_first_plugin-0.1.0.zip</code> exists in your <code>dist</code> directory:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ls<span class="w"> </span>dist<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>your_first_plugin
-</span></code></pre></div>
+<p>Verify that the zip file <code>my_plugin-1.0.0.zip</code> exists in your <code>dist</code> directory:</p>
 <p>The resulting plugin is packaged as a <code>zip</code> file, which can be used to share with other developers who are interested in using your plugin. Users and developers can then upload the zip file onto AI Verify through the plugin manager and use it in the report.</p>
-<p><img alt="algorithm_dist" src="../../images/algorithm_dist.png" /></p>
 <h2 id="uploading-the-plugin">Uploading the plugin</h2>
 <p>To upload the plugin, start the frontend portal of AI Verify. You will need to install AI Verify if you have not done so. The instructions to install and run AI Verify from source code can be found in the <a href="https://imda-btg.github.io/aiverify/getting-started/source-code-setup/">User Guide</a>.</p>
 <ol>
@@ -1172,7 +1177,7 @@
    <img alt="aiv_homepage" src="../../images/aiv_home_page.png" /></p>
 </li>
 <li>
-<p>In the <strong>Plugin Manager page</strong>, click on "INSTALL PLUGIN" at the top right and select <code>your_first_plugin-0.1.0.zip</code>, then click on "INSTALL" :
+<p>In the <strong>Plugin Manager page</strong>, click on "INSTALL PLUGIN" at the top right and select <code>my_plugin-0.1.0.zip</code>, then click on "INSTALL" :
    <img alt="install_plugin" src="../../images/install_plugin.png" /></p>
 </li>
 <li>
@@ -1192,7 +1197,7 @@
     <img alt="project_details" src="../../images/project_details.png" /></li>
 <li>On the <strong>Design Report</strong> page, drag your widget from the left panel to the canvas:
    <img alt="canvas" src="../../images/canvas.png" />
-   You can resize the the widget and click on the alignment buttons to refresh its size. When you're ready, click "Next" on the top right.</li>
+   Since the widget is a <strong>dynamic height</strong> widget, the widget height will expand dynamically to fill to the bottom of the canvas. When you're ready, click "Next" on the top right.</li>
 <li>
 <p>On the <strong>Select the Datasets and AI Model to be tested</strong> page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template or download from <a href="https://github.com/IMDA-BTG/aiverify/tree/main/examples">here</a>. Refer to the following table for reference.</p>
 <table>
@@ -1205,15 +1210,15 @@
 <tbody>
 <tr>
 <td>Testing Dataset</td>
-<td><code>pickle_pandas_mock_binary_classification_credit_risk_testing.sav</code></td>
+<td><code>sample_bc_credit_data.sav</code></td>
 </tr>
 <tr>
 <td>Ground Truth Dataset</td>
-<td><code>pickle_pandas_mock_binary_classification_credit_risk_testing.sav</code>, Ground Truth: <code>default</code></td>
+<td><code>sample_bc_credit_data.sav</code>, Ground Truth: <code>default</code></td>
 </tr>
 <tr>
 <td>AI Model</td>
-<td><code>binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav</code></td>
+<td><code>sample_bc_credit_data.sav</code></td>
 </tr>
 <tr>
 <td>Test Arguments</td>
@@ -1223,12 +1228,11 @@
 </table>
 </li>
 <li>
-<p>For the model, choose <code>Upload AI Model</code> and click "Next".
+<p>During model upload, choose <code>Upload AI Model</code> to the AI model file and click "Next".
    <img alt="upload_model" src="../../images/upload_model.png" /></p>
 </li>
-<li>We will be uploading the <code>binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav</code> model.
-   <img alt="model_uploaded_successfully" src="../../images/model_uploaded_successfully.png" /> </li>
-<li>Type <code>gender</code> into the plugin arguments. The end result should look like this.
+<li>Click "OPEN" at the "My Algorithm" box and type <code>gender</code> for the feature name.</li>
+<li>Click "OPEN" at the "My Input Block" box and enter your first and last name. The end result should look like this.
    <img alt="data_and_model_selection" src="../../images/data_and_model_selection.png" /> </li>
 <li>When you are ready, click on "Next" on the top right. Click on "PROCEED" when prompted:
    <img alt="confirm_generate_report" src="../../images/confirm_generate_report.png" /> </li>

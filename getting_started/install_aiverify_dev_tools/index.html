@@ -399,6 +399,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -433,8 +437,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guided_example/your_first_plugin/" class="md-nav__link">
+        Create Your First Plugin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guided_example/your_first_algorithm/" class="md-nav__link">
         Create Your First Algorithm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guided_example/your_first_inputblock/" class="md-nav__link">
+        Create Your First Input Block
       </a>
     </li>
   
@@ -722,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Plugin_Tool/" class="md-nav__link">
+      <a href="../../plugins/widget/Plugin_Tool.md" class="md-nav__link">
         AI Verify Frontend Plugin Tool
       </a>
     </li>
@@ -1136,7 +1168,8 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    ├── ai-verify-algorithm-template/
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    ├── ai-verify-plugin/
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    └── template_plugin/
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>└── my_virtual_environment/
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── my_plugin/
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└── my_virtual_environment/
 </span></code></pre></div>
 The Developer Tools require specific modules from the main AI Verify repository. If you have not installed AI Verify, use <a href="https://git-scm.com/docs/git-sparse-checkout">sparse-checkout</a> on the AI Verify repository to selectively checkout files that are relevant to the Developer Tools.</p>
 <ol>
@@ -1243,7 +1276,7 @@ The Developer Tools require specific modules from the main AI Verify repository.
 </span></code></pre></div></p>
 </li>
 <li>
-<p>Install AI Verify Frontend Plugin Tool
+<p>Install AI Verify Plugin Tool
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span>aiverify-developer-tools/ai-verify-plugin
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>npm<span class="w"> </span>install
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>npm<span class="w"> </span>install<span class="w"> </span>../../aiverify/ai-verify-shared-library
@@ -1252,10 +1285,26 @@ The Developer Tools require specific modules from the main AI Verify repository.
 </li>
 </ol>
 <p>If the installation is successful, you should see a similar output as shown below.</p>
-<h4 id="ai-verify-plugin">ai-verify-plugin</h4>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ai-verify-plugin<span class="w"> </span>--help
+<h4 id="ai-verify-plugin"><a href="../../plugins/Plugin_Tool/">ai-verify-plugin</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ ai-verify-plugin --help
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>ai-verify-plugin &lt;cmd&gt; [args]
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Commands:
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  ai-verify-plugin generate-widget &lt;cid&gt;      Generate skeleton AI Verify widget                          [aliases: gw]
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  ai-verify-plugin generate-inputblock &lt;cid&gt;  Generate skeleton AI Verify input block                    [aliases: gib]
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>  ai-verify-plugin generate-algorithm &lt;cid&gt;   Generate skeleton AI Verify algorithm                       [aliases: ga]
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>  ai-verify-plugin zip [pluginDir]            Create the plugin zip file
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  ai-verify-plugin validate                   Validate AI Verify plugin
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>  ai-verify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>  ai-verify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>  ai-verify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>                                              options
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>  ai-verify-plugin playground                 Launch the plugin playround
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>Options:
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>  --help  Show help                                                                                           [boolean]
 </span></code></pre></div>
-<p><img alt="ai-verify-plugin Help Text" src="../../images/aiverifyplugin_help_text.png" /></p>
 <h4 id="cookiecutter">cookiecutter</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>cookiecutter<span class="w"> </span>-h
 </span></code></pre></div>

@@ -15,7 +15,9 @@ This page prepares your environment for development on AI Verify. By the end of 
     ├── ai-verify-algorithm-template/
     ├── ai-verify-plugin/
     └── template_plugin/
+├── my_plugin/
 └── my_virtual_environment/
+
 ```
 The Developer Tools require specific modules from the main AI Verify repository. If you have not installed AI Verify, use [sparse-checkout](https://git-scm.com/docs/git-sparse-checkout) on the AI Verify repository to selectively checkout files that are relevant to the Developer Tools.
 
@@ -124,7 +126,7 @@ Install AI Verify Developer Tools in your environment.
 git clone https://github.com/IMDA-BTG/aiverify-developer-tools.git
 ```
 
-2. Install AI Verify Frontend Plugin Tool
+2. Install AI Verify Plugin Tool
 ```bash
 cd aiverify-developer-tools/ai-verify-plugin
 npm install
@@ -133,12 +135,28 @@ sudo npm install -g # You may need sudo for this command
 ```
 
 If the installation is successful, you should see a similar output as shown below.
-#### ai-verify-plugin
-```bash
-ai-verify-plugin --help
+#### [ai-verify-plugin](../plugins/Plugin_Tool.md)
+```
+$ ai-verify-plugin --help
+ai-verify-plugin <cmd> [args]
+
+Commands:
+  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
+  ai-verify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                          [aliases: gw]
+  ai-verify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                    [aliases: gib]
+  ai-verify-plugin generate-algorithm <cid>   Generate skeleton AI Verify algorithm                       [aliases: ga]
+  ai-verify-plugin zip [pluginDir]            Create the plugin zip file
+  ai-verify-plugin validate                   Validate AI Verify plugin
+  ai-verify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
+  ai-verify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
+  ai-verify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
+                                              options
+  ai-verify-plugin playground                 Launch the plugin playround
+
+Options:
+  --help  Show help                                                                                           [boolean]
 ```
 
-![ai-verify-plugin Help Text](../images/aiverifyplugin_help_text.png)
 #### cookiecutter
 ```bash
 cookiecutter -h

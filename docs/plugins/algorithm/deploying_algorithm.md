@@ -1,5 +1,5 @@
 ## Deploying and Packaging Your Algorithm Plugin
-When you are creating your distribution package with `deploy_plugin.sh`, these are the things that will happen: 
+When you are creating your distribution package with [`ai-verify-plugin zip`](../plugins/Plugin_Tool.md#zip) command, these are the things that will happen for each algorithms to be packed: 
 <br>
 
 ### Syntax checking
@@ -15,5 +15,5 @@ There is a predefined list of files that are required (as mentioned in [required
 <br>
 
 ### Packaging the Algorithm Plugin
-When all the checks have passed and all the required files have been added, the algorithm plugin, together with the required files, will be zipped into a `.zip` file and placed in the directory `dist`. The `.zip` package will be used for distribution. 
+When all the checks have passed and all the required files have been added, the algorithm component, together with the required files, will be added to the plugin `.zip` file. The `.zip` package will be used for distribution. 
 <br>

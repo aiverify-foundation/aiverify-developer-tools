@@ -1,16 +1,21 @@
 #!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+
+import { rootDir } from './utils.mjs';
+import * as dotenv from 'dotenv';
+dotenv.config({ path: path.join(rootDir, ".env") })
 
 import semver from 'semver';
 import { URL } from 'node:url';
-import fs from 'node:fs';
-import path from 'node:path';
 import { v4 as uuidv4 } from 'uuid';
 
 import { generatePlugin, validatePlugin, zipPlugin, PLUGIN_META_FILE } from './plugin.mjs';
 import { generateWidget } from './reportWidget.mjs';
 import { generateInputBock } from './inputBlock.mjs';
+import { generateAlgorithm } from './algorithms.mjs';
 import { runPlayground } from './playground.mjs';
-import { runTest } from './test.mjs';
+import { runTest, runAlgoTests } from './test.mjs';
 
 function validateID (id) {
   return id.match(/^[a-zA-Z0-9][a-zA-Z0-9-._]*$/);
@@ -74,10 +79,17 @@ const argv = yargs(process.argv.slice(2))
       type: 'string',
       describe: 'Plugin author',
       requiresArg: true,
+      default: "AI Verify"
     }).option('description', {
       type: 'string',
       describe: 'Plugin description',
       requiresArg: true,
+    }).option('license', {
+      type: 'string',
+      describe: 'Plugin opensource license',
+      requiresArg: true,
+      choices: ["Apache Software License 2.0", "MIT", "BSD-3", "GNU GPL v3.0", "Mozilla Public License 2.0"],
+      default: "Apache Software License 2.0",
     }).option('url', {
       type: 'string',
       describe: 'Plugin URL',
@@ -271,6 +283,58 @@ const argv = yargs(process.argv.slice(2))
     //   argv.name = argv.cid;
     generateInputBock(argv);
   })
+  .command(['generate-algorithm <cid>','ga'], 'Generate skeleton AI Verify algorithm', (yargs) => {
+    yargs.positional('cid', {
+      type: 'string',
+      describe: 'Algorithm Component ID'
+    }).option('interactive', {
+      type: 'boolean',
+      describe: 'Prompt for arguments (will ignore rest of command line options)',
+    }).option('author', {
+      type: 'string',
+      describe: 'Author name',
+      requiresArg: true,
+      default: "Example Author"
+    }).option('pluginVersion', {
+      type: 'string',
+      describe: 'Plugin version',
+      requiresArg: true,
+      default: "0.1.0",
+    }).option('description', {
+      type: 'string',
+      describe: 'Algorithm description',
+      requiresArg: true,
+    }).option('tag', {
+      describe: 'Allow users to search and filter by tags',
+      requiresArg: true,
+      array: true,
+      type: 'string',
+    }).option('modelSupport', {
+      type: 'string',
+      describe: 'Algoritm model support',
+      choices: ["Classification", "Regression", "Both"],
+      default: "Classification",
+    }).option('requireGroundTruth', {
+      describe: 'Whether this algorithm require ground truth (--no-requireGroundTruth to indicate not required)',
+      type: "boolean",
+      default: true,
+    }).option('pluginDir', {
+      describe: 'Path to plugin directory',
+      type: "string",
+      requiresArg: true,
+      default: "."
+    }).check((argv, options) => {
+      // console.log("check", argv, options)
+      findPluginRoot(argv);
+      return true;
+    })
+  }, async function (argv) {
+    if (!argv.name)
+      argv.name = argv.cid;
+    if (!argv.description)
+      argv.description = argv.name;
+    await generateAlgorithm(argv);
+  })
   .command('zip [pluginDir]', 'Create the plugin zip file', (yargs) => {
     yargs.positional('pluginDir', {
       type: 'string',
@@ -315,7 +379,7 @@ const argv = yargs(process.argv.slice(2))
       console.log("Plugin is invalid")
     }
   })
-  .command('test', 'Run the plugin tests', (yargs) => {
+  .command(['test-widget', 'testw'], 'Run the plugin tests for widgets and input blocks', (yargs) => {
     yargs.option('pluginDir', {
       type: 'string',
       describe: 'Path to plugin directory',
@@ -375,6 +439,42 @@ const argv = yargs(process.argv.slice(2))
     })
   }, async function (argv) {
     // console.log("This commmand is not implemented yet.")
+    await runTest(argv);
+  })
+  .command(['test-algorithm', 'testa'], 'Run the plugin tests for algorithms', (yargs) => {
+    yargs.option('pluginDir', {
+      type: 'string',
+      describe: 'Path to plugin directory',
+      requiresArg: true,
+      default: "."
+    })
+    .option('silent', {
+      type: 'boolean',
+      describe: 'Do not display the stdout from the algorithm tests on the console.',
+      default: false,
+    })
+    .check((argv, options) => {
+      findPluginRoot(argv);
+      return true;
+    })
+  }, async function (argv) {
+    // console.log("This commmand is not implemented yet.")
+    await runAlgoTests(argv);
+  })
+  .command('test-all', 'Run all the tests for widgets, input blocks and algorithms with default options', (yargs) => {
+    yargs.option('pluginDir', {
+      type: 'string',
+      describe: 'Path to plugin directory',
+      requiresArg: true,
+      default: "."
+    })
+    .check((argv, options) => {
+      findPluginRoot(argv);
+      return true;
+    })
+  }, async function (argv) {
+    // console.log("This commmand is not implemented yet.")
+    await runAlgoTests(argv);
     await runTest(argv);
   })
   .command('playground', 'Launch the plugin playround', (yargs) => {

@@ -315,6 +315,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -349,8 +353,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guided_example/your_first_plugin/" class="md-nav__link">
+        Create Your First Plugin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guided_example/your_first_algorithm/" class="md-nav__link">
         Create Your First Algorithm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guided_example/your_first_inputblock/" class="md-nav__link">
+        Create Your First Input Block
       </a>
     </li>
   
@@ -713,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../widget/Plugin_Tool/" class="md-nav__link">
+      <a href="../../widget/Plugin_Tool.md" class="md-nav__link">
         AI Verify Frontend Plugin Tool
       </a>
     </li>
@@ -1108,7 +1140,7 @@
   <h1>Deploying</h1>
 
 <h2 id="deploying-and-packaging-your-algorithm-plugin">Deploying and Packaging Your Algorithm Plugin</h2>
-<p>When you are creating your distribution package with <code>deploy_plugin.sh</code>, these are the things that will happen: 
+<p>When you are creating your distribution package with <a href="../plugins/Plugin_Tool.md#zip"><code>ai-verify-plugin zip</code></a> command, these are the things that will happen for each algorithms to be packed: 
 <br></p>
 <h3 id="syntax-checking">Syntax checking</h3>
 <p>There will be a syntax check run on the main Python file (in this case it will be <code>your_first_algorithm_plugin.py</code>). This is to ensure that the algorithm can run smoothly before packaging. If the check fails, it means that there are syntax error(s) and you will have to fix the error(s) before continuing. 
@@ -1120,7 +1152,7 @@
 <p>There is a predefined list of files that are required (as mentioned in <a href="../file_structure/#your_first_algorithm_pluginmetajson">requiredFiles</a>) to be packaged with the algorithm plugin for the algorithm to run. The Python file(s)/directory(s) you have added into <code>requiredFiles</code> will be added into the package as well. 
 <br></p>
 <h3 id="packaging-the-algorithm-plugin">Packaging the Algorithm Plugin</h3>
-<p>When all the checks have passed and all the required files have been added, the algorithm plugin, together with the required files, will be zipped into a <code>.zip</code> file and placed in the directory <code>dist</code>. The <code>.zip</code> package will be used for distribution. 
+<p>When all the checks have passed and all the required files have been added, the algorithm component, together with the required files, will be added to the plugin <code>.zip</code> file. The <code>.zip</code> package will be used for distribution. 
 <br></p>
 
 

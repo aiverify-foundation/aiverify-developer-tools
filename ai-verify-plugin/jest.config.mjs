@@ -18,6 +18,7 @@ const customConfig = {
     "src/(.*)": "<rootDir>/src/$1",
     "playground/(.*)": "<rootDir>/playground/$1",
     // "ai-verify-shared-library/(.*)": "<rootDir>/node_modules/ai-verify-shared-library/$1",
+    "ai-verify-shared-library/(.*)": "<rootDir>/node_modules/ai-verify-shared-library/packages/$1/src",
   },
   // moduleFileExtensions: ["mjs", "js", "jsx", "ts", "tsx"],
   testMatch: [
@@ -30,7 +31,6 @@ const customConfig = {
   globals: {
 		Uint8Array: Uint8Array,
 	},
-  
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

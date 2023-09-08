@@ -39,28 +39,31 @@ export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontm
       case 'xs':
         return '300px';
       case 'sm':
-        return '500px'
+        return '500px';
       case 'md':
-        return '700px'
+        return '700px';
       case 'lg':
-        return '1200px'
+        return '1200px';
       case 'xl':
-        return '1400px'
+        return '1400px';
+      default:
+        return '700px'; // default is md
     }
   }
   
   return (
     <InputDataContext.Provider value={inputBlockContext}>
-      <div style={{ display:'flex', width:'100%', height:'calc(100vh - 20px)' }}>
-        <div style={{ width: '1420px', flexShrink:0 }}>
-          <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
-          <div style={{ height:'calc(100vh - 60px)', overflow:'auto' }}>
-            <div style={{ width:calculateCSSWidth() }}>
-              <InputBlock inputBlock={inputBlock} code={code} frontmatter={frontmatter} />
+      <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)' }}>
+        <div style={{ display:'inline-block', width:'calc(100% - 340px)', verticalAlign:'top' }}>
+            <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
+            <div style={{ height:'calc(100vh - 60px)', marginTop:'5px', overflow:'auto' }}>
+              <div className="aiv-panel" style={{ width:calculateCSSWidth() }}>{inputBlock.meta.name} Dialog</div>
+              <div style={{ width:calculateCSSWidth(), padding:'5px', border:'1px solid grey' }}>
+                <InputBlock inputBlock={inputBlock} code={code} frontmatter={frontmatter} />
+              </div>
             </div>
-          </div>
         </div>
-        <div style={{ height:'calc(100vh - 60px)', flexGrow:1 }}>
+        <div style={{ display:'inline-block', height:'calc(100vh - 60px)', width: '340px', padding:'5px' }}>
           <div style={{ display:'flex' }}>
             <button className="aiv-button c-secondary"
               style={{ backgroundColor:(selectedIndex==0)?"#4b255a":undefined }}

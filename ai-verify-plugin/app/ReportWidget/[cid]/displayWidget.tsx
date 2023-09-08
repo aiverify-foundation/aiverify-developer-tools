@@ -32,16 +32,17 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
     if (!widget)
       return;
     
+    const dynamicHeight = widget.meta.dynamicHeight;
     setLayout([
       {
         i: widget.meta.cid,
         x: 0, y: 0,
         w: widget.meta.widgetSize.minW,
-        h: widget.meta.widgetSize.minH,
+        h: dynamicHeight?36:widget.meta.widgetSize.minH,
         minW: widget.meta.widgetSize.minW,
-        minH: widget.meta.widgetSize.minH,
+        minH: dynamicHeight?36:widget.meta.widgetSize.minH,
         maxW: widget.meta.widgetSize.maxW,
-        maxH: widget.meta.widgetSize.maxH,
+        maxH: dynamicHeight?36:widget.meta.widgetSize.maxH,
         // maxH: 12,
       }
     ])
@@ -65,8 +66,8 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
 
   return (
     <>
-      <div style={{ display:'flex', width:'100%', height:'1200px' }}>
-        <div >
+      <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)', overflow:'hidden' }}>
+        <div style={{ display:'inline-block', width:'calc(100% - 340px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{widget.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
             <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
@@ -103,7 +104,7 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
             </GridLayout>}
           </div>
         </div>
-        <div style={{ flexGrow:1, height:'calc(100vh - 20px)' }}>
+        <div style={{ display:'inline-block', width:'340px', height:'100%' }}>
           <div style={{ display:'flex' }}>
             <button className="aiv-button c-secondary"
               style={{ backgroundColor:(selectedIndex==0)?"#4b255a":undefined }}

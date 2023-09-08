@@ -74,31 +74,33 @@ export default function DisplayAlgorithm ({algorithm, pluginMeta}) {
 
   return (
     <>
-      <div style={{ display:'flex', width:'100%', height:'100vh' }}>
-        <div style={{ width:'800px'}}>
+      <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)', overflow:'hidden' }}>
+        <div style={{ display: 'inline-block', width:'calc(100% - 400px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{algorithm.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
             <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
           </div>
-          {rjsfSchema && (
-            <div className={styles.schemaform}>
-              <Form
-                ref={formRef}
-                schema={rjsfSchema}
-                formData={formData}
-                onChange={(e) => setFormData(e.formData)}
-                uiSchema={uiSchema}
-                validator={validator}
-                // widgets={widgets}
-                liveValidate 
-              />
-            </div>
-          )}
+          <div style={{ width:'600px', height:'calc(100% - 200px)' }}>
+            {rjsfSchema && (
+              <div className={styles.schemaform}>
+                <Form
+                  ref={formRef}
+                  schema={rjsfSchema}
+                  formData={formData}
+                  onChange={(e) => setFormData(e.formData)}
+                  uiSchema={uiSchema}
+                  validator={validator}
+                  // widgets={widgets}
+                  liveValidate 
+                />
+              </div>
+            )}
+          </div>
           <pre className={styles.formdata}>
             {JSON.stringify(formData,null,2)}
           </pre>
         </div>
-        <div style={{ flexGrow:1, height:'calc(100vh - 20px)' }}>
+        <div style={{ display:'inline-block', width:'400px', height:'calc(100vh - 20px)' }}>
           <div style={{ display:'flex' }}>
             <button className="aiv-button c-secondary"
               style={{ backgroundColor:(selectedIndex==0)?"#4b255a":undefined }}

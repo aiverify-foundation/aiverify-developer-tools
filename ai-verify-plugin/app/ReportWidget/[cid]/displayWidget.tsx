@@ -67,7 +67,7 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
   return (
     <>
       <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)', overflow:'hidden' }}>
-        <div style={{ display:'inline-block', width:'calc(100% - 340px)', verticalAlign:'top' }}>
+        <div style={{ display:'inline-block', width:'calc(100% - 400px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{widget.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
             <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
@@ -104,7 +104,7 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
             </GridLayout>}
           </div>
         </div>
-        <div style={{ display:'inline-block', width:'340px', height:'100%' }}>
+        <div style={{ display:'inline-block', width:'400px', height:'100%' }}>
           <div style={{ display:'flex' }}>
             <button className="aiv-button c-secondary"
               style={{ backgroundColor:(selectedIndex==0)?"#4b255a":undefined }}
@@ -115,8 +115,10 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
               onClick={() => setSelectedIndex(1)}
             >Properties</button>
           </div>
-          {selectedIndex==0 && <DisplayMetaInformation component={widget} schema={widgetSchema} />}
-          {selectedIndex==1 && <DisplayProperties widget={widget} properties={properties} setProperties={setProperties} />}
+          <div className='aiv-panel' style={{ backgroundColor:'white', marginTop:'5px', height:'100%', overflow:'hidden' }}>
+            {selectedIndex==0 && <DisplayMetaInformation component={widget} schema={widgetSchema} />}
+            {selectedIndex==1 && <DisplayProperties widget={widget} properties={properties} setProperties={setProperties} />}            
+          </div>
         </div>
       </div>
     </>

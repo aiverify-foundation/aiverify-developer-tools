@@ -4,7 +4,7 @@ import React, { useState, useEffect, createRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { UiSchema, RJSFSchema, hasWidget, getSchemaType } from "@rjsf/utils";
 import validator from '@rjsf/validator-ajv8';
-import Form from '@rjsf/core';
+import Form from '@rjsf/mui';
 import { parseRJSFSchema } from 'ai-verify-shared-library/lib';
 import _ from 'lodash';
 
@@ -115,9 +115,11 @@ export default function DisplayAlgorithm ({algorithm, pluginMeta}) {
               onClick={() => setSelectedIndex(2)}
             >Output Schema</button>
           </div>
-          {selectedIndex==0 && <DisplayMetaInformation component={algorithm} schema={AlgorithmSchema} />}
-          {selectedIndex==1 && <pre className={styles.mytab}>{JSON.stringify(algorithm.inputSchema,null,2)}</pre>}
-          {selectedIndex==2 && <pre className={styles.mytab}>{JSON.stringify(algorithm.outputSchema,null,2)}</pre>}
+          <div className='aiv-panel' style={{ backgroundColor:'white', marginTop:'5px', height:'100%', overflow:'hidden' }}>
+            {selectedIndex==0 && <DisplayMetaInformation component={algorithm} schema={AlgorithmSchema} />}
+            {selectedIndex==1 && <pre className={styles.mytab}>{JSON.stringify(algorithm.inputSchema,null,2)}</pre>}
+            {selectedIndex==2 && <pre className={styles.mytab}>{JSON.stringify(algorithm.outputSchema,null,2)}</pre>}
+          </div>
         </div>
       </div>
     </>

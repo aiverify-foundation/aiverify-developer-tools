@@ -1,6 +1,8 @@
 import path from 'node:path';
 
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
+// import theme from '../src/lib/theme';
+import ThemeRegistry from './components/theme/themeRegistry';
 import "playground/styles/styles.css";
 import 'playground/styles/color-palette.css';
 import { listWidgetCIDs, listInputBlockCIDs, getComponent, getPluginDir, listAlgorithmsCIDs, getAlgorithm } from 'src/pluginManager.mjs';
@@ -50,12 +52,14 @@ export default function RootLayout({
         <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'></link>
        </head>
       <body>
-        <div style={{ display:'flex' }}>
-          <MenuBar pluginMata={pluginMata} widgets={widgets} inputBlocks={inputBlocks} algorithms={algorithms} />
-          <div style={{ flexGrow:1, padding:'10px' }}>
-            {children}
+        <ThemeRegistry options={{ key: 'mui' }}>
+          <div style={{ display:'flex' }}>
+            <MenuBar pluginMata={pluginMata} widgets={widgets} inputBlocks={inputBlocks} algorithms={algorithms} />
+            <div style={{ flexGrow:1, padding:'10px' }}>
+              {children}
+            </div>
           </div>
-        </div>
+        </ThemeRegistry>
       </body>
     </html>
   );

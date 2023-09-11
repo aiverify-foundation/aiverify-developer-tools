@@ -32,5 +32,11 @@ hr {
 	background-color: gray;
 }
 
+.sectionDivider {
+  border-top: 1px solid var(--color-white-soft-pink-tint);
+  opacity: 0.2;
+  margin-bottom: 15px;
+}
+
 
 

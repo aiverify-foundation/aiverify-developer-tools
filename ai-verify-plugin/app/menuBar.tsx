@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { useRouter, useParams, usePathname  } from 'next/navigation';
 import 'ai-verify-shared-library/styles.css';
 
-const SELECTED_COLOR = '#4b255a';
+const SELECTED_COLOR = 'var(--color-palette-violet-red)';
+const NOT_SELECTED_COLOR = '#cf539b';
 
 function compareName(a, b) {
   if (a.meta.name < b.meta.name)
@@ -50,21 +51,22 @@ export default function MenuBar({ pluginMata, widgets, inputBlocks, algorithms }
   }
 
   return (
-    <div className="aiv-panel" style={{ width: '360px', height:'100vh', flexShrink:0, textAlign:'left', overflowY:'auto' }}>
+    <div className="aiv-panel" style={{ backgroundColor:'var(--color-palette-dark-indigo)', width: '360px', height:'100vh', flexShrink:0, textAlign:'left', overflowY:'auto' }}>
       <h2 style={{ padding:0, margin:0 }}>{pluginMata.name}</h2>
-      <div className='aiv-card c-info' style={{ textAlign:'left' }}>
+      <div style={{ textAlign:'left', padding:'5px', }}>
         <div>GID: {pluginMata.gid}</div>
         <div>Version: {pluginMata.version}</div>
         <div>Description: {pluginMata.description}</div>
         <div>Author: {pluginMata.author}</div>
         <div>URL: {pluginMata.url}</div>
       </div>
+      <div className="sectionDivider"></div>
       {widgets && widgets.length > 0 && <h2 style={{ marginTop:'10px' }}>Widgets</h2>}
       {widgets.sort(compareName).map(widget => (
         <button
           key={`link-${widget.meta.cid}`}
           className="aiv-button c-secondary"
-          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === widget.meta.cid)?SELECTED_COLOR:undefined }}
+          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === widget.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(widget)}
         >
             {widget.meta.name}
@@ -75,7 +77,7 @@ export default function MenuBar({ pluginMata, widgets, inputBlocks, algorithms }
         <button
           key={`link-${ib.meta.cid}`}
           className="aiv-button c-secondary"
-          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === ib.meta.cid)?SELECTED_COLOR:undefined }}
+          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === ib.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(ib)}
         >
             {ib.meta.name}
@@ -86,7 +88,7 @@ export default function MenuBar({ pluginMata, widgets, inputBlocks, algorithms }
         <button
           key={`link-${algo.meta.cid}`}
           className="aiv-button c-secondary"
-          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === algo.meta.cid)?SELECTED_COLOR:undefined }}
+          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === algo.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(algo)}
         >
             {algo.meta.name}

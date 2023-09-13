@@ -19,7 +19,6 @@
     "@rjsf/validator-ajv8": "^5.6.2",
     "adm-zip": "^0.5.10",
     "ai-verify-shared-library": "file:../ai-verify-shared-library",
-    "bootstrap": "^3.3.7",
     "dotenv": "^16.3.1",
     "esbuild": "^0.17.14",
     "jsonschema": "^1.4.1",

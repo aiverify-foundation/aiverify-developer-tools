@@ -68,13 +68,13 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
   return (
     <>
       <div style={{ display:'block', width:'100%', height:'100%', overflow:'hidden' }}>
-        <div style={{ display:'inline-block', width:'calc(100% - 400px)', verticalAlign:'top' }}>
+        <div style={{ display:'inline-block', height:'100%', overflowY:'auto', width:'calc(100% - 400px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{widget.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
             <Button variant='contained' sx={{ marginRight:'5px' }} onClick={() => {router.refresh()}}>Refresh</Button>
             {getWidgetSize()}
           </div>
-          <div className={styles.canvas} style={{ display:'block', height:'calc(100% - 100px)', width:'810px', overflowY:'scroll', margin:'10px auto 0 auto' }}>
+          <div className={styles.canvas} style={{ display:'block', position:'relative', height:'1100px', width:'810px', margin:'10px auto 5px auto' }}>
             {/* {JSON.stringify(layout,null,2)} */}
             {layout && <GridLayout
               layout={layout}

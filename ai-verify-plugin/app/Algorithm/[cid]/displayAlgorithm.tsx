@@ -81,7 +81,7 @@ export default function DisplayAlgorithm ({algorithm, pluginMeta}) {
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
             <Button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</Button>
           </div>
-          <div style={{ width:'600px', height:'calc(100% - 200px)', overflowY:'scroll', margin:'10px auto 0 auto' }}>
+          <div style={{ display:'block', width:'600px', height:'calc(100% - 200px)', overflowY:'scroll', margin:'10px auto 0 auto' }}>
             {rjsfSchema && (
               <div className={styles.schemaform}>
                 <Form

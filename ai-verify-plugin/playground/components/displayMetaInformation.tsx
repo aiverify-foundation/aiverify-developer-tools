@@ -32,7 +32,7 @@ export default function DisplayMetaInformation ({ component, schema }) {
     return <div></div>
 
   return (
-    <div style={{ overflowY:'auto', overflowX:'hidden', height:'100%', width:'100%', padding:'10px', marginBottom:'20px' }}>
+    <div style={{ overflowY:'auto', overflowX:'hidden', height:'100%', width:'100%', padding:'5px', paddingBottom:'30px' }}>
       <Form
         ref={formRef}
         schema={rjsfSchema}

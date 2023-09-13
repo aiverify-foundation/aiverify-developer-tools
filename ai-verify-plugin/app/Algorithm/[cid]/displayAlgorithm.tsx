@@ -76,7 +76,7 @@ export default function DisplayAlgorithm ({algorithm, pluginMeta}) {
   return (
     <>
       <div style={{ display:'block', width:'100%', height:'100%', overflow:'hidden' }}>
-        <div style={{ display: 'inline-block', width:'calc(100% - 400px)', verticalAlign:'top' }}>
+        <div style={{ display: 'inline-block', width:'calc(100% - 500px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{algorithm.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
             <Button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</Button>
@@ -97,11 +97,11 @@ export default function DisplayAlgorithm ({algorithm, pluginMeta}) {
               </div>
             )}
           </div>
-          <pre className={styles.formdata}>
+          {/* <pre className={styles.formdata}>
             {JSON.stringify(formData,null,2)}
-          </pre>
+          </pre> */}
         </div>
-        <div style={{ display:'inline-block', width:'400px', height:'calc(100vh - 20px)' }}>
+        <div style={{ display:'inline-block', width:'500px', height:'calc(100vh - 20px)' }}>
           <div style={{ display:'flex' }}>
             <Button
               variant='contained' 
@@ -118,14 +118,21 @@ export default function DisplayAlgorithm ({algorithm, pluginMeta}) {
             <Button
               variant='contained' 
               // className="aiv-button c-secondary"
-              style={{ lineHeight:'normal', backgroundColor:(selectedIndex==2)?"var(--color-button-selected)":undefined }}
+              style={{ marginRight:'5px', lineHeight:'normal', backgroundColor:(selectedIndex==2)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(2)}
             >Output Schema</Button>
+            <Button
+              variant='contained' 
+              // className="aiv-button c-secondary"
+              style={{ lineHeight:'normal', backgroundColor:(selectedIndex==3)?"var(--color-button-selected)":undefined }}
+              onClick={() => setSelectedIndex(3)}
+            >Output</Button>
           </div>
           <div className='aiv-panel' style={{ backgroundColor:'white', marginTop:'5px', height:'100%', overflow:'hidden' }}>
             {selectedIndex==0 && <DisplayMetaInformation component={algorithm} schema={AlgorithmSchema} />}
             {selectedIndex==1 && <pre className={styles.mytab}>{JSON.stringify(algorithm.inputSchema,null,2)}</pre>}
             {selectedIndex==2 && <pre className={styles.mytab}>{JSON.stringify(algorithm.outputSchema,null,2)}</pre>}
+            {selectedIndex==3 && <pre className={styles.mytab}>{JSON.stringify(formData,null,2)}</pre>}
           </div>
         </div>
       </div>

@@ -19,4 +19,6 @@
   --color-alert-success: #52be52;
   --color-alert-warning: #fabb33;
   --color-alert-info: #357cce;
+  --color-button-selected: #991e66;
+  --color-button-not-selected: #702f8a;
 }

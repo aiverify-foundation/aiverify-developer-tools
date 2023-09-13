@@ -53,9 +53,11 @@ export default function RootLayout({
        </head>
       <body>
         <ThemeRegistry options={{ key: 'mui' }}>
-          <div style={{ display:'flex' }}>
-            <MenuBar pluginMata={pluginMata} widgets={widgets} inputBlocks={inputBlocks} algorithms={algorithms} />
-            <div style={{ flexGrow:1, padding:'10px' }}>
+          <div style={{ display:'block', height:'100vh', width:'100wv', overflow:'hidden', padding:0, margin:0 }}>
+            <div style={{ display:'inline-block', width:'360px', height:'100%', verticalAlign:'top' }}>
+              <MenuBar pluginMata={pluginMata} widgets={widgets} inputBlocks={inputBlocks} algorithms={algorithms} />
+            </div>
+            <div style={{ display:'inline-block', verticalAlign:'top', width:'calc(100% - 360px)', height:'100%', padding:'10px', margin:'0px' }}>
               {children}
             </div>
           </div>

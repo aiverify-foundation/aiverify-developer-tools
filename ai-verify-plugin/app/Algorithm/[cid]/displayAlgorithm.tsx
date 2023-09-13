@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, createRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Button from '@mui/material/Button';
 import { UiSchema, RJSFSchema, hasWidget, getSchemaType } from "@rjsf/utils";
 import validator from '@rjsf/validator-ajv8';
 import Form from '@rjsf/mui';
@@ -74,13 +75,13 @@ export default function DisplayAlgorithm ({algorithm, pluginMeta}) {
 
   return (
     <>
-      <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)', overflow:'hidden' }}>
+      <div style={{ display:'block', width:'100%', height:'100%', overflow:'hidden' }}>
         <div style={{ display: 'inline-block', width:'calc(100% - 400px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{algorithm.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
-            <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
+            <Button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</Button>
           </div>
-          <div style={{ width:'600px', height:'calc(100% - 200px)' }}>
+          <div style={{ width:'600px', height:'calc(100% - 200px)', overflowY:'scroll', margin:'10px auto 0 auto' }}>
             {rjsfSchema && (
               <div className={styles.schemaform}>
                 <Form
@@ -102,18 +103,24 @@ export default function DisplayAlgorithm ({algorithm, pluginMeta}) {
         </div>
         <div style={{ display:'inline-block', width:'400px', height:'calc(100vh - 20px)' }}>
           <div style={{ display:'flex' }}>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==0)?"#4b255a":undefined }}
+            <Button
+              variant='contained' 
+              // className="aiv-button c-secondary"
+              style={{ marginRight:'5px', lineHeight:'normal', backgroundColor:(selectedIndex==0)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(0)}
-            >Algorithm Meta</button>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==1)?"#4b255a":undefined }}
+            >Algorithm Meta</Button>
+            <Button
+              variant='contained' 
+              // className="aiv-button c-secondary"
+              style={{ marginRight:'5px', lineHeight:'normal', backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(1)}
-            >Input Schema</button>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==2)?"#4b255a":undefined }}
+            >Input Schema</Button>
+            <Button
+              variant='contained' 
+              // className="aiv-button c-secondary"
+              style={{ lineHeight:'normal', backgroundColor:(selectedIndex==2)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(2)}
-            >Output Schema</button>
+            >Output Schema</Button>
           </div>
           <div className='aiv-panel' style={{ backgroundColor:'white', marginTop:'5px', height:'100%', overflow:'hidden' }}>
             {selectedIndex==0 && <DisplayMetaInformation component={algorithm} schema={AlgorithmSchema} />}

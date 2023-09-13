@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useRouter, useParams, usePathname  } from 'next/navigation';
 import 'ai-verify-shared-library/styles.css';
+import Button from '@mui/material/Button';
 
-const SELECTED_COLOR = 'var(--color-palette-violet-red)';
-const NOT_SELECTED_COLOR = '#cf539b';
+const SELECTED_COLOR = 'var(--color-button-selected)';
+// const NOT_SELECTED_COLOR = '#cf539b';
+const NOT_SELECTED_COLOR = 'var(--color-button-not-selected)';
 
 function compareName(a, b) {
   if (a.meta.name < b.meta.name)
@@ -51,9 +53,9 @@ export default function MenuBar({ pluginMata, widgets, inputBlocks, algorithms }
   }
 
   return (
-    <div className="aiv-panel" style={{ backgroundColor:'var(--color-palette-dark-indigo)', width: '360px', height:'100vh', flexShrink:0, textAlign:'left', overflowY:'auto' }}>
+    <div className="aiv-panel" style={{ display:'inline-block', backgroundColor:'var(--color-palette-dark-indigo)', width: '100%', height:'100%', flexShrink:0, textAlign:'left', overflowY:'auto' }}>
       <h2 style={{ padding:0, margin:0 }}>{pluginMata.name}</h2>
-      <div style={{ textAlign:'left', padding:'5px', }}>
+      <div style={{ textAlign:'left', padding:'5px', fontSize:'14px', overflowWrap:'break-word'  }}>
         <div>GID: {pluginMata.gid}</div>
         <div>Version: {pluginMata.version}</div>
         <div>Description: {pluginMata.description}</div>
@@ -63,36 +65,39 @@ export default function MenuBar({ pluginMata, widgets, inputBlocks, algorithms }
       <div className="sectionDivider"></div>
       {widgets && widgets.length > 0 && <h2 style={{ marginTop:'10px' }}>Widgets</h2>}
       {widgets.sort(compareName).map(widget => (
-        <button
+        <Button
           key={`link-${widget.meta.cid}`}
-          className="aiv-button c-secondary"
-          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === widget.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
+          variant="contained"
+          // className="aiv-button c-secondary"
+          sx={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === widget.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(widget)}
         >
             {widget.meta.name}
-        </button>
+        </Button>
       ))}        
       {inputBlocks && inputBlocks.length > 0 && <h2 style={{ marginTop:'10px' }}>Input Blocks</h2>}
       {inputBlocks.sort(compareName).map(ib => (
-        <button
+        <Button
           key={`link-${ib.meta.cid}`}
-          className="aiv-button c-secondary"
-          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === ib.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
+          // className="aiv-button c-secondary"
+          variant="contained"
+          sx={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === ib.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(ib)}
         >
             {ib.meta.name}
-        </button>
+        </Button>
       ))}        
       {algorithms && algorithms.length > 0 && <h2 style={{ marginTop:'10px' }}>Algorithms</h2>}
       {algorithms.sort(compareName).map(algo => (
-        <button
+        <Button
           key={`link-${algo.meta.cid}`}
-          className="aiv-button c-secondary"
-          style={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === algo.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
+          // className="aiv-button c-secondary"
+          variant="contained"
+          sx={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === algo.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(algo)}
         >
             {algo.meta.name}
-        </button>
+        </Button>
       ))}        
     </div>
   )

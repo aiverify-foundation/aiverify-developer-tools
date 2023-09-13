@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import GridLayout from "react-grid-layout";
+import Button from '@mui/material/Button';
 import widgetSchema from 'src/schemas/ai-verify.widget.schema.json';
 
 import DisplayMetaInformation from 'playground/components/displayMetaInformation';
@@ -66,14 +67,14 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
 
   return (
     <>
-      <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)', overflow:'hidden' }}>
+      <div style={{ display:'block', width:'100%', height:'100%', overflow:'hidden' }}>
         <div style={{ display:'inline-block', width:'calc(100% - 400px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{widget.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
-            <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
+            <Button variant='contained' sx={{ marginRight:'5px' }} onClick={() => {router.refresh()}}>Refresh</Button>
             {getWidgetSize()}
           </div>
-          <div className={styles.canvas} style={{ display:'block', height:'calc(100vh - 100px)', width:'810px', overflowY:'scroll', margin:'10px auto 0 auto' }}>
+          <div className={styles.canvas} style={{ display:'block', height:'calc(100% - 100px)', width:'810px', overflowY:'scroll', margin:'10px auto 0 auto' }}>
             {/* {JSON.stringify(layout,null,2)} */}
             {layout && <GridLayout
               layout={layout}
@@ -106,14 +107,18 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
         </div>
         <div style={{ display:'inline-block', width:'400px', height:'100%' }}>
           <div style={{ display:'flex' }}>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==0)?"#4b255a":undefined }}
+            <Button
+              // className="aiv-button c-secondary"
+              variant='contained'
+              sx={{ marginRight:'5px', lineHeight:'normal', backgroundColor:(selectedIndex==0)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(0)}
-            >Widget Meta</button>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==1)?"#4b255a":undefined }}
+            >Widget Meta</Button>
+            <Button 
+              // className="aiv-button c-secondary"
+              variant='contained'
+              sx={{ backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(1)}
-            >Properties</button>
+            >Properties</Button>
           </div>
           <div className='aiv-panel' style={{ backgroundColor:'white', marginTop:'5px', height:'100%', overflow:'hidden' }}>
             {selectedIndex==0 && <DisplayMetaInformation component={widget} schema={widgetSchema} />}

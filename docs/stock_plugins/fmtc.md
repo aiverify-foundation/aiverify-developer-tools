@@ -26,6 +26,14 @@ The Fairness Metrics Toolbox (FMT) for Classification contains a list of fairnes
 
 ## Using the Plugin in AI Verify
 ### Data Preparation
+For images:
+This plugin was mainly designed for tabular datasets, but can also be used on image datasets.
+
+- Image dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#1-dataset-preparation))
+- Annotated Ground Truth Dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#2-annotated-ground-truth-dataset))
+
+For tabular:
+
 - Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/))
 
 ### Algorithm User Input(s)
@@ -33,6 +41,8 @@ The Fairness Metrics Toolbox (FMT) for Classification contains a list of fairnes
 |      Input Field       |            Description            |  Type   |
 | -------------------- | ------------------------------- | :-----: |
 | Sensitive Feature Name | Array of sensitive features names </br> You may select multiple sensitive features of interest, and as a guide these are usually demographic features | `array` |
+| Annotated ground truth path               | **For image datasets:** An uploaded dataset containing image file names and the corresponding ground truth label </br> **For tabular datasets:** Select the ground truth dataset | `string` |
+| Name of column containing image file name | **For image datasets:** Key in the name of the column containing the file names in the annotated ground truth dataset </br> **For tabular datasets:** Key in `NA`                                                                            | `string` |
 
 ### Algorithm Input Block - Fairness Tree
 The Fairness Tree helps you to select the most relevant fairness metrics for your use case. Read more on how to use the fairness tree [here](https://imda-btg.github.io/aiverify/how-to/use-fairness-tree/) 
@@ -52,7 +62,7 @@ The Fairness Tree helps you to select the most relevant fairness metrics for you
     "description": "A schema for algorithm plugin input arguments",
     "type": "object",
     "required": [
-        "sensitive_feature"
+        "sensitive_feature", "annotated_labels_path","file_name_label"
     ],
     "properties": {
         "sensitive_feature": {
@@ -63,9 +73,21 @@ The Fairness Tree helps you to select the most relevant fairness metrics for you
                 "type": "string"
             },
             "minItems": 1
+        },
+        "annotated_labels_path": {
+            "title": "Annotated labels path",
+            "description": "Annotated labels path",
+            "type": "string",
+            "ui:widget": "selectDataset"
+        },
+        "file_name_label": {
+            "title": "Name of column containing image file names",
+            "description": "Key in the name of the column containing the file names in the annotated ground truth dataset",
+            "type": "string"
         }
     }
 }
+
 ```
 
 </details>

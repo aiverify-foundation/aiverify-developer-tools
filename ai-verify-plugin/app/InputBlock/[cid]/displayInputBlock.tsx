@@ -55,7 +55,7 @@ export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontm
   return (
     <InputDataContext.Provider value={inputBlockContext}>
       <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)' }}>
-        <div style={{ display:'inline-block', width:'calc(100% - 400px)', verticalAlign:'top' }}>
+        <div style={{ display:'inline-block', width:'calc(100% - 500px)', verticalAlign:'top' }}>
             <Button variant='contained' onClick={() => {router.refresh()}}>Refresh</Button>
             <div style={{ height:'calc(100vh - 60px)', marginTop:'5px', overflow:'auto' }}>
               <div className="aiv-panel" style={{ width:calculateCSSWidth() }}>{inputBlock.meta.name} Dialog</div>
@@ -64,7 +64,7 @@ export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontm
               </div>
             </div>
         </div>
-        <div style={{ display:'inline-block', height:'calc(100vh - 60px)', width: '400px', padding:'5px' }}>
+        <div style={{ display:'inline-block', height:'calc(100vh - 60px)', width: '500px', padding:'5px' }}>
           <div style={{ display:'flex' }}>
             <Button
               variant='contained'

@@ -68,7 +68,7 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
   return (
     <>
       <div style={{ display:'block', width:'100%', height:'100%', overflow:'hidden' }}>
-        <div style={{ display:'inline-block', height:'100%', overflowY:'auto', width:'calc(100% - 400px)', verticalAlign:'top' }}>
+        <div style={{ display:'inline-block', height:'100%', overflowY:'auto', width:'calc(100% - 500px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{widget.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
             <Button variant='contained' sx={{ marginRight:'5px' }} onClick={() => {router.refresh()}}>Refresh</Button>
@@ -105,7 +105,7 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
             </GridLayout>}
           </div>
         </div>
-        <div style={{ display:'inline-block', width:'400px', height:'100%' }}>
+        <div style={{ display:'inline-block', width:'500px', height:'100%' }}>
           <div style={{ display:'flex' }}>
             <Button
               // className="aiv-button c-secondary"

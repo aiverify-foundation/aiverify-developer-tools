@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import GridLayout from "react-grid-layout";
+import Button from '@mui/material/Button';
 import widgetSchema from 'src/schemas/ai-verify.widget.schema.json';
 
 import DisplayMetaInformation from 'playground/components/displayMetaInformation';
@@ -32,16 +33,17 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
     if (!widget)
       return;
     
+    const dynamicHeight = widget.meta.dynamicHeight;
     setLayout([
       {
         i: widget.meta.cid,
         x: 0, y: 0,
         w: widget.meta.widgetSize.minW,
-        h: widget.meta.widgetSize.minH,
+        h: dynamicHeight?36:widget.meta.widgetSize.minH,
         minW: widget.meta.widgetSize.minW,
-        minH: widget.meta.widgetSize.minH,
+        minH: dynamicHeight?36:widget.meta.widgetSize.minH,
         maxW: widget.meta.widgetSize.maxW,
-        maxH: widget.meta.widgetSize.maxH,
+        maxH: dynamicHeight?36:widget.meta.widgetSize.maxH,
         // maxH: 12,
       }
     ])
@@ -65,14 +67,14 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
 
   return (
     <>
-      <div style={{ display:'flex', width:'100%', height:'1200px' }}>
-        <div >
+      <div style={{ display:'block', width:'100%', height:'100%', overflow:'hidden' }}>
+        <div style={{ display:'inline-block', height:'100%', overflowY:'auto', width:'calc(100% - 500px)', verticalAlign:'top' }}>
           <h3 className="c-primary" style={{ padding:0, margin:0 }}>{widget.meta.name}</h3>
           <div style={{ display:'flex', alignItems:'center', marginTop:'10px' }}>
-            <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
+            <Button variant='contained' sx={{ marginRight:'5px' }} onClick={() => {router.refresh()}}>Refresh</Button>
             {getWidgetSize()}
           </div>
-          <div className={styles.canvas} style={{ display:'block', height:'calc(100vh - 100px)', width:'810px', overflowY:'scroll', margin:'10px auto 0 auto' }}>
+          <div className={styles.canvas} style={{ display:'block', position:'relative', height:'1100px', width:'810px', margin:'10px auto 5px auto' }}>
             {/* {JSON.stringify(layout,null,2)} */}
             {layout && <GridLayout
               layout={layout}
@@ -103,19 +105,25 @@ export default function DisplayWidget ({widget, pluginMeta, code, frontmatter}) 
             </GridLayout>}
           </div>
         </div>
-        <div style={{ flexGrow:1, height:'calc(100vh - 20px)' }}>
+        <div style={{ display:'inline-block', width:'500px', height:'100%' }}>
           <div style={{ display:'flex' }}>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==0)?"#4b255a":undefined }}
+            <Button
+              // className="aiv-button c-secondary"
+              variant='contained'
+              sx={{ marginRight:'5px', lineHeight:'normal', backgroundColor:(selectedIndex==0)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(0)}
-            >Widget Meta</button>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==1)?"#4b255a":undefined }}
+            >Widget Meta</Button>
+            <Button 
+              // className="aiv-button c-secondary"
+              variant='contained'
+              sx={{ backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(1)}
-            >Properties</button>
+            >Properties</Button>
           </div>
-          {selectedIndex==0 && <DisplayMetaInformation component={widget} schema={widgetSchema} />}
-          {selectedIndex==1 && <DisplayProperties widget={widget} properties={properties} setProperties={setProperties} />}
+          <div className='aiv-panel' style={{ backgroundColor:'white', marginTop:'5px', height:'100%', overflow:'hidden' }}>
+            {selectedIndex==0 && <DisplayMetaInformation component={widget} schema={widgetSchema} />}
+            {selectedIndex==1 && <DisplayProperties widget={widget} properties={properties} setProperties={setProperties} />}            
+          </div>
         </div>
       </div>
     </>

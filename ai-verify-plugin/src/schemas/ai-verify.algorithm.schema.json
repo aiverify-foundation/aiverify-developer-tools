@@ -6,7 +6,7 @@
 	"type": "object",
 	"properties": {
 		"cid": {
-			"description": "Unique identififer for the algorithm within the plugin",
+			"description": "Unique identifier for the algorithm within the plugin",
 			"type": "string",
 			"pattern": "^[a-zA-Z0-9][a-zA-Z0-9-._]*$",
 			"minLength": 1,

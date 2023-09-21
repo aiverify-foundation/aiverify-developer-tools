@@ -6,10 +6,15 @@
 }
 
 .formdata {
+  overflow-y: auto;
   margin-top: 10px;
   width: 100%;
   height: 300px;
   overflow: auto;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  font-family: monospace;
 }
 
 .mytab {
@@ -18,4 +23,7 @@
   overflow: auto;
   /* padding: 10px; */
   margin: 10px;
+  color: #676767;
+  text-align: left;
+  overflow: auto;
 }

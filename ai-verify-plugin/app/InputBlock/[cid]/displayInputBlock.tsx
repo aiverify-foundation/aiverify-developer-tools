@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Button from '@mui/material/Button';
 
 import DisplayMetaInformation from 'playground/components/displayMetaInformation';
 import inputBlockSchema from 'src/schemas/ai-verify.inputBlock.schema.json';
@@ -39,40 +40,49 @@ export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontm
       case 'xs':
         return '300px';
       case 'sm':
-        return '500px'
+        return '500px';
       case 'md':
-        return '700px'
+        return '700px';
       case 'lg':
-        return '1200px'
+        return '1200px';
       case 'xl':
-        return '1400px'
+        return '1400px';
+      default:
+        return '700px'; // default is md
     }
   }
   
   return (
     <InputDataContext.Provider value={inputBlockContext}>
-      <div style={{ display:'flex', width:'100%', height:'calc(100vh - 20px)' }}>
-        <div style={{ width: '1420px', flexShrink:0 }}>
-          <button className='aiv-button c-secondary' onClick={() => {router.refresh()}}>Refresh</button>
-          <div style={{ height:'calc(100vh - 60px)', overflow:'auto' }}>
-            <div style={{ width:calculateCSSWidth() }}>
-              <InputBlock inputBlock={inputBlock} code={code} frontmatter={frontmatter} />
+      <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)' }}>
+        <div style={{ display:'inline-block', width:'calc(100% - 500px)', verticalAlign:'top' }}>
+            <Button variant='contained' onClick={() => {router.refresh()}}>Refresh</Button>
+            <div style={{ height:'calc(100vh - 60px)', marginTop:'5px', overflow:'auto' }}>
+              <div className="aiv-panel" style={{ width:calculateCSSWidth() }}>{inputBlock.meta.name} Dialog</div>
+              <div style={{ width:calculateCSSWidth(), padding:'10px', border:'1px solid grey', backgroundColor:'white' }}>
+                <InputBlock inputBlock={inputBlock} code={code} frontmatter={frontmatter} />
+              </div>
             </div>
-          </div>
         </div>
-        <div style={{ height:'calc(100vh - 60px)', flexGrow:1 }}>
+        <div style={{ display:'inline-block', height:'calc(100vh - 60px)', width: '500px', padding:'5px' }}>
           <div style={{ display:'flex' }}>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==0)?"#4b255a":undefined }}
+            <Button
+              variant='contained'
+              // className="aiv-button c-secondary"
+              sx={{ lineHeight:'normal', marginRight:'5px', backgroundColor:(selectedIndex==0)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(0)}
-            >Input Block Meta</button>
-            <button className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==1)?"#4b255a":undefined }}
+            >Input Block Meta</Button>
+            <Button
+              variant='contained' 
+              // className="aiv-button c-secondary"
+              sx={{ lineHeight:'normal', backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(1)}
-            >Data Output</button>
+            >Data Output</Button>
           </div>
-          {selectedIndex==0 && <DisplayMetaInformation component={inputBlock} schema={inputBlockSchema} />}
-          {selectedIndex==1 && <pre style={{ padding:'10px', margin:'10px', height:'calc(100% - 20px)', overflowY:'auto' }}>{JSON.stringify(inputBlockContext.data, null, 2)}</pre>}
+          <div className='aiv-panel' style={{ backgroundColor:'white', marginTop:'5px', height:'100%', overflow:'hidden' }}>
+            {selectedIndex==0 && <DisplayMetaInformation component={inputBlock} schema={inputBlockSchema} />}
+            {selectedIndex==1 && <pre style={{ padding:'10px', margin:'10px', height:'calc(100% - 20px)', overflowY:'auto' }}>{JSON.stringify(inputBlockContext.data, null, 2)}</pre>}
+          </div>
         </div>
       </div>
     </InputDataContext.Provider>

@@ -32,6 +32,7 @@ const theme = createTheme({
 });
 
 const uiSchema: UiSchema = {
+  "ui:readonly": true,
   "ui:options": {
     "submitButtonOptions": {
       "norender": true,

@@ -79,9 +79,9 @@ export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontm
               onClick={() => setSelectedIndex(1)}
             >Data Output</Button>
           </div>
-          <div className='aiv-panel' style={{ backgroundColor:'white', marginTop:'5px', height:'100%', overflow:'hidden' }}>
+          <div className='aiv-panel' style={{ backgroundColor:'white', color:'#676767', marginTop:'5px', height:'100%', overflow:'hidden' }}>
             {selectedIndex==0 && <DisplayMetaInformation component={inputBlock} schema={inputBlockSchema} />}
-            {selectedIndex==1 && <pre style={{ padding:'10px', margin:'10px', height:'calc(100% - 20px)', overflowY:'auto' }}>{JSON.stringify(inputBlockContext.data, null, 2)}</pre>}
+            {selectedIndex==1 && <pre style={{ padding:'10px', margin:'10px', height:'calc(100% - 20px)', overflowY:'auto', textAlign:'left' }}>{JSON.stringify(inputBlockContext.data, null, 2)}</pre>}
           </div>
         </div>
       </div>

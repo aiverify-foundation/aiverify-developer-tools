@@ -24,7 +24,7 @@ The Developer Tools require specific modules from the main AI Verify repository.
 1. Clone the required modules and selectively checkout dependencies needed for Developer Tools
 ```bash
 # Execute in the working directory
-git clone git@github.com:IMDA-BTG/aiverify.git # requires Github public SSH key
+git clone https://github.com/IMDA-BTG/aiverify.git
 cd aiverify
 git sparse-checkout init --cone
 git sparse-checkout set ai-verify-shared-library test-engine-core-modules test-engine-core
@@ -130,7 +130,7 @@ git clone https://github.com/IMDA-BTG/aiverify-developer-tools.git
 ```bash
 cd aiverify-developer-tools/ai-verify-plugin
 npm install
-npm install ../../aiverify/ai-verify-shared-library
+npm link ../../aiverify/ai-verify-shared-library
 sudo npm install -g # You may need sudo for this command
 ```
 

@@ -336,4 +336,4 @@ Options:
   --hostname   Playground hostname to listen on                                          [string] [default: "localhost"]
 ```
 
-To start the playground, runs the playground command under a plugin directory. The command will scan for the algorithms, widgets and input blocks found under the plugin and luanches the playground app listening on http://localhost:5000/ by default. To change the port and hostname, use the options to configure.
+To start the playground, runs the playground command under a plugin directory. The command will scan for the algorithms, widgets and input blocks found under the plugin and launches the playground app listening on http://localhost:5000/ by default. To change the port and hostname, use the options to configure.

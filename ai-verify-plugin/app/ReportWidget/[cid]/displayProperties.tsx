@@ -10,7 +10,7 @@ export default function DisplayProperties ({ widget, properties, setProperties }
   }
 
   return (
-    <div style={{ marginTop:'10px', padding:'10px' }}>
+    <div style={{ marginTop:'10px', padding:'10px', color:'#676767', textAlign:'left' }}>
       {widget.meta.properties.map(prop => (
         <div key={prop.key} style={{ marginTop:'5px' }}>
           <div style={{ fontWeight:'600' }}>{prop.key}</div>

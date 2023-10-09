@@ -16,34 +16,34 @@
 			"description": "Template name",
 			"type": "string",
 			"minLength": 1,
-      "maxLength": 128
+			"maxLength": 128
 		},
 		"description": {
 			"description": "Template description",
 			"type": "string",
-      "maxLength": 256
+			"maxLength": 256
 		},
 		"author": {
 			"description": "Template author",
 			"type": "string",
-      "maxLength": 128
+			"maxLength": 128
 		},
 		"version": {
 			"description": "Version of the template, default to plugin version if not specificed",
 			"type": "string",
 			"minLength": 1,
-      "maxLength": 256
+			"maxLength": 256
 		},
 		"tags": {
-      "description": "Template tags, used for searching",
-      "type": "array",
-      "maxItems": 128,
-      "items": {
-        "type": "string",
-        "minLength": 1,
-        "maxLength": 128
-      }
-    }
+			"description": "Template tags, used for searching",
+			"type": "array",
+			"maxItems": 128,
+			"items": {
+				"type": "string",
+				"minLength": 1,
+				"maxLength": 128
+			}
+		}
 	},
 	"required": [
 		"cid",

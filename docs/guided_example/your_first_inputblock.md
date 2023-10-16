@@ -31,7 +31,7 @@ The following files are created:
 
 ## Check the Input Block Meta Data
 
-Open the file `my_inputblock.meta.json` under the ```inputs``` folder and check that the properties are set correctly as shown below:
+Open the file `my_inputblock.meta.json` under the **inputs** folder and check that the properties are set correctly as shown below:
 
 ```JSON title="my_inputblock.meta.json"
 {

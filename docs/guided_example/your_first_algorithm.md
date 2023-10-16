@@ -30,7 +30,7 @@ You should see the files generated for the algorithm component under the directo
 
 ## Check the Algorithm Meta Data
 
-Open the file `my_algorithm.meta.json` under the ```widgets``` folder and check that the properties are set correctly as shown below:
+Open the file `my_algorithm.meta.json` under the **algorithms/my_algorithm** folder and check that the properties are set correctly as shown below:
 
 ```JSON title="my_algorithm.meta.json"
 {

@@ -69,7 +69,7 @@ export default function MenuBar({ pluginMata, widgets, inputBlocks, algorithms }
           key={`link-${widget.meta.cid}`}
           variant="contained"
           // className="aiv-button c-secondary"
-          sx={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === widget.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
+          sx={{ marginTop:"10px", marginRight:'5px', textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === widget.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(widget)}
         >
             {widget.meta.name}
@@ -81,7 +81,7 @@ export default function MenuBar({ pluginMata, widgets, inputBlocks, algorithms }
           key={`link-${ib.meta.cid}`}
           // className="aiv-button c-secondary"
           variant="contained"
-          sx={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === ib.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
+          sx={{ marginTop:"10px", marginRight:'5px', textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === ib.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(ib)}
         >
             {ib.meta.name}
@@ -93,7 +93,7 @@ export default function MenuBar({ pluginMata, widgets, inputBlocks, algorithms }
           key={`link-${algo.meta.cid}`}
           // className="aiv-button c-secondary"
           variant="contained"
-          sx={{ marginTop:"10px", textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === algo.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
+          sx={{ marginTop:"10px", marginRight:'5px', textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === algo.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(algo)}
         >
             {algo.meta.name}

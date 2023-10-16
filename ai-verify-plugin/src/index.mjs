@@ -128,6 +128,14 @@ const argv = yargs(process.argv.slice(2))
       type: 'string',
       describe: 'Widget description',
       requiresArg: true,
+    }).option('author', {
+      type: 'string',
+      describe: 'Author name',
+      requiresArg: true,
+    }).option('version', {
+      type: 'string',
+      describe: 'Widget version',
+      requiresArg: true,
     }).option('tag', {
       describe: 'Allow users to search and filter by tags',
       requiresArg: true,
@@ -253,6 +261,19 @@ const argv = yargs(process.argv.slice(2))
       type: 'string',
       describe: 'Input Block description',
       requiresArg: true,
+    }).option('author', {
+      type: 'string',
+      describe: 'Author name',
+      requiresArg: true,
+    }).option('version', {
+      type: 'string',
+      describe: 'Input block version',
+      requiresArg: true,
+    }).option('tag', {
+      describe: 'Allow users to search and filter by tags',
+      requiresArg: true,
+      array: true,
+      type: 'string',
     }).option('group', {
       type: 'string',
       describe: 'Input Block group. Input blocks of the same group name (case-senstive) will be grouped together in the input block list',

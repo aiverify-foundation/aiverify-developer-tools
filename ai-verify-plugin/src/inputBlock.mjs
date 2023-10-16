@@ -35,10 +35,18 @@ export function generateInputBock(argv) {
   if (fs.existsSync(metaFile)) {
     meta = readJSON(metaFile);
   }
-  for (let key of ["name","description","group","width","fullScreen"]) {
+  for (let key of ["name","description","author","version","tag","group","width","fullScreen"]) {
     if (key in argv) {
-      if (!meta[key] || argv.force)
-        meta[key] = argv[key];
+      switch (key) {
+        case 'tag':
+          if (!meta['tags'] || argv.force)
+            meta['tags'] = argv[key];
+          break;
+        default:
+          if (!meta[key] || argv.force)
+            meta[key] = argv[key];
+          break;
+      }
     }
   }
   if (!meta.name)

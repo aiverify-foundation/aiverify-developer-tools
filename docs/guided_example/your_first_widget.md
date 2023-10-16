@@ -32,7 +32,7 @@ The following files are created:
 
 ## Check the Widget Meta Data
 
-Open the file `my_widget.meta.json` under the ```widgets``` folder and check that the properties are set correctly as shown below:
+Open the file `my_widget.meta.json` under the **widgets** folder and check that the properties are set correctly as shown below:
 
 ```JSON title="my_widget.meta.json"
 {

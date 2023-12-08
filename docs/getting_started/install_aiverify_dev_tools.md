@@ -84,12 +84,8 @@ pip install cookiecutter
 
 1. Install AI Verify Test Engine Core.
 ```bash
-# Execute these in the aiverify directory
-cd test-engine-core
-pip install dist/test_engine_core-0.9.0.tar.gz
-
-# Head back to the aiverify directory
-cd ..
+# Execute this in the aiverify directory
+pip install test-engine-core/dist/test_engine_core-0.9.0.tar.gz
 ```
 
     !!! Note 
@@ -97,12 +93,8 @@ cd ..
 
 1. Install necessary requirements from `test-engine-core-modules`.
 ```bash
-# Execute these in the aiverify directory
-cd test-engine-core-modules
-pip install -r requirements.txt
-
-# Head back to the aiverify directory
-cd ..
+# Execute this in the aiverify directory
+pip install -r test-engine-core-modules/requirements.txt
 ```
 
 1. Install dependencies and build AI Verify Frontend Shared Library
@@ -156,12 +148,4 @@ Commands:
 Options:
   --help  Show help                                                                                           [boolean]
 ```
-
-#### cookiecutter
-```bash
-cookiecutter -h
-```
-
-![cookiecutter Help Text](../images/cookiecutter_help_text.png)
-
 Congratulations! You are ready to create your first plugin.

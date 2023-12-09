@@ -1,28 +1,142 @@
-# README.md
+# AI Verify Developer Tool
 
-## Introduction
+Hey there! If you are here, it probably means you are a developer and is looking at developing your own plugin for AI Verify. This tool will get you started real quick. Just a quick reminder that this is just a tool to aid developers in creating their first plugin. AI Verify can be found [here](https://github.com/IMDA-BTG/aiverify).
 
-Welcome to AI Verify! AI Verify is launched under the [AI Verify Foundation](https://aiverifyfoundation.sg/?utm_source=Github&utm_medium=referral&utm_campaign=20230607_AI_Verify_Foundation_GitHub), a subsidiary under the IMDA.
+The AI Verify Plugin Tool help developers to bootstrap AI Verify plugin projects by generating skeleton code for AI Verify plugin, widgets and input blocks. This README serves as a quick start guide to set up the plugin tool.For more info on the use of the tool, please refer to [documentation section](#documentation).
 
-[AI Verify](https://aiverifyfoundation.sg/what-is-ai-verify/?utm_source=Github&utm_medium=referral&utm_campaign=20230607_AI_Verify_GitHub) is an AI governance testing framework and software toolkit that validates the performance of AI systems against a set of internationally recognised principles through standardised tests. AI Verify is consistent with international AI governance frameworks such as those from European Union, OECD and Singapore.
 
-It is a single integrated toolkit that operates within an enterprise environment. It can perform technical tests on common supervised learning classification and regression models for most tabular and image datasets. It however does not define AI ethical standards and does not guarantee that any AI system tested will be free from risks or biases or is completely safe.
+## Before You Begin 
 
-This document provides important notices and information about the project that contributors and users should be aware of. Please take the time to read through this document thoroughly. 
+This page prepares your environment for development on AI Verify. By the end of this guided example, you should end up with the following folder structure.
 
-## AI Verify
-AI Verify is currently live [here](https://github.com/IMDA-BTG/aiverify).
-## Installing AI Verify
+1. Clone the required modules and selectively checkout dependencies needed for Developer Tools
+```bash
+# Execute in the working directory
+git clone https://github.com/IMDA-BTG/aiverify.git
+cd aiverify
+git sparse-checkout init --cone
+git sparse-checkout set ai-verify-shared-library test-engine-core-modules test-engine-core
 
-New to AI Verify? Generally, you should install AI Verify by building and running the [Dockerfile](https://imda-btg.github.io/aiverify/getting-started/docker-setup/), which contains all the dependencies you need. This should get you ready to use AI Verify! See the installation guide for building and running from [source code](https://imda-btg.github.io/aiverify/getting-started/source-code-setup/) if you wish to deal with dependencies on your own. 
+ls # You should be able to see the three folders
+```
 
-## User Guide
+After the sparse checkout, you should end up with these three folders in your aiverify project directory. Please take note of the **test-engine-core-modules** path, as you will need it later while testing the algorithm component. 
 
-Learn how you may utilise AI Verify effectively [here](https://imda-btg.github.io/aiverify).
+![Sparse Checkout Folders](../images/sparse_checkout_folders.png)
 
-## Developer Guide
+## Installing Dependencies
 
-Learn how you can utilise the developer tools effectively to contribute to the project [here](https://imda-btg.github.io/aiverify-developer-tools/getting_started/start_here/).
+Install the following dependencies if they are not already available.
+
+1. Install jq and zip
+```bash
+sudo apt-get install -y jq zip
+```
+
+2. Install Python and its virtual environment packages
+```bash
+sudo apt-get install -y python3.10 python3-pip python3.10-venv
+```
+
+3. Install NodeJS
+```bash
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+## Preparing a Virtual Environment
+
+We recommend setting up a virtual environment for your plugin project to ensure that these libraries will not mess up your main development environment.
+
+1. Create a virtual environment
+```bash
+# Execute in the working directory
+python3 -m venv my_virtual_environment
+```
+
+2. Activate your newly created virtual environment
+```bash
+source my_virtual_environment/bin/activate
+```
+
+3. Check that you're working from the virtual environment
+```bash
+which python # you should see something like <working directory>/my_virtual_environment/bin/python
+```
+
+4. Install plugin dependencies in your virtual environment
+```bash
+pip install --upgrade pip
+pip install cookiecutter
+```
+
+1. Install AI Verify Test Engine Core.
+```bash
+# Execute this in the aiverify directory
+pip install test-engine-core/dist/test_engine_core-0.9.0.tar.gz
+```
+
+    !!! Note 
+        AI Verify Test Engine currently runs Pandas V1.5.3. We do not support Pandas 2.x.x.
+
+1. Install necessary requirements from `test-engine-core-modules`.
+```bash
+# Execute this in the aiverify directory
+pip install -r test-engine-core-modules/requirements.txt
+```
+
+1. Install dependencies and build AI Verify Frontend Shared Library
+```bash
+# Execute these in the aiverify directory
+cd ai-verify-shared-library
+npm install
+npm run build
+
+# Head back to the aiverify directory
+cd ..
+```
+
+## Installing AI Verify Developer Tools
+
+Install AI Verify Developer Tools in your environment.
+
+1. Clone our developer's repository. We recommend cloning this in the *same directory* you cloned **aiverify**.
+```bash
+# Execute in the working directory
+git clone https://github.com/IMDA-BTG/aiverify-developer-tools.git
+```
+
+2. Install AI Verify Plugin Tool
+```bash
+cd aiverify-developer-tools/ai-verify-plugin
+npm install
+npm link ../../aiverify/ai-verify-shared-library
+sudo npm install -g # You may need sudo for this command
+```
+
+If the installation is successful, you should see a similar output as shown below.
+#### [ai-verify-plugin](../plugins/Plugin_Tool.md)
+```
+$ ai-verify-plugin --help
+ai-verify-plugin <cmd> [args]
+
+Commands:
+  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
+  ai-verify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                          [aliases: gw]
+  ai-verify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                    [aliases: gib]
+  ai-verify-plugin generate-algorithm <cid>   Generate skeleton AI Verify algorithm                       [aliases: ga]
+  ai-verify-plugin zip [pluginDir]            Create the plugin zip file
+  ai-verify-plugin validate                   Validate AI Verify plugin
+  ai-verify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
+  ai-verify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
+  ai-verify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
+                                              options
+  ai-verify-plugin playground                 Launch the plugin playround
+
+Options:
+  --help  Show help                                                                                           [boolean]
+```
+Congratulations! You are ready to create your first plugin.
 
 ## Contributing Guidelines
 
@@ -34,7 +148,7 @@ Found a bug or have a feature request? Please report it on our issue tracker. We
 
 ## Documentation
 
-Comprehensive documentation is available for your reference. It includes installation and setup instructions, user guides, and other relevant information. Please refer to the documentation before opening an issue or asking for support.
+To learn more about this tool or create a sample plugin, you can refer our [documentation page](https://imda-btg.github.io/aiverify-developer-tools/).
 
 ## License
 

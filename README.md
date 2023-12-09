@@ -1,13 +1,28 @@
 # AI Verify Developer Tool
 
-Hey there! If you are here, it probably means you are a developer and is looking at developing your own plugin for AI Verify. This tool will get you started real quick. Just a quick reminder that this is just a tool to aid developers in creating their first plugin. AI Verify can be found [here](https://github.com/IMDA-BTG/aiverify).
+Hey there! If you are here, it probably means you are a developer and is looking to develop your own plugin for AI Verify. This tool will get you started real quick. Just a quick reminder that this is a tool to aid developers in creating their first plugin and not AI Verify. AI Verify can be found [here](https://github.com/IMDA-BTG/aiverify).
 
-The AI Verify Plugin Tool help developers to bootstrap AI Verify plugin projects by generating skeleton code for AI Verify plugin, widgets and input blocks. This README serves as a quick start guide to set up the plugin tool.For more info on the use of the tool, please refer to [documentation section](#documentation).
+The AI Verify Plugin Tool help developers to bootstrap AI Verify plugin projects by generating skeleton code for AI Verify plugin, widgets and input blocks. This README serves as a quick start guide to set up the plugin tool. For more info on the use of the tool, please refer to [documentation section](#documentation).
 
 
 ## Before You Begin 
 
-This page prepares your environment for development on AI Verify. By the end of this guided example, you should end up with the following folder structure.
+This page prepares your environment for development on AI Verify. By the end of this guided example, you should end up with the following folder structure:
+
+```
+<working directory>/
+├── aiverify/
+    ├── ai-verify-shared-library/
+    ├── test-engine-core/
+    └── test-engine-core-modules/
+├── aiverify-developer-tools/
+    ├── README.md
+    ├── ai-verify-algorithm-template/
+    ├── ai-verify-plugin/
+    └── template_plugin/
+└── my_virtual_environment/
+
+```
 
 1. Clone the required modules and selectively checkout dependencies needed for Developer Tools
 ```bash
@@ -22,7 +37,7 @@ ls # You should be able to see the three folders
 
 After the sparse checkout, you should end up with these three folders in your aiverify project directory. Please take note of the **test-engine-core-modules** path, as you will need it later while testing the algorithm component. 
 
-![Sparse Checkout Folders](../images/sparse_checkout_folders.png)
+![Sparse Checkout Folders](images/sparse_checkout_folders.png)
 
 ## Installing Dependencies
 
@@ -70,22 +85,21 @@ pip install --upgrade pip
 pip install cookiecutter
 ```
 
-1. Install AI Verify Test Engine Core.
+5. Install AI Verify Test Engine Core.
 ```bash
 # Execute this in the aiverify directory
 pip install test-engine-core/dist/test_engine_core-0.9.0.tar.gz
+# NOTE: AI Verify Test Engine currently runs Pandas V1.5.3. We do not support Pandas 2.x.x.
 ```
 
-    !!! Note 
-        AI Verify Test Engine currently runs Pandas V1.5.3. We do not support Pandas 2.x.x.
 
-1. Install necessary requirements from `test-engine-core-modules`.
+6. Install necessary requirements from `test-engine-core-modules`.
 ```bash
 # Execute this in the aiverify directory
 pip install -r test-engine-core-modules/requirements.txt
 ```
 
-1. Install dependencies and build AI Verify Frontend Shared Library
+7. Install dependencies and build AI Verify Frontend Shared Library
 ```bash
 # Execute these in the aiverify directory
 cd ai-verify-shared-library
@@ -136,7 +150,7 @@ Commands:
 Options:
   --help  Show help                                                                                           [boolean]
 ```
-Congratulations! You are ready to create your first plugin.
+Congratulations! You are ready to create your first plugin. If you wish to follow our guide to create a sample plugin, you can continue [here](https://imda-btg.github.io/aiverify-developer-tools/guided_example/introduction_to_plugins/).
 
 ## Contributing Guidelines
 

@@ -1,5 +1,3 @@
-# README.md
-
 ## Introduction
 
 Welcome to AI Verify! AI Verify is launched under the [AI Verify Foundation](https://aiverifyfoundation.sg/?utm_source=Github&utm_medium=referral&utm_campaign=20230607_AI_Verify_Foundation_GitHub), a subsidiary under the IMDA.
@@ -11,22 +9,23 @@ It is a single integrated toolkit that operates within an enterprise environment
 This document provides important notices and information about the project that contributors and users should be aware of. Please take the time to read through this document thoroughly. 
 
 ## AI Verify
-AI Verify is currently live [here](https://github.com/IMDA-BTG/aiverify).
+AI Verify is currently live [here](https://github.com/aiverify-foundation/aiverify).
+
 ## Installing AI Verify
 
-New to AI Verify? Generally, you should install AI Verify by building and running the [Dockerfile](https://imda-btg.github.io/aiverify/getting-started/docker-setup/), which contains all the dependencies you need. This should get you ready to use AI Verify! See the installation guide for building and running from [source code](https://imda-btg.github.io/aiverify/getting-started/source-code-setup/) if you wish to deal with dependencies on your own. 
+New to AI Verify? Generally, you should install AI Verify by building and running the [Dockerfile](https://aiverify-foundation.github.io/aiverify/getting-started/docker-setup/), which contains all the dependencies you need. This should get you ready to use AI Verify! See the installation guide for building and running from [source code](https://aiverify-foundation.github.io/aiverify/getting-started/source-code-setup/) if you wish to deal with dependencies on your own. 
 
 ## User Guide
 
-Learn how you may utilise AI Verify effectively [here](https://imda-btg.github.io/aiverify).
+Learn how you may utilise AI Verify effectively [here](https://aiverify-foundation.github.io/aiverify).
 
 ## Developer Guide
 
-Learn how you can utilise the developer tools effectively to contribute to the project [here](https://imda-btg.github.io/aiverify-developer-tools/getting_started/start_here/).
+Learn how you can utilise the developer tools effectively to contribute to the project [here](https://aiverify-foundation.github.io/aiverify-developer-tools/getting_started/start_here/).
 
 ## Contributing Guidelines
 
-We encourage contributions from the community to help improve this project. Before contributing, please read our [Contributing Guidelines](https://github.com/IMDA-BTG/aiverify-developer-tools/blob/main/CONTRIBUTING.md) to understand the process and expectations.
+We encourage contributions from the community to help improve this project. Before contributing, please read our [Contributing Guidelines](https://github.com/aiverify-foundation/aiverify-developer-tools/blob/main/CONTRIBUTING.md) to understand the process and expectations.
 
 ## Issue Tracker
 

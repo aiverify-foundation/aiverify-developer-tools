@@ -1,0 +1,1 @@
+{% include 'templates/plugin_types/algo_init' %}

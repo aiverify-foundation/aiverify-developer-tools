@@ -1,5 +1,6 @@
 {
     "cid": "{{cookiecutter.project_slug}}",
+    "gid": "your_first_plugin",
     "name": "{{cookiecutter.plugin_name}}",
     {% if cookiecutter.algo_model_support == "Both" %}"modelType":["classification","regression"],
     {% elif cookiecutter.algo_model_support == "Regression" %}"modelType":["regression"],

@@ -19,7 +19,8 @@ def remove_json_empty_lines() -> None:
     """
     # Opening JSON file
     json_filename = os.path.join(
-        PROJECT_DIRECTORY, "{{cookiecutter.project_slug}}.meta.json"
+        PROJECT_DIRECTORY,
+        "plugin.meta.json",
     )
     json_file = open(json_filename)
 

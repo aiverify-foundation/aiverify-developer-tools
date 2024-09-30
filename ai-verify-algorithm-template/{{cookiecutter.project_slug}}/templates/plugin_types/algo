@@ -2,21 +2,21 @@ import logging
 from pathlib import Path, PurePath
 from typing import Dict, List, Tuple, Union
 
-from test_engine_core.interfaces.ialgorithm import IAlgorithm
-from test_engine_core.interfaces.idata import IData
-from test_engine_core.interfaces.imodel import IModel
-from test_engine_core.interfaces.ipipeline import IPipeline
-from test_engine_core.interfaces.iserializer import ISerializer
-from test_engine_core.plugins.enums.model_type import ModelType
-from test_engine_core.plugins.enums.plugin_type import PluginType
-from test_engine_core.plugins.metadata.plugin_metadata import PluginMetadata
-from test_engine_core.utils.json_utils import load_schema_file, validate_json
-from test_engine_core.utils.simple_progress import SimpleProgress
+from aiverify_test_engine.interfaces.ialgorithm import IAlgorithm
+from aiverify_test_engine.interfaces.idata import IData
+from aiverify_test_engine.interfaces.imodel import IModel
+from aiverify_test_engine.interfaces.ipipeline import IPipeline
+from aiverify_test_engine.interfaces.iserializer import ISerializer
+from aiverify_test_engine.plugins.enums.model_type import ModelType
+from aiverify_test_engine.plugins.enums.plugin_type import PluginType
+from aiverify_test_engine.plugins.metadata.plugin_metadata import PluginMetadata
+from aiverify_test_engine.utils.json_utils import load_schema_file, validate_json
+from aiverify_test_engine.utils.simple_progress import SimpleProgress
 
 
 # =====================================================================================
 # NOTE:
-# 1. Check that you have installed the test_engine_core latest package.
+# 1. Check that you have installed the aiverify_test_engine latest package.
 # 2. Check that you have run tests/install_core_plugins_requirements.sh to install all the
 #    requirements required by the core plugins (serializers, data, models).
 #    Alternatively, you may install the plugins that you require by installing the
@@ -140,8 +140,11 @@ class Plugin(IAlgorithm):
         # Algorithm input schema defined in input.schema.json
         # By defining the input schema, it allows the front-end to know what algorithm input params is
         # required by this plugin. This allows this algorithm plug-in to receive the arguments values it requires.
+        
+        current_file_dir = Path(__file__).parent
+        
         self._input_schema = load_schema_file(
-            str(self._base_path / "input.schema.json")
+            str(current_file_dir / "input.schema.json")
         )
 
         # TODO: Update the output json schema in output.schema.json
@@ -149,7 +152,7 @@ class Plugin(IAlgorithm):
         # By defining the output schema, this plug-in validates the result with the output schema.
         # This allows the result to be validated against the schema before passing it to the front-end for display.
         self._output_schema = load_schema_file(
-            str(self._base_path / "output.schema.json")
+            str(current_file_dir / "output.schema.json")
         )
 
         # Retrieve the input parameters defined in the input schema and store them

@@ -18,11 +18,13 @@ A Cookiecutter project template that allows users to create projects from, e.g. 
   ```bash
   git clone https://github.com/IMDA-BTG/aiverify-developer-tools.git
   ```
-3. Go to the folder folder where the algorithm are stored
+
+3. Go to the folder where the algorithm are stored
   ```bash
   cd aiverify-developer-tools/template_plugin/algorithms
   ```
-3. Run cookiecutter and point it to the provided template
+  
+4. Run cookiecutter and point it to the provided template
   ```bash
   cookiecutter ../../ai-verify-algorithm-template
   # You'll be prompted to enter values to generate your plugin

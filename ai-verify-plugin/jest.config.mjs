@@ -17,8 +17,8 @@ const customConfig = {
   moduleNameMapper: {
     "src/(.*)": "<rootDir>/src/$1",
     "playground/(.*)": "<rootDir>/playground/$1",
-    // "ai-verify-shared-library/(.*)": "<rootDir>/node_modules/ai-verify-shared-library/$1",
-    "ai-verify-shared-library/(.*)": "<rootDir>/node_modules/ai-verify-shared-library/packages/$1/src",
+    // "aiverify-shared-library/(.*)": "<rootDir>/node_modules/aiverify-shared-library/$1",
+    "aiverify-shared-library/(.*)": "<rootDir>/node_modules/aiverify-shared-library/packages/$1/src",
   },
   // moduleFileExtensions: ["mjs", "js", "jsx", "ts", "tsx"],
   testMatch: [

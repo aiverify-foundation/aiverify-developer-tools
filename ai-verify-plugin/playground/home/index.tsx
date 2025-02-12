@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import 'ai-verify-shared-library/styles.css';
+import 'aiverify-shared-library/styles.css';
 import "node_modules/react-grid-layout/css/styles.css";
 import "node_modules/react-resizable/css/styles.css";
 

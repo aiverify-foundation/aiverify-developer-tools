@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import { UiSchema, RJSFSchema, hasWidget, getSchemaType } from "@rjsf/utils";
 import validator from '@rjsf/validator-ajv8';
 import Form from '@rjsf/mui';
-import { parseRJSFSchema } from 'ai-verify-shared-library/lib';
+import { parseRJSFSchema } from 'aiverify-shared-library/lib';
 import _ from 'lodash';
 
 const defaultUISchema: UiSchema = {

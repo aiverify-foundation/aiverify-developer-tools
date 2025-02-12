@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import DisplayMetaInformation from 'playground/components/displayMetaInformation';
 import inputBlockSchema from 'src/schemas/ai-verify.inputBlock.schema.json';
 import InputBlock from 'playground/inputBlock';
-import { InputDataContext, InputDataContextType } from "ai-verify-shared-library/lib";
+import { InputDataContext, InputDataContextType } from "aiverify-shared-library/lib";
 
 
 export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontmatter}) {

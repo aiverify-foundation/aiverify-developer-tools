@@ -11,7 +11,7 @@ The AI Verify Plugin Tool help developers to bootstrap AI Verify plugin projects
 ### Prerequisites
 
 - nodejs >= 16.x
-- [ai-verify-shared-library](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-shared-library)
+- [aiverify-shared-library](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/aiverify-shared-library)
 
 
 ## Script commands
@@ -33,10 +33,10 @@ Options:
 ```
 
 ## Installation
-Install the ai-verify-shared-library.
+Install the aiverify-shared-library.
 ```
-git clone git@gitlab.com:imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-shared-library.git
-cd ai-verify-shared-library
+git clone git@gitlab.com:imda_dsl/t2po/ai-verify/ai-verify-portal/aiverify-shared-library.git
+cd aiverify-shared-library
 npm run build
 ```
 
@@ -45,7 +45,7 @@ Install `ai-verify-plugin` tool
 git clone git@gitlab.com:imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-plugin.git
 cd ai-verify-plugin
 npm install
-npm install <path to ai-verify-shared-library>
+npm install <path to aiverify-shared-library>
 npm install -g
 ```
 

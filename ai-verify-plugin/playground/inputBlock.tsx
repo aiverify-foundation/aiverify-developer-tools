@@ -1,8 +1,8 @@
 import { useMemo, useState, useEffect, useRef, useContext, createContext } from 'react';
 import {getMDXComponent} from 'mdx-bundler/client';
-import { InputDataContext, getComponents, InputDataContextType } from "ai-verify-shared-library/lib";
+import { InputDataContext, getComponents, InputDataContextType } from "aiverify-shared-library/lib";
 const components = getComponents();
-import 'ai-verify-shared-library/styles.css';
+import 'aiverify-shared-library/styles.css';
 
 // const components = getComponents();
 

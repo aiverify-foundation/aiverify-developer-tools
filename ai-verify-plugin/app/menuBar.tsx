@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, useParams, usePathname  } from 'next/navigation';
-import 'ai-verify-shared-library/styles.css';
+import 'aiverify-shared-library/styles.css';
 import Button from '@mui/material/Button';
 
 const SELECTED_COLOR = 'var(--color-button-selected)';

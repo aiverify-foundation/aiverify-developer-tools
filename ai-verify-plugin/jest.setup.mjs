@@ -14,6 +14,6 @@ global.plugin = {
 
 import ResizeObserver from 'resize-observer-polyfill';
 global.ResizeObserver = ResizeObserver;
-// import * as sharedLibr from 'ai-verify-shared-library';
+// import * as sharedLibr from 'aiverify-shared-library';
 // console.log("global.pluginDir", global.pluginDir);
 // console.log("global.plugin", global.plugin);

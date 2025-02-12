@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
 import {getMDXComponent} from 'mdx-bundler/client';
 import moment from 'moment';
-import 'ai-verify-shared-library/styles.css';
+import 'aiverify-shared-library/styles.css';
 
 export default function Widget({ widget, pluginMeta, code, frontmatter, properties={}, testDataset={}, model={}, tests=[] }) {
   const ref = useRef<HTMLDivElement>(null);

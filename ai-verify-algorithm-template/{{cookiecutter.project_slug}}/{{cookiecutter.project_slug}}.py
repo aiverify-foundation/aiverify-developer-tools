@@ -1,1 +1,0 @@
-{% include 'templates/plugin_types/algorithm' %}

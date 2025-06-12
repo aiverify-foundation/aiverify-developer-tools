@@ -1,2 +1,6 @@
 # MacOS
 .DS_Store
+.vscode
+.venv
+venv
+dist

@@ -1,19 +1,24 @@
 ## Introduction
 
-Welcome to AI Verify! AI Verify is launched under the [AI Verify Foundation](https://aiverifyfoundation.sg/?utm_source=Github&utm_medium=referral&utm_campaign=20230607_AI_Verify_Foundation_GitHub), a subsidiary under the IMDA.
+Welcome to AI Verify Developer Tools! This repository provides templates to quickly create a test plugin compatible with AI Verify Toolkit. The `v2.x` branch of this repository should be used to create plugins for AI Verify Toolkit version `v2.x`. Currently, the [v2.x branch](https://github.com/aiverify-foundation/aiverify/tree/v2.x) is under development, but we have released an alpha version of `aiverify-test-engine` that provides most of the primitives required to create a plugin. Refer to the [algorithm template readme](./ai-verify-algorithm-template/README.md) for more information on how to create a plugin with a cookiecutter template.
+
+This document provides important notices and information about the project that contributors and users should be aware of. Please take the time to read through this document thoroughly. 
+
+## AI Verify
+AI Verify is currently live [here](https://github.com/aiverify-foundation/aiverify). AI Verify is launched under the [AI Verify Foundation](https://aiverifyfoundation.sg/?utm_source=Github&utm_medium=referral&utm_campaign=20230607_AI_Verify_Foundation_GitHub), a subsidiary under the IMDA.
 
 [AI Verify](https://aiverifyfoundation.sg/what-is-ai-verify/?utm_source=Github&utm_medium=referral&utm_campaign=20230607_AI_Verify_GitHub) is an AI governance testing framework and software toolkit that validates the performance of AI systems against a set of internationally recognised principles through standardised tests. AI Verify is consistent with international AI governance frameworks such as those from European Union, OECD and Singapore.
 
 It is a single integrated toolkit that operates within an enterprise environment. It can perform technical tests on common supervised learning classification and regression models for most tabular and image datasets. It however does not define AI ethical standards and does not guarantee that any AI system tested will be free from risks or biases or is completely safe.
 
-This document provides important notices and information about the project that contributors and users should be aware of. Please take the time to read through this document thoroughly. 
-
-## AI Verify
-AI Verify is currently live [here](https://github.com/aiverify-foundation/aiverify).
 
 ## Installing AI Verify
 
-New to AI Verify? Generally, you should install AI Verify by building and running the [Dockerfile](https://aiverify-foundation.github.io/aiverify/getting-started/docker-setup/), which contains all the dependencies you need. This should get you ready to use AI Verify! See the installation guide for building and running from [source code](https://aiverify-foundation.github.io/aiverify/getting-started/source-code-setup/) if you wish to deal with dependencies on your own. 
+[AI Verify v2.x branch](https://github.com/aiverify-foundation/aiverify/tree/v2.x) is under development. To install the alpha version of `aiverify-test-engine`, download from pypi using the following command:
+
+```bash
+pip install aiverify-test-engine==2.0.0a1
+```
 
 ## User Guide
 

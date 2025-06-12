@@ -57,7 +57,7 @@ function findPluginRoot (argv) {
 import yargs from 'yargs/yargs';
 const argv = yargs(process.argv.slice(2))
   .version(false)
-  .scriptName("ai-verify-plugin")
+  .scriptName("aiverify-plugin")
   .usage('$0 <cmd> [args]')
   .command(['generate-plugin [gid]','gp'], 'Generate skeleton AI Verify plugin project', (yargs) => {
     yargs.positional('gid', {

@@ -17,7 +17,6 @@ A Cookiecutter project template that allows users to create custom test plugins 
 2. Clone this repository
   ```bash
   git clone https://github.com/IMDA-BTG/aiverify-developer-tools.git
-  git checkout 2.x
   ```
 
 3. Go to the folder where the algorithm are stored

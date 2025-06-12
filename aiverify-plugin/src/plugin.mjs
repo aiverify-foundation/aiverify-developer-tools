@@ -103,10 +103,10 @@ git push -u origin main
 \`\`\`
 
 ## Create zip file for Plugin installation
-Install the [ai-verify-plugin](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-plugin) tool.
+Install the [aiverify-plugin](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/aiverify-plugin) tool.
 
 \`\`\`
-ai-verify-plugin zip --pluginPath=<path to plugin directory>
+aiverify-plugin zip --pluginPath=<path to plugin directory>
 \`\`\`
 `;
 

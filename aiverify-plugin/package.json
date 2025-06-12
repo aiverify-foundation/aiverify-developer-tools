@@ -1,9 +1,9 @@
 {
-  "name": "ai-verify-plugin",
+  "name": "aiverify-plugin",
   "version": "1.0.1",
   "description": "NPX script for ai-verify plugin",
   "bin": {
-    "ai-verify-plugin": "src/index.mjs"
+    "aiverify-plugin": "src/index.mjs"
   },
   "author": "Leong Peck Yoke",
   "license": "ISC",

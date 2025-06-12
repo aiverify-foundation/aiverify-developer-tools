@@ -17,16 +17,16 @@ The AI Verify Plugin Tool help developers to bootstrap AI Verify plugin projects
 ## Script commands
 
 ```
-ai-verify-plugin <cmd> [args]
+aiverify-plugin <cmd> [args]
 
 Commands:
-  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                   [aliases: gp]
-  ai-verify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                           [aliases: gw]
-  ai-verify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                     [aliases: gib]
-  ai-verify-plugin zip [pluginDir]            Create the plugin zip file
-  ai-verify-plugin validate                   Validate AI Verify plugin
-  ai-verify-plugin test                       [TODO] Run the plugin tests
-  ai-verify-plugin playground                 [TODO] Launch the plugin playround
+  aiverify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                   [aliases: gp]
+  aiverify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                           [aliases: gw]
+  aiverify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                     [aliases: gib]
+  aiverify-plugin zip [pluginDir]            Create the plugin zip file
+  aiverify-plugin validate                   Validate AI Verify plugin
+  aiverify-plugin test                       [TODO] Run the plugin tests
+  aiverify-plugin playground                 [TODO] Launch the plugin playround
 
 Options:
   --help  Show help                                                                                            [boolean]
@@ -40,10 +40,10 @@ cd aiverify-shared-library
 npm run build
 ```
 
-Install `ai-verify-plugin` tool
+Install `aiverify-plugin` tool
 ```
-git clone git@gitlab.com:imda_dsl/t2po/ai-verify/ai-verify-portal/ai-verify-plugin.git
-cd ai-verify-plugin
+git clone git@gitlab.com:imda_dsl/t2po/ai-verify/ai-verify-portal/aiverify-plugin.git
+cd aiverify-plugin
 npm install
 npm install <path to aiverify-shared-library>
 npm install -g
@@ -52,5 +52,5 @@ npm install -g
 ## Running the tool
 Run script, e.g. 
 ```
-ai-verify-plugin --help
+aiverify-plugin --help
 ```

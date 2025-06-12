@@ -29,9 +29,10 @@ async function getWidget(params) {
   }
 }
 
-export default async function Page({params}: { params: { cid: string } }) {
+export default async function Page(props: { params: Promise<{ cid: string }> }) {
+  const params = await props.params;
   const pluginMeta = getPluginMeta();
-  const { widget, result, error } = await getWidget(params); 
+  const { widget, result, error } = await getWidget(params);
   if (!result) {
     return (
       <div>Invalid widget</div>

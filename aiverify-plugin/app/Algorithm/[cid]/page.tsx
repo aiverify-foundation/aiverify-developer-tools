@@ -23,7 +23,8 @@ function readAlgo(params) {
   return algo;
 }
 
-export default async function Page({params}: { params: { cid: string } }) {
+export default async function Page(props: { params: Promise<{ cid: string }> }) {
+  const params = await props.params;
   const pluginMeta = getPluginMeta();
   const algo = readAlgo(params);
 

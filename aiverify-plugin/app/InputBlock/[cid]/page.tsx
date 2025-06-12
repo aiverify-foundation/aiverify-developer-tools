@@ -29,9 +29,10 @@ async function getInputBlock(params) {
   }
 }
 
-export default async function Page({params}: { params: { cid: string } }) {
+export default async function Page(props: { params: Promise<{ cid: string }> }) {
+  const params = await props.params;
   const pluginMeta = getPluginMeta();
-  const { inputBlock, result, error } = await getInputBlock(params); 
+  const { inputBlock, result, error } = await getInputBlock(params);
   if (!result) {
     return (
       <div>Invalid inputBlock</div>

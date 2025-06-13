@@ -1,7 +1,7 @@
 import { readJSON, rootDir } from "./utils.mjs";
 import path from "node:path";
 
-const baseSchemaPath = path.join(rootDir,"../aiverify/common/schemas")
+const baseSchemaPath = path.join(rootDir,"../../aiverify/common/schemas")
 
 export const pluginSchema = readJSON(path.join(baseSchemaPath,"./aiverify.plugin.schema.json"));
 

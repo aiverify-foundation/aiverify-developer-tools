@@ -1,7 +1,7 @@
 {
   "name": "aiverify-plugin",
   "version": "1.0.1",
-  "description": "NPX script for ai-verify plugin",
+  "description": "NPX script for aiverify plugin",
   "bin": {
     "aiverify-plugin": "src/index.mjs"
   },
@@ -11,7 +11,8 @@
     "@rjsf/core": "^5.24.11",
     "@rjsf/utils": "^5.24.11",
     "@rjsf/validator-ajv8": "^5.24.11",
-    "aiverify-shared-library": "file:../aiverify-shared-library",
+    "adm-zip": "^0.5.16",
+    "aiverify-shared-library": "file:../../aiverify/aiverify-shared-library",
     "dotenv": "^16.5.0",
     "esbuild": "^0.25.5",
     "jsonschema": "^1.5.0",

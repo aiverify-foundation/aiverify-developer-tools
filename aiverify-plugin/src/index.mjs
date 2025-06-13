@@ -50,6 +50,7 @@ function findPluginRoot (argv) {
     curDir = path.resolve(curDir, "..");
   }
   argv._pluginDir = curDir;
+  process.env["pluginDir"] = curDir
   return curDir;
 }
 

@@ -76,6 +76,12 @@ build/
 lib-cov
 coverage
 cache
+.cache
+.env
+env
+__pycache__
+.pytest_cache
+output/
       `;
     fs.writeFileSync(gitignorePath, gitignore.trim() + "\n");
   }

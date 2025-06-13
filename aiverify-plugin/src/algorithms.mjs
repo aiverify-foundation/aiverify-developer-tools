@@ -9,6 +9,7 @@ import { validate } from "jsonschema";
 import { readJSON, rootDir } from "./utils.mjs";
 
 import { algorithmSchema } from "./schemas.mjs";
+import { getPluginMeta } from "./pluginManager.mjs";
 
 const ALGORITHM_SUBDIR = "algorithms";
 const SYNTAX_CHECKER = "syntax_checker.py";
@@ -17,7 +18,7 @@ export async function validateAlgorithm(argv, meta, subdir) {
   const python = process.env.PYTHON || "python";
 
   const checkerScript = path.join(subdir, SYNTAX_CHECKER);
-  const mainScript = path.join(subdir, `${meta.cid}.py`);
+  const mainScript = path.join(subdir, `algo.py`);
 
   // validate meta
   try {
@@ -64,7 +65,7 @@ export async function validateAllAlgorithms(argv) {
       return false;
     }
 
-    const metaFilename = path.join(subdir, `${cid}.meta.json`);
+    const metaFilename = path.join(subdir, `algo.meta.json`);
     if (!fs.existsSync(metaFilename)) {
       console.log(`Meta file ${metaFilename} not found`);
       return false;
@@ -106,6 +107,7 @@ export async function generateAlgorithm(argv) {
 
   // check algo component directory does not exists
   const compDir = path.join(algoDir, argv.cid);
+  const srcdir = path.join(compDir, argv.cid)
   if (fs.existsSync(compDir)) {
     console.error(`Algorithm component ${argv.cid} already exists`);
     exit(-1);
@@ -162,12 +164,15 @@ default_context:
       rl.close();
       cleanupFiles();
 
+      const pluginMeta = getPluginMeta()
+
       // update meta
-      const metaFilename = path.join(compDir, `${argv.cid}.meta.json`);
+      const metaFilename = path.join(srcdir, `algo.meta.json`);
       const meta = readJSON(metaFilename)
       if (argv.tag) {
         meta.tags = argv.tag;
       }
+      meta.gid = pluginMeta.gid;
       fs.writeFile(metaFilename, JSON.stringify(meta, null, 2), err => {
         if (err) {
           console.error("Error updating algorithm meta file");

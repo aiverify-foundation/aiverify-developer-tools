@@ -111,7 +111,7 @@ export async function generateAlgorithm(argv) {
     exit(-1);
   }
 
-  const templateDir = path.join(rootDir, "../ai-verify-algorithm-template");
+  const templateDir = path.join(rootDir, "../aiverify-algorithm-template");
   const configFile = path.join(algoDir, `${argv.cid}-config.yaml`);
 
   const cleanupFiles = () => {

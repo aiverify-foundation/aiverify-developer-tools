@@ -86,7 +86,7 @@ cache
     const readme = `
 # Project for ${argv.gid} plugin
 
-For more information on AI Verify plugin developer, please refer to the [Developer Documentation](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-developers-documentation/-/tree/master/docs).
+For more information on AI Verify plugin developer, please refer to the [Developer Documentation](https://aiverify-foundation.github.io/aiverify-developer-tools/).
 
 ## Push project to GIT repo
 1. Create a new blank GIT project.
@@ -103,7 +103,7 @@ git push -u origin main
 \`\`\`
 
 ## Create zip file for Plugin installation
-Install the [aiverify-plugin](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/aiverify-plugin) tool.
+Install the [aiverify-plugin](https://github.com/aiverify-foundation/aiverify-developer-tools/tree/main/aiverify-plugin) tool.
 
 \`\`\`
 aiverify-plugin zip --pluginPath=<path to plugin directory>
@@ -143,7 +143,7 @@ aiverify-plugin zip --pluginPath=<path to plugin directory>
   if (argv.license) {
     const licenseDir = path.join(
       rootDir,
-      "../ai-verify-algorithm-template/{{cookiecutter.project_slug}}/templates/licenses"
+      "../aiverify-algorithm-template/{{cookiecutter.project_slug}}/templates/licenses"
     );
     let filename = "";
     switch (argv.license) {

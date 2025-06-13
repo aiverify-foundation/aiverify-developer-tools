@@ -1,6 +1,6 @@
 # AI Verify Plugin Tool
 
-The AI Verify Plugin Tool help developers to bootstrap AI Verify plugin projects by generating skeleton code for AI Verify plugin, widgets and input blocks. For more info on the use of the tool, please refer to the [documentation page](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-developers-documentation/-/blob/master/PluginTool.md).
+The AI Verify Plugin Tool help developers to bootstrap AI Verify plugin projects by generating skeleton code for AI Verify plugin, widgets and input blocks. For more info on the use of the tool, please refer to the [documentation page](https://github.com/aiverify-foundation/aiverify-developer-tools/blob/docs/docs/plugins/Plugin_Tool.md).
 
 
 ## Software Requirements
@@ -10,8 +10,12 @@ The AI Verify Plugin Tool help developers to bootstrap AI Verify plugin projects
 
 ### Prerequisites
 
-- nodejs >= 16.x
-- [aiverify-shared-library](https://gitlab.com/imda_dsl/t2po/ai-verify/ai-verify-portal/aiverify-shared-library)
+- **Python**: Version 3.11 or higher
+- **Node**: Node 18 and higher
+- **Operating System**: Debian
+- **Dependencies**:
+  - [cookiecutter](https://github.com/cookiecutter/cookiecutter)
+  - [aiverify-shared-library](https://github.com/aiverify-foundation/aiverify/tree/main/aiverify-shared-library)
 
 
 ## Script commands
@@ -33,19 +37,30 @@ Options:
 ```
 
 ## Installation
-Install the aiverify-shared-library.
-```
-git clone git@gitlab.com:imda_dsl/t2po/ai-verify/ai-verify-portal/aiverify-shared-library.git
+Install the `aiverify-shared-library`.
+```sh
+git clone --no-checkout git@github.com:aiverify-foundation/aiverify.git
+cd aiverify
+git sparse-checkout init --cone
+git sparse-checkout set aiverify-shared-library
+git sparse-checkout set common
+git checkout main 
 cd aiverify-shared-library
+npm install
 npm run build
+cd ../.. # back to root folder
+```
+
+Install `cookiecutter` tool
+```sh
+pip install cookiecutter
 ```
 
 Install `aiverify-plugin` tool
-```
-git clone git@gitlab.com:imda_dsl/t2po/ai-verify/ai-verify-portal/aiverify-plugin.git
-cd aiverify-plugin
+```sh
+git clone git@github.com:aiverify-foundation/aiverify-developer-tools.git
+cd aiverify-developer-tools/aiverify-plugin
 npm install
-npm install <path to aiverify-shared-library>
 npm install -g
 ```
 

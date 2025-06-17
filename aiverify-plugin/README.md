@@ -43,7 +43,7 @@ git clone --no-checkout git@github.com:aiverify-foundation/aiverify.git
 cd aiverify
 git sparse-checkout init --cone
 git sparse-checkout set aiverify-shared-library
-git sparse-checkout set common
+git sparse-checkout add common
 git checkout main 
 cd aiverify-shared-library
 npm install

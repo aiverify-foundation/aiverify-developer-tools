@@ -300,7 +300,7 @@ export function zipPlugin(argv) {
     const subdirs = fs.readdirSync(algoRootPath);
     for (const algo of subdirs) {
       const algoPath = path.join(algoRootPath, algo);
-      const metaPath = path.join(algoPath, `${algo}.meta.json`);
+      const metaPath = path.join(algoPath, "pyproject.toml");
       if (!fs.existsSync(metaPath)) {
         console.log(`Meta file ${metaPath} does not exists`);
         continue;

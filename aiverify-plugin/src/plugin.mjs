@@ -8,7 +8,10 @@ import { readJSON, rootDir, linkModulePath } from "./utils.mjs";
 import { pluginSchema } from "./schemas.mjs";
 import { validateAllWidgets } from "./reportWidget.mjs";
 import { validateAllInputBlocks } from "./inputBlock.mjs";
-import { validateAllAlgorithms } from "./algorithms.mjs";
+import {
+  validateAllAlgorithms,
+  getModuleNameFromPyProject,
+} from "./algorithms.mjs";
 import { exit } from "node:process";
 import moment from "moment";
 
@@ -284,7 +287,7 @@ export function zipPlugin(argv) {
   }
 
   if (fs.existsSync("inputs")) {
-    zip.addFile("widgets/", null);
+    zip.addFile("inputs/", null);
     zip.addLocalFolder(path.join(pluginDir, "inputs"), "inputs");
   }
 
@@ -300,7 +303,18 @@ export function zipPlugin(argv) {
     const subdirs = fs.readdirSync(algoRootPath);
     for (const algo of subdirs) {
       const algoPath = path.join(algoRootPath, algo);
-      const metaPath = path.join(algoPath, "pyproject.toml");
+      const pyprojectPath = path.join(algoPath, "pyproject.toml");
+      if (!fs.existsSync(pyprojectPath)) {
+        console.log(`pyproject.toml does not exists under ${algo} folder`);
+        continue;
+      }
+      const module_name = getModuleNameFromPyProject(pyprojectPath);
+      if (!module_name) {
+        console.log(`Unable to get project module name from pyproject.toml under ${algo}`);
+        continue;
+      }
+      const srcDir = path.join(algoPath, module_name);
+      const metaPath = path.join(srcDir, "algo.meta.json");
       if (!fs.existsSync(metaPath)) {
         console.log(`Meta file ${metaPath} does not exists`);
         continue;
@@ -311,9 +325,13 @@ export function zipPlugin(argv) {
         for (let f of meta.requiredFiles) {
           if (f === "LICENSE") continue;
           const subpath = path.join(algoPath, f);
+          if (!fs.existsSync(subpath)) {
+            console.log(`Skipping missing path ${f} in ${algo}`);
+            continue;
+          }
           const stat = fs.lstatSync(subpath);
           if (stat.isDirectory()) {
-            console.log("isDirectory", f);
+            // console.log("isDirectory", f);
             zip.addFile(`algorithms/${algo}/${f}/`, null);
             zip.addLocalFolder(subpath, `algorithms/${algo}`);
           } else {

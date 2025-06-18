@@ -17,6 +17,6 @@
     ],
     {% if cookiecutter.require_ground_truth == "True" %}"requireGroundTruth": true
     {% else %}"requireGroundTruth": false{% endif %},
-    "requiredFiles": ["AUTHORS.rst", "CHANGELOG.md", "input.schema.json", "LICENSE",
-    "output.schema.json", "{{cookiecutter.project_slug}}.meta.json", "{{cookiecutter.project_slug}}.py", "README.md", "requirements.txt", "syntax_checker.py"]
+    "requiredFiles": ["AUTHORS.rst", "CHANGELOG.md", "pyproject.toml", "LICENSE",
+    "{{cookiecutter.project_slug}}", "README.md", "requirements.txt", "syntax_checker.py"]
 }

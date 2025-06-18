@@ -5,6 +5,8 @@ import { chdir, exit } from "node:process";
 import * as readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import { validate } from "jsonschema";
+import tomllib from "toml";
+
 // import {bundleMDX} from 'mdx-bundler';
 import { readJSON, rootDir } from "./utils.mjs";
 
@@ -13,6 +15,23 @@ import { getPluginMeta } from "./pluginManager.mjs";
 
 const ALGORITHM_SUBDIR = "algorithms";
 const SYNTAX_CHECKER = "syntax_checker.py";
+
+export function getModuleNameFromPyProject(filepath) {
+  try {
+    let pyprojectContent;
+    const filecontent = fs.readFileSync(filepath);
+    pyprojectContent = tomllib.parse(filecontent);
+    const module_name = pyprojectContent["project"]["name"];
+    if (!module_name) {
+      console.log("Algorithm module name not found in pyproject.toml");
+      return null;
+    }
+    return module_name;
+  } catch (err) {
+    console.error(`Failed to read pyproject.toml at ${pyprojectPath}:`, err);
+    return null;
+  }
+}
 
 export async function validateAlgorithm(argv, meta, subdir) {
   const python = process.env.PYTHON || "python";
@@ -55,17 +74,30 @@ export async function validateAllAlgorithms(argv) {
     const subdir = path.join(algorithmDir, cid);
     if (!fs.lstatSync(subdir).isDirectory()) continue;
 
-    if (!fs.existsSync(path.join(subdir, "input.schema.json"))) {
+    if (!fs.existsSync(path.join(subdir, "pyproject.toml"))) {
+      console.log("pyproject.toml not found");
+      return false;
+    }
+
+    const module_name = getModuleNameFromPyProject(path.join(subdir, "pyproject.toml"))
+    if (!module_name) {
+      console.log("Algorithm module name not found in pyproject.toml");
+      return false;
+    }
+
+    const srcDir = path.join(subdir, module_name);
+
+    if (!fs.existsSync(path.join(srcDir, "input.schema.json"))) {
       console.log("input.schema.json not found");
       return false;
     }
 
-    if (!fs.existsSync(path.join(subdir, "output.schema.json"))) {
+    if (!fs.existsSync(path.join(srcDir, "output.schema.json"))) {
       console.log("output.schema.json not found");
       return false;
     }
 
-    const metaFilename = path.join(subdir, `algo.meta.json`);
+    const metaFilename = path.join(srcDir, `algo.meta.json`);
     if (!fs.existsSync(metaFilename)) {
       console.log(`Meta file ${metaFilename} not found`);
       return false;
@@ -99,18 +131,20 @@ export async function generateAlgorithm(argv) {
     process.exit(-1);
   }
 
-  // create widget dir
+  // create algorithm dir
   const algoDir = path.join(pluginDir, ALGORITHM_SUBDIR);
   if (!fs.existsSync(algoDir)) {
     fs.mkdirSync(algoDir);
   }
 
   // check algo component directory does not exists
-  const compDir = path.join(algoDir, argv.cid);
-  const srcdir = path.join(compDir, argv.cid)
+  const cid = argv.cid;
+  const module_name = cid.replace(/[^a-zA-Z0-9_]/g, "_");
+  const compDir = path.join(algoDir, cid);
+  const srcdir = path.join(compDir, module_name);
   if (fs.existsSync(compDir)) {
-    console.error(`Algorithm component ${argv.cid} already exists`);
-    exit(-1);
+    console.error(`Algorithm component ${cid} already exists`);
+    process.exit(-1);
   }
 
   const templateDir = path.join(rootDir, "../aiverify-algorithm-template");
@@ -136,7 +170,7 @@ export async function generateAlgorithm(argv) {
 default_context:
   author: "${argv.author}"
   plugin_name: "${argv.name}"
-  project_slug: "${argv.cid}"
+  project_slug: "${module_name}"
   plugin_version: "${argv.pluginVersion}"
   plugin_description: "${argv.description || ""}"
   algo_model_support: "${argv.modelSupport}"
@@ -164,16 +198,29 @@ default_context:
       rl.close();
       cleanupFiles();
 
-      const pluginMeta = getPluginMeta()
+      if (cid !== module_name) {
+        const generated_dir = path.join(algoDir, module_name);
+        // Move generated_dir to compDir
+        if (fs.existsSync(generated_dir)) {
+          // Remove compDir if it exists to avoid EEXIST error
+          if (fs.existsSync(compDir)) {
+            fs.rmSync(compDir, { recursive: true, force: true });
+          }
+          fs.renameSync(generated_dir, compDir);
+        }
+      }
+
+      const pluginMeta = getPluginMeta();
 
       // update meta
       const metaFilename = path.join(srcdir, `algo.meta.json`);
-      const meta = readJSON(metaFilename)
+      const meta = readJSON(metaFilename);
       if (argv.tag) {
         meta.tags = argv.tag;
       }
+      meta.cid = cid;
       meta.gid = pluginMeta.gid;
-      fs.writeFile(metaFilename, JSON.stringify(meta, null, 2), err => {
+      fs.writeFile(metaFilename, JSON.stringify(meta, null, 2), (err) => {
         if (err) {
           console.error("Error updating algorithm meta file");
         }

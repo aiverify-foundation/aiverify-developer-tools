@@ -82,13 +82,35 @@ export async function runAlgoTests(argv) {
     try {
       const algoPath = path.join(algoFolder, cid);
       chdir(algoPath);
-      const res = execFileSync(python, ["."], { stdio: "pipe" });
+      const testScript = path.join(algoPath, "run_tests.sh")
+      if (!fs.existsSync(testScript)) {
+        fs.writeFileSync(testScript, `
+if [ ! -d ".venv" ]; then
+    python -m venv .venv
+fi
+source .venv/bin/activate
+pip install .
+pip install pytest
+pytest .
+deactivate
+`);
+      }
+      // const res = execFileSync(python, ["."], { stdio: "pipe" });
+      const res = execFileSync("/bin/sh", ["run_tests.sh"], { stdio: "pipe" });
+      if (!res) {
+        throw new Error("Test execution error");
+      }
+      const output = res.toString()
+      // Check if any line in output starts with "FAILED"
+      if (output.split('\n').some(line => line.startsWith('FAILED'))) {
+        throw new Error(output);
+      }
       count++;
       console.log("Test success\n");
-      if (!silent) console.log(res.toString());
+      if (!silent) console.log(output);
     } catch (e) {
       console.log("Test failed\n");
-      if (!silent) console.log(e.stdout.toString());
+      if (!silent) console.log(e.toString());
     }
   }
   console.log("************************************");

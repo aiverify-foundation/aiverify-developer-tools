@@ -28,12 +28,12 @@ def test_discover_plugin():
     )
 
 
-valid_data_path = str("tests/user_defined_files/data/sample_reg_donation_data.sav")
+valid_data_path = str("https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/data/sample_reg_donation_data.sav")
 valid_model_path = str(
-    "tests/user_defined_files/model/sample_reg_donation_sklearn_linear.LinearRegression.sav"
+    "https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/model/sample_reg_donation_sklearn_linear.LinearRegression.sav"
 )
 valid_ground_truth_path = str(
-    "tests/user_defined_files/data/sample_reg_donation_data.sav"
+    "https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/data/sample_reg_donation_data.sav"
 )
 
 test_string = "data_str"

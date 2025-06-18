@@ -1,7 +1,8 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
+import { getModuleNameFromPyProject } from "./algorithms.mjs";
 
-import { readJSON } from './utils.mjs';
+import { readJSON } from "./utils.mjs";
 
 export function getPluginDir() {
   return process.env.pluginDir;
@@ -26,15 +27,16 @@ export function getPluginMeta() {
 
 export function listWidgetCIDs() {
   const widgetsDir = getWidgetFolder();
-  if (!fs.existsSync(widgetsDir))
-    return [];
+  if (!fs.existsSync(widgetsDir)) return [];
   let cids = [];
-  const metaFiles = fs.readdirSync(widgetsDir).filter(f => f.endsWith(".meta.json"));
+  const metaFiles = fs
+    .readdirSync(widgetsDir)
+    .filter((f) => f.endsWith(".meta.json"));
   for (let file of metaFiles) {
     // do a quick validation of the file.
-    const widget = readJSON(path.join(widgetsDir,file));
+    const widget = readJSON(path.join(widgetsDir, file));
     if (!widget.cid) {
-      console.log(`Missing CID in ${file}`)
+      console.log(`Missing CID in ${file}`);
       continue;
     }
     const basename = path.basename(file);
@@ -55,15 +57,16 @@ export function listWidgetCIDs() {
 
 export function listInputBlockCIDs() {
   const inputsDir = getInputBlockFolder();
-  if (!fs.existsSync(inputsDir))
-    return [];
+  if (!fs.existsSync(inputsDir)) return [];
   let cids = [];
-  const metaFiles = fs.readdirSync(inputsDir).filter(f => f.endsWith(".meta.json"));
+  const metaFiles = fs
+    .readdirSync(inputsDir)
+    .filter((f) => f.endsWith(".meta.json"));
   for (let file of metaFiles) {
     // do a quick validation of the file.
-    const ib = readJSON(path.join(inputsDir,file));
+    const ib = readJSON(path.join(inputsDir, file));
     if (!ib.cid) {
-      console.log(`Missing CID in ${file}`)
+      console.log(`Missing CID in ${file}`);
       continue;
     }
     const basename = path.basename(file);
@@ -91,7 +94,7 @@ export function getComponent(cid) {
   const widgetsDir = getWidgetFolder();
   let mdxPath = path.join(widgetsDir, `${cid}.mdx`);
   let metaPath = path.join(widgetsDir, `${cid}.meta.json`);
-  let type = 'ReportWidget';
+  let type = "ReportWidget";
   let obj = {
     type,
     mdxPath,
@@ -103,8 +106,12 @@ export function getComponent(cid) {
     obj.mdxPath = mdxPath;
     metaPath = path.join(inputsDir, `${cid}.meta.json`);
     const summaryPath = path.join(inputsDir, `${cid}.meta.json`);
-    obj.type = 'InputBlock';
-    if (!fs.existsSync(mdxPath) || !fs.existsSync(metaPath) || !fs.existsSync(summaryPath)) {
+    obj.type = "InputBlock";
+    if (
+      !fs.existsSync(mdxPath) ||
+      !fs.existsSync(metaPath) ||
+      !fs.existsSync(summaryPath)
+    ) {
       console.log(`Component ${cid} not found`);
       return null;
     }
@@ -118,7 +125,8 @@ export function getComponent(cid) {
         mock.data = readJSON(datapath);
       }
     }
-  } else { // InputBlock
+  } else {
+    // InputBlock
   }
   // console.log("obj", JSON.stringify(obj, null, 2));
   return obj;
@@ -126,19 +134,22 @@ export function getComponent(cid) {
 
 export function listAlgorithmsCIDs() {
   const algoDir = getAlgorithmsFolder();
-  if (!fs.existsSync(algoDir))
-    return [];
-  const cids = fs.readdirSync(algoDir).filter(cid => {
+  if (!fs.existsSync(algoDir)) return [];
+  const cids = fs.readdirSync(algoDir).filter((cid) => {
     const d = path.join(algoDir, cid);
     // console.log(d)
-    if (!fs.lstatSync(d).isDirectory())
+    if (!fs.lstatSync(d).isDirectory()) return false;
+    if (!fs.existsSync(path.join(d, "pyproject.toml"))) return false;
+    const moduleName = getModuleNameFromPyProject(
+      path.join(d, "pyproject.toml")
+    );
+    if (!moduleName) {
       return false;
-    if (!fs.existsSync(path.join(d, `${cid}.meta.json`)))
-      return false;
-    if (!fs.existsSync(path.join(d, `input.schema.json`)))
-      return false;
-    if (!fs.existsSync(path.join(d, `output.schema.json`)))
-      return false;
+    }
+    const srcDir = path.join(d, moduleName);
+    if (!fs.existsSync(path.join(srcDir, `algo.meta.json`))) return false;
+    if (!fs.existsSync(path.join(srcDir, `input.schema.json`))) return false;
+    if (!fs.existsSync(path.join(srcDir, `output.schema.json`))) return false;
     return true;
   });
   return cids;
@@ -149,10 +160,10 @@ export function getAlgorithm(cid) {
   // console.log("algoDir", algoDir)
   const algo = {
     cid,
-    type: 'Algorithm',
-    meta: readJSON(path.join(algoDir,`${cid}.meta.json`)),
-    inputSchema: readJSON(path.join(algoDir,'input.schema.json')),
-    outputSchema: readJSON(path.join(algoDir,'output.schema.json')),
-  }
+    type: "Algorithm",
+    meta: readJSON(path.join(algoDir, `${cid}.meta.json`)),
+    inputSchema: readJSON(path.join(algoDir, "input.schema.json")),
+    outputSchema: readJSON(path.join(algoDir, "output.schema.json")),
+  };
   return algo;
 }

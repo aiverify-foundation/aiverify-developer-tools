@@ -1,5 +1,6 @@
 import { getMdxWidgetBundle } from 'src/bundler.mjs';
 import { listWidgetCIDs, getComponent, getPluginMeta } from 'src/pluginManager.mjs';
+import { reportWidgetSchema } from '../../../src/schemas.mjs'
 import DisplayWidget from './displayWidget';
 
 export const dynamicParams = false;
@@ -41,6 +42,6 @@ export default async function Page(props: { params: Promise<{ cid: string }> }) 
 
   const { code, frontmatter } = result;
   return (
-    <DisplayWidget widget={widget} pluginMeta={pluginMeta} code={code} frontmatter={frontmatter} />
+    <DisplayWidget widget={widget} pluginMeta={pluginMeta} code={code} frontmatter={frontmatter} reportWidgetSchema={reportWidgetSchema} />
   )
 }

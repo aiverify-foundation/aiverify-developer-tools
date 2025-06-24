@@ -1,7 +1,7 @@
-import Container from '@mui/material/Container';
+// import Container from '@mui/material/Container';
 
 export default function Page() {
   return (
-    <Container></Container>
+    <div></div>
   )
 }

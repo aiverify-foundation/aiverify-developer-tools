@@ -1,5 +1,5 @@
 import { readJSON, rootDir } from "./utils.mjs";
-import path from "node:path";
+import path from "path";
 
 const baseSchemaPath = path.join(rootDir,"../../aiverify/common/schemas")
 

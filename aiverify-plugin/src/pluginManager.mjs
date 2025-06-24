@@ -158,12 +158,14 @@ export function listAlgorithmsCIDs() {
 export function getAlgorithm(cid) {
   const algoDir = path.join(getAlgorithmsFolder(), cid);
   // console.log("algoDir", algoDir)
+  const moduleName = getModuleNameFromPyProject(path.join(algoDir, "pyproject.toml"))
+  const srcDir = path.join(algoDir, moduleName);
   const algo = {
     cid,
     type: "Algorithm",
-    meta: readJSON(path.join(algoDir, `${cid}.meta.json`)),
-    inputSchema: readJSON(path.join(algoDir, "input.schema.json")),
-    outputSchema: readJSON(path.join(algoDir, "output.schema.json")),
+    meta: readJSON(path.join(srcDir, `algo.meta.json`)),
+    inputSchema: readJSON(path.join(srcDir, "input.schema.json")),
+    outputSchema: readJSON(path.join(srcDir, "output.schema.json")),
   };
   return algo;
 }

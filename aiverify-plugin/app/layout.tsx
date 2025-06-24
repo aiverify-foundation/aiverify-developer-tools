@@ -1,8 +1,10 @@
 import path from 'node:path';
 
+import './globals.css'
+// import "aiverify-shared-library/styles.css";
 // import "bootstrap/dist/css/bootstrap.css";
 // import theme from '../src/lib/theme';
-import ThemeRegistry from './components/theme/themeRegistry';
+// import ThemeRegistry from './components/theme/themeRegistry';
 import "playground/styles/styles.css";
 import 'playground/styles/color-palette.css';
 import { listWidgetCIDs, listInputBlockCIDs, getComponent, getPluginDir, listAlgorithmsCIDs, getAlgorithm } from 'src/pluginManager.mjs';
@@ -52,16 +54,24 @@ export default function RootLayout({
         <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'></link>
        </head>
       <body>
-        <ThemeRegistry options={{ key: 'mui' }}>
-          <div style={{ display:'block', height:'100vh', width:'100wv', overflow:'hidden', padding:0, margin:0 }}>
-            <div style={{ display:'inline-block', width:'360px', height:'100%', verticalAlign:'top' }}>
+          <div 
+            className='block h-screen w-screen overflow-hidden p-0 m-0 bg-primary-950 p-0 m-0 text-white antialiased'
+          >
+            <div 
+              className='inline-block h-full'
+              style={{ width: '360px' }}
+              // style={{ display:'inline-block', width:'360px', height:'100%', verticalAlign:'top' }}
+            >
               <MenuBar pluginMata={pluginMata} widgets={widgets} inputBlocks={inputBlocks} algorithms={algorithms} />
             </div>
-            <div style={{ display:'inline-block', verticalAlign:'top', width:'calc(100% - 360px)', height:'100%', padding:'10px', margin:'0px' }}>
+            <div 
+              className='inline-block h-screen p-1 m-0'
+              style={{ width:'calc(100vw - 360px)' }}
+              // style={{ display:'inline-block', verticalAlign:'top', width:'calc(100% - 360px)', height:'100%', padding:'10px', margin:'0px' }}
+            >
               {children}
             </div>
           </div>
-        </ThemeRegistry>
       </body>
     </html>
   );

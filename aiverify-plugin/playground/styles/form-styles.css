@@ -1,0 +1,103 @@
+/* form-styles.css */
+@reference '../../app/globals.css'
+
+/* Styles for the form container */
+.custom-form {
+  @apply p-6 rounded-lg shadow-md;
+}
+
+/* Styles for form fields */
+.custom-form .field {
+  @apply mb-4 text-inherit text-left;
+}
+
+/* Styles for form labels - Bold labels */
+.custom-form .field label {
+  @apply text-lg font-bold text-inherit mb-1;
+}
+
+/* Styles for form inputs */
+.custom-form .field input,
+.custom-form .field select,
+.custom-form .field textarea {
+  @apply mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+}
+
+/* Styles for form errors */
+.custom-form .field .error-detail {
+  @apply text-red-500 text-sm mt-1;
+}
+
+/* Styles for form buttons */
+.custom-form .form-actions {
+  @apply mt-6 flex justify-end;
+}
+
+.custom-form .form-actions button {
+  @apply bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+}
+
+/* Styles for checkboxes and radios */
+.custom-form .field .field-radio-group,
+.custom-form .field .field-checkbox {
+  @apply flex items-center;
+}
+
+.custom-form .field .field-radio-group label,
+.custom-form .field .field-checkbox label {
+  @apply ml-2 text-sm text-gray-700 font-bold;
+}
+
+.custom-form .field .field-radio-group input,
+.custom-form .field .field-checkbox input {
+  @apply h-4 w-4 text-inherit border-gray-300 rounded focus:ring-indigo-500;
+}
+
+/* Styles for nested objects (field-object) */
+.custom-form .field-object {
+  /* @apply border border-gray-300 rounded-lg p-4 mt-4 bg-gray-50; */
+  @apply mt-6
+}
+
+.custom-form .field-object .field {
+  @apply mb-3;
+}
+
+.custom-form .field-object fieldset > legend {
+  @apply text-lg font-bold text-inherit w-full border-b border-gray-700;
+}
+
+.custom-form .field-object .field label {
+  @apply flex items-center font-bold;
+}
+
+/* Styles for boolean fields (field-boolean) */
+.custom-form .field-boolean {
+  @apply flex flex-row items-center;
+}
+
+.custom-form .field-boolean label {
+  @apply ml-2 text-sm text-gray-700 font-normal;
+}
+
+.custom-form .field-boolean input[type="checkbox"] {
+  @apply h-4 w-4 mr-2 text-inherit border-gray-300 rounded focus:ring-indigo-500;
+}
+
+/* Styles for fieldset in field-array */
+.custom-form .field-array fieldset {
+  /* @apply border border-gray-300 rounded-lg p-4 mt-4 bg-gray-50;  */
+  @apply mt-6
+}
+
+.custom-form .field-array fieldset > legend {
+  @apply text-lg font-bold text-gray-700; /* Style the legend (array title) */
+}
+
+.custom-form .field-array fieldset .field {
+  @apply mb-3; /* Reduce margin for nested fields */
+}
+
+.custom-form .field-array fieldset .field label {
+  @apply font-semibold text-base;
+}

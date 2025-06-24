@@ -1,6 +1,7 @@
 import { getMdxWidgetBundle } from 'src/bundler.mjs';
 import { listInputBlockCIDs, getComponent, getPluginMeta } from 'src/pluginManager.mjs';
 import DisplayInputBlock from './displayInputBlock';
+import { inputBlockSchema } from '../../../src/schemas.mjs'
 
 export const dynamicParams = false;
 
@@ -41,6 +42,6 @@ export default async function Page(props: { params: Promise<{ cid: string }> }) 
 
   const { code, frontmatter } = result;
   return (
-    <DisplayInputBlock inputBlock={inputBlock} pluginMeta={pluginMeta} code={code} frontmatter={frontmatter} />
+    <DisplayInputBlock inputBlock={inputBlock} pluginMeta={pluginMeta} code={code} frontmatter={frontmatter} inputBlockSchema={inputBlockSchema} />
   )
 }

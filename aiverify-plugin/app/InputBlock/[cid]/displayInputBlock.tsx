@@ -2,15 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Button from '@mui/material/Button';
 
 import DisplayMetaInformation from 'playground/components/displayMetaInformation';
-import inputBlockSchema from 'src/schemas/ai-verify.inputBlock.schema.json';
 import InputBlock from 'playground/inputBlock';
 import { InputDataContext, InputDataContextType } from "aiverify-shared-library/lib";
 
 
-export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontmatter}) {
+export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontmatter, inputBlockSchema}) {
   const router = useRouter();
   const [ selectedIndex, setSelectedIndex ] = useState<number>(0);
   // const [ data, setData ] = useState({});
@@ -54,30 +52,42 @@ export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontm
   
   return (
     <InputDataContext.Provider value={inputBlockContext}>
-      <div style={{ display:'block', width:'100%', height:'calc(100vh - 20px)' }}>
-        <div style={{ display:'inline-block', width:'calc(100% - 500px)', verticalAlign:'top' }}>
-            <Button variant='contained' onClick={() => {router.refresh()}}>Refresh</Button>
-            <div style={{ height:'calc(100vh - 60px)', marginTop:'5px', overflow:'auto' }}>
-              <div className="aiv-panel" style={{ width:calculateCSSWidth() }}>{inputBlock.meta.name} Dialog</div>
-              <div style={{ width:calculateCSSWidth(), padding:'10px', border:'1px solid grey', backgroundColor:'white' }}>
+      <div 
+        className='block w-full h-screen overflow-hidden p-2 relative'
+      >
+        <div 
+          className='inline-block align-top'
+          style={{ width:'calc(100% - 500px)' }}
+        >
+            <button className='btn-primary' onClick={() => {router.refresh()}}>Refresh</button>
+            <div 
+              className='h-full mt-2 overflow-auto'
+              // style={{ height:'calc(100vh - 60px)', marginTop:'5px', overflow:'auto' }}
+            >
+              <div className="bg-primary-900 p-2" style={{ width:calculateCSSWidth() }}>{inputBlock.meta.name} Dialog</div>
+              <div 
+                className='p-0 text-white'
+                style={{ width:calculateCSSWidth() }}
+              >
                 <InputBlock inputBlock={inputBlock} code={code} frontmatter={frontmatter} />
               </div>
             </div>
         </div>
         <div style={{ display:'inline-block', height:'calc(100vh - 60px)', width: '500px', padding:'5px' }}>
           <div style={{ display:'flex' }}>
-            <Button
-              variant='contained'
-              // className="aiv-button c-secondary"
-              sx={{ lineHeight:'normal', marginRight:'5px', backgroundColor:(selectedIndex==0)?"var(--color-button-selected)":undefined }}
+            <button
+              className="aiv-button c-secondary mr-1"
+              style={{ backgroundColor:(selectedIndex==0)?"var(--color-button-selected)":undefined }}
+              // sx={{ lineHeight:'normal', marginRight:'5px',  }}
               onClick={() => setSelectedIndex(0)}
-            >Input Block Meta</Button>
-            <Button
-              variant='contained' 
-              // className="aiv-button c-secondary"
-              sx={{ lineHeight:'normal', backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
+            >Input Block Meta</button>
+            <button
+              className="aiv-button c-secondary"
+              style={{ backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
+              // variant='contained' 
+              // sx={{ lineHeight:'normal', backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(1)}
-            >Data Output</Button>
+            >Data Output</button>
           </div>
           <div className='aiv-panel' style={{ backgroundColor:'white', color:'#676767', marginTop:'5px', height:'100%', overflow:'hidden' }}>
             {selectedIndex==0 && <DisplayMetaInformation component={inputBlock} schema={inputBlockSchema} />}

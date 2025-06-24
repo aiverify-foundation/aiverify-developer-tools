@@ -1,6 +1,9 @@
 import { getMdxWidgetBundle } from 'src/bundler.mjs';
 import { listAlgorithmsCIDs, getAlgorithm, getPluginMeta } from 'src/pluginManager.mjs';
 import DisplayAlgorithm from './displayAlgorithm';
+import { algorithmSchema } from 'src/schemas.mjs'
+
+
 
 export const dynamicParams = false;
 
@@ -29,6 +32,6 @@ export default async function Page(props: { params: Promise<{ cid: string }> }) 
   const algo = readAlgo(params);
 
   return (
-    <DisplayAlgorithm algorithm={algo} pluginMeta={pluginMeta} />
+    <DisplayAlgorithm algorithm={algo} pluginMeta={pluginMeta} algorithmSchema={algorithmSchema} />
   )
 }

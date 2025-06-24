@@ -31,10 +31,40 @@
   --color-white: #ffffff;
   --color-danger: #f73939;
   --color-success: #22c55e;
+
+  /* --font-display: "Inter Variable", "sans-serif"; */
 }
+
+/* @layer base {
+  html {
+    font-family: "Inter Variable", sans-serif;
+  }
+} */
 
 body {
   font-family: "Inter Variable", sans-serif;
+  /* text-align: left; */
+  /* font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5; */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+  }
+}
+
+@layer base {
+  * {
+  }
+  body {
+  }
 }
 
 .btn-primary {

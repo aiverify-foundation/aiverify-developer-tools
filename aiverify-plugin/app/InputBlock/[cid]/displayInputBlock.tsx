@@ -53,43 +53,45 @@ export default function DisplayInputBlock ({inputBlock, pluginMeta, code, frontm
   return (
     <InputDataContext.Provider value={inputBlockContext}>
       <div 
-        className='block w-full h-screen overflow-hidden p-2 relative'
+        className='block w-full h-screen overflow-hidden p-1 relative'
       >
         <div 
-          className='inline-block align-top'
+          className='inline-block align-top h-full overflow-auto'
           style={{ width:'calc(100% - 500px)' }}
         >
-            <button className='btn-primary' onClick={() => {router.refresh()}}>Refresh</button>
-            <div 
-              className='h-full mt-2 overflow-auto'
-              // style={{ height:'calc(100vh - 60px)', marginTop:'5px', overflow:'auto' }}
-            >
-              <div className="bg-primary-900 p-2" style={{ width:calculateCSSWidth() }}>{inputBlock.meta.name} Dialog</div>
+            <button className='btn-primary mb-1' onClick={() => {router.refresh()}}>Refresh</button>
+            <div className='h-full w-full m-0'>
+              {/* <div className="bg-primary-900 p-2" style={{ width:calculateCSSWidth() }}>{inputBlock.meta.name} Dialog</div> */}
               <div 
-                className='p-0 text-white'
+                className='p-0 text-white h-full w-full'
                 style={{ width:calculateCSSWidth() }}
               >
                 <InputBlock inputBlock={inputBlock} code={code} frontmatter={frontmatter} />
               </div>
             </div>
         </div>
-        <div style={{ display:'inline-block', height:'calc(100vh - 60px)', width: '500px', padding:'5px' }}>
-          <div style={{ display:'flex' }}>
+        <div className='inline-block h-full p-0'
+          style={{ width: '500px' }}
+          // style={{ display:'inline-block', height:'calc(100vh - 60px)', width: '500px', padding:'5px' }}
+        >
+          <div className='flex p-1'>
             <button
-              className="aiv-button c-secondary mr-1"
-              style={{ backgroundColor:(selectedIndex==0)?"var(--color-button-selected)":undefined }}
+              className="btn-primary mr-1"
+              style={{ backgroundColor:(selectedIndex==0)?"var(--color-primary-700)":undefined }}
               // sx={{ lineHeight:'normal', marginRight:'5px',  }}
               onClick={() => setSelectedIndex(0)}
             >Input Block Meta</button>
             <button
-              className="aiv-button c-secondary"
-              style={{ backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
+              className="btn-primary"
+              style={{ backgroundColor:(selectedIndex==1)?"var(--color-primary-700)":undefined }}
               // variant='contained' 
               // sx={{ lineHeight:'normal', backgroundColor:(selectedIndex==1)?"var(--color-button-selected)":undefined }}
               onClick={() => setSelectedIndex(1)}
             >Data Output</button>
           </div>
-          <div className='aiv-panel' style={{ backgroundColor:'white', color:'#676767', marginTop:'5px', height:'100%', overflow:'hidden' }}>
+          <div className='p-2 bg-white text-black h-full overflow-hidden'
+            // style={{ backgroundColor:'white', color:'#676767', marginTop:'5px', height:'100%', overflow:'hidden' }}
+          >
             {selectedIndex==0 && <DisplayMetaInformation component={inputBlock} schema={inputBlockSchema} />}
             {selectedIndex==1 && <pre style={{ padding:'10px', margin:'10px', height:'calc(100% - 20px)', overflowY:'auto', textAlign:'left' }}>{JSON.stringify(inputBlockContext.data, null, 2)}</pre>}
           </div>

@@ -5,8 +5,8 @@ import './globals.css'
 // import "bootstrap/dist/css/bootstrap.css";
 // import theme from '../src/lib/theme';
 // import ThemeRegistry from './components/theme/themeRegistry';
-import "playground/styles/styles.css";
-import 'playground/styles/color-palette.css';
+// import "playground/styles/styles.css";
+// import 'playground/styles/color-palette.css';
 import { listWidgetCIDs, listInputBlockCIDs, getComponent, getPluginDir, listAlgorithmsCIDs, getAlgorithm } from 'src/pluginManager.mjs';
 import { readJSON } from "src/utils.mjs";
 

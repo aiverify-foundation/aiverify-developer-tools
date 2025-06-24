@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
 import {getMDXComponent} from 'mdx-bundler/client';
 import moment from 'moment';
-import 'aiverify-shared-library/styles.css';
+// import 'aiverify-shared-library/styles.css';
 
 export default function Widget({ widget, pluginMeta, code, frontmatter, properties={}, testDataset={}, model={}, tests=[] }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -107,7 +107,7 @@ export default function Widget({ widget, pluginMeta, code, frontmatter, properti
   }
 
   return (
-    <div ref={ref} style={{ position:'relative', padding:'10px', textAlign:'justify', fontSize:'14px', width:'100%' }}>
+    <div ref={ref} className='relative p-2 w-full'>
       <Component {...frozen} frontmatter={frontmatter} />
     </div>
   );

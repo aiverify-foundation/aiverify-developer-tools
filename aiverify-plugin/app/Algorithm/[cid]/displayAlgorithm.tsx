@@ -103,8 +103,7 @@ export default function DisplayAlgorithm({
               Refresh
             </button>
           </div>
-          <div className="block overflow-hidden h-full mx-auto w-full p-3"
-          >
+          <div className="block overflow-hidden h-full mx-auto w-full p-3">
             {rjsfSchema && (
               <div className='overflow-y-auto overflow-x-hidden w-full p-3 mb-2 text-gray-100 bg-secondary-950'>
                 <Form

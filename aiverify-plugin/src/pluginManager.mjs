@@ -155,15 +155,47 @@ export function listAlgorithmsCIDs() {
   return cids;
 }
 
-export function getAlgorithm(cid) {
-  const algoDir = path.join(getAlgorithmsFolder(), cid);
+export function listAlgorithms() {
+  const algoDir = getAlgorithmsFolder();
+  if (!fs.existsSync(algoDir)) return [];
+  const algos = fs.readdirSync(algoDir).reduce((acc, folder) => {
+    const d = path.join(algoDir, folder);
+    // console.log(d)
+    if (!fs.lstatSync(d).isDirectory()) return acc;
+    if (!fs.existsSync(path.join(d, "pyproject.toml"))) return acc;
+    const moduleName = getModuleNameFromPyProject(
+      path.join(d, "pyproject.toml")
+    );
+    if (!moduleName) {
+      return acc;
+    }
+    const srcDir = path.join(d, moduleName);
+    if (!fs.existsSync(path.join(srcDir, `algo.meta.json`))) return acc;
+    if (!fs.existsSync(path.join(srcDir, `input.schema.json`))) return acc;
+    if (!fs.existsSync(path.join(srcDir, `output.schema.json`))) return acc;
+    const algo = getAlgorithm(folder)
+    acc.push({
+      folder,
+      moduleName,
+      meta: algo.meta,
+      algo
+    })
+    return acc;
+  }, []);
+  return algos;
+}
+
+
+export function getAlgorithm(folder) {
+  const algoDir = path.join(getAlgorithmsFolder(), folder);
   // console.log("algoDir", algoDir)
   const moduleName = getModuleNameFromPyProject(path.join(algoDir, "pyproject.toml"))
   const srcDir = path.join(algoDir, moduleName);
+  const meta = readJSON(path.join(srcDir, 'algo.meta.json'))
   const algo = {
-    cid,
+    cid: meta["cid"],
     type: "Algorithm",
-    meta: readJSON(path.join(srcDir, `algo.meta.json`)),
+    meta,
     inputSchema: readJSON(path.join(srcDir, "input.schema.json")),
     outputSchema: readJSON(path.join(srcDir, "output.schema.json")),
   };

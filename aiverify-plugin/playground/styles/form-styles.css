@@ -6,6 +6,19 @@
   @apply p-6 rounded-lg shadow-md;
 }
 
+/* styles for danger */
+.custom-form .panel-danger {
+  @apply rounded-sm outline outline-danger;
+}
+
+.custom-form .panel-danger .panel-heading {
+  @apply bg-danger p-1;
+}
+
+.custom-form .panel-danger .list-group {
+  @apply p-1 text-white;
+}
+
 /* Styles for form fields */
 .custom-form .field {
   @apply mb-4 text-inherit text-left;
@@ -33,9 +46,54 @@
   @apply mt-6 flex justify-end;
 }
 
-.custom-form .form-actions button {
-  @apply bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+/* for the array items */
+.custom-form .array-item {
+  @apply flex items-center;
 }
+
+
+.custom-form .array-item-toolbox {
+  @apply ml-1
+}
+
+.custom-form .array-item-toolbox button {
+  @apply bg-primary-500 text-white text-base rounded-md px-3 py-1 mt-4 ml-1 cursor-pointer w-8;
+  /* background-color: var(--color-danger);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer; */
+}
+
+.custom-form button.btn-add {
+  @apply bg-primary-500 text-white text-sm px-3 py-1 mt-1 rounded-md cursor-pointer;
+}
+
+.custom-form button.btn-danger {
+  @apply bg-danger;
+}
+
+.custom-form button.btn-default {
+  @apply bg-primary-500;
+}
+
+.custom-form .btn-add::after {
+  content: '+ Add';
+}
+
+.custom-form .array-item-remove::after {
+  content: 'x';
+}
+
+.custom-form .array-item-move-up::after {
+  content: '↑';
+}
+
+.custom-form .array-item-move-down::after {
+  content: '↓';
+}
+
 
 /* Styles for checkboxes and radios */
 .custom-form .field .field-radio-group,
@@ -91,7 +149,7 @@
 }
 
 .custom-form .field-array fieldset > legend {
-  @apply text-lg font-bold text-gray-700; /* Style the legend (array title) */
+  @apply text-lg font-bold text-inherit; /* Style the legend (array title) */
 }
 
 .custom-form .field-array fieldset .field {

@@ -1,5 +1,5 @@
 import { getMdxWidgetBundle } from 'src/bundler.mjs';
-import { listAlgorithmsCIDs, getAlgorithm, getPluginMeta } from 'src/pluginManager.mjs';
+import { listAlgorithms, getAlgorithm, getPluginMeta } from 'src/pluginManager.mjs';
 import DisplayAlgorithm from './displayAlgorithm';
 import { algorithmSchema } from 'src/schemas.mjs'
 
@@ -8,16 +8,15 @@ import { algorithmSchema } from 'src/schemas.mjs'
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const paths = listAlgorithmsCIDs().map(cid => ({
-    cid
+  const paths = listAlgorithms().map(algo => ({
+    folder: algo.folder
   }));
-  // console.log("paths", paths);
   return paths;
 }
 
 function readAlgo(params) {
-  const cid = params.cid;
-  const algo = getAlgorithm(cid);
+  const folder = params.folder;
+  const algo = getAlgorithm(folder);
   if (!algo) {
     return {
       error: "Algorithm not found"

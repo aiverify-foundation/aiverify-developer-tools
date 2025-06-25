@@ -7,7 +7,7 @@ import './globals.css'
 // import ThemeRegistry from './components/theme/themeRegistry';
 // import "playground/styles/styles.css";
 // import 'playground/styles/color-palette.css';
-import { listWidgetCIDs, listInputBlockCIDs, getComponent, getPluginDir, listAlgorithmsCIDs, getAlgorithm } from 'src/pluginManager.mjs';
+import { listWidgetCIDs, listInputBlockCIDs, getComponent, getPluginDir, listAlgorithms, getAlgorithm } from 'src/pluginManager.mjs';
 import { readJSON } from "src/utils.mjs";
 
 import MenuBar from './menuBar';
@@ -26,7 +26,7 @@ function getInputBlocks() {
 }
 
 function getAlgorithms() {
-  return listAlgorithmsCIDs().map(cid => getAlgorithm(cid))
+  return listAlgorithms()
 }
 
 function getPluginMeta() {
@@ -45,6 +45,7 @@ export default function RootLayout({
   const inputBlocks = getInputBlocks();
   const algorithms = getAlgorithms();
   const pluginMata = getPluginMeta();
+  // console.log("algorithms", algorithms)
 
   return (
     <html lang="en">

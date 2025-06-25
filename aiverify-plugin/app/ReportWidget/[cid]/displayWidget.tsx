@@ -15,8 +15,8 @@ import "../../../playground/styles/standardReport.css";
 import Widget from "playground/widget";
 import DisplayProperties from "./displayProperties";
 
-import mockTestData from "../../Algorithm/[cid]/mockTestData.json";
-import mockModels from "../../Algorithm/[cid]/mockModels.json";
+import mockTestData from "../../Algorithm/[folder]/mockTestData.json";
+import mockModels from "../../Algorithm/[folder]/mockModels.json";
 import mockTests from "./mockTestResults.json";
 
 // const GRID_WIDTH = 774;

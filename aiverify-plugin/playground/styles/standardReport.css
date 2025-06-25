@@ -9,6 +9,10 @@
   @apply text-base text-black bg-white;
 }
 
+.standard-report-page .chart-container {
+  @apply w-full h-full;
+}
+
 .standard-report-page h1 {
   @apply mb-1 text-4xl font-bold;
 }

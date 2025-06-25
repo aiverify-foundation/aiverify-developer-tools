@@ -41,14 +41,14 @@ export default function MenuBar({
     setSelectedComponent(null);
   }, [pathname]);
 
-  const selectComponent = (comp) => {
-    if (selectedComponent && comp.meta.cid === selectedComponent.cid) {
+  const selectComponent = (comp, key="cid", value=null) => {
+    if (selectedComponent && (value || comp.meta[key]) === selectedComponent[key]) {
       // setSelectedComponent(null);
       router.push("/");
       return;
     } else {
       // setSelectedComponent(comp);
-      router.push(`/${comp.type}/${comp.meta.cid}`);
+      router.push(`/${comp.type}/${value || comp.meta[key]}`);
     }
   };
 
@@ -74,7 +74,7 @@ export default function MenuBar({
       {widgets.sort(compareName).map((widget) => (
         <button
           key={`link-${widget.meta.cid}`}
-          className="btn-primary mt-1 mr-1 text-left"
+          className="btn-primary mt-1 mr-1 text-left cursor-pointer"
           style={{ backgroundColor:(selectedComponent && selectedComponent.cid === widget.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           // style={{ marginTop:"10px", marginRight:'5px', textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === widget.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           onClick={() => selectComponent(widget)}
@@ -88,7 +88,7 @@ export default function MenuBar({
       {inputBlocks.sort(compareName).map((ib) => (
         <button
           key={`link-${ib.meta.cid}`}
-          className="btn-primary mt-1 mr-1 text-left"
+          className="btn-primary mt-1 mr-1 text-left cursor-pointer"
           style={{ backgroundColor:(selectedComponent && selectedComponent.cid === ib.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           // variant="contained"
           // sx={{ marginTop:"10px", marginRight:'5px', textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === ib.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
@@ -103,11 +103,11 @@ export default function MenuBar({
       {algorithms.sort(compareName).map((algo) => (
         <button
           key={`link-${algo.meta.cid}`}
-          className="btn-primary mt-1 mr-1 text-left"
+          className="btn-primary mt-1 mr-1 text-left cursor-pointer"
           style={{ backgroundColor:(selectedComponent && selectedComponent.cid === algo.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
           // variant="contained"
           // sx={{ marginTop:"10px", marginRight:'5px', textAlign:'left', backgroundColor:(selectedComponent && selectedComponent.cid === algo.meta.cid)?SELECTED_COLOR:NOT_SELECTED_COLOR }}
-          onClick={() => selectComponent(algo)}
+          onClick={() => selectComponent(algo.algo, "folder", algo.folder)}
         >
           {algo.meta.name}
         </button>

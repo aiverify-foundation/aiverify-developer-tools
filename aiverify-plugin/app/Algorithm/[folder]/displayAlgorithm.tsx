@@ -14,6 +14,7 @@ const defaultUISchema: UiSchema = {
     submitButtonOptions: {
       norender: true,
     },
+    hideError: true,
   },
 };
 
@@ -63,10 +64,10 @@ export default function DisplayAlgorithm({
   };
 
   const schema = _.cloneDeep(algorithm.inputSchema);
-  const rjsfSchema = algorithm?schema:{};
+  const rjsfSchema = algorithm ? schema : {};
 
   useEffect(() => {
-    console.log("algorithm:", algorithm);
+    // console.log("algorithm:", algorithm);
     const schema = _.cloneDeep(algorithm.inputSchema);
     const uiw = parseRJSFSchema(schema, getDatasets, mockTestData[0]);
     // const uiw = traverseSchema(schema, mockTestData, mockTestData[0]);
@@ -90,9 +91,7 @@ export default function DisplayAlgorithm({
           className="inline-block align-top h-full p-2"
           style={{ width: "calc(100% - 500px)" }}
         >
-          <h3 className="text-bold text-xl p-0 m-0">
-            {algorithm.meta.name}
-          </h3>
+          <h3 className="text-bold text-xl p-0 m-0">{algorithm.meta.name}</h3>
           <div className="flex items-center mt-2">
             <button
               className="btn-primary"
@@ -103,9 +102,9 @@ export default function DisplayAlgorithm({
               Refresh
             </button>
           </div>
-          <div className="block overflow-hidden h-full mx-auto w-full p-3">
+          <div className="block overflow-y-auto overflow-x-hidden h-full mx-auto w-full mt-2">
             {rjsfSchema && (
-              <div className='overflow-y-auto overflow-x-hidden w-full p-3 mb-2 text-gray-100 bg-secondary-950'>
+              <div className="w-full p-3 pb-12 mb-2 text-gray-100 bg-secondary-950">
                 <Form
                   ref={formRef}
                   schema={rjsfSchema}
@@ -131,16 +130,16 @@ export default function DisplayAlgorithm({
             height: "calc(100vh - 20px)",
           }}
         >
-          <div style={{ display: "flex" }}>
+          <div className="p-1 flex">
             <button
               // variant='contained'
-              className="aiv-button c-secondary"
+              className="btn-primary"
               style={{
                 marginRight: "5px",
                 lineHeight: "normal",
                 backgroundColor:
                   selectedIndex == 0
-                    ? "var(--color-button-selected)"
+                    ? "var(--color-primary-700)"
                     : undefined,
               }}
               onClick={() => setSelectedIndex(0)}
@@ -149,13 +148,13 @@ export default function DisplayAlgorithm({
             </button>
             <button
               // variant='contained'
-              className="aiv-button c-secondary"
+              className="btn-primary"
               style={{
                 marginRight: "5px",
                 lineHeight: "normal",
                 backgroundColor:
                   selectedIndex == 1
-                    ? "var(--color-button-selected)"
+                    ? "var(--color-primary-700)"
                     : undefined,
               }}
               onClick={() => setSelectedIndex(1)}
@@ -164,13 +163,13 @@ export default function DisplayAlgorithm({
             </button>
             <button
               // variant='contained'
-              className="aiv-button c-secondary"
+              className="btn-primary"
               style={{
                 marginRight: "5px",
                 lineHeight: "normal",
                 backgroundColor:
                   selectedIndex == 2
-                    ? "var(--color-button-selected)"
+                    ? "var(--color-primary-700)"
                     : undefined,
               }}
               onClick={() => setSelectedIndex(2)}
@@ -179,12 +178,12 @@ export default function DisplayAlgorithm({
             </button>
             <button
               // variant='contained'
-              className="aiv-button c-secondary"
+              className="btn-primary"
               style={{
                 lineHeight: "normal",
                 backgroundColor:
                   selectedIndex == 3
-                    ? "var(--color-button-selected)"
+                    ? "var(--color-primary-700)"
                     : undefined,
               }}
               onClick={() => setSelectedIndex(3)}
@@ -193,13 +192,13 @@ export default function DisplayAlgorithm({
             </button>
           </div>
           <div
-            className="aiv-panel"
-            style={{
-              backgroundColor: "white",
-              marginTop: "5px",
-              height: "100%",
-              overflow: "hidden",
-            }}
+            className="bg-white h-full overflow-hidden p-2"
+            // style={{
+            //   backgroundColor: "white",
+            //   marginTop: "5px",
+            //   height: "100%",
+            //   overflow: "hidden",
+            // }}
           >
             {selectedIndex == 0 && (
               <DisplayMetaInformation
@@ -208,17 +207,17 @@ export default function DisplayAlgorithm({
               />
             )}
             {selectedIndex == 1 && (
-              <pre className="text-left text-black overflow-auto h-full">
+              <pre className="text-left text-black overflow-auto h-full w-full">
                 {JSON.stringify(algorithm.inputSchema, null, 2)}
               </pre>
             )}
             {selectedIndex == 2 && (
-              <pre className="text-left text-black overflow-auto h-full">
+              <pre className="text-left text-black overflow-auto h-full w-full">
                 {JSON.stringify(algorithm.outputSchema, null, 2)}
               </pre>
             )}
             {selectedIndex == 3 && (
-              <pre className="text-left text-black overflow-auto h-full">
+              <pre className="text-left text-black overflow-auto h-full w-full">
                 {JSON.stringify(formData, null, 2)}
               </pre>
             )}

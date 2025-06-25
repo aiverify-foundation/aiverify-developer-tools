@@ -26,7 +26,7 @@ export function getModuleNameFromPyProject(filepath) {
       console.log("Algorithm module name not found in pyproject.toml");
       return null;
     }
-    return module_name;
+    return module_name.replace(/[^a-zA-Z0-9_]/g, "_");
   } catch (err) {
     console.error(`Failed to read pyproject.toml at ${pyprojectPath}:`, err);
     return null;

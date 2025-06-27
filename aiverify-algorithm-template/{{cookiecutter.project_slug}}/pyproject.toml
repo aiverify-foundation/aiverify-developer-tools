@@ -1,0 +1,9 @@
+[project]
+name = "{{ cookiecutter.project_slug }}"
+version = "{{ cookiecutter.plugin_version }}"
+description = "{{ cookiecutter.plugin_description }}"
+authors = [{ name = "{{ cookiecutter.author }}" }]
+readme = "README.md"
+dependencies = ["aiverify-test-engine>=2.0.1"]
+requires-python = ">=3.10,<3.12"
+license = { file = "LICENSE" }

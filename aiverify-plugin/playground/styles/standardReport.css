@@ -1,0 +1,39 @@
+/*
+ * This is the standard report theme.
+ * It is used to style the report pages and the widgets.
+ * It is also used to style the editing overlay.
+ */
+@reference '../../app/globals.css'
+
+.standard-report-page {
+  @apply text-base text-black bg-white;
+}
+
+.standard-report-page .chart-container {
+  @apply w-full h-full;
+}
+
+.standard-report-page h1 {
+  @apply mb-1 text-4xl font-bold;
+}
+
+.standard-report-page h2 {
+  @apply mb-1 text-3xl font-bold;
+}
+
+.standard-report-page h3 {
+  @apply mb-1 text-2xl font-bold;
+}
+
+.standard-report-page p {
+  @apply mb-2 text-base;
+}
+
+.standard-report-page ul {
+  @apply list-disc p-4 pl-5;
+}
+
+.standard-report-page ol {
+  @apply list-decimal pl-5;
+}
+

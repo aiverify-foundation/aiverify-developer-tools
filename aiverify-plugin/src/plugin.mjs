@@ -335,7 +335,7 @@ export function zipPlugin(argv) {
           if (stat.isDirectory()) {
             // console.log("isDirectory", f);
             zip.addFile(`algorithms/${algo}/${f}/`, null);
-            zip.addLocalFolder(subpath, `algorithms/${algo}`, (filename) => {
+            zip.addLocalFolder(subpath, `algorithms/${algo}/${f}`, (filename) => {
               console.log("filename", filename);
               return ![
                 "node_modules",

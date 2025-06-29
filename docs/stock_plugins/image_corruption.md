@@ -5,49 +5,52 @@
 This plugin tests the robustness of AI models to natural corruptions. 
 
 There are four different broad groups of corruptions that are packaged in this plugin. Each of these broad groups of corruptions also have more specific corruption functions indicated in brackets below:
-- General (Gaussian, Poisson, Salt and Pepper Noise)
-- Blur (Defocus, Gaussian, Glass, Horizontal Motion, Vertical Motion, Zoom Blur)
-- Digital (Brightness Up and Down, Contrast Up and Down, Compression, Random Tilt, Saturate)
-- Environmental (Rain, Fog, Snow)
+
+- General (Gaussian, Poisson, Salt and Pepper)
+- Blur (Gaussian, Glass, Defocus, Horizontal Motion, Vertical Motion, Zoom)
+- Digital (Brightness Up and Down, Contrast Up and Down, Saturate Up and Down, Random Perspective, JPEG Compression)
+- Environmental (Snow, Fog, Rain)
 
 The toolbox generates corrupted images based on the uploaded test data at 5 different severity levels for each corruption function. The accuracy of the model is calculated with the new corrupted datasets.
 
 ## Plugin Content
 - Algorithms
-  
-|          Name           |                                                                                             Description                                                                                             |
-| :---------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    Blur Corruptions     |     Algorithm that adds blur corruptions (defocus, gaussian, glass, horizontal motion, vertical motion and zoom Blur) to images at 5 severity levels, and calculates the accuracy of the model      |
-|   Digital Corruptions   | Algorithm that adds digital corruptions (brightness up and down, contrast up and down, compression, random tilt, saturate) to images at 5 severity levels, and calculates the accuracy of the model |
-| Environment Corruptions |                             Algorithm that adds environmental corruptions (rain, fog and snow) to images at 5 severity levels, and calculates the accuracy of the model                             |
-|   General Corruptions   |                Algorithm that adds environmental corruptions (gaussian, poisson and salt and pepper noise) to images at 5 severity levels, and calculates the accuracy of the model                 |
+
+| Name                    | Description                                                                                                                                                                                                                           |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Blur Corruptions        | Algorithm that adds blur corruptions (gaussian, glass, defocus, horizontal motion, vertical motion, zoom) to images across thresholds of interests, and calculates the accuracy of the model                                          |
+| Digital Corruptions     | Algorithm that adds digital corruptions (brightness up and down, contrast up and down, saturate up and down, random perspective, jpeg compression) to images across thresholds of interests, and calculates the accuracy of the model |
+| Environment Corruptions | Algorithm that adds environmental corruptions (snow, fog, rain) to images across thresholds of interests, and calculates the accuracy of the model                                                                                    |
+| General Corruptions     | Algorithm that adds general corruptions (gaussian, poisson, salt and pepper) to images across thresholds of interests, and calculates the accuracy of the model                                                                       |
 
 
 - Widgets
 
-| Name                                                                                                                                                                                                                                                                                                             | Description                                                                                       |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| Introduction                                                                                                                                                                                                                                                                                                     | To provide an introduction to the Image Corruption Toolbox                                        |
-| Understanding Line Chart                                                                                                                                                                                                                                                                                         | To guide your users on reading the generated line charts                                         |
-| Line Chart (Blur Corruptions)                                                                                                                                                                                                                                                                                    | To generate line chart to visualise the accuracy results when blur corruptions are applied        |
-| <ul> <li> Samples (Blur: Defocus Blur) </li> <li>Samples (Blur: Gaussian Blur) </li> <li>Samples (Blur: Glass Blur) </li> <li> Samples (Blur: Horizontal Motion Blur) </li> <li>Samples (Blur: Vertical Motion Blur) </li> <li>Samples (Blur: Zoom Blur)</li> </ul>                                              | To generate sample images for the blur corruptions                                                |
-| Line Chart (Digital Corruptions)                                                                                                                                                                                                                                                                                 | To generate line chart to visualise the accuracy results when digital corruptions are applied     |
-| <ul> <li> Samples (Digital:  Brightness Up) </li> <li>Samples (Digital:  Brightness Down) </li> <li>Samples (Digital:  Contrast Up) </li> <li> Samples (Digital:  Contrast Down) </li> <li>Samples (Digital:  Saturate) </li> <li>Samples (Digital: Compression)</li> <li>Samples (Digital: Compression)</li></ul> | To generate sample images for the digital corruptions                                             |
-| Line Chart (Environmental Corruptions)                                                                                                                                                                                                                                                                           | To generate line chart to visualise the accuracy results when environment corruptions are applied |
-| <ul><li> Samples (Environment: Rain) </li><li> Samples (Environment: Fog)</li>   <li> Samples (Environment: Snow)</li></ul>                                                                                                                                                                                      | To generate samples for the environment corruptions                                               |
-| Line Chart (General Corruptions)                                                                                                                                                                                                                                                                                 | To generate line chart to visualise the accuracy results when general corruptions are applied     |
-| <ul><li> Samples (General: Gaussian) </li><li> Samples (General: Poisson)</li>   <li> Samples (General: Salt and Pepper)</li></ul>                                                                                                                                                                               | To generate sample images for the general corruptions                                             |
-| Recommendation                                                                                                                                                                                                                                                                                                   | To provide recommendations for robustness (image corruptions) testing |
+| Name                                                                                                                                                           | Description                                                                               |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Introduction                                                                                                                                                   | To provide an introduction to the Image Corruption Toolbox                                |
+| Understanding Bar Chart                                                                                                                                        | To guide your users on reading the generated bar charts                                   |
+| Bar Chart (by corruptions type)                                                                                                                                | To generate bar chart to visualise the accuracy results when blur corruptions are applied |
+| <ul><li> Blur corruption samples </li><li> Digital corruption samples </li> <li> Environment corruption samples</li> <li> General corruption samples</li></ul> | To generate sample images for the different corruption types                              |
+| Recommendation                                                                                                                                                 | To provide recommendations for robustness (image corruptions) testing                     |
 
-## Using the Plugin in AI Verify
-### Data Preparation
+## Algorithm Details
+
+Refer to the README file under each algorithm for more details on the algorithm.
+
+- [General Corruptions](https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox/algorithms/general_corruptions)
+- [Blur Corruptions](https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox/algorithms/blur_corruptions)
+- [Digital Corruptions](https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox/algorithms/digital_corruptions)
+- [Environment Corruptions](https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox/algorithms/environment_corruptions)
+
+<!-- ## Using the Plugin in AI Verify -->
+
+<!-- ### Data Preparation
 - Image dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#1-dataset-preparation))
-- Annotated Ground Truth Dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#2-annotated-ground-truth-dataset))
+- Annotated Ground Truth Dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#2-annotated-ground-truth-dataset)) -->
 
-### Additional Requirements
-- ImageMagick (Details for installation can be found [here](https://docs.wand-py.org/en/0.6.11/guide/install.html#))
 
-### Algorithm User Input(s)
+<!-- ### Algorithm User Input(s)
 Note: These inputs are the same for all the algorithms in this plugin (Blur Corruptions, Digital Corruptions, Environmental Corruptions and General Corruptions)
 
 |                Input Field                |                                                                            Description                                                                             |   Type   |
@@ -165,4 +168,4 @@ Note: These inputs are the same for all the algorithms in this plugin (Blur Corr
 }
 ```
 
-</details>
+</details> -->

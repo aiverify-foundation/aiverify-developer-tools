@@ -85,14 +85,14 @@ nav:
       - Plugin System: plugins/index.md
       - Algorithm:
           - Project Structure: plugins/algorithm/file_structure.md
-          - Core Modules: plugins/algorithm/core_modules.md
+          - AI Verify Test Engine: plugins/algorithm/aiverify_test_engine.md
           - Testing: plugins/algorithm/testing_algorithm.md
           - Deploying: plugins/algorithm/deploying_algorithm.md
       - Widget & Input Block:
           - Input Block: plugins/widget/InputBlock.md
           - Widget: plugins/widget/Widget.md
+          - Playground: plugins/widget/Playground.md
           - AI Verify Frontend Shared Library: plugins/widget/Shared_Library.md
-          - AI Verify Frontend Plugin Tool: plugins/widget/Plugin_Tool.md
           - MDX Guide: plugins/widget/MDX_Guide.md
       - Report Template:
           - Template: plugins/widget/Template.md

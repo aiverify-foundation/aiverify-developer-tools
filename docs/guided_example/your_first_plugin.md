@@ -5,13 +5,13 @@ In this guided example, you will be building a plugin and two type of components
 First, we will have to create a plugin project. If you haven't setup your environment, [follow the instructions on this page](../../getting_started/install_aiverify_dev_tools) before continuing. 
 
 !!! info
-  For this guided example, we will be using the **my_plugin** project folder to store the algorithm and widget components, before using [`ai-verify-plugin zip`](../plugins/Plugin_Tool.md#zip) command to package and deploy the final plugin zip.
+  For this guided example, we will be using the **my_plugin** project folder to store the algorithm and widget components, before using [`aiverify-plugin zip`](../plugins/Plugin_Tool.md#zip) command to package and deploy the final plugin zip.
 
 ## Generating the plugin project
-Use [`ai-verify-plugin gp`](../plugins/Plugin_Tool.md#generate-plugin-alias-gp) command to generate your plugin project.
+Use [`aiverify-plugin gp`](../plugins/Plugin_Tool.md#generate-plugin-alias-gp) command to generate your plugin project.
 
 ```bash
-ai-verify-plugin gp my_plugin --name "My Plugin" --description "My First Plugin" 
+aiverify-plugin gp my_plugin --name "My Plugin" --description "My First Plugin" 
 ```
 
 The project folder `my_plugin` should be generated under the plugin directory. Under the project folder, the following files are generated.

@@ -40,6 +40,20 @@ export default async function Page(props: { params: Promise<{ cid: string }> }) 
     )
   }
 
+  // compute property values
+  console.log("properties", widget.meta.properties)
+  if (widget.meta.properties && widget.meta.properties.length > 0) {
+    const initialValues = {};
+    widget.meta.properties.forEach((prop) => {
+      initialValues[prop.key] =
+        prop.value !== undefined ? prop.value : prop.default;
+    });
+    widget.initialPropertyValues = initialValues
+  } else {
+    widget.initialPropertyValues = {}
+  }
+  
+  
   const { code, frontmatter } = result;
   return (
     <DisplayWidget widget={widget} pluginMeta={pluginMeta} code={code} frontmatter={frontmatter} reportWidgetSchema={reportWidgetSchema} />

@@ -53,7 +53,7 @@ export default function DisplayAlgorithm({
   algorithmSchema,
 }) {
   const router = useRouter();
-  const [formData, setFormData] = useState(algorithm.meta);
+  const [formData, setFormData] = useState({});
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   // const [rjsfSchema, setRjsfSchema] = useState<RJSFSchema>({});
   const [uiSchema, setUISchema] = useState<UiSchema>({});
@@ -176,7 +176,7 @@ export default function DisplayAlgorithm({
             >
               Output Schema
             </button>
-            <button
+            {/* <button
               // variant='contained'
               className="btn-primary"
               style={{
@@ -189,7 +189,7 @@ export default function DisplayAlgorithm({
               onClick={() => setSelectedIndex(3)}
             >
               Output
-            </button>
+            </button> */}
           </div>
           <div
             className="bg-white h-full overflow-hidden p-2"
@@ -216,11 +216,11 @@ export default function DisplayAlgorithm({
                 {JSON.stringify(algorithm.outputSchema, null, 2)}
               </pre>
             )}
-            {selectedIndex == 3 && (
+            {/* {selectedIndex == 3 && (
               <pre className="text-left text-black overflow-auto h-full w-full">
                 {JSON.stringify(formData, null, 2)}
               </pre>
-            )}
+            )} */}
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@ export default function DisplayWidget({
 }) {
   const router = useRouter();
   const [layout, setLayout] = useState<any>([]);
-  const [properties, setProperties] = useState<any>({});
+  const [properties, setProperties] = useState<any>(widget?.initialPropertyValues);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   useEffect(() => {

@@ -8,12 +8,12 @@ There are three learning objectives in this tutorial:
 
 ## Generating a widget component
 
-Widgets are stored in the **my_plugin/widgets** folder. Use [**ai-verify-plugin gw**](../plugins/Plugin_Tool.md#generate-widget-alias-gw) to generate your widget.
+Widgets are stored in the **my_plugin/widgets** folder. Use [**aiverify-plugin gw**](../plugins/Plugin_Tool.md#generate-widget-alias-gw) to generate your widget.
 
 Run the following command to generate a new widget and create a dependency to the algorithm and input block components created earlier.
 
 ```bash
-ai-verify-plugin gw "my_widget" --name "My Widget" --description "My first widget" --dep "Algorithm,my_algorithm" --dep "InputBlock,my_inputblock" --minW 12 --dynamicHeight
+aiverify-plugin gw "my_widget" --name "My Widget" --description "My first widget" --dep "Algorithm,my_algorithm" --dep "InputBlock,my_inputblock" --minW 12 --dynamicHeight
 
 ```
 
@@ -30,11 +30,11 @@ The following files are created:
 - my_algorithm.sample.json
 - my_inputblock.sample.json
 
-## Check the Widget Meta Data
+## Edit the Widget Meta Data
 
-Open the file `my_widget.meta.json` under the **widgets** folder and check that the properties are set correctly as shown below:
+Open the file `my_widget.meta.json` under the **widgets** folder and add the widget properties are as shown in highlight below below:
 
-```JSON title="my_widget.meta.json"
+```JSON title="my_widget.meta.json" linenums="1" hl_lines="32-38"
 {
   "cid": "my_widget",
   "widgetSize": {
@@ -64,6 +64,13 @@ Open the file `my_widget.meta.json` under the **widgets** folder and check that 
       "type": "InputBlock",
       "cid": "my_inputblock",
       "datapath": "my_inputblock.sample.json"
+    }
+  ],
+  "properties": [
+    {
+      "key": "title",
+      "helper": "Set the widget title (default \"Hello World\")",
+      "default": "Hello World"
     }
   ]
 }
@@ -110,10 +117,15 @@ Open and edit `my_widget.mdx` to implement the MDX content.
 export const algo_cid = "my_algorithm"
 export const ib_cid = "my_inputblock"
 
+# {props.properties.title}
+
 {props.getIBData(ib_cid)?(
   <>
-    <b>JSON output of input block data</b>
-    <div>{JSON.stringify(props.getIBData(ib_cid))}</div>
+    <b>Input Block Data:</b>
+    <p>
+      <b>First Name:</b> {props.getIBData(ib_cid)["fname"]}<br/>
+      <b>Last Name:</b> {props.getIBData(ib_cid)["lname"]}
+    </p>
   </>
 ):(
   <div>No widget data</div>
@@ -130,3 +142,23 @@ export const ib_cid = "my_inputblock"
 ```
 
 Once you are done with the widget creation, you can proceed to [deploy your plugin](./deploy_your_plugin.md).
+
+## (Optional) Use the **Playground** to view the Widget.
+
+Run the following command under the plugin directory to launch the [**Playground**](../plugins/widget/Playground.md).
+
+```sh
+aiverify-plugin playground
+```
+
+Navigate to [http://localhost:5000/ReportWidget/my_widget](http://localhost:5000/ReportWidget/my_widget) to view the widget you have created.
+
+![Playground - Widget](../images/playground_widget.png)
+
+Once you make any edit to `my_widget.mdx`, you can click the **Refresh** button to view your changes. The `Widget Meta` tab on the right panel display your Widget meta information.
+
+Select the `Properties` tab to see the widget properties defined. Then change the `title` property to other values. Click **Refresh** button to see the widget title updated to the new value you enter.
+
+![Playground - Widget Properties](../images/playground_widget_2.png)
+
+To exit the Playground, type `ctrl+c` to terminate the application.

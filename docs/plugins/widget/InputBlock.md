@@ -22,6 +22,7 @@ During installation, the Plugin Manager will search for and validate the input b
 | name | string | Yes | Input block name. |
 | description | string | No | Input block description. |
 | group | string | No | Input blocks that have the same group name will be grouped together in the user input page |
+| groupNumber | integer | No | Only applicable if group is defined. The group number defines the order of the input block within the group.  |
 | width | string, enum ["xs", "sm", "md", "lg", "xl"] | No | Defines the width of the input block dialog box in the user input page. If not set, the width will default to "md" |
 | fullScreen | boolean | No | Whether the dialog box in the input block should be in fullscreen mode. If this is set to true, the width property is not used |
 
@@ -93,4 +94,5 @@ export const validate = (data) => {
 
 Developers should implement the methods as defined to provide meaningful summary and track progress of the input block completion. The `validate` method tells the portal whether the input block data is valid.
 
-If the input block summary `validate` function return false, then the portal will not allow report generation until the input block data validate success. If the input block does not require the data to be validated before generating report, then developer should return true for this function.
+!!! note
+    If the input block summary `validate` function return false, then the portal will not allow report generation until the input block data validate success. If the input block does not require the data to be validated before generating report, then developer should return true for this function.

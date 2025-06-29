@@ -22,8 +22,8 @@ This plugin explains how your features affect your overall predictions by using 
 | Recommendations         | To provide a recommendation for explainability testing                                 |
 
 ## Using the Plugin in AI Verify
-### Data Preparation
-- Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/))
+<!-- ### Data Preparation
+- Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/)) -->
 
 ### Algorithm User Input(s)
 

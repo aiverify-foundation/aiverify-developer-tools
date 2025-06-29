@@ -1,6 +1,6 @@
 # AI Verify Plugin
 
-This section contains documentations for widget and input block developers as well as the ai-verify-plugin tool.
+This section contains documentations for widget and input block developers as well as the aiverify-plugin tool.
 
 ## Documentation and References
 

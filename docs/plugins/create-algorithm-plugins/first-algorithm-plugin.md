@@ -76,15 +76,15 @@ Yay! You have instantly generated a algorithm plugin project! <br>
 Before we start, we should create a virtual environment (venv) to let the project have its independent set 
 of Python packages. The virtual environment can be anywhere (remember where you put it as you will need to activate it)<br>
 ```bash
-python3 -m venv my_virtual_environment
+python3 -m venv .venv
 ```
 
 Now that we have created this virtual environment for the project, cd to the directory with the virtual environment and activate it.<br>
 ```bash
-source my_virtual_environment/bin/activate
+source .venv/bin/activate
 ```
 
-We can see that the environment is activated with the `(my_virtual_environment)`:
+We can see that the environment is activated with the `(.venv)`:
 ![activate_venv](screenshots/activate_venv.png)
 
 #### Installing the Core Library

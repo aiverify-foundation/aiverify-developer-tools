@@ -1,41 +1,41 @@
 # AI Verify Plugin Tool
 
-The [ai-verify-plugin](https://github.com/IMDA-BTG/aiverify-developer-tools/tree/main/ai-verify-plugin) tool is a command-line tool that help widget and input block developers to develop and scaffold AI Verify plugin projects directly from command line. 
+The [aiverify-plugin](https://github.com/IMDA-BTG/aiverify-developer-tools/tree/main/aiverify-plugin) tool is a command-line tool that help widget and input block developers to develop and scaffold AI Verify plugin projects directly from command line. 
 
 ## Basic Use
 
-Once the tool is installed, it can be invoked with `ai-verify-plugin`. The command line syntax is as follows:
+Once the tool is installed, it can be invoked with `aiverify-plugin`. The command line syntax is as follows:
 
 ```
-ai-verify-plugin <cmd> [args]
+aiverify-plugin <cmd> [args]
 ```
 
 The second argument <cmd> is the command to run. The `--help` argument will output the help menu for the tool or the command. For example,
 
 ```
-ai-verify-plugin --help
-ai-verify-plugin generate-plugin --help
+aiverify-plugin --help
+aiverify-plugin generate-plugin --help
 ```
 
 ## Commands
 
-You can view the list of commands with `ai-verify-plugin --help`.
+You can view the list of commands with `aiverify-plugin --help`.
 
 ```
-ai-verify-plugin <cmd> [args]
+aiverify-plugin <cmd> [args]
 
 Commands:
-  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
-  ai-verify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                          [aliases: gw]
-  ai-verify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                    [aliases: gib]
-  ai-verify-plugin generate-algorithm <cid>   Generate skeleton AI Verify algorithm                       [aliases: ga]
-  ai-verify-plugin zip [pluginDir]            Create the plugin zip file
-  ai-verify-plugin validate                   Validate AI Verify plugin
-  ai-verify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
-  ai-verify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
-  ai-verify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
+  aiverify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
+  aiverify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                          [aliases: gw]
+  aiverify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                    [aliases: gib]
+  aiverify-plugin generate-algorithm <cid>   Generate skeleton AI Verify algorithm                       [aliases: ga]
+  aiverify-plugin zip [pluginDir]            Create the plugin zip file
+  aiverify-plugin validate                   Validate AI Verify plugin
+  aiverify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
+  aiverify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
+  aiverify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
                                               options
-  ai-verify-plugin playground                 Launch the plugin playround
+  aiverify-plugin playground                 Launch the plugin playround
 
 Options:
   --help  Show help                                                                                           [boolean]
@@ -47,7 +47,7 @@ Options:
 This command generates a skeleton [plugin](../guided_example/introduction_to_plugins.md) project.
 
 ```
-ai-verify-plugin generate-plugin [gid]
+aiverify-plugin generate-plugin [gid]
 
 Generate skeleton AI Verify plugin project
 
@@ -81,19 +81,19 @@ If the command run is successful, the tool will generate a folder with the same 
 
 To generate plugin with random gid.
 ```
-ai-verify-plugin gp --name "My Plugin" --description "Just a test plugin"
+aiverify-plugin gp --name "My Plugin" --description "Just a test plugin"
 ```
 
 To generate plugin with specific gid.
 ```
-ai-verify-plugin gp "myplugin" --name "My Plugin" --description "Just a test plugin"
+aiverify-plugin gp "myplugin" --name "My Plugin" --description "Just a test plugin"
 ```
 
 ## generate-widget [alias: gw]
 To generate a [widget](../guided_example/your_first_widget.md), cd to a plugin project folder and run the following command.
 
 ```
-ai-verify-plugin generate-widget <cid>
+aiverify-plugin generate-widget <cid>
 
 Generate skeleton AI Verify widget
 
@@ -135,34 +135,34 @@ Upon successful command run, the following files are generated under the **widge
 
 Generate a widget without any dependencies and properties.
 ```
-ai-verify-plugin gw "mywidget" --name "My Widget" --description "Widget without dependencies and properties"
+aiverify-plugin gw "mywidget" --name "My Widget" --description "Widget without dependencies and properties"
 ```
 
 Generate a widget with a couple of tags.
 ```
-ai-verify-plugin gw "mywidget" --name "My Widget" --description "Widget with tags" --tag mytag1 --tag mytag2
+aiverify-plugin gw "mywidget" --name "My Widget" --description "Widget with tags" --tag mytag1 --tag mytag2
 ```
 
 Generate a widget with minimum width set to 12.
 ```
-ai-verify-plugin gw "mywidget" --name "My Widget" --description "Widget with minW 12" --minW 12
+aiverify-plugin gw "mywidget" --name "My Widget" --description "Widget with minW 12" --minW 12
 ```
 
 Generate a widget with properties.
 ```
-ai-verify-plugin gw "mywidget" --name "My Widget" --description "Widget with properties" --prop "title,Title text to display,Hello World"
+aiverify-plugin gw "mywidget" --name "My Widget" --description "Widget with properties" --prop "title,Title text to display,Hello World"
 ```
 
 Generate a widget with dependencies.
 ```
-ai-verify-plugin gw "mywidget" --name "My Widget" --description "Widget with dependencies" --dep "Algorithm,my-fake-algo-gid,1.1.0" --dep "InputBlock,my-input-block"
+aiverify-plugin gw "mywidget" --name "My Widget" --description "Widget with dependencies" --dep "Algorithm,my-fake-algo-gid,1.1.0" --dep "InputBlock,my-input-block"
 ```
 
 ## generate-inputblock [alias: gib]
 To generate an [input block](./widget/InputBlock.md), cd to a plugin project folder and run the following command.
 
 ```
-ai-verify-plugin generate-inputblock <cid>
+aiverify-plugin generate-inputblock <cid>
 
 Generate skeleton AI Verify input block
 
@@ -193,19 +193,19 @@ Upon successful command run, the following files are generated under the **input
 
 Generate with input block.
 ```
-ai-verify-plugin gib "myinputblock" --name "My Input Block" --description "An input block"
+aiverify-plugin gib "myinputblock" --name "My Input Block" --description "An input block"
 ```
 
 Generate with input block with dialog width "lg"
 ```
-ai-verify-plugin gib "myinputblock" --name "My Input Block" --description "An input block with dialog width lg" --width lg
+aiverify-plugin gib "myinputblock" --name "My Input Block" --description "An input block with dialog width lg" --width lg
 ```
 
 ## generate-algorithm [alias: ga]
 To generate an [Algorithm](../guided_example/your_first_algorithm.md), cd to a plugin project folder and run the following command.
 
 ```
-ai-verify-plugin generate-algorithm <cid>
+aiverify-plugin generate-algorithm <cid>
 
 Generate skeleton AI Verify algorithm
 
@@ -232,7 +232,7 @@ Upon successful command run, the algorithm boilerplate files are generated under
 This commands create a plugin zip file that can be uploaded to the AI Verify portal using the Plugin Manager.
 
 ```
-ai-verify-plugin zip [pluginDir]
+aiverify-plugin zip [pluginDir]
 
 Create the plugin zip file
 
@@ -251,7 +251,7 @@ Options:
 This command run validate checks on the meta files and MDX scripts under the plugin folder.
 
 ```
-ai-verify-plugin validate
+aiverify-plugin validate
 
 Validate AI Verify plugin
 
@@ -264,7 +264,7 @@ Options:
 This command uses [Jest](https://jestjs.io/) to run tests on the input blocks and widgets.
 
 ```
-ai-verify-plugin test-widget
+aiverify-plugin test-widget
 
 Run the plugin tests for widgets and input blocks
 
@@ -297,7 +297,7 @@ To add additional Jest tests, developers can write their own tests and place the
 This command run the algorithm test script for each algorithm found under the plugin directory.
 
 ```
-ai-verify-plugin test-algorithm
+aiverify-plugin test-algorithm
 
 Run the plugin tests for algorithms
 
@@ -311,7 +311,7 @@ Options:
 This command runs the tests for all algorithms, input blocks and widgets found under the plugin directory.
 
 ```
-ai-verify-plugin test-all
+aiverify-plugin test-all
 
 Run all the tests for widgets, input blocks and algorithms with default options
 
@@ -325,7 +325,7 @@ Options:
 This command launches a web playground app to allow developers to view widgets and input blocks during development.
 
 ```
-ai-verify-plugin playground
+aiverify-plugin playground
 
 Launch the plugin playround
 

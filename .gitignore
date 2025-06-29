@@ -164,3 +164,7 @@ temp/
 
 # Environments
 my_virtual_env/
+
+# MacOS
+.DS_Store
+.vscode

@@ -106,11 +106,11 @@ Below is an example of a component that displays a simple form and save the form
 
 ## AI Verify Shared Library
 
-The [AI Verify Shared Library](https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library) provides some shared components that can be imported by MDX. See [Shared Library Documentation](Shared_Library.md).
+The [AI Verify Shared Library](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library) provides some shared components that can be imported by MDX. See [Shared Library Documentation](Shared_Library.md).
 
-### JSX Component Styling
+<!-- ### JSX Component Styling
 
-To ensure consistent stylings for widgets, it is recommended that JSX components use the CSS classes as provided in the [AI Verify Shared Library Styles](https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/styles).
+To ensure consistent stylings for widgets, it is recommended that JSX components use the CSS classes as provided in the [AI Verify Shared Library Styles](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library/packages/styles).
 
 The following classnames provide different color schemas:
 
@@ -135,13 +135,13 @@ To use a different color for styled buttons:
 ```
 <button class="aiv-button c-secondary">My Button</button>
 ```
-
+ -->
 ### Example use of BarCharts
 
-Below is an example of how to add a [BarChart](https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/charts#barchart) component from the [AI Verify Shared Charts Library](https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/charts).
+Below is an example of how to add a [BarChart](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library/packages/charts#barchart) component from the [AI Verify Shared Charts Library](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library/packages/charts).
 
 ```
-import { BarChart } from 'ai-verify-shared-library/charts'
+import { BarChart } from 'aiverify-shared-library/charts'
 
 export const data01 = [
   {
@@ -199,7 +199,7 @@ export const data01 = [
 
 ### Example use of Decision Tree
 
-The [AI Verify Shared Library DecisionTree](https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/graph) allows user to build their own decision tree.
+The [AI Verify Shared Library DecisionTree](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library/packages/graph) allows user to build their own decision tree.
 
 You can find an example of Decision Tree Input Block from the [Fairness Metrics Toolbox for Classification](https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.fairness-metrics-toolbox-for-classification) plugin.
 An example use of the **DecisionTree** component can be found in the implementation for the [AI Verify Fairness Tree](https://github.com/IMDA-BTG/aiverify/blob/main/stock-plugins/aiverify.stock.fairness-metrics-toolbox-for-classification/inputs/fairness_tree.mdx) is found under the *inputs* folder.

@@ -7,161 +7,161 @@ This page prepares your environment for development on AI Verify. By the end of 
 ```
 <working directory>/
 ├── aiverify/
-    ├── ai-verify-shared-library/
-    ├── test-engine-core/
-    └── test-engine-core-modules/
+    ├── aiverify-shared-library/
+    ├── common/
 ├── aiverify-developer-tools/
     ├── README.md
-    ├── ai-verify-algorithm-template/
-    ├── ai-verify-plugin/
+    ├── aiverify-algorithm-template/
+    ├── aiverify-plugin/
     └── template_plugin/
 ├── my_plugin/
-└── my_virtual_environment/
+└── .venv/
 
 ```
-The Developer Tools require specific modules from the main AI Verify repository. If you have not installed AI Verify, use [sparse-checkout](https://git-scm.com/docs/git-sparse-checkout) on the AI Verify repository to selectively checkout files that are relevant to the Developer Tools.
 
-1. Clone the required modules and selectively checkout dependencies needed for Developer Tools
-```bash
-# Execute in the working directory
-git clone https://github.com/IMDA-BTG/aiverify.git
-cd aiverify
-git sparse-checkout init --cone
-git sparse-checkout set ai-verify-shared-library test-engine-core-modules test-engine-core
-
-ls # You should be able to see the three folders
-```
-
-After the sparse checkout, you should end up with these three folders in your aiverify project directory. Please take note of the **test-engine-core-modules** path, as you will need it later while testing the algorithm component. 
-
-![Sparse Checkout Folders](../images/sparse_checkout_folders.png)
-
-## Installing Dependencies
+## Step 1. Installing Dependencies
 
 Install the following dependencies if they are not already available.
 
-1. Install jq and zip
-```bash
+### Installation on Ubuntu 22
+
+Install jq and zip
+
+```sh
+sudo apt update
 sudo apt-get install -y jq zip
 ```
 
-2. Install Python and its virtual environment packages
-```bash
-sudo apt-get install -y python3.10 python3-pip python3.10-venv
+Install Python 3.11
+
+```sh
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.11
 ```
 
-3. Install NodeJS
-```bash
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+Install NodeJS
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-## Preparing a Virtual Environment
+### Installation on MacOS
+
+The following steps assume [homebrew](https://brew.sh/) is installed.
+
+Install jq and zip
+
+```sh
+brew install jq zip
+```
+
+Install Python 3.11
+
+```sh
+brew install python@3.11
+```
+
+Install NodeJS
+```sh
+brew install node@22
+```
+
+
+## Step 2. Preparing a Virtual Environment
 
 We recommend setting up a virtual environment for your plugin project to ensure that these libraries will not mess up your main development environment.
 
-1. Create a virtual environment
+Step 1. Create and activate a python virtual environment
 ```bash
 # Execute in the working directory
-python3 -m venv my_virtual_environment
+python3 -m venv .venv
+source .venv/bin/activate
+which python # you should see something like <working directory>/.venv/bin/python
 ```
 
-2. Activate your newly created virtual environment
-```bash
-source my_virtual_environment/bin/activate
-```
-
-3. Check that you're working from the virtual environment
-```bash
-which python # you should see something like <working directory>/my_virtual_environment/bin/python
-```
-
-4. Install plugin dependencies in your virtual environment
+Step 2. Install plugin dependencies in your virtual environment
 ```bash
 pip install --upgrade pip
-pip install cookiecutter
+pip install cookiecutter pytest 'aiverify-test-engine[all]'
 ```
 
-1. Install AI Verify Test Engine Core.
-```bash
-# Execute these in the aiverify directory
-cd test-engine-core
-pip install dist/test_engine_core-0.9.0.tar.gz
+## Step 3. Install the required modules from **AI Verify** repository
 
-# Head back to the aiverify directory
-cd ..
+The Developer Tools require specific modules from the main [**AI Verify**](https://github.com/aiverify-foundation/aiverify) repository. If you have not installed **AI Verify**, use [sparse-checkout](https://git-scm.com/docs/git-sparse-checkout) on the AI Verify repository to selectively checkout files that are relevant to the Developer Tools.
+
+Sparse checkout the required modules for **AI Verify** repository.
+
+```sh
+# Execute in the working directory
+git clone --no-checkout git@github.com:aiverify-foundation/aiverify.git
+cd aiverify
+git sparse-checkout init --cone
+git sparse-checkout set aiverify-shared-library common
+ls # You should be able to see the three folders
+git checkout main 
 ```
 
-    !!! Note 
-        AI Verify Test Engine currently runs Pandas V1.5.3. We do not support Pandas 2.x.x.
+After the sparse checkout, you should end up with these two folders in your `aiverify` project directory.
 
-1. Install necessary requirements from `test-engine-core-modules`.
-```bash
-# Execute these in the aiverify directory
-cd test-engine-core-modules
-pip install -r requirements.txt
+```
+<working directory>/
+├── aiverify/
+    ├── aiverify-shared-library/
+    ├── common/
 
-# Head back to the aiverify directory
-cd ..
 ```
 
-1. Install dependencies and build AI Verify Frontend Shared Library
-```bash
-# Execute these in the aiverify directory
-cd ai-verify-shared-library
+Install the require modules.
+
+```
+cd aiverify-shared-library
 npm install
 npm run build
-
-# Head back to the aiverify directory
-cd ..
+cd ../.. # back to working directory
 ```
 
-## Installing AI Verify Developer Tools
 
-Install AI Verify Developer Tools in your environment.
+## Step 4. Install the AI Verify Developer Tool
 
-1. Clone our developer's repository. We recommend cloning this in the *same directory* you cloned **aiverify**.
-```bash
+Clone our developer's repository. You should clone this in the *same directory* you cloned **aiverify**.
+
+```sh
 # Execute in the working directory
 git clone https://github.com/IMDA-BTG/aiverify-developer-tools.git
 ```
 
-2. Install AI Verify Plugin Tool
-```bash
-cd aiverify-developer-tools/ai-verify-plugin
+Install AI Verify Developer Tools in your environment.
+
+```sh
+cd aiverify-developer-tools/aiverify-plugin
 npm install
 npm link ../../aiverify/ai-verify-shared-library
 sudo npm install -g # You may need sudo for this command
 ```
 
 If the installation is successful, you should see a similar output as shown below.
-#### [ai-verify-plugin](../plugins/Plugin_Tool.md)
+#### [aiverify-plugin](../plugins/Plugin_Tool.md)
 ```
-$ ai-verify-plugin --help
-ai-verify-plugin <cmd> [args]
+$ aiverify-plugin --help
+aiverify-plugin <cmd> [args]
 
 Commands:
-  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
-  ai-verify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                          [aliases: gw]
-  ai-verify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                    [aliases: gib]
-  ai-verify-plugin generate-algorithm <cid>   Generate skeleton AI Verify algorithm                       [aliases: ga]
-  ai-verify-plugin zip [pluginDir]            Create the plugin zip file
-  ai-verify-plugin validate                   Validate AI Verify plugin
-  ai-verify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
-  ai-verify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
-  ai-verify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
+  aiverify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
+  aiverify-plugin generate-widget <cid>      Generate skeleton AI Verify widget                          [aliases: gw]
+  aiverify-plugin generate-inputblock <cid>  Generate skeleton AI Verify input block                    [aliases: gib]
+  aiverify-plugin generate-algorithm <cid>   Generate skeleton AI Verify algorithm                       [aliases: ga]
+  aiverify-plugin zip [pluginDir]            Create the plugin zip file
+  aiverify-plugin validate                   Validate AI Verify plugin
+  aiverify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
+  aiverify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
+  aiverify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
                                               options
-  ai-verify-plugin playground                 Launch the plugin playround
+  aiverify-plugin playground                 Launch the plugin playround
 
 Options:
   --help  Show help                                                                                           [boolean]
 ```
 
-#### cookiecutter
-```bash
-cookiecutter -h
-```
-
-![cookiecutter Help Text](../images/cookiecutter_help_text.png)
-
-Congratulations! You are ready to create your first plugin.
+Congratulations! You are ready to create your [first plugin](../guided_example/introduction_to_plugins.md).

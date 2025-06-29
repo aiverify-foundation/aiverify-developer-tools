@@ -151,6 +151,7 @@ The widget MDX are loaded as React components and the component properties are p
 | getResults(cid, gid=null) | function | Function to return result of an algorithm identified by cid. If gid of the algorithm is not specified, the function assumes same plugin gid as the widget. |
 | getIBData(cid, gid=null) | function | Function to return data of an input block identified by cid. If gid of the input block is not specified, the function assumes same plugin gid as the widget. |
 | getTest(cid, gid=null) | function | Function to return test result information (if successful), see [Test Result Information](#test-result-information) |
+| getArtifactURL(cid, pathname, gid=null) | function | Returns the URL of the artifact uploaded for this result. |
 | meta | object | Object containing widget meta data. |
 | report | object | Object containing report information, see [Report](#report) |
 | modelAndDatasets | object | Object containing model and dataset information used to run the test (See [Models and Datasets](#models-and-datasets)) |
@@ -223,3 +224,8 @@ props.getContainerObserver((width, height) => {
 | type | string | Model access type (File, Folder, Pipeline, API) |
 | modelType | string | Model type (Classification, Regression) |
 | modelFormat | string | Model format |
+
+## Guidelines for Creating MDX Files
+
+You can refer to this [guideline](https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins) for additional information in creating MDX files.
+

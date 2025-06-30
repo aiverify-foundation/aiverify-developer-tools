@@ -31,8 +31,8 @@ This plugin computes and displays a list of fairness metrics to measure how corr
 | Table of Definitions    | To provide a table of definitions                                                      |
 
 ## Using the Plugin in AI Verify
-### Data Preparation
-- Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/))
+<!-- ### Data Preparation
+- Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/)) -->
 
 ### Algorithm User Input(s)
 

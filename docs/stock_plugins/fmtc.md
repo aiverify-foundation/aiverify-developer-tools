@@ -25,16 +25,18 @@ The Fairness Metrics Toolbox (FMT) for Classification contains a list of fairnes
 | Fairness Metrics (All)    | To generate all fairness metrics                                                     |
 
 ## Using the Plugin in AI Verify
-### Data Preparation
-For images:
+
 This plugin was mainly designed for tabular datasets, but can also be used on image datasets.
+
+<!-- ### Data Preparation
+For images:
 
 - Image dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#1-dataset-preparation))
 - Annotated Ground Truth Dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#2-annotated-ground-truth-dataset))
 
 For tabular:
 
-- Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/))
+- Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/)) -->
 
 ### Algorithm User Input(s)
 

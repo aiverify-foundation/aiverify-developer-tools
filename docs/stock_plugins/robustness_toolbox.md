@@ -25,9 +25,9 @@ This algorithm is developed for image dataset but can also be used to create noi
 | Description (Technical)  | To provide introduction, bar chart, interpretation and recommendations for robustness testing with technical details                                                |
 
 ## Using the Plugin in AI Verify
-### Data Preparation
 This plugin was mainly designed for image datasets, but can also be used on tabular datasets.
 
+<!-- ### Data Preparation
 For images:
 
 - Image dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#1-dataset-preparation))
@@ -35,7 +35,7 @@ For images:
 
 For tabular:
 
-- Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/))
+- Tabular dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-tabular/)) -->
 
 ### Algorithm User Input(s)
 

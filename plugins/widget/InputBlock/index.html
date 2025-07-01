@@ -542,8 +542,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algorithm/core_modules/" class="md-nav__link">
-        Core Modules
+      <a href="../../algorithm/aiverify_test_engine/" class="md-nav__link">
+        AI Verify Test Engine
       </a>
     </li>
   
@@ -741,8 +741,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Shared_Library/" class="md-nav__link">
-        AI Verify Frontend Shared Library
+      <a href="../Playground/" class="md-nav__link">
+        Playground
       </a>
     </li>
   
@@ -755,8 +755,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Plugin_Tool.md" class="md-nav__link">
-        AI Verify Frontend Plugin Tool
+      <a href="../Shared_Library/" class="md-nav__link">
+        AI Verify Frontend Shared Library
       </a>
     </li>
   
@@ -1205,6 +1205,12 @@
 <td>Input blocks that have the same group name will be grouped together in the user input page</td>
 </tr>
 <tr>
+<td>groupNumber</td>
+<td>integer</td>
+<td>No</td>
+<td>Only applicable if group is defined. The group number defines the order of the input block within the group.</td>
+</tr>
+<tr>
 <td>width</td>
 <td>string, enum ["xs", "sm", "md", "lg", "xl"]</td>
 <td>No</td>
@@ -1290,7 +1296,10 @@
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>}
 </span></code></pre></div>
 <p>Developers should implement the methods as defined to provide meaningful summary and track progress of the input block completion. The <code>validate</code> method tells the portal whether the input block data is valid.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>If the input block summary <code>validate</code> function return false, then the portal will not allow report generation until the input block data validate success. If the input block does not require the data to be validated before generating report, then developer should return true for this function.</p>
+</div>
 
 
 

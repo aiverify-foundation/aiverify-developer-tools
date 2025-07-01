@@ -2,212 +2,217 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://127.0.0.1/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/getting_started/install_aiverify_dev_tools/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/getting_started/start_here/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/guided_example/deploy_your_plugin/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/guided_example/introduction_to_plugins/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/guided_example/your_first_algorithm/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/guided_example/your_first_inputblock/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/guided_example/your_first_plugin/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/guided_example/your_first_widget/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/Plugin_Tool/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://127.0.0.1/plugins/algorithm/aiverify_test_engine/</loc>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/algorithm/algorithm-plugin-in-depth-reference/</loc>
-         <lastmod>2023-10-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://127.0.0.1/plugins/algorithm/core_modules/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/algorithm/deploying_algorithm/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/algorithm/file_structure/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/algorithm/testing_algorithm/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/create-algorithm-plugins/algorithm-plugin-advanced-topics/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/create-algorithm-plugins/create-algorithm-plugins-intro/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/create-algorithm-plugins/first-algorithm-plugin/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/create-algorithm-plugins/samples/accumulated-local-effects/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/create-algorithm-plugins/samples/fairness-metrics-toolbox/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/create-algorithm-plugins/samples/partial-dependence-plot/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/create-algorithm-plugins/samples/performance-metrics-toolbox/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/create-algorithm-plugins/samples/shap-toolbox/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/widget/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/widget/InputBlock/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/widget/MDX_Guide/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://127.0.0.1/plugins/widget/Playground/</loc>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/widget/Plugin/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/widget/Shared_Library/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/widget/Template/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/plugins/widget/Widget/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/ale/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/decorators/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/fmtc/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/fmtr/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/image_corruption/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/pdp/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/process_checklist/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/report/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/robustness_toolbox/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1/stock_plugins/shap/</loc>
-         <lastmod>2023-10-16</lastmod>
+         <lastmod>2025-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

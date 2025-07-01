@@ -475,6 +475,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#upload-the-test-datasets-and-models" class="md-nav__link">
+    Upload the Test Datasets and Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#generating-the-report" class="md-nav__link">
     Generating the Report
   </a>
@@ -613,8 +620,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/algorithm/core_modules/" class="md-nav__link">
-        Core Modules
+      <a href="../../plugins/algorithm/aiverify_test_engine/" class="md-nav__link">
+        AI Verify Test Engine
       </a>
     </li>
   
@@ -729,8 +736,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Shared_Library/" class="md-nav__link">
-        AI Verify Frontend Shared Library
+      <a href="../../plugins/widget/Playground/" class="md-nav__link">
+        Playground
       </a>
     </li>
   
@@ -743,8 +750,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Plugin_Tool.md" class="md-nav__link">
-        AI Verify Frontend Plugin Tool
+      <a href="../../plugins/widget/Shared_Library/" class="md-nav__link">
+        AI Verify Frontend Shared Library
       </a>
     </li>
   
@@ -1110,6 +1117,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#upload-the-test-datasets-and-models" class="md-nav__link">
+    Upload the Test Datasets and Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#generating-the-report" class="md-nav__link">
     Generating the Report
   </a>
@@ -1136,12 +1150,12 @@
 <p>If you are following the guided example, you should have the following components completed and packaged in its own respective folders:</p>
 <ol>
 <li>my_algorithm component</li>
+<li>my_inputblock component</li>
 <li>my_widget component</li>
 </ol>
 <h2 id="combine-the-plugin-components">Combine the plugin components</h2>
-<p>The <strong>my_plugin</strong> directory should mimic the same plugin structure. The algorithms directory should contain algorithms, with each one in its own respective folder. The widget components will be stored in the widgets directory.</p>
+<p>The <strong>my_plugin</strong> directory should mimic the same plugin structure. The <code>algorithms</code> directory should contain algorithms, with each one in its own respective folder. The widget components will be stored in the <code>widgets</code> directory and input blocks will be stored in the <code>inputs</code> directory..</p>
 <p><img alt="plugin structure" src="../../images/plugin_structure.png" /></p>
-<p>In this guided example, the algorithms directory will have the folder <em>my_algorithm</em>. The widgets directory will contain <em>my_widget.meta.json</em>, <em>my_widget.mdx</em>, and <em>my_algorithm.sample.json</em>.</p>
 <h2 id="edit-plugin-details-optional">Edit Plugin Details (Optional)</h2>
 <p>You may wish to edit <em>plugin.meta.json</em> to change the plugin details.</p>
 <div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">plugin.meta.json</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -1159,9 +1173,9 @@
 </span></span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="deploy-your-plugin_1">Deploy your Plugin</h2>
-<p>You can package your plugin using the <a href="../../plugins/Plugin_Tool/#zip"><code>ai-verify-plugin zip</code></a> command.</p>
+<p>You can package your plugin using the <a href="../../plugins/Plugin_Tool/#zip"><code>aiverify-plugin zip</code></a> command.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Execute this command under the my_plugin directory</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ai-verify-plugin<span class="w"> </span>zip
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>aiverify-plugin<span class="w"> </span>zip
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1173,33 +1187,77 @@
 <p>To upload the plugin, start the frontend portal of AI Verify. You will need to install AI Verify if you have not done so. The instructions to install and run AI Verify from source code can be found in the <a href="https://imda-btg.github.io/aiverify/getting-started/source-code-setup/">User Guide</a>.</p>
 <ol>
 <li>
-<p>Once the portal is started up, visit the portal at <a href="http://localhost:3000/home">http://localhost:3000/home</a>. In the homepage, click on "Plugins" to visit the Plugin Manager page:
-   <img alt="aiv_homepage" src="../../images/aiv_home_page.png" /></p>
+<p>Once the portal is started up, visit the portal at <a href="http://localhost:3000/home">http://localhost:3000/home</a>. In the homepage, click on <strong>Manage</strong> -&gt; <strong>Plugins</strong> to visit the <strong>Plugin Manager</strong> page:
+    <img alt="aiv_homepage" src="../../images/aiv_plugin_manager_page.png" /></p>
 </li>
 <li>
-<p>In the <strong>Plugin Manager page</strong>, click on "INSTALL PLUGIN" at the top right and select <code>my_plugin-0.1.0.zip</code>, then click on "INSTALL" :
-   <img alt="install_plugin" src="../../images/install_plugin.png" /></p>
+<p>In the <strong>Plugin Manager</strong> page, click on "UPLOAD PLUGIN" at the top right. Then either drag and drop <code>my_plugin-0.1.0.zip</code> to the file selector or click to browse and select the zip file. Then click "CONFIRM UPLOAD" to upload the plugin:
+    <img alt="install_plugin" src="../../images/install_plugin.png" /></p>
 </li>
 <li>
-<p>The following prompt should appear to inform you that the plugin has been installed successfully: </p>
-<p><img alt="plugin_installed_successfully" src="../../images/plugin_installed_successfully.png" /></p>
+<p>The following prompt should appear to inform you that the plugin has been installed successfully: 
+    <img alt="plugin_installed_successfully" src="../../images/plugin_installed_successfully.png" /></p>
 </li>
 <li>
-<p>You should see your plugin in the list of installed plugins:
-   <img alt="plugin_manager_page" src="../../images/plugin_manager_page.png" /></p>
+<p>Click the back arrow key to return to the <strong>Plugin Manager</strong> page. You should see your plugin in the list of installed plugins:
+    <img alt="plugin_manager_page" src="../../images/plugin_manager_page.png" /></p>
+</li>
+</ol>
+<h2 id="upload-the-test-datasets-and-models">Upload the Test Datasets and Models</h2>
+<p>Select and upload the dataset, ground truth dataset and model. You can download the test dataset and model from the <a href="https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/user_defined_files">AI Verify Github Repository</a>. </p>
+<ol>
+<li>
+<p>From the Homepage, select <strong>Manage</strong> -&gt; <strong>Models</strong> page and then click the <strong>UPLOAD MODEL</strong> button.</p>
+</li>
+<li>
+<p>Select the <strong>Upload AI Model</strong> to upload a model file and click "Next".
+   <img alt="upload_model" src="../../images/upload_model.png" /></p>
+</li>
+<li>
+<p>Drag and drop <code>sample_bc_credit_sklearn_linear.LogisticRegression.sav</code> to the upload file selector, or click to browse and select the file. The filename <code>sample_bc_credit_sklearn_linear.LogisticRegression.sav</code> should appear on the selected file list. Select <code>Classification</code> next to the file name and click <strong>UPLOAD FILES(S)</strong> to upload the file.
+   <img alt="upload_model_selected" src="../../images/upload_model_selected.png" /></p>
+</li>
+<li>
+<p>Once the file has been uploaded, click the back arrow <code>&lt;-</code> twice to return the model list page. You should now see the uploaded model appear in the list.
+   <img alt="model_list" src="../../images/model_list.png" /></p>
+</li>
+<li>
+<p>From the Homepage, select <strong>Manage</strong> -&gt; <strong>Data</strong> page and then click the <strong>UPLOAD DATASET</strong> button.</p>
+</li>
+<li>
+<p>Drag and drop <code>sample_bc_credit_data.sav</code> to the upload file selector, or click to browse and select the file. The filename <code>sample_bc_credit_data.sav</code> should appear on the selected file list. Click <strong>CONFIRM UPLOAD</strong> to upload the file.
+   <img alt="upload_dataset_selected" src="../../images/upload_dataset_selected.png" /></p>
+</li>
+<li>
+<p>Once the file has been uploaded, click the back arrow <code>&lt;-</code> once to return the dataset list page. You should now see the uploaded dataset appear in the list.
+   <img alt="dataset_list" src="../../images/dataset_list.png" /></p>
 </li>
 </ol>
 <h2 id="generating-the-report">Generating the Report</h2>
 <ol>
-<li>It is time to run the plugin. In the homepage, click on "Create New Project":
-   <img alt="aiv_homepage" src="../../images/aiv_home_page.png" /></li>
-<li>Fill in the project details and click "Next" on the top right:
-    <img alt="project_details" src="../../images/project_details.png" /></li>
-<li>On the <strong>Design Report</strong> page, drag your widget from the left panel to the canvas:
-   <img alt="canvas" src="../../images/canvas.png" />
-   Since the widget is a <strong>dynamic height</strong> widget, the widget height will expand dynamically to fill to the bottom of the canvas. When you're ready, click "Next" on the top right.</li>
 <li>
-<p>On the <strong>Select the Datasets and AI Model to be tested</strong> page, select and upload the dataset, ground truth dataset and model. You can use the dataset provided in the template or download from <a href="https://github.com/IMDA-BTG/aiverify/tree/main/examples">here</a>. Refer to the following table for reference.</p>
+<p>It is time to run the plugin. In the homepage, click on "Create New Project":
+   <img alt="aiv_homepage" src="../../images/aiv_home_page.png" /></p>
+</li>
+<li>
+<p>Fill in the project details and click "Next" on the top right:
+   <img alt="project_details" src="../../images/project_details.png" /></p>
+</li>
+<li>
+<p>In the Report Template Selection page, Click <strong>Create New Report Template</strong> to create a report from scratch.
+   <img alt="project_report_template_section" src="../../images/project_report_template_selection.png" /></p>
+</li>
+<li>
+<p>On the <strong>Design Report</strong> page, drag your widget from the left panel to the canvas:
+   <img alt="canvas" src="../../images/canvas.png" />
+   Since the widget is a <strong>dynamic height</strong> widget, the widget height will expand dynamically to fill to the bottom of the canvas. Click on the algorihm and input block dependencies icon to view the list of dependencies for this widget. When you're ready, click "Next" on the bottom right.</p>
+</li>
+<li>
+<p>On the <strong>Select the Mode, Test Results and User Input</strong> page, Click the <strong>RUN TESTS</strong> button besides <strong>My Algorithm</strong> to run the test for the algorithm.
+   <img alt="project_user_input" src="../../images/project_user_input_page.png" /></p>
+</li>
+<li>
+<p>Select the model and test datasets upload. Then enter the algorithm parameters. Refer to the following table for reference.</p>
 <table>
 <thead>
 <tr>
@@ -1209,39 +1267,55 @@
 </thead>
 <tbody>
 <tr>
+<td>Model</td>
+<td><code>sample_bc_credit_sklearn_linear.LogisticRegression.sav</code></td>
+</tr>
+<tr>
 <td>Testing Dataset</td>
 <td><code>sample_bc_credit_data.sav</code></td>
 </tr>
 <tr>
 <td>Ground Truth Dataset</td>
-<td><code>sample_bc_credit_data.sav</code>, Ground Truth: <code>default</code></td>
-</tr>
-<tr>
-<td>AI Model</td>
 <td><code>sample_bc_credit_data.sav</code></td>
 </tr>
 <tr>
-<td>Test Arguments</td>
+<td>Ground Truth Column</td>
+<td><code>default</code></td>
+</tr>
+<tr>
+<td>Feature Name</td>
 <td><code>gender</code></td>
 </tr>
 </tbody>
 </table>
+<p><img alt="run_test" src="../../images/run_test.png" />
+Click <strong>Run Test</strong> button to run the test.</p>
 </li>
 <li>
-<p>During model upload, choose <code>Upload AI Model</code> to the AI model file and click "Next".
-   <img alt="upload_model" src="../../images/upload_model.png" /></p>
+<p>When you are ready, click on <strong>Run Test</strong> button on the bottom right to run the test.</p>
 </li>
-<li>Click "OPEN" at the "My Algorithm" box and type <code>gender</code> for the feature name.</li>
-<li>Click "OPEN" at the "My Input Block" box and enter your first and last name. The end result should look like this.
-   <img alt="data_and_model_selection" src="../../images/data_and_model_selection.png" /> </li>
-<li>When you are ready, click on "Next" on the top right. Click on "PROCEED" when prompted:
-   <img alt="confirm_generate_report" src="../../images/confirm_generate_report.png" /> </li>
-<li>You should see the logs of what is happening in the backend and when your report has been generated, you should see the "Test Completed" prompt in the top right. Click on "VIEW REPORT" to see your report:
-   <img alt="generated_report" src="../../images/generated_report.png" /> </li>
-<li>Your report will be displayed as a PDF file.
-   <img alt="report" src="../../images/report.png" /> 
-   Congratulations! You have generated your first report. </li>
+<li>
+<p>You should see the list of tests that are running or have previously been run from the portal. When the algorithm is running, it's status is <strong>PENDING</strong>. Once the <strong>My Algorithm</strong> has completed running, it's status will be reflected as <strong>SUCCESS</strong> or <strong>ERROR</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the algorithms is unable to run due to error, the status will be set to <strong>ERROR</strong> and you can view the error log by clicking the <strong>View Error</strong> button.</p>
+</div>
+</li>
+<li>
+<p>Click the <strong>Back to Project</strong> button on the top left to return to the project. Now click the <strong>ADD INPUT</strong> button to enter the user input for <strong>My Input Block</strong>. Enter a name for this input and then some values in the <strong>First name</strong> and <strong>Last name</strong> fields.</p>
+<p>Click the <strong>Submit</strong> button on the bottom right to create a new input.</p>
+<p><img alt="input_block" src="../../images/input_block.png" /></p>
+</li>
+<li>
+<p>Now from the <strong>Select the Mode, Test Results and User Input</strong> page, select the <strong>AI Model</strong> and the newly created <strong>Test Results</strong> and <strong>User Inputs</strong>. 
+   <img alt="project_user_input_page_selected" src="../../images/project_user_input_page_selected.png" /></p>
+</li>
+<li>
+<p>Click the <strong>Next</strong> button on the bottom right to view the web report.
+   <img alt="generated_report" src="../../images/generated_report.png" /> </p>
+</li>
 </ol>
+<p>Congratulations! You have generated your first report. </p>
 
 
 

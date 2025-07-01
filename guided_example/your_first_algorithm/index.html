@@ -426,16 +426,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modifying-algorithm" class="md-nav__link">
-    Modifying algorithm
+  <a href="#modifying-command-line-arguments" class="md-nav__link">
+    Modifying Command Line Arguments
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-the-test" class="md-nav__link">
-    Run the test
+  <a href="#modifying-algorithm" class="md-nav__link">
+    Modifying Algorithm
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-algorithm" class="md-nav__link">
+    Run Algorithm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-algorithm" class="md-nav__link">
+    Test Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-test_e2epy" class="md-nav__link">
+    Update test_e2e.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-test_algopy" class="md-nav__link">
+    Update test_algo.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-algorithm-test" class="md-nav__link">
+    Run Algorithm Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -613,8 +654,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/algorithm/core_modules/" class="md-nav__link">
-        Core Modules
+      <a href="../../plugins/algorithm/aiverify_test_engine/" class="md-nav__link">
+        AI Verify Test Engine
       </a>
     </li>
   
@@ -729,8 +770,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Shared_Library/" class="md-nav__link">
-        AI Verify Frontend Shared Library
+      <a href="../../plugins/widget/Playground/" class="md-nav__link">
+        Playground
       </a>
     </li>
   
@@ -743,8 +784,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Plugin_Tool.md" class="md-nav__link">
-        AI Verify Frontend Plugin Tool
+      <a href="../../plugins/widget/Shared_Library/" class="md-nav__link">
+        AI Verify Frontend Shared Library
       </a>
     </li>
   
@@ -1103,16 +1144,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modifying-algorithm" class="md-nav__link">
-    Modifying algorithm
+  <a href="#modifying-command-line-arguments" class="md-nav__link">
+    Modifying Command Line Arguments
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-the-test" class="md-nav__link">
-    Run the test
+  <a href="#modifying-algorithm" class="md-nav__link">
+    Modifying Algorithm
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-algorithm" class="md-nav__link">
+    Run Algorithm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-algorithm" class="md-nav__link">
+    Test Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-test_e2epy" class="md-nav__link">
+    Update test_e2e.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-test_algopy" class="md-nav__link">
+    Update test_algo.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-algorithm-test" class="md-nav__link">
+    Run Algorithm Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1140,46 +1222,45 @@
 <li>Modify the testing codes</li>
 </ol>
 <h2 id="generating-the-algorithm-component-project">Generating the algorithm component project</h2>
-<p>Algorithms are stored under the <strong>my_plugin/algorithms</strong> folder. From your terminal, use <a href="../../plugins/Plugin_Tool/#generate-algorithm-alias-ga"><code>ai-verify-plugin ga</code></a> to generate an algorithm component template for your new algorithm.</p>
+<p>Algorithms are stored under the <strong>my_plugin/algorithms</strong> folder. From your terminal, use <a href="../../plugins/Plugin_Tool/#generate-algorithm-alias-ga"><code>aiverify-plugin ga</code></a> to generate an algorithm component template for your new algorithm.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Navigate to the plugin project directory</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>my_plugin
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Generate the algorithm template</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>ai-verify-plugin<span class="w"> </span>ga<span class="w"> </span>my_algorithm<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;My Algorithm&quot;</span><span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;This algorithm returns the value of the feature name selected by the user.&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>aiverify-plugin<span class="w"> </span>ga<span class="w"> </span>my_algorithm<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;My Algorithm&quot;</span><span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;This algorithm returns the value of the feature name selected by the user.&quot;</span>
 </span></code></pre></div>
 <p>Yay! You have generated an algorithm component project to create your first algorithm. Verify that the directory <code>algorithms/my_algorithm</code> exists in your current directory.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls<span class="w"> </span>algorithms/my_algorithm
 </span></code></pre></div>
 <p>You should see the files generated for the algorithm component under the directory. For more information on the files generated, see <a href="../../plugins/algorithm/file_structure/">Understanding your algorithm project</a>.</p>
 <h2 id="check-the-algorithm-meta-data">Check the Algorithm Meta Data</h2>
-<p>Open the file <code>my_algorithm.meta.json</code> under the <strong>algorithms/my_algorithm</strong> folder and check that the properties are set correctly as shown below:</p>
-<div class="language-JSON highlight"><span class="filename">my_algorithm.meta.json</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<p>Open the file <code>algo.meta.json</code> under the <strong>algorithms/my_algorithm</strong> folder and check that the properties are set correctly as shown below:</p>
+<div class="language-JSON highlight"><span class="filename">algo.meta.json</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;cid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_algorithm&quot;</span><span class="p">,</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Algorithm&quot;</span><span class="p">,</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;modelType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="s2">&quot;classification&quot;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">],</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example Author&quot;</span><span class="p">,</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This algorithm returns the value of the feature name selected by the user.&quot;</span><span class="p">,</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="s2">&quot;My Algorithm&quot;</span><span class="p">,</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="s2">&quot;classification&quot;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p">],</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="nt">&quot;requireGroundTruth&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="nt">&quot;requiredFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="s2">&quot;AUTHORS.rst&quot;</span><span class="p">,</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="s2">&quot;CHANGELOG.md&quot;</span><span class="p">,</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="s2">&quot;input.schema.json&quot;</span><span class="p">,</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="s2">&quot;LICENSE&quot;</span><span class="p">,</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="s2">&quot;output.schema.json&quot;</span><span class="p">,</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="s2">&quot;my_algorithm.meta.json&quot;</span><span class="p">,</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="s2">&quot;my_algorithm.py&quot;</span><span class="p">,</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="s2">&quot;README.md&quot;</span><span class="p">,</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="s2">&quot;requirements.txt&quot;</span><span class="p">,</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="s2">&quot;syntax_checker.py&quot;</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span><span class="p">]</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="p">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;gid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_plugin&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Algorithm&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;modelType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="s2">&quot;classification&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example Author&quot;</span><span class="p">,</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This algorithm returns the value of the feature name selected by the user.&quot;</span><span class="p">,</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="s2">&quot;My Algorithm&quot;</span><span class="p">,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="s2">&quot;classification&quot;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="nt">&quot;requireGroundTruth&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="nt">&quot;requiredFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="s2">&quot;AUTHORS.rst&quot;</span><span class="p">,</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="s2">&quot;CHANGELOG.md&quot;</span><span class="p">,</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="s2">&quot;pyproject.toml&quot;</span><span class="p">,</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="s2">&quot;LICENSE&quot;</span><span class="p">,</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="s2">&quot;my_algorithm&quot;</span><span class="p">,</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="s2">&quot;README.md&quot;</span><span class="p">,</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="s2">&quot;requirements.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="s2">&quot;syntax_checker.py&quot;</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="modifying-input-schema">Modifying input schema</h2>
 <p>First, modify <code>input.schema.json</code> to request an input called <code>feature_name</code> from the user when the user uses this algorithm. Notice the highlighted lines that requires a <code>feature_name</code> field, and the properties of the <code>feature_name</code> is also defined.</p>
@@ -1213,99 +1294,182 @@
 </span></span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="p">}</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="modifying-algorithm">Modifying algorithm</h2>
-<p>Modify <code>my_algorithm.py</code> to receive and return the data of the requested <code>feature_name</code>. </p>
+<h2 id="modifying-command-line-arguments">Modifying Command Line Arguments</h2>
+<p>The file <code>__main__.py</code> serves as the entry point to call the algorithm via comamnd line. The file <code>plugin_init.py</code> contains the logic to parse the command line arguments and pack it into the right input format to be passed to the underlying algorithm.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The input arguments should be consistent with the arguments specified in <code>input.schema.json</code>.</p>
+</div>
+<p>Modify <code>plugin_init.py</code> to add <code>feature_name</code> as input argument to method <code>parse_input_args()</code>.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">plugin_init.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span>
+<span class="normal"><a href="#__codelineno-4-38">38</a></span>
+<span class="normal"><a href="#__codelineno-4-39">39</a></span>
+<span class="normal"><a href="#__codelineno-4-40">40</a></span>
+<span class="normal"><a href="#__codelineno-4-41">41</a></span>
+<span class="normal"><a href="#__codelineno-4-42">42</a></span>
+<span class="normal"><a href="#__codelineno-4-43">43</a></span>
+<span class="normal"><a href="#__codelineno-4-44">44</a></span>
+<span class="normal"><a href="#__codelineno-4-45">45</a></span>
+<span class="normal"><a href="#__codelineno-4-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="k">def</span> <span class="nf">parse_input_args</span><span class="p">():</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="k">global</span> <span class="n">parser</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--data_path&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the data file.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--model_path&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the model file.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a>        <span class="s2">&quot;--ground_truth_path&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the ground truth data file.&quot;</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a>    <span class="p">)</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a>        <span class="s2">&quot;--ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The ground truth column name in the data.&quot;</span><span class="p">,</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>    <span class="p">)</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a>        <span class="s2">&quot;--run_pipeline&quot;</span><span class="p">,</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>        <span class="n">action</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">BooleanOptionalAction</span><span class="p">,</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Whether to run the test as a pipeline (default: False).&quot;</span><span class="p">,</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a>    <span class="p">)</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a>        <span class="s2">&quot;--model_type&quot;</span><span class="p">,</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a>        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37"></a>        <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CLASSIFICATION&quot;</span><span class="p">,</span> <span class="s2">&quot;REGRESSION&quot;</span><span class="p">],</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The type of model (CLASSIFICATION or REGRESSION).&quot;</span><span class="p">,</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39"></a>    <span class="p">)</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41"></a>        <span class="s2">&quot;--core_modules_path&quot;</span><span class="p">,</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42"></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the core modules (default: empty).&quot;</span><span class="p">,</span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44"></a>    <span class="p">)</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="hll">    <span class="c1"># Add additional arguments as needed</span>
+</span></span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="hll">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--feature_name&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Indicate the feature name to be extracted from the data file.&quot;</span><span class="p">)</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>Then update method <code>invoke_plugin()</code> to add the arguments to be passed to the algorithms as highlighted.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">plugin_init.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-48">48</a></span>
+<span class="normal"><a href="#__codelineno-5-49">49</a></span>
+<span class="normal"><a href="#__codelineno-5-50">50</a></span>
+<span class="normal"><a href="#__codelineno-5-51">51</a></span>
+<span class="normal"><a href="#__codelineno-5-52">52</a></span>
+<span class="normal"><a href="#__codelineno-5-53">53</a></span>
+<span class="normal"><a href="#__codelineno-5-54">54</a></span>
+<span class="normal"><a href="#__codelineno-5-55">55</a></span>
+<span class="normal"><a href="#__codelineno-5-56">56</a></span>
+<span class="normal"><a href="#__codelineno-5-57">57</a></span>
+<span class="normal"><a href="#__codelineno-5-58">58</a></span>
+<span class="normal"><a href="#__codelineno-5-59">59</a></span>
+<span class="normal"><a href="#__codelineno-5-60">60</a></span>
+<span class="normal"><a href="#__codelineno-5-61">61</a></span>
+<span class="normal"><a href="#__codelineno-5-62">62</a></span>
+<span class="normal"><a href="#__codelineno-5-63">63</a></span>
+<span class="normal"><a href="#__codelineno-5-64">64</a></span>
+<span class="normal"><a href="#__codelineno-5-65">65</a></span>
+<span class="normal"><a href="#__codelineno-5-66">66</a></span>
+<span class="normal"><a href="#__codelineno-5-67">67</a></span>
+<span class="normal"><a href="#__codelineno-5-68">68</a></span>
+<span class="normal"><a href="#__codelineno-5-69">69</a></span>
+<span class="normal"><a href="#__codelineno-5-70">70</a></span>
+<span class="normal"><a href="#__codelineno-5-71">71</a></span>
+<span class="normal"><a href="#__codelineno-5-72">72</a></span>
+<span class="normal"><a href="#__codelineno-5-73">73</a></span>
+<span class="normal"><a href="#__codelineno-5-74">74</a></span>
+<span class="normal"><a href="#__codelineno-5-75">75</a></span>
+<span class="normal"><a href="#__codelineno-5-76">76</a></span>
+<span class="normal"><a href="#__codelineno-5-77">77</a></span>
+<span class="normal"><a href="#__codelineno-5-78">78</a></span>
+<span class="normal"><a href="#__codelineno-5-79">79</a></span>
+<span class="normal"><a href="#__codelineno-5-80">80</a></span>
+<span class="normal"><a href="#__codelineno-5-81">81</a></span>
+<span class="normal"><a href="#__codelineno-5-82">82</a></span>
+<span class="normal"><a href="#__codelineno-5-83">83</a></span>
+<span class="normal"><a href="#__codelineno-5-84">84</a></span>
+<span class="normal"><a href="#__codelineno-5-85">85</a></span>
+<span class="normal"><a href="#__codelineno-5-86">86</a></span>
+<span class="normal"><a href="#__codelineno-5-87">87</a></span>
+<span class="normal"><a href="#__codelineno-5-88">88</a></span>
+<span class="normal"><a href="#__codelineno-5-89">89</a></span>
+<span class="normal"><a href="#__codelineno-5-90">90</a></span>
+<span class="normal"><a href="#__codelineno-5-91">91</a></span>
+<span class="normal"><a href="#__codelineno-5-92">92</a></span>
+<span class="normal"><a href="#__codelineno-5-93">93</a></span>
+<span class="normal"><a href="#__codelineno-5-94">94</a></span>
+<span class="normal"><a href="#__codelineno-5-95">95</a></span>
+<span class="normal"><a href="#__codelineno-5-96">96</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48"></a><span class="k">def</span> <span class="nf">invoke_plugin</span><span class="p">():</span>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49"></a>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50"></a>    <span class="c1"># Parse the arguments</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51"></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52"></a>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53"></a>    <span class="c1"># Determine the value of run_pipeline</span>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54"></a>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">run_pipeline</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55"></a>        <span class="n">run_pipeline</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Default to False if not provided</span>
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57"></a>        <span class="n">run_pipeline</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">run_pipeline</span>
+</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58"></a>
+</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59"></a>    <span class="c1"># Map string argument to ModelType enum</span>
+</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60"></a>    <span class="n">model_type</span> <span class="o">=</span> <span class="n">ModelType</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">model_type</span><span class="p">]</span>
+</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61"></a>
+</span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62"></a><span class="hll">    <span class="c1"># Add additional arguments to the plugin_argument_values dictionary as needed</span>
+</span></span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63"></a><span class="hll">    <span class="n">plugin_argument_values</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span id="__span-5-64"><a id="__codelineno-5-64" name="__codelineno-5-64"></a><span class="hll">        <span class="s2">&quot;feature_name&quot;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">feature_name</span><span class="p">,</span>
+</span></span><span id="__span-5-65"><a id="__codelineno-5-65" name="__codelineno-5-65"></a><span class="hll">    <span class="p">}</span>
+</span></span><span id="__span-5-66"><a id="__codelineno-5-66" name="__codelineno-5-66"></a>
+</span><span id="__span-5-67"><a id="__codelineno-5-67" name="__codelineno-5-67"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-5-68"><a id="__codelineno-5-68" name="__codelineno-5-68"></a>    <span class="c1"># Debugging prints</span>
+</span><span id="__span-5-69"><a id="__codelineno-5-69" name="__codelineno-5-69"></a>    <span class="nb">print</span><span class="p">(</span>
+</span><span id="__span-5-70"><a id="__codelineno-5-70" name="__codelineno-5-70"></a>        <span class="sa">f</span><span class="s2">&quot;Running with the following arguments:</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-5-71"><a id="__codelineno-5-71" name="__codelineno-5-71"></a>        <span class="sa">f</span><span class="s2">&quot;Data Path: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-5-72"><a id="__codelineno-5-72" name="__codelineno-5-72"></a>        <span class="sa">f</span><span class="s2">&quot;Model Path: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">model_path</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-5-73"><a id="__codelineno-5-73" name="__codelineno-5-73"></a>        <span class="sa">f</span><span class="s2">&quot;Ground Truth Path: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">ground_truth_path</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-5-74"><a id="__codelineno-5-74" name="__codelineno-5-74"></a>        <span class="sa">f</span><span class="s2">&quot;Ground Truth: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">ground_truth</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-5-75"><a id="__codelineno-5-75" name="__codelineno-5-75"></a>        <span class="sa">f</span><span class="s2">&quot;Run Pipeline: </span><span class="si">{</span><span class="n">run_pipeline</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-5-76"><a id="__codelineno-5-76" name="__codelineno-5-76"></a>        <span class="sa">f</span><span class="s2">&quot;Model Type: </span><span class="si">{</span><span class="n">model_type</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-5-77"><a id="__codelineno-5-77" name="__codelineno-5-77"></a>        <span class="sa">f</span><span class="s2">&quot;Core Modules Path: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">core_modules_path</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-5-78"><a id="__codelineno-5-78" name="__codelineno-5-78"></a>    <span class="p">)</span>
+</span><span id="__span-5-79"><a id="__codelineno-5-79" name="__codelineno-5-79"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-5-80"><a id="__codelineno-5-80" name="__codelineno-5-80"></a>
+</span><span id="__span-5-81"><a id="__codelineno-5-81" name="__codelineno-5-81"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-5-82"><a id="__codelineno-5-82" name="__codelineno-5-82"></a>        <span class="c1"># Create an instance of AlgoInit with defined paths and arguments and Run.</span>
+</span><span id="__span-5-83"><a id="__codelineno-5-83" name="__codelineno-5-83"></a>        <span class="n">plugin_test</span> <span class="o">=</span> <span class="n">AlgoInit</span><span class="p">(</span>
+</span><span id="__span-5-84"><a id="__codelineno-5-84" name="__codelineno-5-84"></a>            <span class="n">run_pipeline</span><span class="p">,</span>
+</span><span id="__span-5-85"><a id="__codelineno-5-85" name="__codelineno-5-85"></a>            <span class="n">args</span><span class="o">.</span><span class="n">core_modules_path</span><span class="p">,</span>
+</span><span id="__span-5-86"><a id="__codelineno-5-86" name="__codelineno-5-86"></a>            <span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span>
+</span><span id="__span-5-87"><a id="__codelineno-5-87" name="__codelineno-5-87"></a>            <span class="n">args</span><span class="o">.</span><span class="n">model_path</span><span class="p">,</span>
+</span><span id="__span-5-88"><a id="__codelineno-5-88" name="__codelineno-5-88"></a>            <span class="n">args</span><span class="o">.</span><span class="n">ground_truth_path</span><span class="p">,</span>
+</span><span id="__span-5-89"><a id="__codelineno-5-89" name="__codelineno-5-89"></a>            <span class="n">args</span><span class="o">.</span><span class="n">ground_truth</span><span class="p">,</span>
+</span><span id="__span-5-90"><a id="__codelineno-5-90" name="__codelineno-5-90"></a>            <span class="n">model_type</span><span class="p">,</span>
+</span><span id="__span-5-91"><a id="__codelineno-5-91" name="__codelineno-5-91"></a><span class="hll">            <span class="n">plugin_argument_values</span><span class="p">,</span> <span class="c1"># Uncomment this line if additional arguments are added</span>
+</span></span><span id="__span-5-92"><a id="__codelineno-5-92" name="__codelineno-5-92"></a>        <span class="p">)</span>
+</span><span id="__span-5-93"><a id="__codelineno-5-93" name="__codelineno-5-93"></a>        <span class="n">plugin_test</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span><span id="__span-5-94"><a id="__codelineno-5-94" name="__codelineno-5-94"></a>
+</span><span id="__span-5-95"><a id="__codelineno-5-95" name="__codelineno-5-95"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+</span><span id="__span-5-96"><a id="__codelineno-5-96" name="__codelineno-5-96"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exception caught while running the plugin test: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="modifying-algorithm">Modifying Algorithm</h2>
+<p>Modify <code>algo.py</code> to receive and return the data of the requested <code>feature_name</code>. </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>All codes generated has been annotated with <code>TODO:</code> for users to quickly navigate to areas that require code modification.</p>
 </div>
 <p>Next, update the <code>generate</code> method to retrieve the return the values of the selected <code>feature_name</code> in a given sample data file.</p>
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">my_algorithm.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-319">319</a></span>
-<span class="normal"><a href="#__codelineno-4-320">320</a></span>
-<span class="normal"><a href="#__codelineno-4-321">321</a></span>
-<span class="normal"><a href="#__codelineno-4-322">322</a></span>
-<span class="normal"><a href="#__codelineno-4-323">323</a></span>
-<span class="normal"><a href="#__codelineno-4-324">324</a></span>
-<span class="normal"><a href="#__codelineno-4-325">325</a></span>
-<span class="normal"><a href="#__codelineno-4-326">326</a></span>
-<span class="normal"><a href="#__codelineno-4-327">327</a></span>
-<span class="normal"><a href="#__codelineno-4-328">328</a></span>
-<span class="normal"><a href="#__codelineno-4-329">329</a></span>
-<span class="normal"><a href="#__codelineno-4-330">330</a></span>
-<span class="normal"><a href="#__codelineno-4-331">331</a></span>
-<span class="normal"><a href="#__codelineno-4-332">332</a></span>
-<span class="normal"><a href="#__codelineno-4-333">333</a></span>
-<span class="normal"><a href="#__codelineno-4-334">334</a></span>
-<span class="normal"><a href="#__codelineno-4-335">335</a></span>
-<span class="normal"><a href="#__codelineno-4-336">336</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-319"><a id="__codelineno-4-319" name="__codelineno-4-319"></a>    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-4-320"><a id="__codelineno-4-320" name="__codelineno-4-320"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-4-321"><a id="__codelineno-4-321" name="__codelineno-4-321"></a><span class="sd">        A method to generate the algorithm results with the provided data, model, ground truth information.</span>
-</span><span id="__span-4-322"><a id="__codelineno-4-322" name="__codelineno-4-322"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="__span-4-323"><a id="__codelineno-4-323" name="__codelineno-4-323"></a>        <span class="c1"># Retrieve data information</span>
-</span><span id="__span-4-324"><a id="__codelineno-4-324" name="__codelineno-4-324"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_instance</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-</span><span id="__span-4-325"><a id="__codelineno-4-325" name="__codelineno-4-325"></a>
-</span><span id="__span-4-326"><a id="__codelineno-4-326" name="__codelineno-4-326"></a><span class="hll">        <span class="c1"># TODO: Insert algorithm logic for this plug-in.</span>
-</span></span><span id="__span-4-327"><a id="__codelineno-4-327" name="__codelineno-4-327"></a>        <span class="c1"># Retrieve the input arguments</span>
-</span><span id="__span-4-328"><a id="__codelineno-4-328" name="__codelineno-4-328"></a><span class="hll">        <span class="n">my_user_defined_feature_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_arguments</span><span class="p">[</span><span class="s1">&#39;feature_name&#39;</span><span class="p">]</span>
-</span></span><span id="__span-4-329"><a id="__codelineno-4-329" name="__codelineno-4-329"></a>
-</span><span id="__span-4-330"><a id="__codelineno-4-330" name="__codelineno-4-330"></a>        <span class="c1"># Get the values of the feature name and convert to a list.</span>
-</span><span id="__span-4-331"><a id="__codelineno-4-331" name="__codelineno-4-331"></a><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">_results</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span id="__span-4-332"><a id="__codelineno-4-332" name="__codelineno-4-332"></a><span class="hll">            <span class="s2">&quot;my_expected_results&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">my_user_defined_feature_name</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-</span></span><span id="__span-4-333"><a id="__codelineno-4-333" name="__codelineno-4-333"></a><span class="hll">        <span class="p">}</span>
-</span></span><span id="__span-4-334"><a id="__codelineno-4-334" name="__codelineno-4-334"></a>
-</span><span id="__span-4-335"><a id="__codelineno-4-335" name="__codelineno-4-335"></a>        <span class="c1"># Update progress (For 100% completion)</span>
-</span><span id="__span-4-336"><a id="__codelineno-4-336" name="__codelineno-4-336"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_progress_inst</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-<p>Lastly, update the <code>output.schema.json</code> to return the expected results. This file will be validated against the output to ensure that the results (see line 180 in the previous code snippet) adhere to the output schema.</p>
-<p>In this algorithm, the expected output will be stored in a list (or array) named <code>my_expected_results</code>.  There must be at least 10 items in the list, and the items must have the type <code>number</code> (as shown in the highlighted lines).</p>
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">output.schema.json</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Algorithm Plugin Output Arguments&quot;</span><span class="p">,</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A schema for algorithm plugin output arguments&quot;</span><span class="p">,</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="hll">    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;my_expected_results&quot;</span><span class="p">],</span>
-</span></span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="s2">&quot;minProperties&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="hll">        <span class="s2">&quot;my_expected_results&quot;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="hll">            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Algorithm Output&quot;</span><span class="p">,</span>
-</span></span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="hll">            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
-</span></span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="hll">            <span class="s2">&quot;minItems&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-</span></span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="hll">            <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">}</span>
-</span></span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a>        <span class="p">}</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a>    <span class="p">}</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="run-the-test">Run the test</h2>
-<p>First, update <code>__main__.py</code> with your sample data, model and ground truth files required for your algorithm to run.</p>
-<p>In this algorithm, we have updated the <code>data_path</code>, <code>model_path</code>, <code>ground_truth_path</code> to the path of the files. The <code>ground_truth</code> has also been set to default. We have also updated the <code>plugin_argument_values</code> with required arguments to ensure that the input validation passes. This is typically an input parameter from the dataset. For the mock data, we will be using <em>gender</em> as the plugin argument value.</p>
-<p><strong>If you have been following every step from <a href="../../getting_started/install_aiverify_dev_tools/">Installing AI Verify Developer Tools</a> to <a href="../deploy_your_plugin/">Guided Example</a>, you will need to update <code>core_modules_path</code> as shown below.</strong> If you decide to structure the files differently, ensure that <code>core_modules_path</code> is an absolute/relative path pointing to your <strong>test-engine-core-modules</strong> folder.</p>
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">__main__.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span>
-<span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span>
-<span class="normal"><a href="#__codelineno-6-14">14</a></span>
-<span class="normal"><a href="#__codelineno-6-15">15</a></span>
-<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">my_algorithm.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-16">16</a></span>
 <span class="normal"><a href="#__codelineno-6-17">17</a></span>
 <span class="normal"><a href="#__codelineno-6-18">18</a></span>
 <span class="normal"><a href="#__codelineno-6-19">19</a></span>
@@ -1320,42 +1484,237 @@
 <span class="normal"><a href="#__codelineno-6-28">28</a></span>
 <span class="normal"><a href="#__codelineno-6-29">29</a></span>
 <span class="normal"><a href="#__codelineno-6-30">30</a></span>
-<span class="normal"><a href="#__codelineno-6-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kn">from</span> <span class="nn">tests.plugin_test</span> <span class="kn">import</span> <span class="n">PluginTest</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="c1"># TODO: Define data, model, ground_truth file location. Requires absolute path.</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>    <span class="c1">#       Define core modules path as relative/absolute path. If you cloned the project using </span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>    <span class="c1">#       the provided setup script, leave core_modules_path as an empty string.</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a>    <span class="c1"># Example:</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a>    <span class="c1"># data_path = &quot;tests/user_defined_files/data/sample_reg_donation_data.sav&quot;</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a>    <span class="c1"># model_path = &quot;tests/user_defined_files/model/sample_reg_donation_sklearn_linear.LogisticRegression.sav&quot;</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a>    <span class="c1"># ground_truth_path = &quot;tests/user_defined_files/data/sample_reg_donation_data.sav&quot;</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a>    <span class="c1"># ground_truth = &quot;default&quot;</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a>    <span class="c1"># model_type = ModelType.REGRESSION</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="hll">    <span class="n">core_modules_path</span> <span class="o">=</span> <span class="s2">&quot;../../../aiverify/test-engine-core-modules&quot;</span>
-</span></span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="hll">    <span class="n">data_path</span> <span class="o">=</span> <span class="s2">&quot;tests/user_defined_files/data/sample_bc_credit_data.sav&quot;</span>
-</span></span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="hll">    <span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;tests/user_defined_files/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav&quot;</span>
-</span></span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="hll">    <span class="n">ground_truth_path</span> <span class="o">=</span> <span class="s2">&quot;tests/user_defined_files/data/sample_bc_credit_data.sav&quot;</span>
-</span></span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="hll">    <span class="n">ground_truth</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
-</span></span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="hll">    <span class="n">model_type</span> <span class="o">=</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">CLASSIFICATION</span>
-</span></span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="hll">    <span class="n">run_pipeline</span> <span class="o">=</span> <span class="kc">False</span>
-</span></span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a>    <span class="c1"># TODO: Define the plugin input parameters value referenced from input.schema.json</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a>    <span class="c1"># Example:</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a>    <span class="c1"># plugin_arguments_value = {</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a>    <span class="c1">#     &quot;argument1&quot;: &quot;MyArgumentValue&quot;</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a>    <span class="c1"># }</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="hll">    <span class="n">plugin_argument_values</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="hll">        <span class="s2">&quot;feature_name&quot;</span><span class="p">:</span> <span class="s2">&quot;gender&quot;</span>
-</span></span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="hll">    <span class="p">}</span>
-</span></span></code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-6-31">31</a></span>
+<span class="normal"><a href="#__codelineno-6-32">32</a></span>
+<span class="normal"><a href="#__codelineno-6-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a>    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="sd">        A method to generate the algorithm results with the provided data, model, ground truth information.</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a>        <span class="c1"># Retrieve data information</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_instance</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="hll">        <span class="c1"># TODO: Insert algorithm logic for this plug-in.</span>
+</span></span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a>        <span class="c1"># Retrieve the input arguments</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="hll">        <span class="n">my_user_defined_feature_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_arguments</span><span class="p">[</span><span class="s1">&#39;feature_name&#39;</span><span class="p">]</span>
+</span></span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a>        <span class="c1"># Get the values of the feature name and convert to a list.</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">_results</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="hll">            <span class="s2">&quot;my_expected_results&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">my_user_defined_feature_name</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</span></span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="hll">        <span class="p">}</span>
+</span></span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31"></a>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32"></a>        <span class="c1"># Update progress (For 100% completion)</span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_progress_inst</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Lastly, update the <code>output.schema.json</code> to return the expected results. This file will be validated against the output to ensure that the results (see line 180 in the previous code snippet) adhere to the output schema.</p>
+<p>In this algorithm, the expected output will be stored in a list (or array) named <code>my_expected_results</code>.  There must be at least 10 items in the list, and the items must have the type <code>number</code> (as shown in the highlighted lines).</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">output.schema.json</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Algorithm Plugin Output Arguments&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A schema for algorithm plugin output arguments&quot;</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="hll">    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;my_expected_results&quot;</span><span class="p">],</span>
+</span></span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="s2">&quot;minProperties&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="hll">        <span class="s2">&quot;my_expected_results&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="hll">            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Algorithm Output&quot;</span><span class="p">,</span>
+</span></span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="hll">            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+</span></span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="hll">            <span class="s2">&quot;minItems&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+</span></span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="hll">            <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">}</span>
+</span></span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="hll">        <span class="p">}</span>
+</span></span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a>    <span class="p">}</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="run-algorithm">Run Algorithm</h2>
+<p>For this algorithm, we call the algorithm from the command line using sample data and model files from the <code>aiverify</code> github repository.</p>
+<p>First install the algorithm.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span><span class="w"> </span>my-first-plugin/algorithms/my-algo
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</span></code></pre></div>
+<p>Now run the algorithm.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">root_path</span><span class="o">=</span><span class="s2">&quot;https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files&quot;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>python<span class="w"> </span>-m<span class="w"> </span>my_algorithm<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span>--data_path<span class="w"> </span><span class="nv">$root_path</span>/data/sample_bc_credit_data.sav<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span>--model_path<span class="w"> </span><span class="nv">$root_path</span>/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span>--ground_truth_path<span class="w"> </span><span class="nv">$root_path</span>/data/sample_bc_credit_data.sav<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span>--ground_truth<span class="w"> </span>default<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span>--model_type<span class="w"> </span>CLASSIFICATION<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span>--feature_name<span class="w"> </span>gender
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Ground truth is optional so if your algorithm does not require ground truth, <code>ground_truth_path</code> and <code>ground_truth</code> can be left as an empty string <code>""</code>.</p>
 </div>
-<p>Next, run <a href="../../plugins/Plugin_Tool/#test-algorithm-alias-testa"><code>ai-verify-plugin testa</code></a> to test your algorithm.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ai-verify-plugin<span class="w"> </span>testa
+<p>Next, run <a href="../../plugins/Plugin_Tool/#test-algorithm-alias-testa"><code>aiverify-plugin testa</code></a> to test your algorithm.</p>
+<h2 id="test-algorithm">Test Algorithm</h2>
+<p>Sample unit tests are generated under the <code>tests</code> directory and should be updated for the algorithm.</p>
+<h3 id="update-test_e2epy">Update test_e2e.py</h3>
+<p>Update the test data and model files, as well as the input arguments.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">test_e2e.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span>
+<span class="normal"><a href="#__codelineno-10-20">20</a></span>
+<span class="normal"><a href="#__codelineno-10-21">21</a></span>
+<span class="normal"><a href="#__codelineno-10-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="n">binary_classification_pipeline</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="hll">    <span class="s2">&quot;data_path&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span>
+</span></span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="hll">        <span class="s2">&quot;https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/data/sample_bc_credit_data.sav&quot;</span>
+</span></span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="hll">    <span class="p">),</span>
+</span></span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="hll">    <span class="s2">&quot;model_path&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav&quot;</span><span class="p">),</span>
+</span></span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="hll">    <span class="s2">&quot;ground_truth_path&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span>
+</span></span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="hll">        <span class="s2">&quot;https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/data/sample_bc_credit_data.sav&quot;</span>
+</span></span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="hll">    <span class="p">),</span>
+</span></span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a>    <span class="s2">&quot;run_pipeline&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a>    <span class="s2">&quot;model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">CLASSIFICATION</span><span class="p">,</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a>    <span class="s2">&quot;ground_truth&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="hll">    <span class="s2">&quot;plugin_argument_values&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="hll">        <span class="s2">&quot;feature_name&quot;</span><span class="p">:</span> <span class="s2">&quot;gender&quot;</span><span class="p">,</span>
+</span></span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="hll">    <span class="p">}</span>
+</span></span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Add the input arguments to <code>AlgoInit</code> call.
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">test_e2e.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-34">34</a></span>
+<span class="normal"><a href="#__codelineno-11-35">35</a></span>
+<span class="normal"><a href="#__codelineno-11-36">36</a></span>
+<span class="normal"><a href="#__codelineno-11-37">37</a></span>
+<span class="normal"><a href="#__codelineno-11-38">38</a></span>
+<span class="normal"><a href="#__codelineno-11-39">39</a></span>
+<span class="normal"><a href="#__codelineno-11-40">40</a></span>
+<span class="normal"><a href="#__codelineno-11-41">41</a></span>
+<span class="normal"><a href="#__codelineno-11-42">42</a></span>
+<span class="normal"><a href="#__codelineno-11-43">43</a></span>
+<span class="normal"><a href="#__codelineno-11-44">44</a></span>
+<span class="normal"><a href="#__codelineno-11-45">45</a></span>
+<span class="normal"><a href="#__codelineno-11-46">46</a></span>
+<span class="normal"><a href="#__codelineno-11-47">47</a></span>
+<span class="normal"><a href="#__codelineno-11-48">48</a></span>
+<span class="normal"><a href="#__codelineno-11-49">49</a></span>
+<span class="normal"><a href="#__codelineno-11-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34"></a><span class="k">def</span> <span class="nf">test_plugin</span><span class="p">(</span><span class="n">data_set</span><span class="p">):</span>
+</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35"></a>    <span class="c1"># Create an instance of PluginTest with defined paths and arguments and Run.</span>
+</span><span id="__span-11-36"><a id="__codelineno-11-36" name="__codelineno-11-36"></a>    <span class="n">core_modules_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span id="__span-11-37"><a id="__codelineno-11-37" name="__codelineno-11-37"></a>    <span class="n">plugin_test</span> <span class="o">=</span> <span class="n">AlgoInit</span><span class="p">(</span>
+</span><span id="__span-11-38"><a id="__codelineno-11-38" name="__codelineno-11-38"></a>        <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;run_pipeline&quot;</span><span class="p">],</span>
+</span><span id="__span-11-39"><a id="__codelineno-11-39" name="__codelineno-11-39"></a>        <span class="n">core_modules_path</span><span class="p">,</span>
+</span><span id="__span-11-40"><a id="__codelineno-11-40" name="__codelineno-11-40"></a>        <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;data_path&quot;</span><span class="p">],</span>
+</span><span id="__span-11-41"><a id="__codelineno-11-41" name="__codelineno-11-41"></a>        <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;model_path&quot;</span><span class="p">],</span>
+</span><span id="__span-11-42"><a id="__codelineno-11-42" name="__codelineno-11-42"></a>        <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;ground_truth_path&quot;</span><span class="p">],</span>
+</span><span id="__span-11-43"><a id="__codelineno-11-43" name="__codelineno-11-43"></a>        <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">],</span>
+</span><span id="__span-11-44"><a id="__codelineno-11-44" name="__codelineno-11-44"></a>        <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;model_type&quot;</span><span class="p">],</span>
+</span><span id="__span-11-45"><a id="__codelineno-11-45" name="__codelineno-11-45"></a><span class="hll">        <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;plugin_argument_values&quot;</span><span class="p">]</span>
+</span></span><span id="__span-11-46"><a id="__codelineno-11-46" name="__codelineno-11-46"></a>    <span class="p">)</span>
+</span><span id="__span-11-47"><a id="__codelineno-11-47" name="__codelineno-11-47"></a>    <span class="n">plugin_test</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span><span id="__span-11-48"><a id="__codelineno-11-48" name="__codelineno-11-48"></a>
+</span><span id="__span-11-49"><a id="__codelineno-11-49" name="__codelineno-11-49"></a>    <span class="n">json_file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;output&quot;</span> <span class="o">/</span> <span class="s2">&quot;results.json&quot;</span>
+</span><span id="__span-11-50"><a id="__codelineno-11-50" name="__codelineno-11-50"></a>    <span class="k">assert</span> <span class="n">json_file_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h3 id="update-test_algopy">Update test_algo.py</h3>
+<p>Make sure that you are using the right data and model files for the tests.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">test_algo.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-32">32</a></span>
+<span class="normal"><a href="#__codelineno-12-33">33</a></span>
+<span class="normal"><a href="#__codelineno-12-34">34</a></span>
+<span class="normal"><a href="#__codelineno-12-35">35</a></span>
+<span class="normal"><a href="#__codelineno-12-36">36</a></span>
+<span class="normal"><a href="#__codelineno-12-37">37</a></span>
+<span class="normal"><a href="#__codelineno-12-38">38</a></span>
+<span class="normal"><a href="#__codelineno-12-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32"></a><span class="c1"># Variables for testing</span>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33"></a><span class="hll"><span class="n">valid_data_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/data/sample_bc_credit_data.sav&quot;</span><span class="p">)</span>
+</span></span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34"></a><span class="hll"><span class="n">valid_model_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+</span></span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35"></a><span class="hll">    <span class="s2">&quot;https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/model/sample_bc_credit_sklearn_linear.LogisticRegression.sav&quot;</span>
+</span></span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36"></a><span class="hll"><span class="p">)</span>
+</span></span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37"></a><span class="hll"><span class="n">valid_ground_truth_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+</span></span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38"></a><span class="hll">    <span class="s2">&quot;https://github.com/aiverify-foundation/aiverify/raw/refs/heads/main/stock-plugins/user_defined_files/data/sample_bc_credit_data.sav&quot;</span>
+</span></span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39"></a><span class="hll"><span class="p">)</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>Add the input arguments.</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">test_algo.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-52">52</a></span>
+<span class="normal"><a href="#__codelineno-13-53">53</a></span>
+<span class="normal"><a href="#__codelineno-13-54">54</a></span>
+<span class="normal"><a href="#__codelineno-13-55">55</a></span>
+<span class="normal"><a href="#__codelineno-13-56">56</a></span>
+<span class="normal"><a href="#__codelineno-13-57">57</a></span>
+<span class="normal"><a href="#__codelineno-13-58">58</a></span>
+<span class="normal"><a href="#__codelineno-13-59">59</a></span>
+<span class="normal"><a href="#__codelineno-13-60">60</a></span>
+<span class="normal"><a href="#__codelineno-13-61">61</a></span>
+<span class="normal"><a href="#__codelineno-13-62">62</a></span>
+<span class="normal"><a href="#__codelineno-13-63">63</a></span>
+<span class="normal"><a href="#__codelineno-13-64">64</a></span>
+<span class="normal"><a href="#__codelineno-13-65">65</a></span>
+<span class="normal"><a href="#__codelineno-13-66">66</a></span>
+<span class="normal"><a href="#__codelineno-13-67">67</a></span>
+<span class="normal"><a href="#__codelineno-13-68">68</a></span>
+<span class="normal"><a href="#__codelineno-13-69">69</a></span>
+<span class="normal"><a href="#__codelineno-13-70">70</a></span>
+<span class="normal"><a href="#__codelineno-13-71">71</a></span>
+<span class="normal"><a href="#__codelineno-13-72">72</a></span>
+<span class="normal"><a href="#__codelineno-13-73">73</a></span>
+<span class="normal"><a href="#__codelineno-13-74">74</a></span>
+<span class="normal"><a href="#__codelineno-13-75">75</a></span>
+<span class="normal"><a href="#__codelineno-13-76">76</a></span>
+<span class="normal"><a href="#__codelineno-13-77">77</a></span>
+<span class="normal"><a href="#__codelineno-13-78">78</a></span>
+<span class="normal"><a href="#__codelineno-13-79">79</a></span>
+<span class="normal"><a href="#__codelineno-13-80">80</a></span>
+<span class="normal"><a href="#__codelineno-13-81">81</a></span>
+<span class="normal"><a href="#__codelineno-13-82">82</a></span>
+<span class="normal"><a href="#__codelineno-13-83">83</a></span>
+<span class="normal"><a href="#__codelineno-13-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-52"><a id="__codelineno-13-52" name="__codelineno-13-52"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-13-53"><a id="__codelineno-13-53" name="__codelineno-13-53"></a>        <span class="n">test_discover_plugin</span><span class="p">()</span>
+</span><span id="__span-13-54"><a id="__codelineno-13-54" name="__codelineno-13-54"></a>        <span class="p">(</span>
+</span><span id="__span-13-55"><a id="__codelineno-13-55" name="__codelineno-13-55"></a>            <span class="n">data_instance</span><span class="p">,</span>
+</span><span id="__span-13-56"><a id="__codelineno-13-56" name="__codelineno-13-56"></a>            <span class="n">data_serializer_instance</span><span class="p">,</span>
+</span><span id="__span-13-57"><a id="__codelineno-13-57" name="__codelineno-13-57"></a>            <span class="n">data_error_message</span><span class="p">,</span>
+</span><span id="__span-13-58"><a id="__codelineno-13-58" name="__codelineno-13-58"></a>        <span class="p">)</span> <span class="o">=</span> <span class="n">PluginManager</span><span class="o">.</span><span class="n">get_instance</span><span class="p">(</span><span class="n">PluginType</span><span class="o">.</span><span class="n">DATA</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="n">valid_data_path</span><span class="p">})</span>
+</span><span id="__span-13-59"><a id="__codelineno-13-59" name="__codelineno-13-59"></a>
+</span><span id="__span-13-60"><a id="__codelineno-13-60" name="__codelineno-13-60"></a>        <span class="p">(</span>
+</span><span id="__span-13-61"><a id="__codelineno-13-61" name="__codelineno-13-61"></a>            <span class="n">model_instance</span><span class="p">,</span>
+</span><span id="__span-13-62"><a id="__codelineno-13-62" name="__codelineno-13-62"></a>            <span class="n">model_serializer_instance</span><span class="p">,</span>
+</span><span id="__span-13-63"><a id="__codelineno-13-63" name="__codelineno-13-63"></a>            <span class="n">model_error_message</span><span class="p">,</span>
+</span><span id="__span-13-64"><a id="__codelineno-13-64" name="__codelineno-13-64"></a>        <span class="p">)</span> <span class="o">=</span> <span class="n">PluginManager</span><span class="o">.</span><span class="n">get_instance</span><span class="p">(</span>
+</span><span id="__span-13-65"><a id="__codelineno-13-65" name="__codelineno-13-65"></a>            <span class="n">PluginType</span><span class="o">.</span><span class="n">MODEL</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="n">valid_model_path</span><span class="p">}</span>
+</span><span id="__span-13-66"><a id="__codelineno-13-66" name="__codelineno-13-66"></a>        <span class="p">)</span>
+</span><span id="__span-13-67"><a id="__codelineno-13-67" name="__codelineno-13-67"></a>
+</span><span id="__span-13-68"><a id="__codelineno-13-68" name="__codelineno-13-68"></a>        <span class="p">(</span>
+</span><span id="__span-13-69"><a id="__codelineno-13-69" name="__codelineno-13-69"></a>            <span class="n">ground_truth_instance</span><span class="p">,</span>
+</span><span id="__span-13-70"><a id="__codelineno-13-70" name="__codelineno-13-70"></a>            <span class="n">ground_truth_serializer_instance</span><span class="p">,</span>
+</span><span id="__span-13-71"><a id="__codelineno-13-71" name="__codelineno-13-71"></a>            <span class="n">data_error_message</span><span class="p">,</span>
+</span><span id="__span-13-72"><a id="__codelineno-13-72" name="__codelineno-13-72"></a>        <span class="p">)</span> <span class="o">=</span> <span class="n">PluginManager</span><span class="o">.</span><span class="n">get_instance</span><span class="p">(</span>
+</span><span id="__span-13-73"><a id="__codelineno-13-73" name="__codelineno-13-73"></a>            <span class="n">PluginType</span><span class="o">.</span><span class="n">DATA</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="n">valid_ground_truth_path</span><span class="p">}</span>
+</span><span id="__span-13-74"><a id="__codelineno-13-74" name="__codelineno-13-74"></a>        <span class="p">)</span>
+</span><span id="__span-13-75"><a id="__codelineno-13-75" name="__codelineno-13-75"></a>
+</span><span id="__span-13-76"><a id="__codelineno-13-76" name="__codelineno-13-76"></a>        <span class="n">ground_truth</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+</span><span id="__span-13-77"><a id="__codelineno-13-77" name="__codelineno-13-77"></a>        <span class="n">model_type</span> <span class="o">=</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">CLASSIFICATION</span>
+</span><span id="__span-13-78"><a id="__codelineno-13-78" name="__codelineno-13-78"></a><span class="hll">        <span class="n">input_args</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span id="__span-13-79"><a id="__codelineno-13-79" name="__codelineno-13-79"></a><span class="hll">            <span class="s2">&quot;feature_name&quot;</span><span class="p">:</span> <span class="s2">&quot;gender&quot;</span>
+</span></span><span id="__span-13-80"><a id="__codelineno-13-80" name="__codelineno-13-80"></a><span class="hll">        <span class="p">}</span>
+</span></span><span id="__span-13-81"><a id="__codelineno-13-81" name="__codelineno-13-81"></a>        <span class="n">expected_exception</span> <span class="o">=</span> <span class="ne">RuntimeError</span>
+</span><span id="__span-13-82"><a id="__codelineno-13-82" name="__codelineno-13-82"></a>        <span class="n">expected_exception_msg</span> <span class="o">=</span> <span class="s2">&quot;The algorithm has failed data validation&quot;</span>
+</span><span id="__span-13-83"><a id="__codelineno-13-83" name="__codelineno-13-83"></a>        <span class="n">logger_instance</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;PluginTestLogger&quot;</span><span class="p">)</span>
+</span><span id="__span-13-84"><a id="__codelineno-13-84" name="__codelineno-13-84"></a>        <span class="n">logger_instance</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="run-algorithm-test">Run Algorithm Test</h3>
+<p>Under the algorithm directory, run <code>pytest</code> to run the unit tests.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>pytest<span class="w"> </span>.
 </span></code></pre></div>
 <p>If the test passes (no error messages in terminal), you have <strong>successfully completed</strong> the creation of the algorithm component. At this stage, you can either <a href="../deploy_your_plugin/"><strong>deploy your algorithm component</strong></a> as a standalone plugin, or continue to <a href="../your_first_inputblock/"><strong>work on other components</strong></a> (eg. another algorithm, widget, input block etc) before packaging it as a single plugin.</p>
 <p>If the test fails, refer to the troubleshooting guide for help.</p>

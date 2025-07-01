@@ -446,6 +446,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#optional-use-the-playground-to-view-the-input-block" class="md-nav__link">
+    (Optional) Use the Playground to view the Input Block.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -606,8 +613,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/algorithm/core_modules/" class="md-nav__link">
-        Core Modules
+      <a href="../../plugins/algorithm/aiverify_test_engine/" class="md-nav__link">
+        AI Verify Test Engine
       </a>
     </li>
   
@@ -722,8 +729,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Shared_Library/" class="md-nav__link">
-        AI Verify Frontend Shared Library
+      <a href="../../plugins/widget/Playground/" class="md-nav__link">
+        Playground
       </a>
     </li>
   
@@ -736,8 +743,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Plugin_Tool.md" class="md-nav__link">
-        AI Verify Frontend Plugin Tool
+      <a href="../../plugins/widget/Shared_Library/" class="md-nav__link">
+        AI Verify Frontend Shared Library
       </a>
     </li>
   
@@ -1102,6 +1109,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#optional-use-the-playground-to-view-the-input-block" class="md-nav__link">
+    (Optional) Use the Playground to view the Input Block.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1125,9 +1139,9 @@
 <li>Modify the input block component to create a web form with inputs for first and last name</li>
 </ol>
 <h2 id="generating-a-input-block-component">Generating a input block component</h2>
-<p>Widgets are stored in the <strong>my_plugin/inputs</strong> folder. Use <a href="../../plugins/Plugin_Tool/#generate-inputblock-alias-gib"><strong>ai-verify-plugin gib</strong></a> to generate your widget.</p>
+<p>Widgets are stored in the <strong>my_plugin/inputs</strong> folder. Use <a href="../../plugins/Plugin_Tool/#generate-inputblock-alias-gib"><strong>aiverify-plugin gib</strong></a> to generate your widget.</p>
 <p>Run the following command to generate a new input block.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ai-verify-plugin<span class="w"> </span>gib<span class="w"> </span><span class="s2">&quot;my_inputblock&quot;</span><span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;My Input Block&quot;</span><span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;My first Input Block&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>aiverify-plugin<span class="w"> </span>gib<span class="w"> </span><span class="s2">&quot;my_inputblock&quot;</span><span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;My Input Block&quot;</span><span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;My first Input Block&quot;</span>
 </span></code></pre></div>
 <p>Verify that the directory <code>inputs</code> exists in your current directory with the files for the input block generated inside.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls<span class="w"> </span>inputs
@@ -1148,44 +1162,67 @@
 </span></code></pre></div>
 <h2 id="editing-mdx">Editing MDX</h2>
 <p>Open and edit <code>my_inputblock.mdx</code> to implement the MDX content.</p>
-<div class="language-HTML highlight"><span class="filename">my_inputblock.mdx</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">{{</span> <span class="na">display:</span><span class="err">&quot;</span><span class="na">flex</span><span class="err">&quot;,</span> <span class="na">flexDirection:</span><span class="err">&quot;</span><span class="na">column</span><span class="err">&quot;}}</span><span class="p">&gt;</span>
+<div class="language-HTML highlight"><span class="filename">my_inputblock.mdx</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">{{</span> <span class="na">display:</span><span class="err">&quot;</span><span class="na">flex</span><span class="err">&quot;,</span> <span class="na">flexDirection:</span><span class="err">&quot;</span><span class="na">column</span><span class="err">&quot;</span> <span class="err">}}</span><span class="p">&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">htmlFor</span><span class="o">=</span><span class="s">&quot;fname&quot;</span><span class="p">&gt;</span>First name:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fname&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">{props.data[&quot;fname&quot;]}</span> <span class="na">onChange</span><span class="o">=</span><span class="s">{(e)=</span><span class="p">&gt;</span>props.onChangeData(&quot;fname&quot;,e.target.value)} /&gt;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">style</span><span class="o">=</span><span class="s">{{</span> <span class="na">color:</span><span class="err">&#39;</span><span class="na">black</span><span class="err">&#39;</span> <span class="err">}}</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fname&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">{props.data[&quot;fname&quot;]}</span> <span class="na">onChange</span><span class="o">=</span><span class="s">{(e)=</span><span class="p">&gt;</span>props.onChangeData(&quot;fname&quot;,e.target.value)} /&gt;
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">htmlFor</span><span class="o">=</span><span class="s">&quot;lname&quot;</span><span class="p">&gt;</span>Last name:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lname&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">{props.data[&quot;lname&quot;]}</span> <span class="na">onChange</span><span class="o">=</span><span class="s">{(e)=</span><span class="p">&gt;</span>props.onChangeData(&quot;lname&quot;,e.target.value)} /&gt;
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">style</span><span class="o">=</span><span class="s">{{</span> <span class="na">color:</span><span class="err">&#39;</span><span class="na">black</span><span class="err">&#39;</span> <span class="err">}}</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lname&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">{props.data[&quot;lname&quot;]}</span> <span class="na">onChange</span><span class="o">=</span><span class="s">{(e)=</span><span class="p">&gt;</span>props.onChangeData(&quot;lname&quot;,e.target.value)} /&gt;
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h2 id="editing-summary-mdx">Editing Summary MDX</h2>
 <p>Open and edit <code>my_inputblock.summary.mdx</code> to update the summary MDX content as highlighted.</p>
-<div class="language-Javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">my_inputblock.summary.mdx</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">progress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="c1">// TODO: replace below code with percentage of user completion.</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">totalKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
-</span></span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">numKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">v</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">  </span><span class="p">}).</span><span class="nx">length</span><span class="p">;</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="nx">numKeys</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">totalKeys</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="p">}</span>
+<div class="language-Javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">my_inputblock.summary.mdx</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="p">{</span><span class="cm">/* Return progress in percentage (0-100) */</span><span class="p">}</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">progress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">    </span><span class="c1">// TODO: replace below code with percentage of user completion.</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">totalKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span></span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">numKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">v</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">  </span><span class="p">}).</span><span class="nx">length</span><span class="p">;</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="nx">numKeys</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">totalKeys</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="p">}</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="p">{</span><span class="cm">/* Validate data. */</span><span class="p">}</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">validate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">  </span><span class="c1">// TODO: replace below code with data validation. </span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="hll"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span></span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Once you have build your input block, you can proceed to <a href="../your_first_widget/">create a widget</a>.</p>
+<h2 id="optional-use-the-playground-to-view-the-input-block">(Optional) Use the <strong>Playground</strong> to view the Input Block.</h2>
+<p>Run the following command under the plugin directory to launch the <a href="../../plugins/widget/Playground/"><strong>Playground</strong></a>.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>aiverify-plugin<span class="w"> </span>playground
+</span></code></pre></div>
+<p>Navigate to <a href="http://localhost:5000/InputBlock/my_inputblock">http://localhost:5000/InputBlock/my_inputblock</a> to view the input block you have created.</p>
+<p><img alt="Playground - Input Block" src="../../images/playground_input_block.png" /></p>
+<p>Once you make any edit to <code>my_inputblock.mdx</code>, you can click the <strong>Refresh</strong> button to view your changes. The <code>Input Block Meta</code> tab on the right panel display your Input Block meta information.</p>
+<p>Type some characters in the First and Last Name fields, then select the <code>Data Output</code> tab on the right panel. You should see the field values captured in the data output.</p>
+<p>To exit the Playground, type <code>ctrl+c</code> to terminate the application.</p>
 
 
 

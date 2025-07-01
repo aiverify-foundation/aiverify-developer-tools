@@ -540,8 +540,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/algorithm/core_modules/" class="md-nav__link">
-        Core Modules
+      <a href="../../plugins/algorithm/aiverify_test_engine/" class="md-nav__link">
+        AI Verify Test Engine
       </a>
     </li>
   
@@ -656,8 +656,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Shared_Library/" class="md-nav__link">
-        AI Verify Frontend Shared Library
+      <a href="../../plugins/widget/Playground/" class="md-nav__link">
+        Playground
       </a>
     </li>
   
@@ -670,8 +670,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugins/widget/Plugin_Tool.md" class="md-nav__link">
-        AI Verify Frontend Plugin Tool
+      <a href="../../plugins/widget/Shared_Library/" class="md-nav__link">
+        AI Verify Frontend Shared Library
       </a>
     </li>
   
@@ -976,50 +976,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-plugin-in-ai-verify" class="md-nav__link">
-    Using the Plugin in AI Verify
+  <a href="#algorithm-details" class="md-nav__link">
+    Algorithm Details
   </a>
-  
-    <nav class="md-nav" aria-label="Using the Plugin in AI Verify">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-preparation" class="md-nav__link">
-    Data Preparation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#additional-requirements" class="md-nav__link">
-    Additional Requirements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#algorithm-user-inputs" class="md-nav__link">
-    Algorithm User Input(s)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sample-use-of-the-widgets" class="md-nav__link">
-    Sample use of the widgets
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#more-details" class="md-nav__link">
-    More details
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1121,50 +1080,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-plugin-in-ai-verify" class="md-nav__link">
-    Using the Plugin in AI Verify
+  <a href="#algorithm-details" class="md-nav__link">
+    Algorithm Details
   </a>
-  
-    <nav class="md-nav" aria-label="Using the Plugin in AI Verify">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-preparation" class="md-nav__link">
-    Data Preparation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#additional-requirements" class="md-nav__link">
-    Additional Requirements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#algorithm-user-inputs" class="md-nav__link">
-    Algorithm User Input(s)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sample-use-of-the-widgets" class="md-nav__link">
-    Sample use of the widgets
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#more-details" class="md-nav__link">
-    More details
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1187,11 +1105,13 @@
 <p>(aiverify.stock.image-corruption-toolbox) [<a href="https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox">source</a>]</p>
 <h2 id="description">Description</h2>
 <p>This plugin tests the robustness of AI models to natural corruptions. </p>
-<p>There are four different broad groups of corruptions that are packaged in this plugin. Each of these broad groups of corruptions also have more specific corruption functions indicated in brackets below:
-- General (Gaussian, Poisson, Salt and Pepper Noise)
-- Blur (Defocus, Gaussian, Glass, Horizontal Motion, Vertical Motion, Zoom Blur)
-- Digital (Brightness Up and Down, Contrast Up and Down, Compression, Random Tilt, Saturate)
-- Environmental (Rain, Fog, Snow)</p>
+<p>There are four different broad groups of corruptions that are packaged in this plugin. Each of these broad groups of corruptions also have more specific corruption functions indicated in brackets below:</p>
+<ul>
+<li>General (Gaussian, Poisson, Salt and Pepper)</li>
+<li>Blur (Gaussian, Glass, Defocus, Horizontal Motion, Vertical Motion, Zoom)</li>
+<li>Digital (Brightness Up and Down, Contrast Up and Down, Saturate Up and Down, Random Perspective, JPEG Compression)</li>
+<li>Environmental (Snow, Fog, Rain)</li>
+</ul>
 <p>The toolbox generates corrupted images based on the uploaded test data at 5 different severity levels for each corruption function. The accuracy of the model is calculated with the new corrupted datasets.</p>
 <h2 id="plugin-content">Plugin Content</h2>
 <ul>
@@ -1200,26 +1120,26 @@
 <table>
 <thead>
 <tr>
-<th align="center">Name</th>
-<th align="center">Description</th>
+<th>Name</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">Blur Corruptions</td>
-<td align="center">Algorithm that adds blur corruptions (defocus, gaussian, glass, horizontal motion, vertical motion and zoom Blur) to images at 5 severity levels, and calculates the accuracy of the model</td>
+<td>Blur Corruptions</td>
+<td>Algorithm that adds blur corruptions (gaussian, glass, defocus, horizontal motion, vertical motion, zoom) to images across thresholds of interests, and calculates the accuracy of the model</td>
 </tr>
 <tr>
-<td align="center">Digital Corruptions</td>
-<td align="center">Algorithm that adds digital corruptions (brightness up and down, contrast up and down, compression, random tilt, saturate) to images at 5 severity levels, and calculates the accuracy of the model</td>
+<td>Digital Corruptions</td>
+<td>Algorithm that adds digital corruptions (brightness up and down, contrast up and down, saturate up and down, random perspective, jpeg compression) to images across thresholds of interests, and calculates the accuracy of the model</td>
 </tr>
 <tr>
-<td align="center">Environment Corruptions</td>
-<td align="center">Algorithm that adds environmental corruptions (rain, fog and snow) to images at 5 severity levels, and calculates the accuracy of the model</td>
+<td>Environment Corruptions</td>
+<td>Algorithm that adds environmental corruptions (snow, fog, rain) to images across thresholds of interests, and calculates the accuracy of the model</td>
 </tr>
 <tr>
-<td align="center">General Corruptions</td>
-<td align="center">Algorithm that adds environmental corruptions (gaussian, poisson and salt and pepper noise) to images at 5 severity levels, and calculates the accuracy of the model</td>
+<td>General Corruptions</td>
+<td>Algorithm that adds general corruptions (gaussian, poisson, salt and pepper) to images across thresholds of interests, and calculates the accuracy of the model</td>
 </tr>
 </tbody>
 </table>
@@ -1239,40 +1159,16 @@
 <td>To provide an introduction to the Image Corruption Toolbox</td>
 </tr>
 <tr>
-<td>Understanding Line Chart</td>
-<td>To guide your users on reading the generated line charts</td>
+<td>Understanding Bar Chart</td>
+<td>To guide your users on reading the generated bar charts</td>
 </tr>
 <tr>
-<td>Line Chart (Blur Corruptions)</td>
-<td>To generate line chart to visualise the accuracy results when blur corruptions are applied</td>
+<td>Bar Chart (by corruptions type)</td>
+<td>To generate bar chart to visualise the accuracy results when blur corruptions are applied</td>
 </tr>
 <tr>
-<td><ul> <li> Samples (Blur: Defocus Blur) </li> <li>Samples (Blur: Gaussian Blur) </li> <li>Samples (Blur: Glass Blur) </li> <li> Samples (Blur: Horizontal Motion Blur) </li> <li>Samples (Blur: Vertical Motion Blur) </li> <li>Samples (Blur: Zoom Blur)</li> </ul></td>
-<td>To generate sample images for the blur corruptions</td>
-</tr>
-<tr>
-<td>Line Chart (Digital Corruptions)</td>
-<td>To generate line chart to visualise the accuracy results when digital corruptions are applied</td>
-</tr>
-<tr>
-<td><ul> <li> Samples (Digital:  Brightness Up) </li> <li>Samples (Digital:  Brightness Down) </li> <li>Samples (Digital:  Contrast Up) </li> <li> Samples (Digital:  Contrast Down) </li> <li>Samples (Digital:  Saturate) </li> <li>Samples (Digital: Compression)</li> <li>Samples (Digital: Compression)</li></ul></td>
-<td>To generate sample images for the digital corruptions</td>
-</tr>
-<tr>
-<td>Line Chart (Environmental Corruptions)</td>
-<td>To generate line chart to visualise the accuracy results when environment corruptions are applied</td>
-</tr>
-<tr>
-<td><ul><li> Samples (Environment: Rain) </li><li> Samples (Environment: Fog)</li>   <li> Samples (Environment: Snow)</li></ul></td>
-<td>To generate samples for the environment corruptions</td>
-</tr>
-<tr>
-<td>Line Chart (General Corruptions)</td>
-<td>To generate line chart to visualise the accuracy results when general corruptions are applied</td>
-</tr>
-<tr>
-<td><ul><li> Samples (General: Gaussian) </li><li> Samples (General: Poisson)</li>   <li> Samples (General: Salt and Pepper)</li></ul></td>
-<td>To generate sample images for the general corruptions</td>
+<td><ul><li> Blur corruption samples </li><li> Digital corruption samples </li> <li> Environment corruption samples</li> <li> General corruption samples</li></ul></td>
+<td>To generate sample images for the different corruption types</td>
 </tr>
 <tr>
 <td>Recommendation</td>
@@ -1280,47 +1176,36 @@
 </tr>
 </tbody>
 </table>
-<h2 id="using-the-plugin-in-ai-verify">Using the Plugin in AI Verify</h2>
-<h3 id="data-preparation">Data Preparation</h3>
+<h2 id="algorithm-details">Algorithm Details</h2>
+<p>Refer to the README file under each algorithm for more details on the algorithm.</p>
 <ul>
-<li>Image dataset (<a href="https://imda-btg.github.io/aiverify/getting-started/prepare-image/#1-dataset-preparation">Tutorial for Preparation</a>)</li>
-<li>Annotated Ground Truth Dataset (<a href="https://imda-btg.github.io/aiverify/getting-started/prepare-image/#2-annotated-ground-truth-dataset">Tutorial for Preparation</a>)</li>
+<li><a href="https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox/algorithms/general_corruptions">General Corruptions</a></li>
+<li><a href="https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox/algorithms/blur_corruptions">Blur Corruptions</a></li>
+<li><a href="https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox/algorithms/digital_corruptions">Digital Corruptions</a></li>
+<li><a href="https://github.com/aiverify-foundation/aiverify/tree/main/stock-plugins/aiverify.stock.image-corruption-toolbox/algorithms/environment_corruptions">Environment Corruptions</a></li>
 </ul>
-<h3 id="additional-requirements">Additional Requirements</h3>
-<ul>
-<li>ImageMagick (Details for installation can be found <a href="https://docs.wand-py.org/en/0.6.11/guide/install.html#">here</a>)</li>
-</ul>
-<h3 id="algorithm-user-inputs">Algorithm User Input(s)</h3>
-<p>Note: These inputs are the same for all the algorithms in this plugin (Blur Corruptions, Digital Corruptions, Environmental Corruptions and General Corruptions)</p>
-<table>
-<thead>
-<tr>
-<th align="center">Input Field</th>
-<th align="center">Description</th>
-<th align="center">Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Annotated ground truth path</td>
-<td align="center">An uploaded dataset containing image file names and the corresponding ground truth label</td>
-<td align="center"><code>string</code></td>
-</tr>
-<tr>
-<td align="center">Name of column containing image file name</td>
-<td align="center">Key in the name of the column containing the file names in the annotated ground truth dataset</td>
-<td align="center"><code>string</code></td>
-</tr>
-<tr>
-<td align="center">Seed for selection of data for display</td>
-<td align="center">Some of the plugins selects a random sample data for display. The random seed for this selection can be changed, if desired. The default value we are using is 10.</td>
-<td align="center"><code>int</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="sample-use-of-the-widgets">Sample use of the widgets</h3>
-<p><img alt="ICT sample" src="../../images/image_corruption_toolbox_sample.png" /></p>
-<h3 id="more-details">More details</h3>
+<!-- ## Using the Plugin in AI Verify -->
+
+<!-- ### Data Preparation
+- Image dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#1-dataset-preparation))
+- Annotated Ground Truth Dataset ([Tutorial for Preparation](https://imda-btg.github.io/aiverify/getting-started/prepare-image/#2-annotated-ground-truth-dataset)) -->
+
+<!-- ### Algorithm User Input(s)
+Note: These inputs are the same for all the algorithms in this plugin (Blur Corruptions, Digital Corruptions, Environmental Corruptions and General Corruptions)
+
+|                Input Field                |                                                                            Description                                                                             |   Type   |
+| :---------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: |
+|        Annotated ground truth path        |                                      An uploaded dataset containing image file names and the corresponding ground truth label                                      | `string` |
+| Name of column containing image file name |                                   Key in the name of the column containing the file names in the annotated ground truth dataset                                    | `string` |
+|  Seed for selection of data for display   | Some of the plugins selects a random sample data for display. The random seed for this selection can be changed, if desired. The default value we are using is 10. |  `int`   |
+
+
+### Sample use of the widgets
+
+![ICT sample](../images/image_corruption_toolbox_sample.png)
+
+
+### More details
 <details>
 <summary> Algorithm input schema </summary>
 
@@ -1421,7 +1306,7 @@
 </span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="p">}</span>
 </span></code></pre></div>
 
-</details>
+</details> -->
 
 
 

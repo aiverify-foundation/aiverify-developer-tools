@@ -544,8 +544,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../core_modules/" class="md-nav__link">
-        Core Modules
+      <a href="../aiverify_test_engine/" class="md-nav__link">
+        AI Verify Test Engine
       </a>
     </li>
   
@@ -731,8 +731,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../widget/Shared_Library/" class="md-nav__link">
-        AI Verify Frontend Shared Library
+      <a href="../../widget/Playground/" class="md-nav__link">
+        Playground
       </a>
     </li>
   
@@ -745,8 +745,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../widget/Plugin_Tool.md" class="md-nav__link">
-        AI Verify Frontend Plugin Tool
+      <a href="../../widget/Shared_Library/" class="md-nav__link">
+        AI Verify Frontend Shared Library
       </a>
     </li>
   
@@ -1140,20 +1140,15 @@
   <h1>Deploying</h1>
 
 <h2 id="deploying-and-packaging-your-algorithm-plugin">Deploying and Packaging Your Algorithm Plugin</h2>
-<p>When you are creating your distribution package with <a href="../plugins/Plugin_Tool.md#zip"><code>ai-verify-plugin zip</code></a> command, these are the things that will happen for each algorithms to be packed: 
-<br></p>
+<p>When you are creating your distribution package with <a href="../plugins/Plugin_Tool.md#zip"><code>aiverify-plugin zip</code></a> command, these are the things that will happen for each algorithms to be packed: </p>
 <h3 id="syntax-checking">Syntax checking</h3>
-<p>There will be a syntax check run on the main Python file (in this case it will be <code>your_first_algorithm_plugin.py</code>). This is to ensure that the algorithm can run smoothly before packaging. If the check fails, it means that there are syntax error(s) and you will have to fix the error(s) before continuing. 
-<br></p>
+<p>There will be a syntax check run on the main Python file (in this case it will be <code>algo.py</code>). This is to ensure that the algorithm can run smoothly before packaging. If the check fails, it means that there are syntax error(s) and you will have to fix the error(s) before continuing. </p>
 <h3 id="test-running-the-algorithm">Test Running the Algorithm</h3>
-<p>This is the same as testing your algorithm in the <a href="../testing_algorithm/">previous section</a>. The algorithm's input argument(s) and generated results will be validated against the schema you have defined in <code>input.schema.json</code> and <code>output.schema.json</code> respectively. This is to ensure that the input argument(s) and generated results have the right format and data type. 
-<br></p>
+<p>This is the same as testing your algorithm in the <a href="../testing_algorithm/">previous section</a>. The algorithm's input argument(s) and generated results will be validated against the schema you have defined in <code>input.schema.json</code> and <code>output.schema.json</code> respectively. This is to ensure that the input argument(s) and generated results have the right format and data type. </p>
 <h3 id="adding-in-the-required-files">Adding in the Required Files</h3>
-<p>There is a predefined list of files that are required (as mentioned in <a href="../file_structure/#your_first_algorithm_pluginmetajson">requiredFiles</a>) to be packaged with the algorithm plugin for the algorithm to run. The Python file(s)/directory(s) you have added into <code>requiredFiles</code> will be added into the package as well. 
-<br></p>
+<p>There is a predefined list of files that are required (as mentioned in <a href="../file_structure/#algometajson">requiredFiles</a>) to be packaged with the algorithm plugin for the algorithm to run. The Python file(s)/directory(s) you have added into <code>requiredFiles</code> will be added into the package as well. </p>
 <h3 id="packaging-the-algorithm-plugin">Packaging the Algorithm Plugin</h3>
-<p>When all the checks have passed and all the required files have been added, the algorithm component, together with the required files, will be added to the plugin <code>.zip</code> file. The <code>.zip</code> package will be used for distribution. 
-<br></p>
+<p>When all the checks have passed and all the required files have been added, the algorithm component, together with the required files, will be added to the plugin <code>.zip</code> file. The <code>.zip</code> package will be used for distribution. </p>
 
 
 

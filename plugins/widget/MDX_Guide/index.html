@@ -542,8 +542,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algorithm/core_modules/" class="md-nav__link">
-        Core Modules
+      <a href="../../algorithm/aiverify_test_engine/" class="md-nav__link">
+        AI Verify Test Engine
       </a>
     </li>
   
@@ -660,8 +660,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Shared_Library/" class="md-nav__link">
-        AI Verify Frontend Shared Library
+      <a href="../Playground/" class="md-nav__link">
+        Playground
       </a>
     </li>
   
@@ -674,8 +674,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Plugin_Tool.md" class="md-nav__link">
-        AI Verify Frontend Plugin Tool
+      <a href="../Shared_Library/" class="md-nav__link">
+        AI Verify Frontend Shared Library
       </a>
     </li>
   
@@ -776,13 +776,6 @@
   
     <nav class="md-nav" aria-label="AI Verify Shared Library">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#jsx-component-styling" class="md-nav__link">
-    JSX Component Styling
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#example-use-of-barcharts" class="md-nav__link">
@@ -1185,13 +1178,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#jsx-component-styling" class="md-nav__link">
-    JSX Component Styling
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#example-use-of-barcharts" class="md-nav__link">
     Example use of BarCharts
   </a>
@@ -1297,30 +1283,35 @@
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>&lt;/div&gt;
 </span></code></pre></div>
 <h2 id="ai-verify-shared-library">AI Verify Shared Library</h2>
-<p>The <a href="https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library">AI Verify Shared Library</a> provides some shared components that can be imported by MDX. See <a href="../Shared_Library/">Shared Library Documentation</a>.</p>
-<h3 id="jsx-component-styling">JSX Component Styling</h3>
-<p>To ensure consistent stylings for widgets, it is recommended that JSX components use the CSS classes as provided in the <a href="https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/styles">AI Verify Shared Library Styles</a>.</p>
-<p>The following classnames provide different color schemas:</p>
-<ul>
-<li>c-primary</li>
-<li>c-secondary</li>
-<li>c-success</li>
-<li>c-info</li>
-<li>c-warning</li>
-<li>c-error</li>
-</ul>
-<p>For example, to change header color:
+<p>The <a href="https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library">AI Verify Shared Library</a> provides some shared components that can be imported by MDX. See <a href="../Shared_Library/">Shared Library Documentation</a>.</p>
+<!-- ### JSX Component Styling
+
+To ensure consistent stylings for widgets, it is recommended that JSX components use the CSS classes as provided in the [AI Verify Shared Library Styles](https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library/packages/styles).
+
+The following classnames provide different color schemas:
+
+* c-primary
+* c-secondary
+* c-success
+* c-info
+* c-warning
+* c-error
+
+For example, to change header color:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;h4 class=&quot;c-primary&quot;&gt;Primary Test Color&lt;/h4&gt;
-</span></code></pre></div></p>
-<p>To style buttons:
+</span></code></pre></div>
+
+To style buttons:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;button class=&quot;aiv-button&quot;&gt;My Button&lt;/button&gt;
-</span></code></pre></div></p>
-<p>To use a different color for styled buttons:
+</span></code></pre></div>
+
+To use a different color for styled buttons:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;button class=&quot;aiv-button c-secondary&quot;&gt;My Button&lt;/button&gt;
-</span></code></pre></div></p>
+</span></code></pre></div>
+ -->
 <h3 id="example-use-of-barcharts">Example use of BarCharts</h3>
-<p>Below is an example of how to add a <a href="https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/charts#barchart">BarChart</a> component from the <a href="https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/charts">AI Verify Shared Charts Library</a>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>import { BarChart } from &#39;ai-verify-shared-library/charts&#39;
+<p>Below is an example of how to add a <a href="https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library/packages/charts#barchart">BarChart</a> component from the <a href="https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library/packages/charts">AI Verify Shared Charts Library</a>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>import { BarChart } from &#39;aiverify-shared-library/charts&#39;
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>export const data01 = [
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  {
@@ -1376,7 +1367,7 @@
 </span><span id="__span-9-54"><a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>&lt;/div&gt;
 </span></code></pre></div>
 <h3 id="example-use-of-decision-tree">Example use of Decision Tree</h3>
-<p>The <a href="https://github.com/IMDA-BTG/aiverify/tree/main/ai-verify-shared-library/packages/graph">AI Verify Shared Library DecisionTree</a> allows user to build their own decision tree.</p>
+<p>The <a href="https://github.com/IMDA-BTG/aiverify/tree/main/aiverify-shared-library/packages/graph">AI Verify Shared Library DecisionTree</a> allows user to build their own decision tree.</p>
 <p>You can find an example of Decision Tree Input Block from the <a href="https://github.com/IMDA-BTG/aiverify/tree/main/stock-plugins/aiverify.stock.fairness-metrics-toolbox-for-classification">Fairness Metrics Toolbox for Classification</a> plugin.
 An example use of the <strong>DecisionTree</strong> component can be found in the implementation for the <a href="https://github.com/IMDA-BTG/aiverify/blob/main/stock-plugins/aiverify.stock.fairness-metrics-toolbox-for-classification/inputs/fairness_tree.mdx">AI Verify Fairness Tree</a> is found under the <em>inputs</em> folder.</p>
 

@@ -536,8 +536,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../algorithm/core_modules/" class="md-nav__link">
-        Core Modules
+      <a href="../algorithm/aiverify_test_engine/" class="md-nav__link">
+        AI Verify Test Engine
       </a>
     </li>
   
@@ -652,8 +652,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../widget/Shared_Library/" class="md-nav__link">
-        AI Verify Frontend Shared Library
+      <a href="../widget/Playground/" class="md-nav__link">
+        Playground
       </a>
     </li>
   
@@ -666,8 +666,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../widget/Plugin_Tool.md" class="md-nav__link">
-        AI Verify Frontend Plugin Tool
+      <a href="../widget/Shared_Library/" class="md-nav__link">
+        AI Verify Frontend Shared Library
       </a>
     </li>
   
@@ -1143,31 +1143,31 @@
 
 
 <h1 id="ai-verify-plugin-tool">AI Verify Plugin Tool</h1>
-<p>The <a href="https://github.com/IMDA-BTG/aiverify-developer-tools/tree/main/ai-verify-plugin">ai-verify-plugin</a> tool is a command-line tool that help widget and input block developers to develop and scaffold AI Verify plugin projects directly from command line. </p>
+<p>The <a href="https://github.com/IMDA-BTG/aiverify-developer-tools/tree/main/aiverify-plugin">aiverify-plugin</a> tool is a command-line tool that help widget and input block developers to develop and scaffold AI Verify plugin projects directly from command line. </p>
 <h2 id="basic-use">Basic Use</h2>
-<p>Once the tool is installed, it can be invoked with <code>ai-verify-plugin</code>. The command line syntax is as follows:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ai-verify-plugin &lt;cmd&gt; [args]
+<p>Once the tool is installed, it can be invoked with <code>aiverify-plugin</code>. The command line syntax is as follows:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>aiverify-plugin &lt;cmd&gt; [args]
 </span></code></pre></div>
 <p>The second argument <cmd> is the command to run. The <code>--help</code> argument will output the help menu for the tool or the command. For example,</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ai-verify-plugin --help
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ai-verify-plugin generate-plugin --help
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>aiverify-plugin --help
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>aiverify-plugin generate-plugin --help
 </span></code></pre></div>
 <h2 id="commands">Commands</h2>
-<p>You can view the list of commands with <code>ai-verify-plugin --help</code>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ai-verify-plugin &lt;cmd&gt; [args]
+<p>You can view the list of commands with <code>aiverify-plugin --help</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>aiverify-plugin &lt;cmd&gt; [args]
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Commands:
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  ai-verify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  ai-verify-plugin generate-widget &lt;cid&gt;      Generate skeleton AI Verify widget                          [aliases: gw]
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  ai-verify-plugin generate-inputblock &lt;cid&gt;  Generate skeleton AI Verify input block                    [aliases: gib]
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  ai-verify-plugin generate-algorithm &lt;cid&gt;   Generate skeleton AI Verify algorithm                       [aliases: ga]
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  ai-verify-plugin zip [pluginDir]            Create the plugin zip file
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  ai-verify-plugin validate                   Validate AI Verify plugin
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  ai-verify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  ai-verify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  ai-verify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  aiverify-plugin generate-plugin [gid]      Generate skeleton AI Verify plugin project                  [aliases: gp]
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  aiverify-plugin generate-widget &lt;cid&gt;      Generate skeleton AI Verify widget                          [aliases: gw]
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  aiverify-plugin generate-inputblock &lt;cid&gt;  Generate skeleton AI Verify input block                    [aliases: gib]
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  aiverify-plugin generate-algorithm &lt;cid&gt;   Generate skeleton AI Verify algorithm                       [aliases: ga]
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  aiverify-plugin zip [pluginDir]            Create the plugin zip file
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  aiverify-plugin validate                   Validate AI Verify plugin
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  aiverify-plugin test-widget                Run the plugin tests for widgets and input blocks        [aliases: testw]
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  aiverify-plugin test-algorithm             Run the plugin tests for algorithms                      [aliases: testa]
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  aiverify-plugin test-all                   Run all the tests for widgets, input blocks and algorithms with default
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>                                              options
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  ai-verify-plugin playground                 Launch the plugin playround
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  aiverify-plugin playground                 Launch the plugin playround
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Options:
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  --help  Show help                                                                                           [boolean]
@@ -1175,7 +1175,7 @@
 <p><strong>Tip</strong>: Using the gp, gw and gib commands on existing plugin or component will update the component meta data with any new arguments specified. To overwrite existing meta properties, use the <em>--force</em> argument.</p>
 <h2 id="generate-plugin-alias-gp">generate-plugin [alias: gp]</h2>
 <p>This command generates a skeleton <a href="../../guided_example/introduction_to_plugins/">plugin</a> project.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ai-verify-plugin generate-plugin [gid]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>aiverify-plugin generate-plugin [gid]
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Generate skeleton AI Verify plugin project
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -1223,14 +1223,14 @@
 </table>
 <h3 id="examples">Examples</h3>
 <p>To generate plugin with random gid.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ai-verify-plugin gp --name &quot;My Plugin&quot; --description &quot;Just a test plugin&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>aiverify-plugin gp --name &quot;My Plugin&quot; --description &quot;Just a test plugin&quot;
 </span></code></pre></div></p>
 <p>To generate plugin with specific gid.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ai-verify-plugin gp &quot;myplugin&quot; --name &quot;My Plugin&quot; --description &quot;Just a test plugin&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>aiverify-plugin gp &quot;myplugin&quot; --name &quot;My Plugin&quot; --description &quot;Just a test plugin&quot;
 </span></code></pre></div></p>
 <h2 id="generate-widget-alias-gw">generate-widget [alias: gw]</h2>
 <p>To generate a <a href="../../guided_example/your_first_widget/">widget</a>, cd to a plugin project folder and run the following command.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ai-verify-plugin generate-widget &lt;cid&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>aiverify-plugin generate-widget &lt;cid&gt;
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Generate skeleton AI Verify widget
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
@@ -1283,23 +1283,23 @@
 </table>
 <h3 id="examples_1">Examples</h3>
 <p>Generate a widget without any dependencies and properties.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ai-verify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget without dependencies and properties&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>aiverify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget without dependencies and properties&quot;
 </span></code></pre></div></p>
 <p>Generate a widget with a couple of tags.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ai-verify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget with tags&quot; --tag mytag1 --tag mytag2
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>aiverify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget with tags&quot; --tag mytag1 --tag mytag2
 </span></code></pre></div></p>
 <p>Generate a widget with minimum width set to 12.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ai-verify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget with minW 12&quot; --minW 12
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>aiverify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget with minW 12&quot; --minW 12
 </span></code></pre></div></p>
 <p>Generate a widget with properties.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ai-verify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget with properties&quot; --prop &quot;title,Title text to display,Hello World&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>aiverify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget with properties&quot; --prop &quot;title,Title text to display,Hello World&quot;
 </span></code></pre></div></p>
 <p>Generate a widget with dependencies.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ai-verify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget with dependencies&quot; --dep &quot;Algorithm,my-fake-algo-gid,1.1.0&quot; --dep &quot;InputBlock,my-input-block&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>aiverify-plugin gw &quot;mywidget&quot; --name &quot;My Widget&quot; --description &quot;Widget with dependencies&quot; --dep &quot;Algorithm,my-fake-algo-gid,1.1.0&quot; --dep &quot;InputBlock,my-input-block&quot;
 </span></code></pre></div></p>
 <h2 id="generate-inputblock-alias-gib">generate-inputblock [alias: gib]</h2>
 <p>To generate an <a href="../widget/InputBlock/">input block</a>, cd to a plugin project folder and run the following command.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ai-verify-plugin generate-inputblock &lt;cid&gt;
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>aiverify-plugin generate-inputblock &lt;cid&gt;
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Generate skeleton AI Verify input block
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
@@ -1343,14 +1343,14 @@ Upon successful command run, the following files are generated under the <strong
 </table>
 <h3 id="examples_2">Examples</h3>
 <p>Generate with input block.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ai-verify-plugin gib &quot;myinputblock&quot; --name &quot;My Input Block&quot; --description &quot;An input block&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>aiverify-plugin gib &quot;myinputblock&quot; --name &quot;My Input Block&quot; --description &quot;An input block&quot;
 </span></code></pre></div></p>
 <p>Generate with input block with dialog width "lg"
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ai-verify-plugin gib &quot;myinputblock&quot; --name &quot;My Input Block&quot; --description &quot;An input block with dialog width lg&quot; --width lg
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>aiverify-plugin gib &quot;myinputblock&quot; --name &quot;My Input Block&quot; --description &quot;An input block with dialog width lg&quot; --width lg
 </span></code></pre></div></p>
 <h2 id="generate-algorithm-alias-ga">generate-algorithm [alias: ga]</h2>
 <p>To generate an <a href="../../guided_example/your_first_algorithm/">Algorithm</a>, cd to a plugin project folder and run the following command.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ai-verify-plugin generate-algorithm &lt;cid&gt;
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>aiverify-plugin generate-algorithm &lt;cid&gt;
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Generate skeleton AI Verify algorithm
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
@@ -1373,7 +1373,7 @@ Upon successful command run, the following files are generated under the <strong
 Upon successful command run, the algorithm boilerplate files are generated under the <strong>algorithms/{algorithm cid}</strong> sub-folder:</p>
 <h2 id="zip">zip</h2>
 <p>This commands create a plugin zip file that can be uploaded to the AI Verify portal using the Plugin Manager.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ai-verify-plugin zip [pluginDir]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>aiverify-plugin zip [pluginDir]
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Create the plugin zip file
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
@@ -1388,7 +1388,7 @@ Upon successful command run, the algorithm boilerplate files are generated under
 * By default, the zip command will run validation tests first before creating the plugin zip. The "--skip-validation" option allows user to skip the validation step.</p>
 <h2 id="validate">validate</h2>
 <p>This command run validate checks on the meta files and MDX scripts under the plugin folder.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ai-verify-plugin validate
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>aiverify-plugin validate
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Validate AI Verify plugin
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
@@ -1398,7 +1398,7 @@ Upon successful command run, the algorithm boilerplate files are generated under
 </span></code></pre></div>
 <h2 id="test-widget-alias-testw">test-widget [alias: testw]</h2>
 <p>This command uses <a href="https://jestjs.io/">Jest</a> to run tests on the input blocks and widgets.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ai-verify-plugin test-widget
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>aiverify-plugin test-widget
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>Run the plugin tests for widgets and input blocks
 </span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
@@ -1426,7 +1426,7 @@ Upon successful command run, the algorithm boilerplate files are generated under
 <p>To add additional Jest tests, developers can write their own tests and place them under <code>__tests__</code> folder under the plugin directory.</p>
 <h2 id="test-algorithm-alias-testa">test-algorithm [alias: testa]</h2>
 <p>This command run the algorithm test script for each algorithm found under the plugin directory.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ai-verify-plugin test-algorithm
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>aiverify-plugin test-algorithm
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Run the plugin tests for algorithms
 </span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
@@ -1437,7 +1437,7 @@ Upon successful command run, the algorithm boilerplate files are generated under
 </span></code></pre></div>
 <h2 id="test-all">test-all</h2>
 <p>This command runs the tests for all algorithms, input blocks and widgets found under the plugin directory.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ai-verify-plugin test-all
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>aiverify-plugin test-all
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Run all the tests for widgets, input blocks and algorithms with default options
 </span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
@@ -1447,7 +1447,7 @@ Upon successful command run, the algorithm boilerplate files are generated under
 </span></code></pre></div>
 <h2 id="playground">playground</h2>
 <p>This command launches a web playground app to allow developers to view widgets and input blocks during development.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ai-verify-plugin playground
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>aiverify-plugin playground
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Launch the plugin playround
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>

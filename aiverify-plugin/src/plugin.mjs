@@ -310,7 +310,9 @@ export function zipPlugin(argv) {
       }
       const module_name = getModuleNameFromPyProject(pyprojectPath);
       if (!module_name) {
-        console.log(`Unable to get project module name from pyproject.toml under ${algo}`);
+        console.log(
+          `Unable to get project module name from pyproject.toml under ${algo}`
+        );
         continue;
       }
       const srcDir = path.join(algoPath, module_name);
@@ -333,7 +335,16 @@ export function zipPlugin(argv) {
           if (stat.isDirectory()) {
             // console.log("isDirectory", f);
             zip.addFile(`algorithms/${algo}/${f}/`, null);
-            zip.addLocalFolder(subpath, `algorithms/${algo}`);
+            zip.addLocalFolder(subpath, `algorithms/${algo}/${f}`, (filename) => {
+              console.log("filename", filename);
+              return ![
+                "node_modules",
+                "__pycache__",
+                ".pytest_cache",
+                "env",
+                ".env",
+              ].some((item) => filename.includes(item));
+            });
           } else {
             zip.addLocalFile(subpath, `algorithms/${algo}`);
           }
